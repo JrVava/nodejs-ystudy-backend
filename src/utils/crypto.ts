@@ -17,7 +17,6 @@ export const encrypt = (data: any) => {
 
     let encrypted = cipher.update(json, "utf8", "base64");
     encrypted += cipher.final("base64");
-
     return encrypted;
 };
 
@@ -31,6 +30,5 @@ export const decrypt = (encryptedData: string) => {
 
     let decrypted = decipher.update(encryptedData, "base64", "utf8");
     decrypted += decipher.final("utf8");
-
     return JSON.parse(decrypted);
 };
