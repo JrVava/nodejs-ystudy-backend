@@ -6,7 +6,9 @@ if (!process.env.CRYPTO_SECRET_KEY) {
 
 export const config = {
   port: process.env.PORT || 3000,
+  mongoDB_URI: process.env.MONGO_URI,
   timeZone: process.env.TIMEZONE || "Asia/Kolkata",
   logLevel: process.env.LOG_LEVEL || "info",
-  CRYPTO_SECRET_KEY: process.env.CRYPTO_SECRET_KEY
+  CRYPTO_SECRET_KEY: process.env.CRYPTO_SECRET_KEY,
+  jwt_secret: process.env.JWT_SECRET,
 };

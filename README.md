@@ -33,13 +33,19 @@ PORT=4000
 CRYPTO_SECRET_KEY=your_64_char_hex_key_here
 TIMEZONE=Asia/Kolkata
 LOG_LEVEL=info
+JWT_SECRET=xxxx
+MONGO_URI=xxxx
 ```
-**👉 Generate CRYPTO_SECRET_KEY using:**
+**👉 Generate CRYPTO_SECRET_KEY AND JWT_SECRET using:**
 ```
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
+4. To execute seed file
+```
+npm run seed
+```
 
-4. Run the Project
+5. Run the Project
 Development
 ```
 npm run dev

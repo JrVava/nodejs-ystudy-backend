@@ -1,14 +1,10 @@
-// src/app.ts
-
 import "reflect-metadata";
 import express from "express";
 import { useExpressServer } from "routing-controllers";
 import path from "path";
 import { config } from "./config";
-import { decryptMiddleware } from "./middleware/decrypt";
-import { encryptMiddleware } from "./middleware/encrypted";
-import { decrypt } from "./utils/crypto";
-
+import { connectDB } from "./database/mongo";
+import { decrypt, encrypt } from "./utils/crypto";
 
 const baseUrl = __dirname;
 
@@ -20,53 +16,77 @@ export class App {
     this.initialize();
   }
 
-  private initialize() {
-    this.app.use(express.json());
+  private async initialize() {
+    // ✅ CONNECT DB FIRST
+    await connectDB();
 
-    // ✅ APPLY GLOBAL MIDDLEWARES HERE
-    this.app.use(decryptMiddleware);
-    this.app.use(encryptMiddleware);
-
+    // ✅ INIT routing-controllers FIRST
     this.app = useExpressServer(this.app, {
-      cors: false,
+      cors: true,
       routePrefix: "/api",
       controllers: [
-        path.join(baseUrl, "/controllers/*.{ts,js}"),
+        path.join(baseUrl, "/controllers/**/*.{ts,js}"),
       ],
     });
 
+    // ✅ THEN APPLY BODY PARSER (ONLY FOR CUSTOM ROUTES)
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
+
+    // ✅ CUSTOM ROUTES AFTER BODY PARSER
     this.routes();
   }
 
   private routes() {
+    this.app.post("/api/raw-encrypt", (req, res) => {
+      try {
+        const decryptedData = req.body;
+
+        if (!decryptedData) {
+          return res.status(400).json({
+            success: false,
+            message: "Missing decrypted data",
+          });
+        }
+
+        const encrypted = encrypt(decryptedData);
+
+        return res.json({
+          data: encrypted,
+        });
+      } catch (error) {
+        console.error(error);
+        return res.status(400).json({
+          success: false,
+          message: "Encryption failed",
+        });
+      }
+    });
+
     this.app.post("/api/raw-decrypt", (req, res) => {
       try {
+
         const encryptedData = req.body?.data;
+
         if (!encryptedData) {
           return res.status(400).json({
+            success: false,
             message: "Missing encrypted data",
           });
         }
 
         const decrypted = decrypt(encryptedData);
-        return res.json({
-          success: true,
-          decrypted,
-        });
 
+        return res.json({
+          data: decrypted,
+        });
       } catch (error) {
+        console.error(error);
         return res.status(400).json({
-          message: "Invalid encrypted payload",
+          success: false,
+          message: "Decryption failed",
         });
       }
-    });
-
-    this.app.get("/download", (req, res) => {
-      res.download("logs/combined.log");
-    });
-
-    this.app.get("/server-status", (req, res) => {
-      res.status(200).json({ status: "OK" });
     });
   }
 
