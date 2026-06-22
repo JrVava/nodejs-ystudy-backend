@@ -1,5 +1,3 @@
-// src/controllers/test.controller.ts
-
 import { JsonController, Get, Res, Req } from "routing-controllers";
 import logger from "../utils/logger";
 import { encrypt } from "../utils/crypto";
