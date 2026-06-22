@@ -60,7 +60,17 @@ IDLE_TIMEOUT_MS=1800000 # 30 min
 JWT_EXPIRES_IN_MS=7200000 # 2 hours
 ```
 
-### 4. Running the Server
+**👉 Generate CRYPTO_SECRET_KEY AND JWT_SECRET using:**
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+### 4. Run database seeders (optional):**
+```bash
+npm run seed
+```
+
+### 5. Running the Server
 ```bash
 # Starts the backend in development mode with auto-reloading
 npm run dev

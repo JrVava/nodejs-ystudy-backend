@@ -64,14 +64,14 @@ export class ImageController {
       }
 
       const filePath = path.join(targetDir, `${uploadId}-${session.fileName}`);
-      
+
       // Simulate network delay so the user can visibly see the ETA and progress bar
       await new Promise((resolve) => setTimeout(resolve, 500));
 
       // Append buffer to file
       if (file && file.buffer) {
-         fs.appendFileSync(filePath, file.buffer);
-         session.uploadedBytes += file.buffer.length;
+        fs.appendFileSync(filePath, file.buffer);
+        session.uploadedBytes += file.buffer.length;
       }
 
       return { success: true, uploadedBytes: session.uploadedBytes };
@@ -89,25 +89,25 @@ export class ImageController {
       if (!session) throw new HttpError(404, "Upload session not found");
 
       session.status = "processing";
-      
+
       const safeFolder = session.folderName ? path.basename(session.folderName) : "uploads";
-      
+
       // 1. Upsert Folder into DB
       const folderDB = new QueryBuilder<Folder>("folders");
       const folderResult = await folderDB.upsertOne(
         { name: safeFolder },
-        { 
+        {
           $setOnInsert: { createdAt: new Date() },
           $set: { updatedAt: new Date() }
         }
       );
-      
+
       const folderId = folderResult.upsertedId || (await folderDB.findOne({ name: safeFolder }))?._id;
 
       // 2. Insert Media into DB
       const mediaDB = new QueryBuilder<Media>("media");
       const filePath = `media/${safeFolder}/${uploadId}-${session.fileName}`;
-      
+
       await mediaDB.insertOne({
         fileName: session.fileName,
         folderId: folderId!,
@@ -124,7 +124,7 @@ export class ImageController {
         folderName: session.folderName,
         totalSize: session.totalSize,
       });
-      
+
       session.jobId = job.id!;
 
       return { success: true, jobId: job.id };
@@ -216,21 +216,21 @@ export class ImageController {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
       const filter: any = {};
-      
+
       if (folderId) {
-         // Ensure valid ObjectId before filtering
-         try {
-           filter.folderId = new ObjectId(folderId);
-         } catch (e) {
-           throw new HttpError(400, "Invalid folderId format");
-         }
+        // Ensure valid ObjectId before filtering
+        try {
+          filter.folderId = new ObjectId(folderId);
+        } catch (e) {
+          throw new HttpError(400, "Invalid folderId format");
+        }
       }
 
       // Sort by newest first
       const results = await mediaDB.paginate(filter, Number(page), Number(limit), { createdAt: -1 });
-      
-      return { 
-        success: true, 
+
+      return {
+        success: true,
         ...results,
         data: results.data.map(m => ({ ...m, _id: m._id?.toString(), folderId: m.folderId?.toString() }))
       };
@@ -246,9 +246,9 @@ export class ImageController {
     try {
       const folderDB = new QueryBuilder<Folder>("folders");
       const folders = await folderDB.find({}, { sort: { name: 1 } });
-      return { 
-        success: true, 
-        data: folders.map(f => ({ ...f, _id: f._id?.toString() })) 
+      return {
+        success: true,
+        data: folders.map(f => ({ ...f, _id: f._id?.toString() }))
       };
     } catch (error) {
       logger.error(`[ImageController:listFolders] Error occurred:`, error);
@@ -261,7 +261,7 @@ export class ImageController {
   async getFolder(@Param("id") folderId: string) {
     try {
       const folderDB = new QueryBuilder<Folder>("folders");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(folderId);
@@ -274,9 +274,9 @@ export class ImageController {
         throw new HttpError(404, "Folder not found");
       }
 
-      return { 
+      return {
         data: encrypt({
-          success: true, 
+          success: true,
           data: { ...folder, _id: folder._id?.toString() }
         })
       };
@@ -291,7 +291,7 @@ export class ImageController {
   async deleteMedia(@Param("mediaId") mediaId: string) {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(mediaId);
@@ -325,7 +325,7 @@ export class ImageController {
   async getSeo(@Param("mediaId") mediaId: string) {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(mediaId);
@@ -338,8 +338,8 @@ export class ImageController {
         throw new HttpError(404, "Media not found");
       }
 
-      const payload = { 
-        success: true, 
+      const payload = {
+        success: true,
         data: {
           _id: media._id?.toString(),
           title: media.title || "",
@@ -365,7 +365,7 @@ export class ImageController {
   ) {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(mediaId);
@@ -403,7 +403,7 @@ export class ImageController {
 
       const folderDB = new QueryBuilder<Folder>("folders");
       const mediaDB = new QueryBuilder<Media>("media");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(folderId);
@@ -413,12 +413,12 @@ export class ImageController {
 
       const folder = await folderDB.findOne({ _id: objId });
       if (!folder) throw new HttpError(404, "Folder not found");
-      
+
       const safeOldName = path.basename(folder.name);
       const safeNewName = path.basename(body.newName);
 
       if (safeOldName === safeNewName) {
-         return { data: encrypt({ success: true, message: "Folder already has this name" }) };
+        return { data: encrypt({ success: true, message: "Folder already has this name" }) };
       }
 
       // 1. Rename physical directory
@@ -438,8 +438,8 @@ export class ImageController {
       const medias = await mediaDB.find({ folderId: objId });
       for (const m of medias) {
         if (m.filePath && m._id) {
-           const newFilePath = m.filePath.replace(`media/${safeOldName}/`, `media/${safeNewName}/`);
-           await mediaDB.updateOne({ _id: m._id }, { $set: { filePath: newFilePath } });
+          const newFilePath = m.filePath.replace(`media/${safeOldName}/`, `media/${safeNewName}/`);
+          await mediaDB.updateOne({ _id: m._id }, { $set: { filePath: newFilePath } });
         }
       }
 
@@ -456,7 +456,7 @@ export class ImageController {
     try {
       const folderDB = new QueryBuilder<Folder>("folders");
       const mediaDB = new QueryBuilder<Media>("media");
-      
+
       let objId: ObjectId;
       try {
         objId = new ObjectId(folderId);
@@ -481,9 +481,9 @@ export class ImageController {
       // 3. Delete all Media records in this folder
       const medias = await mediaDB.find({ folderId: objId });
       for (const m of medias) {
-         if (m._id) {
-           await mediaDB.deleteById(m._id.toString());
-         }
+        if (m._id) {
+          await mediaDB.deleteById(m._id.toString());
+        }
       }
 
       return { data: encrypt({ success: true, message: "Folder deleted successfully" }) };
