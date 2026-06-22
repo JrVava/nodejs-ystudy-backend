@@ -4,6 +4,8 @@ import { comparePassword } from "../../utils/hash";
 import { getDB } from "../../database/mongo";
 import { generateToken } from "../../utils/jwt";
 import { decrypt, encrypt } from "../../utils/crypto";
+import { config } from "../../config";
+import logger from "../../utils/logger";
 
 @JsonController("/auth")
 export class AuthController {
@@ -53,13 +55,35 @@ export class AuthController {
                         email: user.email,
                         role: user.role,
                     },
+                    idleTimeoutMs: config.idleTimeoutMs,
+                    expiresInMs: config.jwtExpiresInMs,
                 }),
             });
         } catch (error) {
-            console.error(error);
+            logger.error(`[AuthController:login] Error occurred:`, error);
             return res.status(500).json({
                 message: "Something went wrong",
             });
+        }
+    }
+
+    @Post("/logout")
+    async logout(@Res() res: Response) {
+        try {
+            // Since we are using stateless JWTs (returned in JSON, not HTTP-only cookies),
+            // actual token destruction happens on the client side.
+            // We provide this endpoint to confirm the action and allow for future enhancements
+            // (like token blacklisting or analytic tracking).
+
+            return res.json({
+                data: encrypt({
+                    success: true,
+                    message: "Logout successful",
+                }),
+            });
+        } catch (error) {
+            logger.error(`[AuthController:logout] Error occurred:`, error);
+            return res.status(500).json({ message: "Internal server error" });
         }
     }
 }
