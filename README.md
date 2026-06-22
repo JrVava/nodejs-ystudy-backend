@@ -1,133 +1,114 @@
-<p align="center">
-  <img src="./Voceantechnologies.png" alt="Vocean Technologies" width="500"/>
-</p>
+![Vocean Technologies](Voceantechnologies.png)
 
-# nodejs-ystudy-backend
-## 🚀 Node.js Encryption API Server & Scalable Media Uploader
+# YStudy Backend 
 
-This project is a comprehensive Node.js + Express + TypeScript backend. It features an automatic encryption/decryption layer and a highly scalable, robust Media Upload Module supporting chunked file uploads, local persistence, and background queue processing.
+A secure, high-performance Node.js backend powering the yStudy platform. Built with a robust MVC architecture, this backend securely handles file uploads, chunk processing, encrypted SEO metadata, role-based access control, and strict user session timeouts.
 
-### 📦 Tech Stack
-- Node.js
-- Express.js
-- TypeScript
-- routing-controllers
-- multer
-- Crypto (AES-256-CBC)
-- pm2 (for production)
+## 🚀 Features
+
+- **Robust Architecture**: Built with `routing-controllers`, enabling clean, declarative class-based endpoints.
+- **Advanced File Uploads**: Chunked, resumable multipart uploads, backed by an asynchronous background task queue (`UploadQueue.ts`) so large files never block the main thread.
+- **Role-Based Security**: Centralized `AdminMiddleware.ts` validating roles and issuing secure, stateless JWT tokens.
+- **Active Idle Timeouts**: Deep tracking of user inactivity limits (configurable via `.env`), aggressively logging out idle sessions.
+- **Edge Cryptography**: Intercepting middleware natively encrypts and decrypts sensitive JSON payloads (like SEO metadata) automatically before they reach the controller.
+- **Bulletproof Error Logging**: Comprehensive `try/catch` boundaries natively tied to our custom `logger`, ensuring errors always note their exact module/method origin.
 
 ---
 
-## ⚙️ Setup Instructions
+## 🛠️ Technology Stack
+- **Runtime**: Node.js
+- **Language**: TypeScript
+- **Framework**: Express + routing-controllers
+- **Database**: MongoDB (via native `mongodb` driver with a custom `QueryBuilder`)
+- **Authentication**: Stateless JSON Web Tokens (JWT)
+- **Encryption**: AES-256-CBC natively backed by the Node.js `crypto` module.
 
-### 1. Clone the Repository
+---
+
+## 💻 Local Setup (Development)
+
+Follow these steps to spin up the server on your local machine.
+
+### 1. Prerequisites
+- Node.js (v18+)
+- MongoDB running locally on `localhost:27017`
+
+### 2. Installation
 ```bash
-git clone <your-repo-url>
+# Clone the repository
+git clone https://github.com/your-org/nodejs-ystudy-backend.git
 cd nodejs-ystudy-backend
+
+# Install dependencies
+npm install
 ```
 
-### 2. Environment Variables
-Create a `.env` file in the root:
+### 3. Environment Configuration
+Copy the sample environment file:
+```bash
+cp .env.example .env
+```
+Edit the `.env` file to match your local setup:
 ```env
 PORT=4000
-CRYPTO_SECRET_KEY=your_64_char_hex_key_here
 TIMEZONE=Asia/Kolkata
 LOG_LEVEL=info
-JWT_SECRET=xxxx
-MONGO_URI=xxxx
-```
-*(Tip: Generate secrets using `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`)*
-
----
-
-## 💻 Local Development Setup
-
-1. **Install dependencies:**
-```bash
-npm install
+CRYPTO_SECRET_KEY=9318cd9b582062e4723131d497581c5965b29365c0c495a0d17076d48df8354d
+MONGO_URI=mongodb://localhost:27017/ystudy
+JWT_SECRET=78528cbfeb98939bf80b3d05557ab629c6c3f6297771414909c2f5d86bdeffd778b06d6c0a2800b84c51a8b43d104724f06728b99d5659cfd05679a202232f78
+IDLE_TIMEOUT_MS=1800000 # 30 min
+JWT_EXPIRES_IN_MS=7200000 # 2 hours
 ```
 
-2. **Run database seeders (optional):**
+### 4. Running the Server
 ```bash
-npm run seed
-```
-
-3. **Start the Development Server:**
-```bash
+# Starts the backend in development mode with auto-reloading
 npm run dev
 ```
-*(The server will run on `http://localhost:4000` with hot-reloading enabled)*
 
 ---
 
-## 🌍 Production Server Setup (PM2)
+## 🌐 Production Setup (Server)
 
-For production, the application should be compiled to JavaScript and managed by **PM2** to ensure it runs continuously and restarts automatically on failure.
+Follow these steps to deploy the application to a live production Linux server.
 
-1. **Install dependencies:**
+### 1. Prerequisites
+- Node.js (v18+) installed on the server.
+- PM2 installed globally (`npm install -g pm2`).
+- A production-ready MongoDB instance.
+
+### 2. Installation & Build
 ```bash
-npm install
-```
+# Pull latest code
+git pull origin main
 
-2. **Install PM2 globally (if not already installed):**
-```bash
-npm install -g pm2
-```
+# Install dependencies
+npm install --production
 
-3. **Build the TypeScript code:**
-```bash
+# Build the TypeScript source code
 npm run build
 ```
 
-4. **Start the server with PM2:**
+### 3. Environment Configuration
+Ensure your production `.env` is securely created at the root of the project.
+**CRITICAL**: Rotate your `CRYPTO_SECRET_KEY` and `JWT_SECRET` in production! Do not use development keys.
+
+### 4. Running via PM2
+PM2 ensures the server restarts automatically on crashes or server reboots.
 ```bash
-pm2 start dist/index.js --name "ystudy-backend"
+# Start the production build using PM2
+pm2 start dist/app.js --name "ystudy-backend"
+
+# Save the PM2 process list to auto-start on server reboot
+pm2 save
+pm2 startup
 ```
 
-5. **Useful PM2 Commands:**
-- `pm2 status` - View running processes
-- `pm2 logs ystudy-backend` - View live logs
-- `pm2 restart ystudy-backend` - Restart the server
-- `pm2 stop ystudy-backend` - Stop the server
-- `pm2 save` - Save the PM2 process list to auto-start on server boot
+### 5. Managing the Server
+```bash
+# View live logs
+pm2 logs ystudy-backend
 
----
-
-## 📤 Scalable Media Upload Module
-
-A state-of-the-art chunked uploading system that handles massive files gracefully.
-
-### Features
-- **Chunked Uploads:** Receives sliced files to prevent server memory overload.
-- **In-Memory Queue System:** An efficient, event-driven internal queue (`UploadQueue`) that processes files asynchronously in the background.
-
-### API Endpoints
-Managed by `ImageController` (`/api/upload`):
-- `POST /init` - Initialize an upload session
-- `POST /chunk/:uploadId` - Receive chunk buffers sequentially
-- `POST /complete/:uploadId` - Assembles chunks and delegates to the internal background queue
-- `GET /status/:uploadId` - Poll status (uploading -> processing -> completed)
-- `POST /pause/:uploadId`
-- `POST /resume/:uploadId`
-- `POST /cancel/:uploadId` - Cleans up partial files safely from the local `uploads` directory
-
----
-
-## 🔐 Encryption System
-
-✅ **Incoming Request**
-If a request body contains `{"data": "ENCRYPTED_STRING"}`, it will be automatically decrypted by the built-in middleware.
-
-✅ **Outgoing Response**
-All responses are automatically wrapped and encrypted.
-
-✅ **Raw Decrypt API (No Middleware)**
-`POST /api/raw-decrypt` - Decrypt data manually (used for testing/debugging).
-
----
-
-## 👨‍💻 Author
-Ashish Sitaram Panicker / Vocean Technologies
-
-## 📜 License
-MIT License
+# Restart the server
+pm2 restart ystudy-backend
+```

@@ -56,7 +56,7 @@ temp/
 
 # Optional: ignore uploads if any
 
-uploads/
+media/
 
 # Optional: ignore local database files
 

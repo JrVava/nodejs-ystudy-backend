@@ -33,6 +33,9 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
 
+    // ✅ SERVE STATIC MEDIA FOLDER
+    this.app.use("/media", express.static(path.join(__dirname, "../media")));
+
     // ✅ CUSTOM ROUTES AFTER BODY PARSER
     this.routes();
   }

@@ -1,4 +1,5 @@
 import EventEmitter from "events";
+import logger from "../utils/logger";
 
 class UploadQueue extends EventEmitter {
   private queue: any[] = [];
@@ -6,21 +7,31 @@ class UploadQueue extends EventEmitter {
   private jobs: Record<string, any> = {};
 
   async add(name: string, data: any) {
-    const job = {
-      id: Math.random().toString(36).substring(7),
-      name,
-      data,
-      progress: 0,
-      status: "pending",
-    };
-    this.jobs[job.id] = job;
-    this.queue.push(job);
-    this.processNext();
-    return job;
+    try {
+      const job = {
+        id: Math.random().toString(36).substring(7),
+        name,
+        data,
+        progress: 0,
+        status: "pending",
+      };
+      this.jobs[job.id] = job;
+      this.queue.push(job);
+      this.processNext();
+      return job;
+    } catch (error) {
+      logger.error(`[UploadQueue:add] Error occurred:`, error);
+      throw error;
+    }
   }
 
   getJob(id: string) {
-    return this.jobs[id] || null;
+    try {
+      return this.jobs[id] || null;
+    } catch (error) {
+      logger.error(`[UploadQueue:getJob] Error occurred:`, error);
+      return null;
+    }
   }
 
   private async processNext() {
@@ -34,16 +45,18 @@ class UploadQueue extends EventEmitter {
     }
 
     try {
-      console.log(`Processing job ${job.name} (ID: ${job.id})`);
+      logger.info(`Processing job ${job.name} (ID: ${job.id})`);
       job.status = "processing";
+
       for (let i = 0; i <= 100; i += 20) {
         job.progress = i;
         await new Promise((resolve) => setTimeout(resolve, 500));
       }
-      console.log(`Finished job ${job.name} (ID: ${job.id})`);
+      logger.info(`Finished job ${job.name} (ID: ${job.id})`);
       job.status = "completed";
       this.emit("completed", job);
     } catch (error: any) {
+      logger.error(`[UploadQueue:processNext] Error occurred:`, error);
       job.status = "failed";
       this.emit("failed", job, error);
     } finally {
