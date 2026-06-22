@@ -257,6 +257,36 @@ export class ImageController {
     }
   }
 
+  @Get("/folders/:id")
+  async getFolder(@Param("id") folderId: string) {
+    try {
+      const folderDB = new QueryBuilder<Folder>("folders");
+      
+      let objId: ObjectId;
+      try {
+        objId = new ObjectId(folderId);
+      } catch (e) {
+        throw new HttpError(400, "Invalid folderId format");
+      }
+
+      const folder = await folderDB.findOne({ _id: objId });
+      if (!folder) {
+        throw new HttpError(404, "Folder not found");
+      }
+
+      return { 
+        data: encrypt({
+          success: true, 
+          data: { ...folder, _id: folder._id?.toString() }
+        })
+      };
+    } catch (error) {
+      logger.error(`[ImageController:getFolder] Error occurred:`, error);
+      if (error instanceof HttpError) throw error;
+      throw new HttpError(500, "Internal server error");
+    }
+  }
+
   @Post("/delete/:mediaId")
   async deleteMedia(@Param("mediaId") mediaId: string) {
     try {
@@ -358,6 +388,107 @@ export class ImageController {
       return { data: encrypt({ success: true, message: "SEO metadata updated successfully" }) };
     } catch (error) {
       logger.error(`[ImageController:updateSeo] Error occurred:`, error);
+      if (error instanceof HttpError) throw error;
+      throw new HttpError(500, "Internal server error");
+    }
+  }
+
+  @Post("/folders/rename/:id")
+  async renameFolder(
+    @Param("id") folderId: string,
+    @Body() body: { newName: string }
+  ) {
+    try {
+      if (!body.newName) throw new HttpError(400, "New name is required");
+
+      const folderDB = new QueryBuilder<Folder>("folders");
+      const mediaDB = new QueryBuilder<Media>("media");
+      
+      let objId: ObjectId;
+      try {
+        objId = new ObjectId(folderId);
+      } catch (e) {
+        throw new HttpError(400, "Invalid folderId format");
+      }
+
+      const folder = await folderDB.findOne({ _id: objId });
+      if (!folder) throw new HttpError(404, "Folder not found");
+      
+      const safeOldName = path.basename(folder.name);
+      const safeNewName = path.basename(body.newName);
+
+      if (safeOldName === safeNewName) {
+         return { data: encrypt({ success: true, message: "Folder already has this name" }) };
+      }
+
+      // 1. Rename physical directory
+      const oldDir = path.join(__dirname, "../../../media", safeOldName);
+      const newDir = path.join(__dirname, "../../../media", safeNewName);
+
+      if (fs.existsSync(oldDir)) {
+        fs.renameSync(oldDir, newDir);
+      } else {
+        fs.mkdirSync(newDir, { recursive: true });
+      }
+
+      // 2. Update Folder DB
+      await folderDB.updateOne({ _id: objId }, { $set: { name: safeNewName, updatedAt: new Date() } });
+
+      // 3. Update all Media paths in DB
+      const medias = await mediaDB.find({ folderId: objId });
+      for (const m of medias) {
+        if (m.filePath && m._id) {
+           const newFilePath = m.filePath.replace(`media/${safeOldName}/`, `media/${safeNewName}/`);
+           await mediaDB.updateOne({ _id: m._id }, { $set: { filePath: newFilePath } });
+        }
+      }
+
+      return { data: encrypt({ success: true, message: "Folder renamed successfully", newName: safeNewName }) };
+    } catch (error) {
+      logger.error(`[ImageController:renameFolder] Error occurred:`, error);
+      if (error instanceof HttpError) throw error;
+      throw new HttpError(500, "Internal server error");
+    }
+  }
+
+  @Post("/folders/delete/:id")
+  async deleteFolder(@Param("id") folderId: string) {
+    try {
+      const folderDB = new QueryBuilder<Folder>("folders");
+      const mediaDB = new QueryBuilder<Media>("media");
+      
+      let objId: ObjectId;
+      try {
+        objId = new ObjectId(folderId);
+      } catch (e) {
+        throw new HttpError(400, "Invalid folderId format");
+      }
+
+      const folder = await folderDB.findOne({ _id: objId });
+      if (!folder) throw new HttpError(404, "Folder not found");
+
+      const safeFolderName = path.basename(folder.name);
+
+      // 1. Delete physical directory and its contents
+      const targetDir = path.join(__dirname, "../../../media", safeFolderName);
+      if (fs.existsSync(targetDir)) {
+        fs.rmSync(targetDir, { recursive: true, force: true });
+      }
+
+      // 2. Delete Folder DB
+      await folderDB.deleteById(folderId);
+
+      // 3. Delete all Media records in this folder
+      const medias = await mediaDB.find({ folderId: objId });
+      for (const m of medias) {
+         if (m._id) {
+           await mediaDB.deleteById(m._id.toString());
+         }
+      }
+
+      return { data: encrypt({ success: true, message: "Folder deleted successfully" }) };
+    } catch (error) {
+      logger.error(`[ImageController:deleteFolder] Error occurred:`, error);
       if (error instanceof HttpError) throw error;
       throw new HttpError(500, "Internal server error");
     }
