@@ -1,17 +1,16 @@
 // src/controllers/test.controller.ts
 
-import { JsonController, Get } from "routing-controllers";
+import { JsonController, Get, Res, Req } from "routing-controllers";
 import logger from "../utils/logger";
-import { getDB } from "../database/mongo";
- 
+import { encrypt } from "../utils/crypto";
+import { Request, Response } from "express";
+
 @JsonController("/test")
 export class TestController {
-  
+
   @Get("/")
-  async getTest() {
-    // const db = getDB();
-    // await db.collection("users").insertOne({ name: "Ashish" });
+  async getTest(@Req() req: Request, @Res() res: Response) {
     logger.info("Test endpoint hit");
-    return { message: "Hello from controller🚀 ",data: { name: "John Doe", age: 30 } };
+    return res.json({ data: encrypt({ message: "Hello from controller🚀 ", data: { name: "John Doe", age: 30 } }) });
   }
 }
