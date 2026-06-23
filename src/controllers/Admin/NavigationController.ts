@@ -1,0 +1,254 @@
+import { JsonController, Get, Post, Put, Delete, Body, Param, HttpError } from "routing-controllers";
+import { getDB } from "../../database/mongo";
+import { ObjectId } from "mongodb";
+import { Navigation } from "../../models/Navigation";
+import { encrypt, decrypt } from "../../utils/crypto";
+import logger from "../../utils/logger";
+
+@JsonController("/navigations")
+export class NavigationController {
+
+    // Convert flat array to tree structure
+    private buildTree(pages: any[], parentId: string | null = null): any[] {
+        return pages
+            .filter(page => page.parentId === parentId)
+            .sort((a, b) => a.position - b.position)
+            .map(page => ({
+                ...page,
+                children: this.buildTree(pages, page._id)
+            }));
+    }
+
+    @Get("/")
+    async getAllPages() {
+        try {
+            const db = getDB();
+            const pages = await db.collection("navigations").find().toArray();
+            const formattedPages = pages.map(p => ({
+                ...p,
+                _id: p._id.toString(),
+                parentId: p.parentId ? p.parentId.toString() : null
+            }));
+            return {
+                data: encrypt({
+                    success: true,
+                    data: this.buildTree(formattedPages)
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:getAllPages] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Get("/flat")
+    async getFlatPages() {
+        try {
+            const db = getDB();
+            const pages = await db.collection("navigations").find().sort({ position: 1 }).toArray();
+            return {
+                data: encrypt({
+                    success: true,
+                    data: pages.map(p => ({
+                        ...p,
+                        _id: p._id.toString(),
+                        parentId: p.parentId ? p.parentId.toString() : null
+                    }))
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:getFlatPages] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Post("/")
+    async createPage(@Body() body: any) {
+        try {
+            const decryptedBody = decrypt(body.data);
+            const db = getDB();
+
+            const { slug, pageName, componentName, parentId, position } = decryptedBody;
+
+            // Check if slug exists
+            const existingPage = await db.collection("navigations").findOne({ slug });
+            if (existingPage) {
+                throw new HttpError(400, "Slug already exists");
+            }
+
+            let parsedParentId = null;
+            if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
+                if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
+                    parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
+                } else if (ObjectId.isValid(parentId)) {
+                    parsedParentId = new ObjectId(parentId);
+                } else {
+                    throw new HttpError(400, `Invalid parentId format. Value received: ${JSON.stringify(parentId)} (type: ${typeof parentId})`);
+                }
+            }
+
+            const newNavigation: Navigation = {
+                slug,
+                pageName,
+                componentName,
+                parentId: parsedParentId,
+                position: position || 0,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            };
+
+            const result = await db.collection("navigations").insertOne(newNavigation);
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: { ...newNavigation, _id: result.insertedId }
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:createPage] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Put("/reorder")
+    async reorderPages(@Body() body: any) {
+        try {
+            const decryptedBody = decrypt(body.data);
+            const db = getDB();
+            const { items } = decryptedBody;
+
+            if (!items || !Array.isArray(items)) {
+                throw new HttpError(400, "Invalid items format");
+            }
+
+            const bulkOps = items.map((item: any) => {
+                let parsedItemParentId = null;
+                if (item.parentId && item.parentId !== "null" && item.parentId !== "undefined" && item.parentId !== "") {
+                    if (typeof item.parentId === 'object' && item.parentId.buffer && item.parentId.buffer.data) {
+                        parsedItemParentId = new ObjectId(Buffer.from(item.parentId.buffer.data));
+                    } else if (ObjectId.isValid(item.parentId)) {
+                        parsedItemParentId = new ObjectId(item.parentId);
+                    } else {
+                        throw new HttpError(400, `Invalid parentId format for item ${item.id}`);
+                    }
+                }
+
+                return {
+                    updateOne: {
+                        filter: { _id: new ObjectId(item.id) },
+                        update: {
+                            $set: {
+                                parentId: parsedItemParentId,
+                                position: item.position,
+                                updatedAt: new Date()
+                            }
+                        }
+                    }
+                };
+            });
+
+            if (bulkOps.length > 0) {
+                await db.collection("navigations").bulkWrite(bulkOps);
+            }
+
+            return {
+                data: encrypt({
+                    success: true,
+                    message: "Pages reordered successfully"
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:reorderPages] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Put("/:id")
+    async updatePage(@Param("id") id: string, @Body() body: any) {
+        try {
+            const decryptedBody = decrypt(body.data);
+            const db = getDB();
+            const { slug, pageName, componentName, parentId } = decryptedBody;
+
+            if (slug) {
+                const existingPage = await db.collection("navigations").findOne({ slug, _id: { $ne: new ObjectId(id) } });
+                if (existingPage) {
+                    throw new HttpError(400, "Slug already exists");
+                }
+            }
+
+            const updateData: any = { updatedAt: new Date() };
+            if (slug) updateData.slug = slug;
+            if (pageName) updateData.pageName = pageName;
+            if (componentName) updateData.componentName = componentName;
+            
+            if (parentId !== undefined) {
+                let parsedParentId = null;
+                if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
+                    if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
+                        parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
+                    } else if (ObjectId.isValid(parentId)) {
+                        parsedParentId = new ObjectId(parentId);
+                    } else {
+                        throw new HttpError(400, "Invalid parentId format. Must be a valid ObjectId.");
+                    }
+                }
+                updateData.parentId = parsedParentId;
+            }
+
+            const result = await db.collection("navigations").findOneAndUpdate(
+                { _id: new ObjectId(id) },
+                { $set: updateData },
+                { returnDocument: 'after' }
+            );
+
+            if (!result) {
+                throw new HttpError(404, "Page not found");
+            }
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: result
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:updatePage] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Delete("/:id")
+    async deletePage(@Param("id") id: string) {
+        try {
+            const db = getDB();
+
+            const deleteChildren = async (parentId: ObjectId) => {
+                const children = await db.collection("navigations").find({ parentId }).toArray();
+                for (const child of children) {
+                    await deleteChildren(child._id as ObjectId);
+                    await db.collection("navigations").deleteOne({ _id: child._id });
+                }
+            };
+
+            const pageId = new ObjectId(id);
+            await deleteChildren(pageId);
+
+            const result = await db.collection("navigations").deleteOne({ _id: pageId });
+            if (result.deletedCount === 0) {
+                throw new HttpError(404, "Page not found");
+            }
+
+            return {
+                data: encrypt({
+                    success: true,
+                    message: "Page deleted successfully"
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:deletePage] Error occurred:`, error);
+            throw error;
+        }
+    }
+}
