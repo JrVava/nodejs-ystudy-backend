@@ -1,0 +1,926 @@
+[{
+  "_id": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "slug": "degrees",
+  "pageName": "Degrees",
+  "componentName": "Drgress",
+  "parentId": null,
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T12:51:29.545Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:51:29.545Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76139e7460c6e4ec08dc"
+  },
+  "slug": "search-degrees",
+  "pageName": "Search Degrees",
+  "componentName": "SearchDegrees",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T12:52:35.892Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:52:35.892Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76349e7460c6e4ec08dd"
+  },
+  "slug": "study-locations",
+  "pageName": "Study Locations",
+  "componentName": "StudyLocations",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T12:53:08.906Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:53:08.906Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e764b9e7460c6e4ec08de"
+  },
+  "slug": "foundation-year",
+  "pageName": "Foundation Year",
+  "componentName": "FoundationYear",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T12:53:31.818Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:53:31.818Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76619e7460c6e4ec08df"
+  },
+  "slug": "hnd",
+  "pageName": "HND",
+  "componentName": "HND",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T12:53:53.735Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:53:53.735Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e767d9e7460c6e4ec08e0"
+  },
+  "slug": "certificate-of-higher-education",
+  "pageName": "Certificate of Higher Education",
+  "componentName": "CertificateOFHigherEducation",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T12:54:21.638Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:54:21.638Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76929e7460c6e4ec08e1"
+  },
+  "slug": "masters-degree",
+  "pageName": "Master's Degree",
+  "componentName": "MasterDegree",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 5,
+  "createdAt": {
+    "$date": "2026-06-26T12:54:42.716Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:54:42.716Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76a69e7460c6e4ec08e2"
+  },
+  "slug": "study-subjects",
+  "pageName": "Study Subjects",
+  "componentName": "StudySubjects",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 6,
+  "createdAt": {
+    "$date": "2026-06-26T12:55:02.934Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:55:02.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76bc9e7460c6e4ec08e3"
+  },
+  "slug": "study-routes",
+  "pageName": "Study Routes",
+  "componentName": "StudyRoutes",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 7,
+  "createdAt": {
+    "$date": "2026-06-26T12:55:24.703Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:55:24.703Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76d49e7460c6e4ec08e4"
+  },
+  "slug": "hnc",
+  "pageName": "HNC",
+  "componentName": "HNC",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 8,
+  "createdAt": {
+    "$date": "2026-06-26T12:55:48.171Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:55:48.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e76ef9e7460c6e4ec08e5"
+  },
+  "slug": "foundation-degree",
+  "pageName": "Foundation Degree",
+  "componentName": "FoundationDegree",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 9,
+  "createdAt": {
+    "$date": "2026-06-26T12:56:15.451Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:56:15.451Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77049e7460c6e4ec08e6"
+  },
+  "slug": "top-up-degree",
+  "pageName": "Top-Up Degree",
+  "componentName": "TopUpDegree",
+  "parentId": {
+    "$oid": "6a3e75d19e7460c6e4ec08db"
+  },
+  "position": 10,
+  "createdAt": {
+    "$date": "2026-06-26T12:56:36.148Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:56:36.148Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "slug": "funding",
+  "pageName": "Funding ",
+  "componentName": "Funding ",
+  "parentId": null,
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T12:57:18.899Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:57:18.899Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77569e7460c6e4ec08e8"
+  },
+  "slug": "funding-hub",
+  "pageName": "Funding Hub",
+  "componentName": "FundingHub",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T12:57:58.914Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:57:58.914Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e776b9e7460c6e4ec08e9"
+  },
+  "slug": "tuition-fee-loan",
+  "pageName": "Tuition Fee Loan",
+  "componentName": "TuitionFeeLoan",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T12:58:19.367Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:58:19.367Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77809e7460c6e4ec08ea"
+  },
+  "slug": "student-money-hub",
+  "pageName": "Student Money Hub",
+  "componentName": "StudentMoneyHub",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T12:58:40.229Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T12:58:40.229Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77929e7460c6e4ec08eb"
+  },
+  "slug": "finance-calculator",
+  "pageName": "Funding Checker",
+  "componentName": "FundingChecker",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 3,
+  "createdAt": {
+    "$date": "2026-06-26T12:58:58.377Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:04:39.150Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e779f9e7460c6e4ec08ec"
+  },
+  "slug": "childcare-grant",
+  "pageName": "Childcare Grant",
+  "componentName": "ChildcareGrant",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T12:59:11.331Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:00:06.573Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77e69e7460c6e4ec08ed"
+  },
+  "slug": "maintenance-loan",
+  "pageName": "Maintenance Loan",
+  "componentName": "MaintenanceLoan",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 5,
+  "createdAt": {
+    "$date": "2026-06-26T13:00:22.779Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:00:22.779Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e77f59e7460c6e4ec08ee"
+  },
+  "slug": "grants-support",
+  "pageName": "Grants & Support",
+  "componentName": "GrantsSupport",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 6,
+  "createdAt": {
+    "$date": "2026-06-26T13:00:37.277Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:00:37.277Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e78019e7460c6e4ec08ef"
+  },
+  "slug": "eligibility",
+  "pageName": "Eligibility",
+  "componentName": "Eligibility",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 7,
+  "createdAt": {
+    "$date": "2026-06-26T13:00:49.446Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:00:49.446Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e78119e7460c6e4ec08f0"
+  },
+  "slug": "previous-study",
+  "pageName": "Previous Study",
+  "componentName": "PreviousStudy",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 8,
+  "createdAt": {
+    "$date": "2026-06-26T13:01:05.360Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:01:05.360Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e781e9e7460c6e4ec08f1"
+  },
+  "slug": "dsa",
+  "pageName": "DSA",
+  "componentName": "DSA",
+  "parentId": {
+    "$oid": "6a3e772e9e7460c6e4ec08e7"
+  },
+  "position": 9,
+  "createdAt": {
+    "$date": "2026-06-26T13:01:18.580Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:01:18.580Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "slug": "tools",
+  "pageName": "Tools ",
+  "componentName": "Tools ",
+  "parentId": null,
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T13:02:12.834Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:02:12.834Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e78689e7460c6e4ec08f3"
+  },
+  "slug": "degree-match-finder",
+  "pageName": "Degree Match Finder",
+  "componentName": "DegreeMatchFinder",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T13:02:32.477Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:02:32.477Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e78799e7460c6e4ec08f4"
+  },
+  "slug": "english-test",
+  "pageName": "English Test",
+  "componentName": "EnglishTest",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T13:02:49.591Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:02:49.591Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79079e7460c6e4ec08f5"
+  },
+  "slug": "funding-checker",
+  "pageName": "Funding Checker",
+  "componentName": "FundingChecker",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T13:05:11.648Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:05:11.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79159e7460c6e4ec08f6"
+  },
+  "slug": "cv-builder",
+  "pageName": "CV Builder",
+  "componentName": "CVBuilder",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 3,
+  "createdAt": {
+    "$date": "2026-06-26T13:05:25.360Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:05:25.360Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79259e7460c6e4ec08f7"
+  },
+  "slug": "career-quiz",
+  "pageName": "Career Quiz",
+  "componentName": "CareerQuiz",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T13:05:41.527Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:05:41.527Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79339e7460c6e4ec08f8"
+  },
+  "slug": "eligibility-checker",
+  "pageName": "Eligibility Checker",
+  "componentName": "EligibilityChecker",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 5,
+  "createdAt": {
+    "$date": "2026-06-26T13:05:55.657Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:05:55.657Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79429e7460c6e4ec08f9"
+  },
+  "slug": "salary-checker",
+  "pageName": "Salary Checker",
+  "componentName": "SalaryChecker",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 6,
+  "createdAt": {
+    "$date": "2026-06-26T13:06:10.875Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:06:10.875Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79539e7460c6e4ec08fa"
+  },
+  "slug": "personal-statement",
+  "pageName": "Personal Statement",
+  "componentName": "PersonalStatement",
+  "parentId": {
+    "$oid": "6a3e78549e7460c6e4ec08f2"
+  },
+  "position": 7,
+  "createdAt": {
+    "$date": "2026-06-26T13:06:27.892Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:06:27.892Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "slug": "resources",
+  "pageName": "Resources",
+  "componentName": "Resources",
+  "parentId": null,
+  "position": 3,
+  "createdAt": {
+    "$date": "2026-06-26T13:07:21.926Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:07:21.926Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79979e7460c6e4ec08fc"
+  },
+  "slug": "resources-hub",
+  "pageName": "Resources Hub",
+  "componentName": "ResourcesHub",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T13:07:35.912Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:07:43.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79ad9e7460c6e4ec08fd"
+  },
+  "slug": "university-routes",
+  "pageName": "University Routes",
+  "componentName": "UniversityRoutes",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T13:07:57.377Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:07:57.377Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79bb9e7460c6e4ec08fe"
+  },
+  "slug": "career-change",
+  "pageName": "Career Change",
+  "componentName": "CareerChange",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T13:08:11.874Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:08:11.874Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79ca9e7460c6e4ec08ff"
+  },
+  "slug": "success-stories",
+  "pageName": "Success Stories",
+  "componentName": "SuccessStories",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 7,
+  "createdAt": {
+    "$date": "2026-06-26T13:08:26.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:11:42.455Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79dc9e7460c6e4ec0900"
+  },
+  "slug": "news-updates",
+  "pageName": "News & Updates",
+  "componentName": "NewsUpdates",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T13:08:44.145Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:11:33.222Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79ea9e7460c6e4ec0901"
+  },
+  "slug": "polish-community",
+  "pageName": "Polish Community",
+  "componentName": "PolishCommunity",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 5,
+  "createdAt": {
+    "$date": "2026-06-26T13:08:58.892Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:11:39.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e79fd9e7460c6e4ec0902"
+  },
+  "slug": "student-finance-guides",
+  "pageName": "Student Finance Guides",
+  "componentName": "StudentFinanceGuides",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 6,
+  "createdAt": {
+    "$date": "2026-06-26T13:09:17.059Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:11:42.455Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7a5d9e7460c6e4ec0903"
+  },
+  "slug": "why-ystudy",
+  "pageName": "Why YStudy",
+  "componentName": "WhyYStudy",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 3,
+  "createdAt": {
+    "$date": "2026-06-26T13:10:53.410Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:11:23.040Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7aad9e7460c6e4ec0904"
+  },
+  "slug": "how-guidance-works",
+  "pageName": "How Guidance Works",
+  "componentName": "HowGuidanceWorks",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 8,
+  "createdAt": {
+    "$date": "2026-06-26T13:12:13.159Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:12:13.159Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7abd9e7460c6e4ec0905"
+  },
+  "slug": "faqs",
+  "pageName": "FAQs",
+  "componentName": "FAQs",
+  "parentId": {
+    "$oid": "6a3e79899e7460c6e4ec08fb"
+  },
+  "position": 9,
+  "createdAt": {
+    "$date": "2026-06-26T13:12:29.908Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:12:29.908Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "slug": "partners",
+  "pageName": "Partners ",
+  "componentName": "Partners ",
+  "parentId": null,
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T13:13:14.507Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:13:14.507Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b019e7460c6e4ec0907"
+  },
+  "slug": "become-a-student-adviser",
+  "pageName": "Become a Student Adviser",
+  "componentName": "BecomeStudentAdviser",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 0,
+  "createdAt": {
+    "$date": "2026-06-26T13:13:37.258Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:13:37.258Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b139e7460c6e4ec0908"
+  },
+  "slug": "affiliate-programme",
+  "pageName": "Affiliate Programme",
+  "componentName": "AffiliateProgramme",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 1,
+  "createdAt": {
+    "$date": "2026-06-26T13:13:55.040Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:13:55.040Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b269e7460c6e4ec0909"
+  },
+  "slug": "advertise-to-students",
+  "pageName": "Advertise to Students",
+  "componentName": "AdvertiseToStudents",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 2,
+  "createdAt": {
+    "$date": "2026-06-26T13:14:14.804Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:14:14.804Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b379e7460c6e4ec090a"
+  },
+  "slug": "sponsored-content",
+  "pageName": "Sponsored Content",
+  "componentName": "SponsoredContent",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 3,
+  "createdAt": {
+    "$date": "2026-06-26T13:14:31.257Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:14:31.257Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b4a9e7460c6e4ec090b"
+  },
+  "slug": "creator-programme",
+  "pageName": "Creator Programme",
+  "componentName": "Creator Programme",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 4,
+  "createdAt": {
+    "$date": "2026-06-26T13:14:50.307Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:14:50.307Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b5b9e7460c6e4ec090c"
+  },
+  "slug": "refer-a-friend",
+  "pageName": "Refer a Friend",
+  "componentName": "ReferFriend",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 5,
+  "createdAt": {
+    "$date": "2026-06-26T13:15:07.223Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:15:07.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b6b9e7460c6e4ec090d"
+  },
+  "slug": "brand-partnerships",
+  "pageName": "Brand Partnerships",
+  "componentName": "BrandPartnerships",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 6,
+  "createdAt": {
+    "$date": "2026-06-26T13:15:23.122Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:15:23.122Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e7b7a9e7460c6e4ec090e"
+  },
+  "slug": "business-opportunities",
+  "pageName": "Business Opportunities",
+  "componentName": "BusinessOpportunities",
+  "parentId": {
+    "$oid": "6a3e7aea9e7460c6e4ec0906"
+  },
+  "position": 7,
+  "createdAt": {
+    "$date": "2026-06-26T13:15:38.589Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:15:38.589Z"
+  }
+}]

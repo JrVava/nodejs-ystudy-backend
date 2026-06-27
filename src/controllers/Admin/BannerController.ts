@@ -48,7 +48,7 @@ export class BannerController {
         }
     }
 
-    @Get("/")
+    @Get("/pagination")
     async listBanners(
         @QueryParam("page") page: number = 1,
         @QueryParam("limit") limit: number = 10
@@ -70,7 +70,7 @@ export class BannerController {
         }
     }
 
-    @Get("/:id")
+    @Get("/edit/:id")
     async getBanner(@Param("id") bannerId: string) {
         try {
             const bannerDB = new QueryBuilder<Banner>("banners");
@@ -100,7 +100,7 @@ export class BannerController {
         }
     }
 
-    @Post("/:id")
+    @Post("/update/:id")
     async updateBanner(
         @Param("id") bannerId: string,
         @Body() body: any
