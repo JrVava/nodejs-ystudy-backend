@@ -1,11 +1,13 @@
-import { JsonController, Get, Post, Put, Delete, Body, Param, HttpError } from "routing-controllers";
+import { JsonController, Get, Post, Put, Delete, Body, Param, HttpError, UseBefore } from "routing-controllers";
 import { getDB } from "../../database/mongo";
 import { ObjectId } from "mongodb";
 import { Navigation } from "../../models/Navigation";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
+import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 
 @JsonController("/navigations")
+@UseBefore(AdminMiddleware)
 export class NavigationController {
 
     // Convert flat array to tree structure
@@ -62,54 +64,54 @@ export class NavigationController {
         }
     }
 
-    @Post("/")
-    async createPage(@Body() body: any) {
-        try {
-            const decryptedBody = decrypt(body.data);
-            const db = getDB();
+    // @Post("/")
+    // async createPage(@Body() body: any) {
+    //     try {
+    //         const decryptedBody = decrypt(body.data);
+    //         const db = getDB();
 
-            const { slug, pageName, componentName, parentId, position } = decryptedBody;
+    //         const { slug, pageName, componentName, parentId, position } = decryptedBody;
 
-            // Check if slug exists
-            const existingPage = await db.collection("navigations").findOne({ slug });
-            if (existingPage) {
-                throw new HttpError(400, "Slug already exists");
-            }
+    //         // Check if slug exists
+    //         const existingPage = await db.collection("navigations").findOne({ slug });
+    //         if (existingPage) {
+    //             throw new HttpError(400, "Slug already exists");
+    //         }
 
-            let parsedParentId = null;
-            if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
-                if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
-                    parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
-                } else if (ObjectId.isValid(parentId)) {
-                    parsedParentId = new ObjectId(parentId);
-                } else {
-                    throw new HttpError(400, `Invalid parentId format. Value received: ${JSON.stringify(parentId)} (type: ${typeof parentId})`);
-                }
-            }
+    //         let parsedParentId = null;
+    //         if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
+    //             if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
+    //                 parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
+    //             } else if (ObjectId.isValid(parentId)) {
+    //                 parsedParentId = new ObjectId(parentId);
+    //             } else {
+    //                 throw new HttpError(400, `Invalid parentId format. Value received: ${JSON.stringify(parentId)} (type: ${typeof parentId})`);
+    //             }
+    //         }
 
-            const newNavigation: Navigation = {
-                slug,
-                pageName,
-                componentName,
-                parentId: parsedParentId,
-                position: position || 0,
-                createdAt: new Date(),
-                updatedAt: new Date()
-            };
+    //         const newNavigation: Navigation = {
+    //             slug,
+    //             pageName,
+    //             componentName,
+    //             parentId: parsedParentId,
+    //             position: position || 0,
+    //             createdAt: new Date(),
+    //             updatedAt: new Date()
+    //         };
 
-            const result = await db.collection("navigations").insertOne(newNavigation);
+    //         const result = await db.collection("navigations").insertOne(newNavigation);
 
-            return {
-                data: encrypt({
-                    success: true,
-                    data: { ...newNavigation, _id: result.insertedId }
-                })
-            };
-        } catch (error) {
-            logger.error(`[NavigationController:createPage] Error occurred:`, error);
-            throw error;
-        }
-    }
+    //         return {
+    //             data: encrypt({
+    //                 success: true,
+    //                 data: { ...newNavigation, _id: result.insertedId }
+    //             })
+    //         };
+    //     } catch (error) {
+    //         logger.error(`[NavigationController:createPage] Error occurred:`, error);
+    //         throw error;
+    //     }
+    // }
 
     @Put("/reorder")
     async reorderPages(@Body() body: any) {
@@ -164,7 +166,7 @@ export class NavigationController {
         }
     }
 
-    @Put("/:id")
+    @Put("/update/:id")
     async updatePage(@Param("id") id: string, @Body() body: any) {
         try {
             const decryptedBody = decrypt(body.data);
@@ -182,7 +184,7 @@ export class NavigationController {
             if (slug) updateData.slug = slug;
             if (pageName) updateData.pageName = pageName;
             if (componentName) updateData.componentName = componentName;
-            
+
             if (parentId !== undefined) {
                 let parsedParentId = null;
                 if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
@@ -219,7 +221,7 @@ export class NavigationController {
         }
     }
 
-    @Delete("/:id")
+    @Delete("/delete/:id")
     async deletePage(@Param("id") id: string) {
         try {
             const db = getDB();

@@ -1,11 +1,16 @@
 
 import { connectDB } from "../mongo";
 import { adminSeeder } from "./adminSeeder";
+import { navigationSeeder } from "./navigationSeeder";
 
 const seeders = [
   {
     name: "Admin Seeder",
     run: adminSeeder,
+  },
+  {
+    name: "Navigation Seeder",
+    run: navigationSeeder,
   },
   // Add more here
   // { name: "Role Seeder", run: roleSeeder },
