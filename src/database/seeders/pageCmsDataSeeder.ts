@@ -33,7 +33,13 @@ export const pageCmsDataSeeder = async () => {
   let processedCount = 0;
   for (const page of parsedData) {
     processCmsObject(page);
-    await qb.upsertOne({ page: page.page }, page);
+    await qb.upsertOne(
+      { page: page.page },
+      {
+        $set: { ...page, updatedAt: new Date() },
+        $setOnInsert: { createdAt: new Date() }
+      }
+    );
     processedCount++;
   }
 

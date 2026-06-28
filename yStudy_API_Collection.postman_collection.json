@@ -697,6 +697,87 @@
           }
         }
       ]
+    },
+    {
+      "name": "CMS Pages",
+      "item": [
+        {
+          "name": "List CMS Pages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/cms-pages",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cms-pages"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get CMS Page by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/cms-pages/page-data/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cms-pages",
+                "page-data",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a3e75d19e7460c6e4ec08db"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update CMS Page",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": \"encrypted_payload_here\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/cms-pages/update/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cms-pages",
+                "update",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a3e75d19e7460c6e4ec08db"
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
