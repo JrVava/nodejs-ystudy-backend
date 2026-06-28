@@ -1,0 +1,456 @@
+[
+    {
+        "page": "home",
+        "section_2": {
+            "badge": "⚡ 10-second check",
+            "title": "Could you get funding?",
+            "description": "Answer three quick questions and see your likely Student Finance support — no sign-up, instant result.",
+            "dot_points": [
+                "Trusted by adult learners across the UK",
+                "✓ SFE eligible courses",
+                "✓ Free adviser guidance",
+                "✓ Flexible & blended study",
+                "✓ UCAS-style search"
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Why YStudy works",
+            "title": "Thousands have found their route.",
+            "statistics": [
+                {
+                    "value": "2,400+",
+                    "label": "courses compared"
+                },
+                {
+                    "value": "12,000+",
+                    "label": "learners helped"
+                },
+                {
+                    "value": "£14k+",
+                    "label": "avg support"
+                },
+                {
+                    "value": "£0",
+                    "label": "always free"
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Popular degrees",
+            "title": "Degrees that fit real life.",
+            "status": true
+        },
+        "section_5": {
+            "badge": "🎯 Find your match in 60 seconds",
+            "title": "Not sure which degree?",
+            "description": "Start the Degree Match quiz right here. A few questions about your goals and we'll recommend one clear route.",
+            "badges": [
+                {
+                    "value": "5 min",
+                    "class": "pill"
+                },
+                {
+                    "value": "Free",
+                    "class": "pill o"
+                },
+                {
+                    "value": "Personalised",
+                    "class": "pill"
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "Browse by subject",
+            "title": "Find your field.",
+            "status": true
+        },
+        "section_7": {
+            "badge": "Free tools",
+            "title": "Plan your route with free tools.",
+            "status": true
+        },
+        "section_8": {
+            "headers": {
+                "feature_header": "What you get",
+                "ystudy_header": "With YStudy",
+                "direct_header": "Going direct"
+            },
+            "rows": [
+                {
+                    "feature": "Free adviser guidance",
+                    "with_ystudy": "check",
+                    "going_direct": "cross"
+                },
+                {
+                    "feature": "Funding & eligibility check",
+                    "with_ystudy": "check",
+                    "going_direct": "cross"
+                },
+                {
+                    "feature": "Compare flexible routes",
+                    "with_ystudy": "check",
+                    "going_direct": "Limited"
+                },
+                {
+                    "feature": "Application support",
+                    "with_ystudy": "check",
+                    "going_direct": "cross"
+                },
+                {
+                    "feature": "Always free",
+                    "with_ystudy": "check",
+                    "going_direct": "dash"
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "badge": "Student Finance Hub",
+            "title": "How much could you get?",
+            "description": "Understand tuition loans, maintenance support and grants before you apply — in plain English.",
+            "status": true
+        },
+        "section_10": {
+            "badge": "RESIDENCY STATUS CHECK",
+            "title": "Student finance eligibility by immigration status.",
+            "description": "Use this before you choose a course or apply. It helps separate students who are usually stronger for full support from cases that need an adviser check.",
+            "important_box": {
+                "title": "Important",
+                "text": "Eligibility still depends on home address, ordinary residence, 3-year residence rules, course designation, previous study, age and Student Finance England assessment."
+            },
+            "ps_box": {
+                "code": "PS",
+                "badge": "Adviser check",
+                "title": "EU pre-settled status",
+                "description": "Often tuition-fee support only unless another route applies, for example worker or specific family-member rules. Check before promising maintenance."
+            },
+            "disclaimer": "Guidance based on current GOV.UK student finance residency categories. Final decision is always made by Student Finance England.",
+            "status_cards": [
+                {
+                    "code": "UK",
+                    "badge": "FULL SUPPORT ROUTE",
+                    "description": "Usually able to apply for Tuition Fee Loan and Maintenance Loan if England residence and course rules are met."
+                },
+                {
+                    "code": "ILR",
+                    "badge": "FULL SUPPORT ROUTE",
+                    "description": "Usually treated as settled. Check England home address and continuous residence before the course starts."
+                },
+                {
+                    "code": "EU",
+                    "badge": "FULL SUPPORT ROUTE",
+                    "description": "Can be a strong full-support route where the student meets residence, course and age requirements."
+                },
+                {
+                    "code": "RF",
+                    "badge": "PROTECTED STATUS",
+                    "description": "Often eligible under protected-status rules, but evidence and exact status wording must be checked carefully."
+                }
+            ],
+            "status": true
+        },
+        "section_11": {
+            "badge": "SALARY PROJECTION",
+            "title": "What could your route look like?",
+            "description": "Salary cards create a stronger decision signal for users comparing courses.",
+            "projection_cards": [
+                {
+                    "level": "ENTRY",
+                    "years": "Year 1",
+                    "salary": "£28k",
+                    "description": "Graduate or junior role."
+                },
+                {
+                    "level": "JUNIOR",
+                    "years": "Year 2-3",
+                    "salary": "£36k",
+                    "description": "Specialist or team role."
+                },
+                {
+                    "level": "MID-CAREER",
+                    "years": "Year 4-6",
+                    "salary": "£47k",
+                    "description": "Manager or analyst role."
+                },
+                {
+                    "level": "SENIOR",
+                    "years": "Year 7+",
+                    "salary": "£75k+",
+                    "description": "Senior management path."
+                }
+            ],
+            "cta_banner": {
+                "title": "What could you earn after studying?",
+                "subtitle": "Check salary ranges for business, computing, healthcare, psychology and more."
+            },
+            "status": true
+        },
+        "section_12": {
+            "badge": "THE HONEST TRUTH ABOUT STUDENT FINANCE",
+            "title": "It's a loan — but a fair one.",
+            "description": "Student Finance is often misunderstood. We'd rather you know now than be surprised later.",
+            "truth_cards": [
+                {
+                    "title": "It's a loan, not a grant",
+                    "description": "Tuition is paid to university. Maintenance is paid to you."
+                },
+                {
+                    "title": "You only repay above £25,000",
+                    "description": "Repayment is based on income, not the balance."
+                },
+                {
+                    "title": "Wiped after 30 / 40 years",
+                    "description": "Many graduates do not repay the full amount."
+                }
+            ],
+            "next_intake": {
+                "title": "Next intake: September 2026",
+                "description": "Applications close in August — secure your place early."
+            },
+            "status": true
+        },
+        "section_13": {
+            "badge": "Success stories",
+            "title": "Real people. Real routes.",
+            "card": [
+                {
+                    "image": "",
+                    "title": "A degree that fits around my kids.",
+                    "name": "Aisha M.",
+                    "year": "Year 2 · Business Management"
+                },
+                {
+                    "image": "",
+                    "title": "The adviser showed me a route.",
+                    "name": "James T.",
+                    "year": "Year 1 · Computing"
+                },
+                {
+                    "image": "",
+                    "title": "Best decision I've made.",
+                    "name": "Priya K.",
+                    "year": "Year 2 · Health & Social Care"
+                }
+            ],
+            "status": true
+        },
+        "section_14": {
+            "badge": "Guides & news",
+            "title": "Read before you decide.",
+            "card": [
+                {
+                    "badge": "Funding",
+                    "title": "Maintenance Loan explained",
+                    "description": "What affects your amount and how it's paid termly.",
+                    "image": "",
+                    "time": "5 min read"
+                },
+                {
+                    "badge": "Applying",
+                    "title": "Personal statement structure",
+                    "description": "The four sections admissions teams expect.",
+                    "image": "",
+                    "time": "7 min read"
+                },
+                {
+                    "badge": "Careers",
+                    "title": "Which degree pays off?",
+                    "description": "Salary outcomes by subject and route.",
+                    "image": "",
+                    "time": "8 min read"
+                }
+            ],
+            "status": true
+        },
+        "section_15": {
+            "badge": "Student journey",
+            "title": "How YStudy supports you.",
+            "description": "One guided path — not a maze. Eight clear steps from first idea to enrolled, with free support at every stage.",
+            "changing_card": [
+                {
+                    "number": "1",
+                    "title": "Check if university fits your life",
+                    "description": "Start with your work pattern, family time, travel and study confidence."
+                },
+                {
+                    "number": "2",
+                    "title": "Find the right course route",
+                    "description": "Match subject, qualification level, study mode and location."
+                },
+                {
+                    "number": "3",
+                    "title": "Check your English level",
+                    "description": "Understand whether you are ready for interview, study and assignments."
+                },
+                {
+                    "number": "4",
+                    "title": "Prepare for interview",
+                    "description": "Know what universities usually ask and how to explain your goals."
+                },
+                {
+                    "number": "5",
+                    "title": "Apply with YStudy",
+                    "description": "Send one short form and we help you move to the right next step."
+                },
+                {
+                    "number": "6",
+                    "title": "Plan Student Finance",
+                    "description": "Check tuition, maintenance, evidence and likely payment route."
+                },
+                {
+                    "number": "7",
+                    "title": "Enrol with confidence",
+                    "description": "Complete the final checks before your course starts."
+                },
+                {
+                    "number": "8",
+                    "title": "Get support while studying",
+                    "description": "Use adviser support, tools and guidance when you need it."
+                }
+            ],
+            "status": true
+        },
+        "section_16": {
+            "title": "You're not behind. You're exactly where your next step begins — and we'll walk it with you.",
+            "description": "— The YStudy promise to every adult learner",
+            "status": true
+        },
+        "section_17": {
+            "badge": "How it works",
+            "title": "From unsure to enrolled, in four steps.",
+            "faq": [
+                {
+                    "badge": "FAQ",
+                    "title": "Quick answers.",
+                    "faq_card": [
+                        {
+                            "title": "Is YStudy really free?",
+                            "description": "Yes — guidance, tools and adviser support are always free. We're funded by partner universities, not by you."
+                        },
+                        {
+                            "title": "Am I too old to study?",
+                            "description": "No. Our courses are built for adult learners and career changers — many students are 25, 35, 45+."
+                        },
+                        {
+                            "title": "Do I need existing qualifications?",
+                            "description": "Not always. Foundation years and Access routes exist for people without traditional A-levels."
+                        },
+                        {
+                            "title": "Will I get funding?",
+                            "description": "Most eligible UK residents can access tuition and maintenance loans. Use the eligibility check to see your likely support."
+                        }
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_18": {
+            "badge": "Refer a friend",
+            "title": "Know someone who'd thrive at university?",
+            "description": "Pass on their details, with permission. We'll guide them for free, and we'll thank you when they enrol.",
+            "card": [
+                {
+                    "badge": "Most common",
+                    "title": "Content creators",
+                    "description": "TikTok, Instagram, YouTube — for UK adults thinking about study or career change.",
+                    "image": ""
+                },
+                {
+                    "badge": "Highest trust",
+                    "title": "Community voices",
+                    "description": "Facebook groups, WhatsApp communities and local networks.",
+                    "image": ""
+                },
+                {
+                    "badge": "Real stories",
+                    "title": "Peer mentors",
+                    "description": "You went back to university and want to help others.",
+                    "image": ""
+                },
+                {
+                    "badge": "Long-form",
+                    "title": "Bloggers & podcasters",
+                    "description": "Education, careers, mature study or money content.",
+                    "image": ""
+                }
+            ],
+            "status": true
+        },
+        "section_19": {
+            "badge": "Free adviser support",
+            "title": "Not sure what to choose?",
+            "description": "Book a free call with a real adviser. We'll talk through your goals, funding and the best route — no pressure, no cost.",
+            "status": true
+        },
+        "section_20": {
+            "title": "Your future starts with one step.",
+            "description": "Find your degree, check your funding and apply with free guidance — built around the life you already have.",
+            "status": true
+        }
+    },
+    {
+        "page": "degrees",
+        "section_3": {
+            "title": "Ready to shortlist?",
+            "description": "Save the strongest degree routes, then ask an adviser to check funding, entry route and interview fit before you apply.",
+            "status": true
+        },
+        "section_4": {
+            "title": "Courses available by subject",
+            "description": "Start with what you want to study, then compare flexible routes, funding and locations.",
+            "status": true
+        },
+        "section_5": {
+            "title": "Courses available by qualification",
+            "description": "Choose the right entry route: first year, foundation year, advanced entry or postgraduate.",
+            "status": true
+        },
+        "section_6": {
+            "title": "Courses available by location",
+            "description": "Browse where you can realistically travel, then compare subjects and timetable options.",
+            "status": true
+        },
+        "section_7": {
+            "badge": "Not sure how to choose?",
+            "title": "Feeling unsure is normal. We'll guide you.",
+            "description": "Most adult learners don't know exactly what to study at first. That's fine — here's a simple, free path from \"I'm not sure\" to \"I've applied,\" with real tools and a human adviser at every step.",
+            "status": true
+        },
+        "section_8": {
+            "steps": [
+                {
+                    "title": "Choose your subject",
+                    "description": "Start with what interests you. Browse the strongest routes for adult learners."
+                },
+                {
+                    "title": "Use our free tools",
+                    "description": "Make sure you're eligible for funding and see where each route could take your salary."
+                },
+                {
+                    "title": "Read our guides",
+                    "description": "Still have questions? Our plain-English guides often hold the answer — funding, applying and career routes explained."
+                },
+                {
+                    "title": "Free application kit",
+                    "description": "Our students get free tools and adviser support to build a confident application."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "badge": "★ We're with you all the way",
+            "title": "We're always here to help you.",
+            "description": "Your success is our success. Talk it through with a real adviser, or start your application whenever you're ready — free, supportive, no pressure.",
+            "status": true
+        },
+        "section_10": {
+            "badge": "Not ready to apply yet?",
+            "title": "Save your shortlist for later.",
+            "description": "Create a free account to save the courses you liked, track applications and pick up where you left off — no pressure to apply.",
+            "status": true
+        }
+    }
+]

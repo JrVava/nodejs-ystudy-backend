@@ -1,11 +1,10 @@
 import fs from "fs";
 import path from "path";
-import { getDB } from "../mongo";
+import { QueryBuilder } from "../QueryBuilder";
 import { ObjectId } from "mongodb";
 
 export const navigationSeeder = async () => {
-  const db = getDB();
-  const filePath = path.join(__dirname, "navigations.json");
+  const filePath = path.join(__dirname, "../data/navigations.json");
   const rawData = fs.readFileSync(filePath, "utf8");
   const parsedData = JSON.parse(rawData);
 
@@ -19,17 +18,17 @@ export const navigationSeeder = async () => {
     };
   });
 
-  const collection = db.collection("navigations");
-  
+  const qb = new QueryBuilder("navigations");
+
   // Insert new navigations only if they don't already exist
   let insertedCount = 0;
   for (const nav of navigations) {
-    const existing = await collection.findOne({ _id: nav._id });
+    const existing = await qb.findById(nav._id);
     if (!existing) {
-      await collection.insertOne(nav);
+      await qb.insertOne(nav);
       insertedCount++;
     }
   }
-  
+
   console.log(`✅ Navigations seeded. Inserted: ${insertedCount}`);
 };
