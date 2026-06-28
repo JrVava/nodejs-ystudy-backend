@@ -160,4 +160,11 @@ export class QueryBuilder<T extends Document = Document> {
       totalPages: Math.ceil(total / limit)
     };
   }
+
+  /**
+   * Execute bulk operations
+   */
+  async bulkWrite(operations: any[]): Promise<any> {
+    return await this.collection.bulkWrite(operations);
+  }
 }

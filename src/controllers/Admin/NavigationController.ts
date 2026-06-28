@@ -1,5 +1,5 @@
-import { JsonController, Get, Post, Put, Delete, Body, Param, HttpError, UseBefore } from "routing-controllers";
-import { getDB } from "../../database/mongo";
+import { JsonController, Get, Put, Delete, Body, Param, HttpError, UseBefore } from "routing-controllers";
+import { QueryBuilder } from "../../database/QueryBuilder";
 import { ObjectId } from "mongodb";
 import { Navigation } from "../../models/Navigation";
 import { encrypt, decrypt } from "../../utils/crypto";
@@ -24,11 +24,11 @@ export class NavigationController {
     @Get("/")
     async getAllPages() {
         try {
-            const db = getDB();
-            const pages = await db.collection("navigations").find().toArray();
+            const qb = new QueryBuilder<Navigation>("navigations");
+            const pages = await qb.find();
             const formattedPages = pages.map(p => ({
                 ...p,
-                _id: p._id.toString(),
+                _id: p._id!.toString(),
                 parentId: p.parentId ? p.parentId.toString() : null
             }));
             return {
@@ -46,14 +46,14 @@ export class NavigationController {
     @Get("/flat")
     async getFlatPages() {
         try {
-            const db = getDB();
-            const pages = await db.collection("navigations").find().sort({ position: 1 }).toArray();
+            const qb = new QueryBuilder<Navigation>("navigations");
+            const pages = await qb.find({}, { sort: { position: 1 } });
             return {
                 data: encrypt({
                     success: true,
                     data: pages.map(p => ({
                         ...p,
-                        _id: p._id.toString(),
+                        _id: p._id ? p._id.toString() : undefined,
                         parentId: p.parentId ? p.parentId.toString() : null
                     }))
                 })
@@ -117,7 +117,7 @@ export class NavigationController {
     async reorderPages(@Body() body: any) {
         try {
             const decryptedBody = decrypt(body.data);
-            const db = getDB();
+            const qb = new QueryBuilder<Navigation>("navigations");
             const { items } = decryptedBody;
 
             if (!items || !Array.isArray(items)) {
@@ -151,7 +151,7 @@ export class NavigationController {
             });
 
             if (bulkOps.length > 0) {
-                await db.collection("navigations").bulkWrite(bulkOps);
+                await qb.bulkWrite(bulkOps);
             }
 
             return {
@@ -170,11 +170,11 @@ export class NavigationController {
     async updatePage(@Param("id") id: string, @Body() body: any) {
         try {
             const decryptedBody = decrypt(body.data);
-            const db = getDB();
+            const qb = new QueryBuilder<Navigation>("navigations");
             const { slug, pageName, componentName, parentId } = decryptedBody;
 
             if (slug) {
-                const existingPage = await db.collection("navigations").findOne({ slug, _id: { $ne: new ObjectId(id) } });
+                const existingPage = await qb.findOne({ slug, _id: { $ne: new ObjectId(id) } });
                 if (existingPage) {
                     throw new HttpError(400, "Slug already exists");
                 }
@@ -199,11 +199,8 @@ export class NavigationController {
                 updateData.parentId = parsedParentId;
             }
 
-            const result = await db.collection("navigations").findOneAndUpdate(
-                { _id: new ObjectId(id) },
-                { $set: updateData },
-                { returnDocument: 'after' }
-            );
+            await qb.updateById(id, updateData);
+            const result = await qb.findById(id);
 
             if (!result) {
                 throw new HttpError(404, "Page not found");
@@ -224,21 +221,23 @@ export class NavigationController {
     @Delete("/delete/:id")
     async deletePage(@Param("id") id: string) {
         try {
-            const db = getDB();
+            const qb = new QueryBuilder<Navigation>("navigations");
 
             const deleteChildren = async (parentId: ObjectId) => {
-                const children = await db.collection("navigations").find({ parentId }).toArray();
+                const children = await qb.find({ parentId });
                 for (const child of children) {
-                    await deleteChildren(child._id as ObjectId);
-                    await db.collection("navigations").deleteOne({ _id: child._id });
+                    if (child._id) {
+                        await deleteChildren(child._id as ObjectId);
+                        await qb.deleteById(child._id as ObjectId);
+                    }
                 }
             };
 
             const pageId = new ObjectId(id);
             await deleteChildren(pageId);
 
-            const result = await db.collection("navigations").deleteOne({ _id: pageId });
-            if (result.deletedCount === 0) {
+            const result = await qb.deleteById(pageId);
+            if (!result || result.deletedCount === 0) {
                 throw new HttpError(404, "Page not found");
             }
 

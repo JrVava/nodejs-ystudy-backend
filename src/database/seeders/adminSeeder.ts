@@ -1,14 +1,13 @@
 ;
 import { hashPassword } from "../../utils/hash";
-import { getDB } from "../mongo";
-
+import { QueryBuilder } from "../QueryBuilder";
 
 export const adminSeeder = async () => {
-  const db = getDB();
+  const qb = new QueryBuilder("users");
 
   const adminEmail = "admin@ystudy.com";
 
-  const existing = await db.collection("users").findOne({ email: adminEmail });
+  const existing = await qb.findOne({ email: adminEmail });
 
   if (existing) {
     console.log("⏭️ Admin already exists");
@@ -17,7 +16,7 @@ export const adminSeeder = async () => {
 
   const hashedPassword = await hashPassword("admin123");
 
-  await db.collection("users").insertOne({
+  await qb.insertOne({
     name: "Super Admin",
     email: adminEmail,
     password: hashedPassword,

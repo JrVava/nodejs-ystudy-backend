@@ -2,6 +2,7 @@
 import { connectDB } from "../mongo";
 import { adminSeeder } from "./adminSeeder";
 import { navigationSeeder } from "./navigationSeeder";
+import { pageCmsDataSeeder } from "./pageCmsDataSeeder";
 
 const seeders = [
   {
@@ -11,6 +12,10 @@ const seeders = [
   {
     name: "Navigation Seeder",
     run: navigationSeeder,
+  },
+  {
+    name: "Page CMS Data Seeder",
+    run: pageCmsDataSeeder,
   },
   // Add more here
   // { name: "Role Seeder", run: roleSeeder },
