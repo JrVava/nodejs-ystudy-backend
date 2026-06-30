@@ -8,7 +8,7 @@ import { getFullImageUrl } from "../../utils/mediaUtils";
 import { Course } from "../../models/Course";
 
 @JsonController("/courses")
-// @UseBefore(AdminMiddleware)
+@UseBefore(AdminMiddleware)
 export class CourseController {
 
     @Post("/add")

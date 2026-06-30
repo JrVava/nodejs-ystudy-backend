@@ -24,7 +24,7 @@ const uploadOptions = { storage };
 const activeUploads: Record<string, UploadSession> = {};
 
 @JsonController("/upload")
-// @UseBefore(AdminMiddleware)
+@UseBefore(AdminMiddleware)
 export class ImageController {
   @Post("/init")
   initUpload(@Body() body: { fileName: string; totalSize: number; folderName?: string }) {

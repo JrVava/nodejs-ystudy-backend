@@ -7,7 +7,7 @@ import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 
 @JsonController("/cms-pages")
-// @UseBefore(AdminMiddleware)
+@UseBefore(AdminMiddleware)
 export class CMSPageController {
 
     @Get("/")
