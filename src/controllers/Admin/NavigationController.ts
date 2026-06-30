@@ -7,7 +7,7 @@ import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 
 @JsonController("/navigations")
-// @UseBefore(AdminMiddleware)
+@UseBefore(AdminMiddleware)
 export class NavigationController {
 
     // Convert flat array to tree structure
