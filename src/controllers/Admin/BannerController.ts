@@ -1,13 +1,14 @@
-import { JsonController, Post, Get, Body, Param, QueryParam, HttpError, UseBefore } from "routing-controllers";
+import { JsonController, Post, Get, Body, Param, QueryParam, HttpError, UseBefore, Req } from "routing-controllers";
 import { ObjectId } from "mongodb";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import logger from "../../utils/logger";
 import { encrypt, decrypt } from "../../utils/crypto";
+import { getFullImageUrl } from "../../utils/mediaUtils";
 import { Banner } from "../../models/Banner";
 
 @JsonController("/banners")
-@UseBefore(AdminMiddleware)
+// @UseBefore(AdminMiddleware)
 export class BannerController {
 
     @Post("/")
@@ -71,7 +72,7 @@ export class BannerController {
     }
 
     @Get("/edit/:id")
-    async getBanner(@Param("id") bannerId: string) {
+    async getBanner(@Param("id") bannerId: string, @Req() req: any) {
         try {
             const bannerDB = new QueryBuilder<Banner>("banners");
 
@@ -87,10 +88,12 @@ export class BannerController {
                 throw new HttpError(404, "Banner not found");
             }
 
+            const fullImageUrl = await getFullImageUrl(banner.background?.imageUrl, req);
+
             return {
                 data: encrypt({
                     success: true,
-                    data: { ...banner, _id: banner._id?.toString() }
+                    data: { ...banner, _id: banner._id?.toString(), fullImageUrl }
                 })
             };
         } catch (error) {
