@@ -1,783 +1,963 @@
 {
-  "info": {
-    "name": "yStudy Backend APIs",
-    "description": "Auto-generated collection of all active APIs in the yStudy Backend project.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:3000",
-      "type": "string"
-    }
-  ],
-  "item": [
-    {
-      "name": "Auth",
-      "item": [
-        {
-          "name": "Login",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/auth/login",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Logout",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/auth/logout",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "logout"
-              ]
-            }
-          }
-        }
-      ]
+    "info": {
+        "name": "yStudy API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
-    {
-      "name": "Banners",
-      "item": [
+    "item": [
         {
-          "name": "Create Banner",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/banners/",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "banners",
-                ""
-              ]
-            }
-          }
-        },
-        {
-          "name": "List Banners (Pagination)",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/banners/pagination",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "banners",
-                "pagination"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Get Banner",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/banners/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "banners",
-                ":id"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Update Banner",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/banners/update/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "banners",
-                "update",
-                ":id"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Delete Banner",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/banners/delete/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "banners",
-                "delete",
-                ":id"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "Navigations",
-      "item": [
-        {
-          "name": "Get Navigations Tree",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/navigations/",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "navigations",
-                ""
-              ]
-            }
-          }
-        },
-        {
-          "name": "Get Flat Navigations",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/navigations/flat",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "navigations",
-                "flat"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Reorder Navigations",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/navigations/reorder",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "navigations",
-                "reorder"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Update Navigation",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/navigations/update/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "navigations",
-                "update",
-                ":id"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Delete Navigation",
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/navigations/delete/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "navigations",
-                "delete",
-                ":id"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "Uploads / Media",
-      "item": [
-        {
-          "name": "Init Upload",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/init",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "init"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Upload Chunk",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/chunk/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "chunk",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Complete Upload",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/complete/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "complete",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Check Status",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/status/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "status",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Pause Upload",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/pause/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "pause",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Cancel Upload",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/cancel/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "cancel",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Resume Upload",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/resume/:uploadId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "resume",
-                ":uploadId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "List Media",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/list",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "list"
-              ]
-            }
-          }
-        },
-        {
-          "name": "List Folders",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/folders",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "folders"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Get Folder",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/folders/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "folders",
-                ":id"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Delete Media",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/delete/:mediaId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "delete",
-                ":mediaId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Get SEO",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/seo/:mediaId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "seo",
-                ":mediaId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Update SEO",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/update-seo/:mediaId",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "update-seo",
-                ":mediaId"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Rename Folder",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/folders/rename/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "folders",
-                "rename",
-                ":id"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Delete Folder",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/upload/folders/delete/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "upload",
-                "folders",
-                "delete",
-                ":id"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "Encryption",
-      "item": [
-        {
-          "name": "Raw Encrypt",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/raw-encrypt",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "raw-encrypt"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Raw Decrypt",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/raw-decrypt",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "raw-decrypt"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "Test",
-      "item": [
-        {
-          "name": "Test Endpoint",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/test/",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "test",
-                ""
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "CMS Pages",
-      "item": [
-        {
-          "name": "List CMS Pages",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/cms-pages",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "cms-pages"
-              ]
-            }
-          }
-        },
-        {
-          "name": "Get CMS Page by ID",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/api/cms-pages/page-data/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "cms-pages",
-                "page-data",
-                ":id"
-              ],
-              "variable": [
+            "name": "BannerController",
+            "item": [
                 {
-                  "key": "id",
-                  "value": "6a3e75d19e7460c6e4ec08db"
+                    "name": "POST /banners",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/banners",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /banners/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/banners/pagination",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners",
+                                "pagination"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /banners/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/banners/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /banners/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/banners/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /banners/delete/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/banners/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
                 }
-              ]
-            }
-          }
+            ]
         },
         {
-          "name": "Update CMS Page",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"data\": \"encrypted_payload_here\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/cms-pages/update/:id",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "cms-pages",
-                "update",
-                ":id"
-              ],
-              "variable": [
+            "name": "CMSPageController",
+            "item": [
                 {
-                  "key": "id",
-                  "value": "6a3e75d19e7460c6e4ec08db"
+                    "name": "GET /cms-pages",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cms-pages",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cms-pages"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /cms-pages/page-data/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cms-pages/page-data/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cms-pages",
+                                "page-data",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "PUT /cms-pages/update/:id",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/cms-pages/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cms-pages",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
                 }
-              ]
-            }
-          }
+            ]
+        },
+        {
+            "name": "CourseController",
+            "item": [
+                {
+                    "name": "POST /courses/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/courses/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /courses/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses/pagination",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "pagination"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /courses/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /courses/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /courses/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/courses/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ImageController",
+            "item": [
+                {
+                    "name": "POST /upload/init",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/init",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "init"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/chunk/:uploadId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/chunk/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "chunk",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/complete/:uploadId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/complete/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "complete",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /upload/status/:uploadId",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/upload/status/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "status",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/pause/:uploadId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/pause/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "pause",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/cancel/:uploadId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/cancel/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "cancel",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/resume/:uploadId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/resume/:uploadId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "resume",
+                                ":uploadId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /upload/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/upload/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /upload/folders",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/upload/folders",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "folders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /upload/folders/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/upload/folders/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "folders",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/delete/:mediaId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/delete/:mediaId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "delete",
+                                ":mediaId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /upload/seo/:mediaId",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/upload/seo/:mediaId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "seo",
+                                ":mediaId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/update-seo/:mediaId",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/update-seo/:mediaId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "update-seo",
+                                ":mediaId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/folders/rename/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/folders/rename/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "folders",
+                                "rename",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /upload/folders/delete/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload/folders/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload",
+                                "folders",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "NavigationController",
+            "item": [
+                {
+                    "name": "GET /navigations",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/navigations",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /navigations/flat",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/navigations/flat",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations",
+                                "flat"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /navigations",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/navigations",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "PUT /navigations/reorder",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/navigations/reorder",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations",
+                                "reorder"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "PUT /navigations/update/:id",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/navigations/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /navigations/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/navigations/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "navigations",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AuthController",
+            "item": [
+                {
+                    "name": "POST /auth/login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /auth/logout",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/auth/logout",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "logout"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "test",
+            "item": [
+                {
+                    "name": "GET /test",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/test",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "test"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

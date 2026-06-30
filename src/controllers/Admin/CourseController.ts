@@ -16,12 +16,18 @@ export class CourseController {
         try {
             // Decrypt incoming payload
             const decryptedBody = decrypt(body.data);
+
+            if (!decryptedBody.slug) {
+                throw new HttpError(400, "Slug is required and cannot be empty");
+            }
+
             const courseDB = new QueryBuilder<Course>("courses");
 
             // Construct new course object
             const newCourse: Course = {
                 image: new ObjectId(decryptedBody.image),
                 title: decryptedBody.title,
+                slug: decryptedBody.slug,
                 shortDescription: decryptedBody.shortDescription,
                 longDescription: decryptedBody.longDescription,
                 badges: Array.isArray(decryptedBody.badges) ? decryptedBody.badges : [],
@@ -94,7 +100,8 @@ export class CourseController {
 
             const courses = await courseDB.find({}, {
                 projection: {
-                    title: 1
+                    title: 1,
+                    slug: 1
                 }
             });
 
@@ -103,7 +110,8 @@ export class CourseController {
                     success: true,
                     data: courses.map((c: any) => ({
                         _id: c._id?.toString(),
-                        title: c.title
+                        title: c.title,
+                        slug: c.slug
                     }))
                 })
             };

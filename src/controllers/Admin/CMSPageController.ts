@@ -1,4 +1,6 @@
-import { JsonController, Get, Put, Body, UseBefore, Param, QueryParam } from "routing-controllers";
+import { JsonController, Get, Put, Body, UseBefore, Param, QueryParam, Req } from "routing-controllers";
+import { getFullImageUrl, populateImages } from "../../utils/mediaUtils";
+import { ObjectId } from "mongodb";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
@@ -39,7 +41,7 @@ export class CMSPageController {
     }
 
     @Get("/page-data/:id")
-    async getPageById(@Param("id") id: string) {
+    async getPageById(@Param("id") id: string, @Req() req: any) {
         try {
             const qb = new QueryBuilder<any>("page_cms_data");
 
@@ -52,9 +54,11 @@ export class CMSPageController {
                 };
             }
 
+            const populatedPage = await populateImages(page, req);
+
             // Convert _id to string for the response
             const formattedPage = {
-                ...page,
+                ...populatedPage,
                 _id: page._id?.toString(),
             };
 
