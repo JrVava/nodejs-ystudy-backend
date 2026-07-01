@@ -57,15 +57,31 @@ export class CMSPageController {
             const populatedPage = await populateImages(page, req);
 
             // Convert _id to string for the response
-            const formattedPage = {
+            const formattedPage: any = {
                 ...populatedPage,
                 _id: page._id?.toString(),
             };
 
+            // Sort keys to ensure section_* are ordered numerically
+            const nonSectionKeys = Object.keys(formattedPage).filter(k => !k.startsWith('section_'));
+            const sectionKeys = Object.keys(formattedPage).filter(k => k.startsWith('section_')).sort((a, b) => {
+                const numA = parseInt(a.replace('section_', ''), 10);
+                const numB = parseInt(b.replace('section_', ''), 10);
+                return numA - numB;
+            });
+
+            const sortedPage: any = {};
+            for (const key of nonSectionKeys) {
+                sortedPage[key] = formattedPage[key];
+            }
+            for (const key of sectionKeys) {
+                sortedPage[key] = formattedPage[key];
+            }
+
             return {
                 data: encrypt({
                     success: true,
-                    data: formattedPage
+                    data: sortedPage
                 })
             };
         } catch (error) {
