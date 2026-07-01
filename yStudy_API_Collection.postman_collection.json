@@ -331,6 +331,162 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "DELETE /courses/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/courses/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "courses",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "LocationController",
+            "item": [
+                {
+                    "name": "POST /location/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/location/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /location/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/location/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /location/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/location/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /location/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/location/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /location/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/location/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /location/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/location/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "location",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
                 }
             ]
         },
