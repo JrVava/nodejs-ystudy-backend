@@ -5,6 +5,7 @@ import path from "path";
 import { config } from "./config";
 import { connectDB } from "./database/mongo";
 import { decrypt, encrypt } from "./utils/crypto";
+import { HttpErrorHandler } from "./utils/HttpErrorHandler";
 
 const baseUrl = __dirname;
 
@@ -24,6 +25,8 @@ export class App {
     this.app = useExpressServer(this.app, {
       cors: true,
       routePrefix: "/api",
+      defaultErrorHandler: false,
+      middlewares: [HttpErrorHandler],
       controllers: [
         path.join(baseUrl, "/controllers/**/*.{ts,js}"),
       ],

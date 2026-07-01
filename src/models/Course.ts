@@ -14,7 +14,9 @@ export interface Course {
     };
     careerOutcomeBadge?: string;
     availableCourses?: ObjectId[] | null;
+    locations?: ObjectId[] | null;
     relatedCourses?: ObjectId[] | null;
+    status?: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

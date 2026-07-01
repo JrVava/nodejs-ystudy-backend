@@ -1,4 +1,4 @@
-import { JsonController, Post, Get, Body, HttpError, UseBefore, QueryParam, Param, Req } from "routing-controllers";
+import { JsonController, Post, Get, Body, HttpError, UseBefore, QueryParam, Param, Req, Delete } from "routing-controllers";
 import { ObjectId } from "mongodb";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
@@ -37,11 +37,15 @@ export class CourseController {
                 relatedCourses: Array.isArray(decryptedBody.relatedCourses)
                     ? decryptedBody.relatedCourses.map((id: string) => new ObjectId(id))
                     : null,
+                locations: Array.isArray(decryptedBody.locations)
+                    ? decryptedBody.locations.map((id: string) => new ObjectId(id))
+                    : null,
                 salaryRange: {
                     from: decryptedBody.salaryRange?.from || 0,
                     to: decryptedBody.salaryRange?.to || 0
                 },
                 careerOutcomeBadge: decryptedBody.careerOutcomeBadge,
+                status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
                 updatedAt: new Date()
             };
@@ -81,6 +85,7 @@ export class CourseController {
                     data: results.data.map(c => ({
                         _id: c._id?.toString(),
                         title: c.title,
+                        status: c.status,
                         createdAt: c.createdAt,
                         updatedAt: c.updatedAt
                     }))
@@ -98,7 +103,7 @@ export class CourseController {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
 
-            const courses = await courseDB.find({}, {
+            const courses = await courseDB.find({ status: true }, {
                 projection: {
                     title: 1,
                     slug: 1
@@ -111,7 +116,8 @@ export class CourseController {
                     data: courses.map((c: any) => ({
                         _id: c._id?.toString(),
                         title: c.title,
-                        slug: c.slug
+                        slug: c.slug,
+                        status: c.status
                     }))
                 })
             };
@@ -190,6 +196,10 @@ export class CourseController {
                 updateFields.relatedCourses = updateFields.relatedCourses.map((id: string) => new ObjectId(id));
             }
 
+            if (Array.isArray(updateFields.locations)) {
+                updateFields.locations = updateFields.locations.map((id: string) => new ObjectId(id));
+            }
+
             const result = await courseDB.updateOne({ _id: objId }, { $set: updateFields });
 
             if (result.matchedCount === 0) {
@@ -204,6 +214,37 @@ export class CourseController {
             };
         } catch (error) {
             logger.error(`[CourseController:updateCourse] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, "Internal server error");
+        }
+    }
+
+    @Delete("/delete/:id")
+    async deleteCourse(@Param("id") id: string) {
+        try {
+            const courseDB = new QueryBuilder<Course>("courses");
+
+            let objId: ObjectId;
+            try {
+                objId = new ObjectId(id);
+            } catch (e) {
+                throw new HttpError(400, "Invalid course ID format");
+            }
+
+            const result = await courseDB.deleteById(objId);
+
+            if (!result || result.deletedCount === 0) {
+                throw new HttpError(404, "Course not found");
+            }
+
+            return {
+                data: encrypt({
+                    success: true,
+                    message: "Course deleted successfully"
+                })
+            };
+        } catch (error) {
+            logger.error(`[CourseController:deleteCourse] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, "Internal server error");
         }
