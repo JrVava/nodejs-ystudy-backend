@@ -5,21 +5,11 @@ import { Navigation } from "../../models/Navigation";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
+import { buildTree } from "../../utils/navigation";
 
 @JsonController("/navigations")
 @UseBefore(AdminMiddleware)
 export class NavigationController {
-
-    // Convert flat array to tree structure
-    private buildTree(pages: any[], parentId: string | null = null): any[] {
-        return pages
-            .filter(page => page.parentId === parentId)
-            .sort((a, b) => a.position - b.position)
-            .map(page => ({
-                ...page,
-                children: this.buildTree(pages, page._id)
-            }));
-    }
 
     @Get("/")
     async getAllPages() {
@@ -34,7 +24,7 @@ export class NavigationController {
             return {
                 data: encrypt({
                     success: true,
-                    data: this.buildTree(formattedPages)
+                    data: buildTree(formattedPages)
                 })
             };
         } catch (error) {
