@@ -324,25 +324,7 @@
             "faq": [
                 {
                     "badge": "FAQ",
-                    "title": "Quick answers.",
-                    "faq_card": [
-                        {
-                            "title": "Is YStudy really free?",
-                            "description": "Yes — guidance, tools and adviser support are always free. We're funded by partner universities, not by you."
-                        },
-                        {
-                            "title": "Am I too old to study?",
-                            "description": "No. Our courses are built for adult learners and career changers — many students are 25, 35, 45+."
-                        },
-                        {
-                            "title": "Do I need existing qualifications?",
-                            "description": "Not always. Foundation years and Access routes exist for people without traditional A-levels."
-                        },
-                        {
-                            "title": "Will I get funding?",
-                            "description": "Most eligible UK residents can access tuition and maintenance loans. Use the eligibility check to see your likely support."
-                        }
-                    ]
+                    "title": "Quick answers."
                 }
             ],
             "status": true

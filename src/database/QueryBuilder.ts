@@ -116,6 +116,13 @@ export class QueryBuilder<T extends Document = Document> {
   }
 
   /**
+   * Delete multiple documents by filter.
+   */
+  async deleteMany(filter: Filter<T>): Promise<DeleteResult> {
+    return await this.collection.deleteMany(filter);
+  }
+
+  /**
    * Delete a single document by its ObjectId.
    */
   async deleteById(id: string | ObjectId): Promise<DeleteResult> {
