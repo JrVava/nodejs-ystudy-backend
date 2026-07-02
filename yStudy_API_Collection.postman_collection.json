@@ -1114,6 +1114,145 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "FAQController",
+            "item": [
+                {
+                    "name": "POST /faqs",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/faqs",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "faqs"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /faqs/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/faqs/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "faqs",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /faqs/edit/:slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/faqs/edit/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "faqs",
+                                "edit",
+                                ":slug"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /faqs/update/:slug",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/faqs/update/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "faqs",
+                                "update",
+                                ":slug"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /faqs/delete/:slug",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/faqs/delete/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "faqs",
+                                "delete",
+                                ":slug"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
