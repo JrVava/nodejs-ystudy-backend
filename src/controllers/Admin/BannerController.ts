@@ -57,7 +57,7 @@ export class BannerController {
         try {
             const bannerDB = new QueryBuilder<Banner>("banners");
 
-            const results = await bannerDB.paginate({}, Number(page), Number(limit), { createdAt: -1 });
+            const results = await bannerDB.paginate({ isDeleted: { $ne: true } }, Number(page), Number(limit), { createdAt: -1 });
 
             return {
                 success: true,
@@ -83,7 +83,7 @@ export class BannerController {
                 throw new HttpError(400, "Invalid bannerId format");
             }
 
-            const banner = await bannerDB.findOne({ _id: objId });
+            const banner = await bannerDB.findOne({ _id: objId, isDeleted: { $ne: true } });
             if (!banner) {
                 throw new HttpError(404, "Banner not found");
             }
@@ -128,7 +128,7 @@ export class BannerController {
                 }
             }
 
-            const result = await bannerDB.updateOne({ _id: objId }, { $set: updateFields });
+            const result = await bannerDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Banner not found");
@@ -159,12 +159,14 @@ export class BannerController {
                 throw new HttpError(400, "Invalid bannerId format");
             }
 
-            const banner = await bannerDB.findOne({ _id: objId });
-            if (!banner) {
+            const result = await bannerDB.updateOne(
+                { _id: objId, isDeleted: { $ne: true } },
+                { $set: { isDeleted: true, updatedAt: new Date() } }
+            );
+
+            if (result.matchedCount === 0) {
                 throw new HttpError(404, "Banner not found");
             }
-
-            await bannerDB.deleteById(bannerId);
 
             return {
                 data: encrypt({

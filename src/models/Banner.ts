@@ -33,6 +33,7 @@ export interface Banner {
     };
 
     isActive: boolean;
+    isDeleted?: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

@@ -8,6 +8,7 @@ export interface Location {
     long_description: string;
     image?: ObjectId | null; // ObjectId of media collection
     status?: boolean;
+    isDeleted?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }

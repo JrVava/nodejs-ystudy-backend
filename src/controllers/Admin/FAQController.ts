@@ -54,7 +54,7 @@ export class FAQController {
         try {
             const faqDB = new QueryBuilder<FAQ>("faqs");
 
-            const results = await faqDB.paginate({}, Number(page), Number(limit), { createdAt: -1 });
+            const results = await faqDB.paginate({ isDeleted: { $ne: true } }, Number(page), Number(limit), { createdAt: -1 });
 
             return {
                 success: true,
@@ -79,7 +79,7 @@ export class FAQController {
         try {
             const faqDB = new QueryBuilder<FAQ>("faqs");
 
-            const faqs = await faqDB.find({ slug });
+            const faqs = await faqDB.find({ slug, isDeleted: { $ne: true } });
             if (!faqs || faqs.length === 0) {
                 throw new HttpError(404, "FAQ slug not found");
             }
@@ -118,8 +118,13 @@ export class FAQController {
                 throw new HttpError(400, "faqs array is required in the payload");
             }
 
-            // First delete existing rows for this slug
-            await faqDB.deleteMany({ slug } as any);
+            // First soft-delete existing rows for this slug
+            await faqDB.bulkWrite([{
+                updateMany: {
+                    filter: { slug, isDeleted: { $ne: true } },
+                    update: { $set: { isDeleted: true, updatedAt: new Date() } }
+                }
+            }]);
 
             // Re-insert new rows
             const updatedFAQs: FAQ[] = decryptedBody.faqs.map((f: any) => ({
@@ -153,12 +158,17 @@ export class FAQController {
         try {
             const faqDB = new QueryBuilder<FAQ>("faqs");
 
-            const faqs = await faqDB.find({ slug });
+            const faqs = await faqDB.find({ slug, isDeleted: { $ne: true } });
             if (!faqs || faqs.length === 0) {
                 throw new HttpError(404, "FAQ slug not found");
             }
 
-            await faqDB.deleteMany({ slug } as any);
+            await faqDB.bulkWrite([{
+                updateMany: {
+                    filter: { slug, isDeleted: { $ne: true } },
+                    update: { $set: { isDeleted: true, updatedAt: new Date() } }
+                }
+            }]);
 
             return {
                 data: encrypt({

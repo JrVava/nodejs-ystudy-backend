@@ -74,7 +74,7 @@ export class CourseController {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
 
-            const results = await courseDB.paginate({}, Number(page), Number(limit), { createdAt: -1 });
+            const results = await courseDB.paginate({ isDeleted: { $ne: true } }, Number(page), Number(limit), { createdAt: -1 });
 
             return {
                 data: encrypt({
@@ -103,7 +103,7 @@ export class CourseController {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
 
-            const courses = await courseDB.find({ status: true }, {
+            const courses = await courseDB.find({ status: true, isDeleted: { $ne: true } }, {
                 projection: {
                     title: 1,
                     slug: 1
@@ -140,7 +140,7 @@ export class CourseController {
                 throw new HttpError(400, "Invalid course ID format");
             }
 
-            const course = await courseDB.findOne({ _id: objId });
+            const course = await courseDB.findOne({ _id: objId, isDeleted: { $ne: true } });
             if (!course) {
                 throw new HttpError(404, "Course not found");
             }
@@ -200,7 +200,7 @@ export class CourseController {
                 updateFields.locations = updateFields.locations.map((id: string) => new ObjectId(id));
             }
 
-            const result = await courseDB.updateOne({ _id: objId }, { $set: updateFields });
+            const result = await courseDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Course not found");
@@ -231,9 +231,12 @@ export class CourseController {
                 throw new HttpError(400, "Invalid course ID format");
             }
 
-            const result = await courseDB.deleteById(objId);
+            const result = await courseDB.updateOne(
+                { _id: objId, isDeleted: { $ne: true } },
+                { $set: { isDeleted: true, updatedAt: new Date() } }
+            );
 
-            if (!result || result.deletedCount === 0) {
+            if (result.matchedCount === 0) {
                 throw new HttpError(404, "Course not found");
             }
 

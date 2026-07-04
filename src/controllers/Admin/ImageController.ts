@@ -215,7 +215,7 @@ export class ImageController {
   ) {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
-      const filter: any = {};
+      const filter: any = { isDeleted: { $ne: true } };
 
       if (folderId) {
         // Ensure valid ObjectId before filtering
@@ -245,7 +245,7 @@ export class ImageController {
   async listFolders() {
     try {
       const folderDB = new QueryBuilder<Folder>("folders");
-      const folders = await folderDB.find({}, { sort: { name: 1 } });
+      const folders = await folderDB.find({ isDeleted: { $ne: true } }, { sort: { name: 1 } });
       return {
         success: true,
         data: folders.map(f => ({ ...f, _id: f._id?.toString() }))
@@ -269,7 +269,7 @@ export class ImageController {
         throw new HttpError(400, "Invalid folderId format");
       }
 
-      const folder = await folderDB.findOne({ _id: objId });
+      const folder = await folderDB.findOne({ _id: objId, isDeleted: { $ne: true } });
       if (!folder) {
         throw new HttpError(404, "Folder not found");
       }
@@ -299,19 +299,13 @@ export class ImageController {
         throw new HttpError(400, "Invalid mediaId format");
       }
 
-      const media = await mediaDB.findOne({ _id: objId });
+      const media = await mediaDB.findOne({ _id: objId, isDeleted: { $ne: true } });
       if (!media) {
         throw new HttpError(404, "Media not found");
       }
 
-      // Delete file from disk
-      const absolutePath = path.join(__dirname, "../../../", media.filePath);
-      if (fs.existsSync(absolutePath)) {
-        fs.unlinkSync(absolutePath);
-      }
-
-      // Delete from DB
-      await mediaDB.deleteById(mediaId);
+      // Delete from DB (Soft delete)
+      await mediaDB.updateOne({ _id: objId }, { $set: { isDeleted: true } });
 
       return { success: true, message: "Image deleted successfully" };
     } catch (error) {
@@ -333,7 +327,7 @@ export class ImageController {
         throw new HttpError(400, "Invalid mediaId format");
       }
 
-      const media = await mediaDB.findOne({ _id: objId });
+      const media = await mediaDB.findOne({ _id: objId, isDeleted: { $ne: true } });
       if (!media) {
         throw new HttpError(404, "Media not found");
       }
@@ -379,7 +373,7 @@ export class ImageController {
       if (body.caption !== undefined) updateFields.caption = body.caption;
       if (body.description !== undefined) updateFields.description = body.description;
 
-      const result = await mediaDB.updateOne({ _id: objId }, { $set: updateFields });
+      const result = await mediaDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
       if (result.matchedCount === 0) {
         throw new HttpError(404, "Media not found");
@@ -411,7 +405,7 @@ export class ImageController {
         throw new HttpError(400, "Invalid folderId format");
       }
 
-      const folder = await folderDB.findOne({ _id: objId });
+      const folder = await folderDB.findOne({ _id: objId, isDeleted: { $ne: true } });
       if (!folder) throw new HttpError(404, "Folder not found");
 
       const safeOldName = path.basename(folder.name);
@@ -435,7 +429,7 @@ export class ImageController {
       await folderDB.updateOne({ _id: objId }, { $set: { name: safeNewName, updatedAt: new Date() } });
 
       // 3. Update all Media paths in DB
-      const medias = await mediaDB.find({ folderId: objId });
+      const medias = await mediaDB.find({ folderId: objId, isDeleted: { $ne: true } });
       for (const m of medias) {
         if (m.filePath && m._id) {
           const newFilePath = m.filePath.replace(`media/${safeOldName}/`, `media/${safeNewName}/`);
@@ -464,26 +458,21 @@ export class ImageController {
         throw new HttpError(400, "Invalid folderId format");
       }
 
-      const folder = await folderDB.findOne({ _id: objId });
+      const folder = await folderDB.findOne({ _id: objId, isDeleted: { $ne: true } });
       if (!folder) throw new HttpError(404, "Folder not found");
 
-      const safeFolderName = path.basename(folder.name);
+      // 1. Soft Delete Folder DB
+      await folderDB.updateOne({ _id: objId }, { $set: { isDeleted: true, updatedAt: new Date() } });
 
-      // 1. Delete physical directory and its contents
-      const targetDir = path.join(__dirname, "../../../media", safeFolderName);
-      if (fs.existsSync(targetDir)) {
-        fs.rmSync(targetDir, { recursive: true, force: true });
-      }
-
-      // 2. Delete Folder DB
-      await folderDB.deleteById(folderId);
-
-      // 3. Delete all Media records in this folder
-      const medias = await mediaDB.find({ folderId: objId });
-      for (const m of medias) {
-        if (m._id) {
-          await mediaDB.deleteById(m._id.toString());
-        }
+      // 2. Soft Delete all Media records in this folder
+      const medias = await mediaDB.find({ folderId: objId, isDeleted: { $ne: true } });
+      if (medias.length > 0) {
+        await mediaDB.bulkWrite([{
+          updateMany: {
+            filter: { folderId: objId, isDeleted: { $ne: true } },
+            update: { $set: { isDeleted: true } }
+          }
+        }]);
       }
 
       return { data: encrypt({ success: true, message: "Folder deleted successfully" }) };

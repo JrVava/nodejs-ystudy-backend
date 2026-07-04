@@ -6,6 +6,7 @@ export interface FAQ {
     question: string;
     answer: string;
     status?: boolean;
+    isDeleted?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
