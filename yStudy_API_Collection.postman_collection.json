@@ -1280,6 +1280,57 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Frontend",
+            "item": [
+                {
+                    "name": "GET /frontend/banners/:slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/banners/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "banners",
+                                ":slug"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /frontend/faqs/:slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/faqs/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "faqs",
+                                ":slug"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
