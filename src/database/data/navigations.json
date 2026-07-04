@@ -8,6 +8,7 @@
     "componentName": "Drgress",
     "parentId": null,
     "position": 0,
+    "status": true,
     "createdAt": {
       "$date": "2026-06-26T12:51:29.545Z"
     },
@@ -26,6 +27,7 @@
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
     "position": 0,
+    "status": true,
     "createdAt": {
       "$date": "2026-06-26T12:52:35.892Z"
     },
@@ -40,6 +42,7 @@
     "slug": "study-locations",
     "pageName": "Study Locations",
     "componentName": "StudyLocations",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -58,6 +61,7 @@
     "slug": "foundation-year",
     "pageName": "Foundation Year",
     "componentName": "FoundationYear",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -76,6 +80,7 @@
     "slug": "hnd",
     "pageName": "HND",
     "componentName": "HND",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -94,6 +99,7 @@
     "slug": "certificate-of-higher-education",
     "pageName": "Certificate of Higher Education",
     "componentName": "CertificateOFHigherEducation",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -112,6 +118,7 @@
     "slug": "masters-degree",
     "pageName": "Master's Degree",
     "componentName": "MasterDegree",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -130,6 +137,7 @@
     "slug": "study-subjects",
     "pageName": "Study Subjects",
     "componentName": "StudySubjects",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -148,6 +156,7 @@
     "slug": "study-routes",
     "pageName": "Study Routes",
     "componentName": "StudyRoutes",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -166,6 +175,7 @@
     "slug": "hnc",
     "pageName": "HNC",
     "componentName": "HNC",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -184,6 +194,7 @@
     "slug": "foundation-degree",
     "pageName": "Foundation Degree",
     "componentName": "FoundationDegree",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -202,6 +213,7 @@
     "slug": "top-up-degree",
     "pageName": "Top-Up Degree",
     "componentName": "TopUpDegree",
+    "status": true,
     "parentId": {
       "$oid": "6a3e75d19e7460c6e4ec08db"
     },
@@ -220,6 +232,7 @@
     "slug": "funding",
     "pageName": "Funding ",
     "componentName": "Funding ",
+    "status": true,
     "parentId": null,
     "position": 1,
     "createdAt": {
@@ -236,6 +249,7 @@
     "slug": "funding-hub",
     "pageName": "Funding Hub",
     "componentName": "FundingHub",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -254,6 +268,7 @@
     "slug": "tuition-fee-loan",
     "pageName": "Tuition Fee Loan",
     "componentName": "TuitionFeeLoan",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -272,6 +287,7 @@
     "slug": "student-money-hub",
     "pageName": "Student Money Hub",
     "componentName": "StudentMoneyHub",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -290,6 +306,7 @@
     "slug": "finance-calculator",
     "pageName": "Funding Checker",
     "componentName": "FundingChecker",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -308,6 +325,7 @@
     "slug": "childcare-grant",
     "pageName": "Childcare Grant",
     "componentName": "ChildcareGrant",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -326,6 +344,7 @@
     "slug": "maintenance-loan",
     "pageName": "Maintenance Loan",
     "componentName": "MaintenanceLoan",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -344,6 +363,7 @@
     "slug": "grants-support",
     "pageName": "Grants & Support",
     "componentName": "GrantsSupport",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -362,6 +382,7 @@
     "slug": "eligibility",
     "pageName": "Eligibility",
     "componentName": "Eligibility",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -380,6 +401,7 @@
     "slug": "previous-study",
     "pageName": "Previous Study",
     "componentName": "PreviousStudy",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -398,6 +420,7 @@
     "slug": "dsa",
     "pageName": "DSA",
     "componentName": "DSA",
+    "status": true,
     "parentId": {
       "$oid": "6a3e772e9e7460c6e4ec08e7"
     },
@@ -416,6 +439,7 @@
     "slug": "tools",
     "pageName": "Tools ",
     "componentName": "Tools ",
+    "status": true,
     "parentId": null,
     "position": 2,
     "createdAt": {
@@ -432,6 +456,7 @@
     "slug": "degree-match-finder",
     "pageName": "Degree Match Finder",
     "componentName": "DegreeMatchFinder",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -450,6 +475,7 @@
     "slug": "english-test",
     "pageName": "English Test",
     "componentName": "EnglishTest",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -468,6 +494,7 @@
     "slug": "funding-checker",
     "pageName": "Funding Checker",
     "componentName": "FundingChecker",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -486,6 +513,7 @@
     "slug": "cv-builder",
     "pageName": "CV Builder",
     "componentName": "CVBuilder",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -504,6 +532,7 @@
     "slug": "career-quiz",
     "pageName": "Career Quiz",
     "componentName": "CareerQuiz",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -522,6 +551,7 @@
     "slug": "eligibility-checker",
     "pageName": "Eligibility Checker",
     "componentName": "EligibilityChecker",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -540,6 +570,7 @@
     "slug": "salary-checker",
     "pageName": "Salary Checker",
     "componentName": "SalaryChecker",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -558,6 +589,7 @@
     "slug": "personal-statement",
     "pageName": "Personal Statement",
     "componentName": "PersonalStatement",
+    "status": true,
     "parentId": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
@@ -576,6 +608,7 @@
     "slug": "resources",
     "pageName": "Resources",
     "componentName": "Resources",
+    "status": true,
     "parentId": null,
     "position": 3,
     "createdAt": {
@@ -592,6 +625,7 @@
     "slug": "resources-hub",
     "pageName": "Resources Hub",
     "componentName": "ResourcesHub",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -610,6 +644,7 @@
     "slug": "university-routes",
     "pageName": "University Routes",
     "componentName": "UniversityRoutes",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -628,6 +663,7 @@
     "slug": "career-change",
     "pageName": "Career Change",
     "componentName": "CareerChange",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -646,6 +682,7 @@
     "slug": "success-stories",
     "pageName": "Success Stories",
     "componentName": "SuccessStories",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -664,6 +701,7 @@
     "slug": "news-updates",
     "pageName": "News & Updates",
     "componentName": "NewsUpdates",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -682,6 +720,7 @@
     "slug": "polish-community",
     "pageName": "Polish Community",
     "componentName": "PolishCommunity",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -700,6 +739,7 @@
     "slug": "student-finance-guides",
     "pageName": "Student Finance Guides",
     "componentName": "StudentFinanceGuides",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -718,6 +758,7 @@
     "slug": "why-ystudy",
     "pageName": "Why YStudy",
     "componentName": "WhyYStudy",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -736,6 +777,7 @@
     "slug": "how-guidance-works",
     "pageName": "How Guidance Works",
     "componentName": "HowGuidanceWorks",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -754,6 +796,7 @@
     "slug": "faqs",
     "pageName": "FAQs",
     "componentName": "FAQs",
+    "status": true,
     "parentId": {
       "$oid": "6a3e79899e7460c6e4ec08fb"
     },
@@ -772,6 +815,7 @@
     "slug": "partners",
     "pageName": "Partners ",
     "componentName": "Partners ",
+    "status": true,
     "parentId": null,
     "position": 4,
     "createdAt": {
@@ -788,6 +832,7 @@
     "slug": "become-a-student-adviser",
     "pageName": "Become a Student Adviser",
     "componentName": "BecomeStudentAdviser",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -806,6 +851,7 @@
     "slug": "affiliate-programme",
     "pageName": "Affiliate Programme",
     "componentName": "AffiliateProgramme",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -824,6 +870,7 @@
     "slug": "advertise-to-students",
     "pageName": "Advertise to Students",
     "componentName": "AdvertiseToStudents",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -842,6 +889,7 @@
     "slug": "sponsored-content",
     "pageName": "Sponsored Content",
     "componentName": "SponsoredContent",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -860,6 +908,7 @@
     "slug": "creator-programme",
     "pageName": "Creator Programme",
     "componentName": "Creator Programme",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -878,6 +927,7 @@
     "slug": "refer-a-friend",
     "pageName": "Refer a Friend",
     "componentName": "ReferFriend",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -896,6 +946,7 @@
     "slug": "brand-partnerships",
     "pageName": "Brand Partnerships",
     "componentName": "BrandPartnerships",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },
@@ -914,6 +965,7 @@
     "slug": "business-opportunities",
     "pageName": "Business Opportunities",
     "componentName": "BusinessOpportunities",
+    "status": true,
     "parentId": {
       "$oid": "6a3e7aea9e7460c6e4ec0906"
     },

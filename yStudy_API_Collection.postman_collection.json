@@ -1253,6 +1253,33 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "FrontendNavigationController",
+            "item": [
+                {
+                    "name": "GET /frontend/navigations",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/navigations",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "navigations"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
