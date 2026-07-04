@@ -1331,6 +1331,235 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "RecycleBinController",
+            "item": [
+                {
+                    "name": "GET /recycle-bin/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/recycle-bin/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "recycle-bin",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /recycle-bin/restore/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/recycle-bin/restore/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "recycle-bin",
+                                "restore",
+                                ":id"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /recycle-bin/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/recycle-bin/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "recycle-bin",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TimeTableController",
+            "item": [
+                {
+                    "name": "POST /time-tables/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "add"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "GET /time-tables/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/pagination",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "pagination"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /time-tables/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /time-tables/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "update",
+                                ":id"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "GET /time-tables/listing",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/listing",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "listing"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /time-tables/delete/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/time-tables/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "time-tables",
+                                "delete",
+                                ":id"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        }
+                    }
+                }
+            ]
         }
     ]
 }

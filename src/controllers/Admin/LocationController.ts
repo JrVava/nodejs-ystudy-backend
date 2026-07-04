@@ -28,7 +28,7 @@ export class LocationController {
             const locationDB = new QueryBuilder<Location>("locations");
 
             // Check if slug already exists
-            const existingLocation = await locationDB.findOne({ slug: decryptedBody.slug });
+            const existingLocation = await locationDB.findOne({ slug: decryptedBody.slug, isDeleted: { $ne: true } });
             if (existingLocation) {
                 throw new HttpError(400, "Location with this slug already exists");
             }
@@ -71,7 +71,7 @@ export class LocationController {
         try {
             const locationDB = new QueryBuilder<Location>("locations");
 
-            const results = await locationDB.paginate({}, Number(page), Number(limit), { createdAt: -1 });
+            const results = await locationDB.paginate({ isDeleted: { $ne: true } }, Number(page), Number(limit), { createdAt: -1 });
 
             return {
                 data: encrypt({
@@ -102,7 +102,7 @@ export class LocationController {
         try {
             const locationDB = new QueryBuilder<Location>("locations");
 
-            const locations = await locationDB.find({ status: true }, {
+            const locations = await locationDB.find({ status: true, isDeleted: { $ne: true } }, {
                 projection: {
                     title: 1,
                     slug: 1
@@ -141,7 +141,7 @@ export class LocationController {
                 throw new HttpError(400, "Invalid location ID format");
             }
 
-            const location = await locationDB.findOne({ _id: objId });
+            const location = await locationDB.findOne({ _id: objId, isDeleted: { $ne: true } });
             if (!location) {
                 throw new HttpError(404, "Location not found");
             }
@@ -182,7 +182,7 @@ export class LocationController {
             }
 
             if (decryptedBody.slug) {
-                const existingLocation = await locationDB.findOne({ slug: decryptedBody.slug });
+                const existingLocation = await locationDB.findOne({ slug: decryptedBody.slug, isDeleted: { $ne: true } });
                 if (existingLocation && existingLocation._id?.toString() !== id) {
                     throw new HttpError(400, "Location with this slug already exists");
                 }
@@ -195,7 +195,7 @@ export class LocationController {
                 updateFields.image = new ObjectId(updateFields.image);
             }
 
-            const result = await locationDB.updateOne({ _id: objId }, { $set: updateFields });
+            const result = await locationDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Location not found");
@@ -226,9 +226,12 @@ export class LocationController {
                 throw new HttpError(400, "Invalid location ID format");
             }
 
-            const result = await locationDB.deleteById(objId);
+            const result = await locationDB.updateOne(
+                { _id: objId, isDeleted: { $ne: true } },
+                { $set: { isDeleted: true, updatedAt: new Date() } }
+            );
 
-            if (!result || result.deletedCount === 0) {
+            if (result.matchedCount === 0) {
                 throw new HttpError(404, "Location not found");
             }
 

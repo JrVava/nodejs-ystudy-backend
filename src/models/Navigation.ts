@@ -7,6 +7,7 @@ export interface Navigation {
     componentName: string;
     parentId: ObjectId | null;
     position: number;
+    isDeleted?: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

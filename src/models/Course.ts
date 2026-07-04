@@ -16,6 +16,7 @@ export interface Course {
     availableCourses?: ObjectId[] | null;
     locations?: ObjectId[] | null;
     relatedCourses?: ObjectId[] | null;
+    isDeleted?: boolean;
     status?: boolean;
     createdAt: Date;
     updatedAt: Date;

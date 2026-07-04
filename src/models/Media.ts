@@ -13,6 +13,6 @@ export interface Media {
   title?: string;
   caption?: string;
   description?: string;
-
+  isDeleted?: boolean;
   createdAt: Date;
 }

@@ -15,7 +15,7 @@ export class NavigationController {
     async getAllPages() {
         try {
             const qb = new QueryBuilder<Navigation>("navigations");
-            const pages = await qb.find();
+            const pages = await qb.find({ isDeleted: { $ne: true } });
             const formattedPages = pages.map(p => ({
                 ...p,
                 _id: p._id!.toString(),
@@ -37,7 +37,7 @@ export class NavigationController {
     async getFlatPages() {
         try {
             const qb = new QueryBuilder<Navigation>("navigations");
-            const pages = await qb.find({}, { sort: { position: 1 } });
+            const pages = await qb.find({ isDeleted: { $ne: true } }, { sort: { position: 1 } });
             return {
                 data: encrypt({
                     success: true,
@@ -128,7 +128,7 @@ export class NavigationController {
 
                 return {
                     updateOne: {
-                        filter: { _id: new ObjectId(item.id) },
+                        filter: { _id: new ObjectId(item.id), isDeleted: { $ne: true } },
                         update: {
                             $set: {
                                 parentId: parsedItemParentId,
@@ -164,7 +164,7 @@ export class NavigationController {
             const { slug, pageName, componentName, parentId } = decryptedBody;
 
             if (slug) {
-                const existingPage = await qb.findOne({ slug, _id: { $ne: new ObjectId(id) } });
+                const existingPage = await qb.findOne({ slug, _id: { $ne: new ObjectId(id) }, isDeleted: { $ne: true } });
                 if (existingPage) {
                     throw new HttpError(400, "Slug already exists");
                 }
@@ -189,8 +189,8 @@ export class NavigationController {
                 updateData.parentId = parsedParentId;
             }
 
-            await qb.updateById(id, updateData);
-            const result = await qb.findById(id);
+            await qb.updateOne({ _id: new ObjectId(id), isDeleted: { $ne: true } }, updateData);
+            const result = await qb.findOne({ _id: new ObjectId(id), isDeleted: { $ne: true } });
 
             if (!result) {
                 throw new HttpError(404, "Page not found");
@@ -214,11 +214,11 @@ export class NavigationController {
             const qb = new QueryBuilder<Navigation>("navigations");
 
             const deleteChildren = async (parentId: ObjectId) => {
-                const children = await qb.find({ parentId });
+                const children = await qb.find({ parentId, isDeleted: { $ne: true } });
                 for (const child of children) {
                     if (child._id) {
                         await deleteChildren(child._id as ObjectId);
-                        await qb.deleteById(child._id as ObjectId);
+                        await qb.updateOne({ _id: child._id, isDeleted: { $ne: true } }, { $set: { isDeleted: true, updatedAt: new Date() } });
                     }
                 }
             };
@@ -226,8 +226,11 @@ export class NavigationController {
             const pageId = new ObjectId(id);
             await deleteChildren(pageId);
 
-            const result = await qb.deleteById(pageId);
-            if (!result || result.deletedCount === 0) {
+            const result = await qb.updateOne(
+                { _id: pageId, isDeleted: { $ne: true } },
+                { $set: { isDeleted: true, updatedAt: new Date() } }
+            );
+            if (!result || result.matchedCount === 0) {
                 throw new HttpError(404, "Page not found");
             }
 
