@@ -1285,9 +1285,9 @@
             "name": "Frontend",
             "item": [
                 {
-                    "name": "GET /frontend/banners/:slug",
+                    "name": "POST /frontend/banners",
                     "request": {
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1295,22 +1295,25 @@
                             }
                         ],
                         "url": {
-                            "raw": "{{base_url}}/frontend/banners/:slug",
+                            "raw": "{{base_url}}/frontend/banners",
                             "host": [
                                 "{{base_url}}"
                             ],
                             "path": [
                                 "frontend",
-                                "banners",
-                                ":slug"
+                                "banners"
                             ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"slug\\\": \\\"your-slug\\\"}\"\n}"
                         }
                     }
                 },
                 {
-                    "name": "GET /frontend/faqs/:slug",
+                    "name": "POST /frontend/faqs",
                     "request": {
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1318,15 +1321,44 @@
                             }
                         ],
                         "url": {
-                            "raw": "{{base_url}}/frontend/faqs/:slug",
+                            "raw": "{{base_url}}/frontend/faqs",
                             "host": [
                                 "{{base_url}}"
                             ],
                             "path": [
                                 "frontend",
-                                "faqs",
-                                ":slug"
+                                "faqs"
                             ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"slug\\\": \\\"your-slug\\\"}\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "POST /frontend/cms",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/cms",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "cms"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"slug\\\": \\\"your-slug\\\"}\"\n}"
                         }
                     }
                 }

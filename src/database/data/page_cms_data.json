@@ -711,7 +711,8 @@
                     "cost": "£0",
                     "description": "Upfront — apply through gov.uk"
                 }
-            ]
+            ],
+            "status": true
         },
         "section_9": {
             "badge": "Don't confuse these",
