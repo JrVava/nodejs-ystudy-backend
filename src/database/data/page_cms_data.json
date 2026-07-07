@@ -434,5 +434,574 @@
             "description": "Create a free account to save the courses you liked, track applications and pick up where you left off — no pressure to apply.",
             "status": true
         }
+    },
+    {
+        "page": "study-locations",
+        "section_2": {
+            "badge": "Study by city",
+            "title": "Start with the place you can actually attend.",
+            "description": "Location is not a detail for mature students. It decides your commute, timetable, costs and whether the course is realistic around work and family.",
+            "status": true
+        },
+        "section_3": {
+            "badge": "Choose subject",
+            "title": "Then choose the subject that fits your future.",
+            "description": "Use these subject groups as simple entry points into course results. No extra submenu, no duplicated pathways — just city, subject and relevant courses.",
+            "status": true
+        },
+        "section_4": {
+            "badge": "Course results",
+            "title": "Available courses by location.",
+            "description": "Use these as quick entry points into the full Search Degrees page. Each card uses the same course-card logic: photo, location, timetable, funding, value and clear action buttons.",
+            "status": true
+        },
+        "section_5": {
+            "badge": "Compare",
+            "title": "Compare locations quickly.",
+            "description": "One clean comparison only — no repeated city content. This helps students decide where to focus before speaking to an adviser.",
+            "status": true
+        },
+        "section_6": {
+            "title": "Funding may be available wherever you study.",
+            "description": "Eligible students may be able to access Tuition Fee Loan and Maintenance Loan support. YStudy can help you check your route before you apply.",
+            "card": [
+                {
+                    "title": "Tuition Fee Loan",
+                    "cost": "£9,790"
+                },
+                {
+                    "title": "Maintenance Loan",
+                    "cost": "Up to £14,135"
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "badge": "Student stories",
+            "title": "Adult learners choose locations for real-life reasons.",
+            "description": "Short, location-based stories help students imagine how study could fit around work, family and travel.",
+            "status": true
+        },
+        "section_8": {
+            "title": "Ready to choose your location?",
+            "description": "Search degrees, check funding and apply with free YStudy guidance.",
+            "status": true
+        }
+    },
+    {
+        "page": "foundation-year",
+        "section_2": {
+            "badge": "Level 6 with Year 0",
+            "title": "A degree route built for adults without A-levels.",
+            "description": "A Foundation year (Year 0) is a one-year preparation course attached to a full degree — the standard route into university for adults, fully funded by Student Finance England.",
+            "foundationTimeLine": [
+                {
+                    "title": "4 yrs",
+                    "description": "Year 0 + 3-yr degree"
+                },
+                {
+                    "title": "£9,790",
+                    "description": "Tuition / yr · funded"
+                },
+                {
+                    "title": "No A-levels",
+                    "description": "required to start"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "What it is",
+            "title": "What a Foundation Year actually is.",
+            "description": "The first year of a four-year integrated degree. It bridges school and university — giving you the academic skills, subject grounding and confidence to thrive on the main degree.",
+            "cards": [
+                {
+                    "title": "No A-levels required",
+                    "description": "The biggest barrier to university is removed. Work experience or simply being a motivated mature applicant can be enough."
+                },
+                {
+                    "title": "Full SFE funding from Year 0",
+                    "description": "Funded as part of your degree — Tuition Fee Loan, Maintenance Loan and any grants you qualify for, the same as Years 1–3."
+                },
+                {
+                    "title": "Same university, same degree",
+                    "description": "You progress straight into Year 1 without re-applying. Your final certificate is identical to a 3-year degree."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Available courses",
+            "title": "Foundation Year courses you can study.",
+            "description": "Every course below offers a Year 0 entry route, accepts adults without A-levels, and is fully Student Finance eligible.",
+            "status": true
+        },
+        "section_5": {
+            "badge": "You've found your route",
+            "title": "Here's how YStudy gets you there.",
+            "description": "You’ve picked the qualification — now four clear steps take you from “interested” to enrolled, with free support at every stage.",
+            "cards": [
+                {
+                    "numbers": "1",
+                    "title": "Check you fit",
+                    "description": "Confirm you're eligible and see your funding — tuition and maintenance — in about two minutes."
+                },
+                {
+                    "numbers": "2",
+                    "title": "Pick your course",
+                    "description": "Choose from the Foundation Year courses above — by subject, study mode and start date."
+                },
+                {
+                    "numbers": "3",
+                    "title": "Get application help",
+                    "description": "Use the free personal statement and CV tools, built for adult learners returning to study."
+                },
+                {
+                    "numbers": "4",
+                    "title": "Apply & enrol",
+                    "description": "We guide your UCAS or direct application all the way through to your confirmed start date."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "What you walk away with",
+            "title": "What certificate do I get?",
+            "description": "A Foundation year is part of the full degree. What you get depends on how far you progress — exit awards exist as a safety net.",
+            "cards": [
+                {
+                    "numbers": "0",
+                    "title": "Pass Year 0",
+                    "description": "A Certificate of Foundation Studies — recognition of completed Level 3 study."
+                },
+                {
+                    "numbers": "1",
+                    "title": "+ Year 1",
+                    "description": "Exit with a Certificate of Higher Education (CertHE) — a Level 4 qualification."
+                },
+                {
+                    "numbers": "2",
+                    "title": "+ Years 1 & 2",
+                    "description": "Exit with a Diploma of Higher Education (DipHE) — a Level 5 qualification."
+                },
+                {
+                    "numbers": "3",
+                    "title": "All 4 years",
+                    "description": "A full Bachelor's degree (BA/BSc) — identical to a 3-year degree. No “with foundation” on the certificate."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "badge": "Who is eligible",
+            "title": "Can you get in — and get funded?",
+            "description": "Two things decide it: whether you meet the academic entry route, and whether your residency status qualifies you for Student Finance. Here's both.",
+            "cardsTitle": "1 · Academic entry routes",
+            "cards": [
+                {
+                    "badge": "Standard route",
+                    "title": "With Level 3 qualifications",
+                    "points": [
+                        "Any Level 3 qualification — A-levels, BTEC, Access to HE, NVQ Level 3 — usually at any grade",
+                        "GCSE Maths & English at Grade 4/C (some providers accept lower with an assessment)",
+                        "A personal statement explaining your motivation and goals"
+                    ]
+                },
+                {
+                    "badge": "Mature / work-experience route",
+                    "title": "Without formal qualifications",
+                    "points": [
+                        "Substantial work experience — often 2+ years — can count in place of academic grades",
+                        "No A-levels required; this is the standard adult route into university",
+                        "Some courses ask for a short interview or written task instead"
+                    ]
+                },
+                {
+                    "badge": "Returning to study",
+                    "title": "Access to HE Diploma",
+                    "points": [
+                        "A one-year Level 3 course designed for adults — widely accepted for Foundation Year entry",
+                        "Often a strong route if you left school without A-levels but want structured preparation"
+                    ]
+                },
+                {
+                    "badge": "Plan for these",
+                    "title": "Common things to check first",
+                    "points": [
+                        "No GCSEs: most universities offer a free pre-entry assessment or short equivalency",
+                        "English not your first language: B1 (≈ IELTS 5.0–5.5) is the usual foundation entry minimum",
+                        "Previous higher education study: SFE funding may be affected by prior study (ELQ rules)"
+                    ]
+                }
+            ],
+            "tableTitle": "2 · Student Finance eligibility by status",
+            "tableBadge": "⚠ Eligibility also depends on your home address, ordinary residence, the 3-year residence rule, course designation, previous study and age. The table is a guide — use the eligibility checker or an adviser to confirm your case.",
+            "headers": {
+                "status_header": "Your status",
+                "likely_header": "Likely Student Finance position"
+            },
+            "row": [
+                {
+                    "status": {
+                        "badge": "Full support route",
+                        "title": "British / Irish citizen"
+                    },
+                    "likely": "Usually able to apply for both the Tuition Fee Loan and Maintenance Loan, if England residence and course rules are met."
+                },
+                {
+                    "status": {
+                        "badge": "Full support route",
+                        "title": "Settled status (ILR)",
+                        "class": "pill full"
+                    },
+                    "likely": "Usually treated as settled. Check your England home address and continuous residence before the course starts."
+                },
+                {
+                    "status": {
+                        "badge": "Full support route",
+                        "title": "EU settled status",
+                        "class": "pill full"
+                    },
+                    "likely": "Often a strong full-support route where you meet the residence, course and age requirements."
+                },
+                {
+                    "status": {
+                        "badge": "Protected status",
+                        "title": "Refugee / humanitarian protection",
+                        "class": "pill full"
+                    },
+                    "likely": "Refugees and those with humanitarian protection (and their family) are usually eligible for full support — confirm with an adviser."
+                },
+                {
+                    "status": {
+                        "badge": "Check needed",
+                        "title": "Pre-settled status",
+                        "class": "pill check"
+                    },
+                    "likely": "May qualify depending on residence history and other rules. Worth an eligibility check before you apply."
+                },
+                {
+                    "status": {
+                        "badge": "Check needed",
+                        "title": "Other visa / unsure",
+                        "class": "pill check"
+                    },
+                    "likely": "Many other routes exist but vary case by case. A free adviser call is the fastest way to know where you stand."
+                }
+            ],
+            "status": true
+        },
+        "section_8": {
+            "badge": "Funding · 2026/27",
+            "title": "Your full SFE entitlement during Year 0.",
+            "cards": [
+                {
+                    "cost": "£9,790",
+                    "description": "Tuition fee loan / yr — paid to your university"
+                },
+                {
+                    "cost": "£10,830",
+                    "description": "Maintenance loan / yr — outside London, away"
+                },
+                {
+                    "cost": "£14,135",
+                    "description": "Maintenance loan / yr — London, away"
+                },
+                {
+                    "cost": "£0",
+                    "description": "Upfront — apply through gov.uk"
+                }
+            ]
+        },
+        "section_9": {
+            "badge": "Don't confuse these",
+            "title": "Foundation Year vs Foundation Degree.",
+            "description": "They sound similar but are very different — getting it wrong can waste a year of funding entitlement.",
+            "cards": [
+                {
+                    "title": "🎓 Foundation Year (Year 0)",
+                    "questionAnswer": [
+                        {
+                            "question": "What it is",
+                            "answer": "The first year of a four-year integrated Bachelor's degree (1 + 3 years)."
+                        },
+                        {
+                            "question": "What you get",
+                            "answer": "A full Bachelor's degree after all 4 years — identical to a 3-year degree."
+                        },
+                        {
+                            "question": "Best for",
+                            "answer": "Adults without A-levels who want a full Bachelor's but need preparation first."
+                        }
+                    ]
+                },
+                {
+                    "title": "📜 Foundation Degree (FdA / FdSc)",
+                    "questionAnswer": [
+                        {
+                            "question": "What it is",
+                            "answer": "A standalone Level 5 qualification (≈ first two years of a Bachelor's). Vocational."
+                        },
+                        {
+                            "question": "What you get",
+                            "answer": "A Foundation Degree on its own — you can then “top up” to a full Bachelor's in one extra year."
+                        },
+                        {
+                            "question": "Best for",
+                            "answer": "People who want a work-relevant qualification with the option to top up later."
+                        }
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_10": {
+            "badge": "Real stories",
+            "title": "Adults who chose Foundation Year.",
+            "description": "Three people who started a degree without A-levels and used Year 0 to get there.",
+            "status": true
+        },
+        "section_11": {
+            "badge": "Common questions",
+            "title": "Foundation Year FAQ.",
+            "status": true
+        },
+        "section_12": {
+            "badge": "Not sure which qualification fits?",
+            "title": "Explore other routes into university.",
+            "description": "Foundation Year isn't the only way in. Compare the main qualification routes for adult learners — each is Student Finance eligible.",
+            "status": true
+        },
+        "section_13": {
+            "badge": "Free adviser support",
+            "title": "Not sure Foundation Year is right?",
+            "description": "Book a free call with a real adviser. We'll talk through your goals, funding and the best route for you — no pressure, no cost.",
+            "status": true
+        },
+        "section_14": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_15": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "hnd",
+        "section_2": {
+            "badge": "Top-up friendly",
+            "title": "HND — Higher National Diploma",
+            "description": "A two-year Level 5 qualification focused on practical higher education, often used as a stepping stone into the final year of a degree.",
+            "hndTimeLine": [
+                {
+                    "title": "2 years",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 5",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is HND?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "Higher National Diploma when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "Usually Level 3, HNC or relevant experience",
+                        "Some courses accept mature students with work history",
+                        "English level may be assessed"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Top-up to a full Bachelor’s degree",
+                        "Enter graduate-style roles",
+                        "Continue into specialist study"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Business manager",
+                        "IT support analyst",
+                        "Construction manager",
+                        "Health service coordinator"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "FAQ",
+            "title": "HND FAQ.",
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
     }
 ]
