@@ -15,25 +15,37 @@ export class RecycleBinController {
 
     @Get("/list")
     async listDeleted(
-        @QueryParam("collection") collectionName: string,
         @QueryParam("page") page: number = 1,
         @QueryParam("limit") limit: number = 10
     ) {
         try {
-            if (!collectionName || !allowedCollections.includes(collectionName)) {
-                throw new HttpError(400, "Invalid or missing collection name");
+            let allResults: any[] = [];
+
+            for (const collectionName of allowedCollections) {
+                const qb = new QueryBuilder<any>(collectionName);
+                const results = await qb.find({ isDeleted: true }, { sort: { updatedAt: -1 } });
+                const withCollection = results.map(r => ({ ...r, collectionName }));
+                allResults.push(...withCollection);
             }
 
-            const qb = new QueryBuilder<any>(collectionName);
-            const results = await qb.paginate({ isDeleted: true }, Number(page), Number(limit), { updatedAt: -1 });
+            // Sort all by updatedAt desc
+            allResults.sort((a, b) => {
+                const dateA = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+                const dateB = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+                return dateB - dateA;
+            });
+
+            const total = allResults.length;
+            const totalPages = Math.ceil(total / Number(limit));
+            const paginatedData = allResults.slice((Number(page) - 1) * Number(limit), Number(page) * Number(limit));
 
             return {
                 data: encrypt({
                     success: true,
-                    total: results.total,
-                    page: results.page,
-                    totalPages: results.totalPages,
-                    data: results.data.map(item => ({
+                    total: total,
+                    page: Number(page),
+                    totalPages: totalPages,
+                    data: paginatedData.map(item => ({
                         ...item,
                         _id: item._id?.toString()
                     }))
@@ -48,14 +60,9 @@ export class RecycleBinController {
 
     @Post("/restore/:id")
     async restoreRecord(
-        @Param("id") id: string,
-        @QueryParam("collection") collectionName: string
+        @Param("id") id: string
     ) {
         try {
-            if (!collectionName || !allowedCollections.includes(collectionName)) {
-                throw new HttpError(400, "Invalid or missing collection name");
-            }
-
             let objId: ObjectId;
             try {
                 objId = new ObjectId(id);
@@ -63,15 +70,22 @@ export class RecycleBinController {
                 throw new HttpError(400, "Invalid ID format");
             }
 
-            const qb = new QueryBuilder<any>(collectionName);
+            let restored = false;
 
-            // Using $unset instead of $set: false to cleanly remove the flag
-            const result = await qb.updateOne(
-                { _id: objId },
-                { $unset: { isDeleted: "" }, $set: { updatedAt: new Date() } }
-            );
+            for (const collectionName of allowedCollections) {
+                const qb = new QueryBuilder<any>(collectionName);
+                const result = await qb.updateOne(
+                    { _id: objId },
+                    { $unset: { isDeleted: "" }, $set: { updatedAt: new Date() } }
+                );
 
-            if (result.matchedCount === 0) {
+                if (result.matchedCount > 0) {
+                    restored = true;
+                    break;
+                }
+            }
+
+            if (!restored) {
                 throw new HttpError(404, "Record not found");
             }
 
@@ -90,14 +104,9 @@ export class RecycleBinController {
 
     @Delete("/delete/:id")
     async hardDeleteRecord(
-        @Param("id") id: string,
-        @QueryParam("collection") collectionName: string
+        @Param("id") id: string
     ) {
         try {
-            if (!collectionName || !allowedCollections.includes(collectionName)) {
-                throw new HttpError(400, "Invalid or missing collection name");
-            }
-
             let objId: ObjectId;
             try {
                 objId = new ObjectId(id);
@@ -105,10 +114,21 @@ export class RecycleBinController {
                 throw new HttpError(400, "Invalid ID format");
             }
 
-            const qb = new QueryBuilder<any>(collectionName);
-            const record = await qb.findOne({ _id: objId });
+            let record: any = null;
+            let collectionName = "";
+            let qb: QueryBuilder<any> | null = null;
 
-            if (!record) {
+            for (const c of allowedCollections) {
+                const tempQb = new QueryBuilder<any>(c);
+                record = await tempQb.findOne({ _id: objId });
+                if (record) {
+                    collectionName = c;
+                    qb = tempQb;
+                    break;
+                }
+            }
+
+            if (!record || !qb) {
                 throw new HttpError(404, "Record not found");
             }
 
@@ -138,11 +158,11 @@ export class RecycleBinController {
             } else if (collectionName === "navigations") {
                 // Delete children for navigation
                 const deleteChildren = async (parentId: ObjectId) => {
-                    const children = await qb.find({ parentId });
+                    const children = await qb!.find({ parentId });
                     for (const child of children) {
                         if (child._id) {
                             await deleteChildren(child._id as ObjectId);
-                            await qb.deleteById(child._id as ObjectId);
+                            await qb!.deleteById(child._id as ObjectId);
                         }
                     }
                 };
