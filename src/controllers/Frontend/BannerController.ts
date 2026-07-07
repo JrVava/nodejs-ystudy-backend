@@ -1,16 +1,23 @@
-import { JsonController, Get, Param, HttpError, Req } from "routing-controllers";
+import { JsonController, Post, Body, HttpError, Req } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
-import { encrypt } from "../../utils/crypto";
+import { encrypt, decrypt } from "../../utils/crypto";
 import { Banner } from "../../models/Banner";
 import { getFullImageUrl } from "../../utils/mediaUtils";
 
 @JsonController("/frontend/banners")
 export class FrontendBannerController {
 
-    @Get("/:slug")
-    async getBannerBySlug(@Param("slug") slug: string, @Req() req: any) {
+    @Post("/")
+    async getBannerBySlug(@Body() body: any, @Req() req: any) {
         try {
+            const decryptedBody = decrypt(body.data);
+            const slug = decryptedBody?.slug;
+
+            if (!slug) {
+                throw new HttpError(400, "Slug is required");
+            }
+
             const bannerDB = new QueryBuilder<Banner>("banners");
 
             // Assuming the internalName acts as the slug for banners
@@ -23,8 +30,10 @@ export class FrontendBannerController {
             const fullImageUrl = await getFullImageUrl(banner.background?.imageUrl, req);
 
             return {
-                success: true,
-                data: { ...banner, _id: banner._id?.toString(), fullImageUrl }
+                data: encrypt({
+                    success: true,
+                    data: { ...banner, _id: banner._id?.toString(), fullImageUrl }
+                })
             };
         } catch (error) {
             logger.error(`[FrontendBannerController:getBannerBySlug] Error occurred:`, error);
