@@ -8,5 +8,6 @@ export const allowedCollections = [
     "media",
     "folders",
     "subjects",
-    "qualifications"
+    "qualifications",
+    "modes"
 ];
