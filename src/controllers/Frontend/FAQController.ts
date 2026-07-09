@@ -15,7 +15,7 @@ export class FrontendFAQController {
             const faqDB = new QueryBuilder<FAQ>("faqs");
 
             // Find all active FAQs matching the slug
-            const faqs = await faqDB.find({ slug, status: true });
+            const faqs = await faqDB.find({ slug, status: true, isDeleted: { $ne: true } });
 
             if (!faqs || faqs.length === 0) {
                 throw new HttpError(404, "FAQ not found for the given slug");

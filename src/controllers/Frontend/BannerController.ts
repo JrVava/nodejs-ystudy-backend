@@ -21,7 +21,7 @@ export class FrontendBannerController {
             const bannerDB = new QueryBuilder<Banner>("banners");
 
             // Assuming the internalName acts as the slug for banners
-            const banner = await bannerDB.findOne({ internalName: slug, isActive: true });
+            const banner = await bannerDB.findOne({ internalName: slug, isActive: true, isDeleted: { $ne: true } });
 
             if (!banner) {
                 throw new HttpError(404, "Banner not found");
