@@ -14,7 +14,7 @@ export class FrontendNavigationController {
             const qb = new QueryBuilder<Navigation>("navigations");
             
             // We usually only want active navigations for the frontend
-            const pages = await qb.find({ status: true });
+            const pages = await qb.find({ status: true, slug: { $ne: 'home' } });
             
             const formattedPages = pages.map(p => ({
                 ...p,
