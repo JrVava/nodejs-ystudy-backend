@@ -9,5 +9,6 @@ export const allowedCollections = [
     "folders",
     "subjects",
     "qualifications",
-    "modes"
+    "modes",
+    "durations"
 ];
