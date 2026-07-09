@@ -10,5 +10,6 @@ export const allowedCollections = [
     "subjects",
     "qualifications",
     "modes",
-    "durations"
+    "durations",
+    "fundings"
 ];
