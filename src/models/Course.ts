@@ -7,7 +7,10 @@ export interface Course {
     slug: string;
     shortDescription?: string;
     longDescription?: string;
+    courseType: 'General' | 'Social';
     badges?: string[];
+    entryRequirement?: string[];
+    modeType?: ObjectId[] | null;
     salaryRange?: {
         from?: number;
         to?: number;

@@ -21,6 +21,10 @@ export class CourseController {
                 throw new HttpError(400, "Slug is required and cannot be empty");
             }
 
+            if (!decryptedBody.courseType || !['General', 'Social'].includes(decryptedBody.courseType)) {
+                throw new HttpError(400, "courseType is required and must be either 'General' or 'Social'");
+            }
+
             const courseDB = new QueryBuilder<Course>("courses");
 
             // Construct new course object
@@ -30,7 +34,9 @@ export class CourseController {
                 slug: decryptedBody.slug,
                 shortDescription: decryptedBody.shortDescription,
                 longDescription: decryptedBody.longDescription,
+                courseType: decryptedBody.courseType,
                 badges: Array.isArray(decryptedBody.badges) ? decryptedBody.badges : [],
+                entryRequirement: Array.isArray(decryptedBody.entryRequirement) ? decryptedBody.entryRequirement : [],
                 availableCourses: Array.isArray(decryptedBody.availableCourses)
                     ? decryptedBody.availableCourses.map((id: string) => new ObjectId(id))
                     : null,
@@ -39,6 +45,9 @@ export class CourseController {
                     : null,
                 locations: Array.isArray(decryptedBody.locations)
                     ? decryptedBody.locations.map((id: string) => new ObjectId(id))
+                    : null,
+                modeType: Array.isArray(decryptedBody.modeType)
+                    ? decryptedBody.modeType.map((id: string) => new ObjectId(id))
                     : null,
                 salaryRange: {
                     from: decryptedBody.salaryRange?.from || 0,
@@ -198,6 +207,10 @@ export class CourseController {
 
             if (Array.isArray(updateFields.locations)) {
                 updateFields.locations = updateFields.locations.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.modeType)) {
+                updateFields.modeType = updateFields.modeType.map((id: string) => new ObjectId(id));
             }
 
             const result = await courseDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });

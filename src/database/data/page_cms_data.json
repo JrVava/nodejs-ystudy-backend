@@ -1004,5 +1004,871 @@
             ],
             "status": true
         }
+    },
+    {
+        "page": "certificate-of-higher-education",
+        "section_2": {
+            "badge": "Degree Year 1",
+            "title": "CertHE — Certificate of Higher Education",
+            "description": "A Level 4 higher education qualification equal to the first year of a degree. Useful if you want a shorter recognised university route.",
+            "hndTimeLine": [
+                {
+                    "title": "1 year",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 4",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is CertHE?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "Certificate of Higher Education when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "Usually Level 3 or mature entry route",
+                        "Strong personal statement helps",
+                        "Some providers assess English and academic writing"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Progress into Year 2 of a degree where accepted",
+                        "Use it as an exit award",
+                        "Return later to continue study"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Team leader",
+                        "Care coordinator",
+                        "Admin officer",
+                        "Junior business role"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "masters-degree",
+        "section_2": {
+            "badge": "Postgraduate",
+            "title": "Master's Degree",
+            "description": "A postgraduate qualification for graduates or experienced professionals who want deeper expertise, promotion or a career change.",
+            "hndTimeLine": [
+                {
+                    "title": "1 year FT / 2 years PT",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 7",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is Master's Degree?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "MA / MSc / MBA when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "Usually Bachelor’s degree or strong professional experience",
+                        "English requirement may be higher",
+                        "Postgraduate finance is a different loan system"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Specialist career progression",
+                        "Professional conversion route",
+                        "Possible PhD or research route"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Project manager",
+                        "Consultant",
+                        "Senior analyst",
+                        "Specialist practitioner"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "hnc",
+        "section_2": {
+            "badge": "Practical route",
+            "title": "HNC — Higher National Certificate",
+            "description": "A one-year Level 4 qualification designed to build practical skills and a clear route into work, an HND or a degree.",
+            "hndTimeLine": [
+                {
+                    "title": "1 year",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 4",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is HNC?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "Higher National Certificate when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "Usually Level 3 or relevant work experience",
+                        "English and maths may be checked",
+                        "Mature students can often apply with CV experience"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Move into an HND Year 2",
+                        "Apply for Year 1 of a degree",
+                        "Use it for career progression"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Engineering technician",
+                        "Business administrator",
+                        "Computing support",
+                        "Construction supervisor"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "foundation-degree",
+        "section_2": {
+            "badge": "Work-focused",
+            "title": "Foundation Degree — FdA / FdSc",
+            "description": "A work-focused Level 5 qualification, usually equal to the first two years of a Bachelor’s degree, with the option to top up.",
+            "hndTimeLine": [
+                {
+                    "title": "2 year",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 5",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is Foundation Degree?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "Foundation Degree when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "Usually Level 3 or relevant experience",
+                        "Often suitable for employed adults",
+                        "Some courses include workplace learning"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Top-up to a full Bachelor’s degree",
+                        "Enter a professional pathway",
+                        "Use work experience alongside study"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Early years practitioner",
+                        "Business officer",
+                        "Health support lead",
+                        "Technical specialist"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "top-up-degree",
+        "section_2": {
+            "badge": "Final year",
+            "title": "Top-Up Degree",
+            "description": "A final-year route that converts an HND, Foundation Degree or equivalent Level 5 qualification into a full Bachelor’s degree.",
+            "hndTimeLine": [
+                {
+                    "title": "1 year",
+                    "description": "Typical duration"
+                },
+                {
+                    "title": "Level 6",
+                    "description": "Qualification level"
+                },
+                {
+                    "title": "Funding",
+                    "description": "Check SFE route"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Quick explanation",
+            "title": "What is Top-Up Degree?",
+            "description": "This page follows the Foundation Year structure: clear, practical and focused on what students need before applying.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "What you study",
+                    "description": "Subject-focused modules that build academic knowledge, practical skills and confidence for your next step."
+                },
+                {
+                    "number": "2",
+                    "title": "Who it suits",
+                    "description": "Mature students, career changers and learners who want a recognised route without overcomplicating the decision."
+                },
+                {
+                    "number": "3",
+                    "title": "What you receive",
+                    "description": "BA / BSc Honours when you complete the course, depending on provider rules and successful completion."
+                },
+                {
+                    "number": "4",
+                    "title": "Next step",
+                    "description": "Use the qualification to progress academically, apply for work or top up where the route allows."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Before you apply",
+            "title": "Entry requirements and progression.",
+            "description": "Most adult learners need a simple answer: can I enter, can I fund it, and where can it take me?",
+            "cards": [
+                {
+                    "badge": "Entry requirements",
+                    "title": "What universities usually check",
+                    "points": [
+                        "HND, Foundation Degree or Level 5 equivalent",
+                        "Relevant subject match required",
+                        "Previous credits must be checked"
+                    ]
+                },
+                {
+                    "badge": "Progression",
+                    "title": "Where this route can lead",
+                    "points": [
+                        "Graduate with a full Bachelor’s degree",
+                        "Apply for graduate roles",
+                        "Progress to postgraduate study"
+                    ]
+                },
+                {
+                    "badge": "Career options",
+                    "title": "Possible outcomes",
+                    "points": [
+                        "Graduate trainee",
+                        "Manager",
+                        "Business analyst",
+                        "Project coordinator"
+                    ]
+                },
+                {
+                    "badge": "Important",
+                    "title": "Check before committing",
+                    "points": [
+                        "Previous higher education study can affect funding.",
+                        "Part-time, online and weekend routes may be assessed differently.",
+                        "Use the eligibility checker before applying."
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Funding check",
+            "title": "Can Student Finance support this route?",
+            "cards": [
+                {
+                    "title": "Tuition",
+                    "description": "May be covered if the course is designated."
+                },
+                {
+                    "title": "Living costs",
+                    "description": "Depends on mode, intensity, residence and course type."
+                },
+                {
+                    "title": "Previous study",
+                    "description": "Must be checked before applying."
+                },
+                {
+                    "title": "Adviser",
+                    "description": "Free eligibility review before submission."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Not sure if this is your best route?",
+            "description": "Speak with YStudy before applying. We can check your qualification, funding route and course options.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "study-subjects"
+    },
+    {
+        "page": "study-routes"
     }
 ]
