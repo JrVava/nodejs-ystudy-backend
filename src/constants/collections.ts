@@ -7,5 +7,6 @@ export const allowedCollections = [
     "navigations",
     "media",
     "folders",
-    "subjects"
+    "subjects",
+    "qualifications"
 ];
