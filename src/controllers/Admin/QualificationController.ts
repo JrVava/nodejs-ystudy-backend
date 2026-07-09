@@ -82,6 +82,36 @@ export class QualificationController {
         }
     }
 
+    @Get("/list")
+    async getAllQualifications() {
+        try {
+            const qualificationsDB = new QueryBuilder<Qualification>("qualifications");
+
+            const qualifications = await qualificationsDB.find({ status: true, isDeleted: { $ne: true } }, {
+                projection: {
+                    title: 1
+                }
+            });
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: qualifications.map((q: any) => ({
+                        _id: q._id?.toString(),
+                        title: q.title,
+                        status: q.status
+                    }))
+                })
+            };
+        } catch (error: any) {
+            logger.error(`[QualificationController:getAllQualifications] Error occurred:`, error);
+            if (error instanceof HttpError) {
+                throw error;
+            }
+            throw new HttpError(500, error.message || "Internal server error");
+        }
+    }
+
     @Get("/edit/:id")
     async getQualificationById(@Param("id") id: string) {
         try {
