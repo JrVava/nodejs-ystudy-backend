@@ -6,5 +6,6 @@ export const allowedCollections = [
     "locations",
     "navigations",
     "media",
-    "folders"
+    "folders",
+    "subjects"
 ];
