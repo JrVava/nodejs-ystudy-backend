@@ -25,7 +25,7 @@ export interface Banner {
     };
 
     rightCard: {
-        layoutType: 'stacked-cards' | 'stats-highlight' | 'grid-2x2';
+        layoutType: 'stacked-cards' | 'stats-highlight' | 'grid-2x2' | 'list-items' | 'list-items';
         title?: string;
         description?: string;
         mainValue?: string;
