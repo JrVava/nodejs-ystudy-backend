@@ -13,9 +13,8 @@ export class FrontendCmsController {
             const decryptedBody = decrypt(body.data);
             const slug = decryptedBody?.slug;
             const qb = new QueryBuilder<any>("page_cms_data");
-
             // Querying by page (slug) and checking top-level status
-            const page = await qb.findOne({ page: slug, status: true });
+            const page = await qb.findOne({ page: slug, isDeleted: { $ne: true } });
 
             if (!page) {
                 throw new HttpError(404, "Page not found or is inactive");

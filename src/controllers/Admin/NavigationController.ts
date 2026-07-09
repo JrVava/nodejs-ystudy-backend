@@ -2,6 +2,7 @@ import { JsonController, Get, Put, Delete, Body, Param, HttpError, UseBefore } f
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { ObjectId } from "mongodb";
 import { Navigation } from "../../models/Navigation";
+import { Course } from "../../models/Course";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
@@ -15,7 +16,7 @@ export class NavigationController {
     async getAllPages() {
         try {
             const qb = new QueryBuilder<Navigation>("navigations");
-            const pages = await qb.find({ isDeleted: { $ne: true } });
+            const pages = await qb.find({ isDeleted: { $ne: true }, slug: { $ne: 'home' } });
             const formattedPages = pages.map(p => ({
                 ...p,
                 _id: p._id!.toString(),
@@ -37,7 +38,7 @@ export class NavigationController {
     async getFlatPages() {
         try {
             const qb = new QueryBuilder<Navigation>("navigations");
-            const pages = await qb.find({ isDeleted: { $ne: true } }, { sort: { position: 1 } });
+            const pages = await qb.find({ isDeleted: { $ne: true }, slug: { $ne: 'home' } }, { sort: { position: 1 } });
             return {
                 data: encrypt({
                     success: true,
@@ -50,6 +51,40 @@ export class NavigationController {
             };
         } catch (error) {
             logger.error(`[NavigationController:getFlatPages] Error occurred:`, error);
+            throw error;
+        }
+    }
+
+    @Get("/allInOne")
+    async getAllInOne() {
+        try {
+            const navQb = new QueryBuilder<Navigation>("navigations");
+            const courseQb = new QueryBuilder<Course>("courses");
+
+            const pages = await navQb.find({ isDeleted: { $ne: true } });
+            const courses = await courseQb.find({ isDeleted: { $ne: true } });
+
+            const combined = [
+                ...pages.map(p => ({
+                    name: p.pageName,
+                    slug: p.slug,
+                    type: 'page'
+                })),
+                ...courses.map(c => ({
+                    name: c.title,
+                    slug: c.slug,
+                    type: 'course'
+                }))
+            ];
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: combined
+                })
+            };
+        } catch (error) {
+            logger.error(`[NavigationController:getAllInOne] Error occurred:`, error);
             throw error;
         }
     }
