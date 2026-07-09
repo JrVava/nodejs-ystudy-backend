@@ -1361,6 +1361,91 @@
                             "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"slug\\\": \\\"your-slug\\\"}\"\n}"
                         }
                     }
+                },
+                {
+                    "name": "GET /frontend/subject",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/subject",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "subject"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /frontend/fundings",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/fundings",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "fundings"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /frontend/durations",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/durations",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "durations"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /frontend/qualifications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/qualifications",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "qualifications"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /frontend/modes",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/modes",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "modes"
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -1588,6 +1673,696 @@
                         "body": {
                             "mode": "raw",
                             "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SubjectController",
+            "item": [
+                {
+                    "name": "POST /subjects/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/subjects/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /subjects/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/subjects/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /subjects/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/subjects/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /subjects/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/subjects/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /subjects/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/subjects/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /subjects/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/subjects/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "subjects",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "FundingController",
+            "item": [
+                {
+                    "name": "POST /fundings/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/fundings/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /fundings/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/fundings/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /fundings/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/fundings/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /fundings/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/fundings/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /fundings/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/fundings/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /fundings/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/fundings/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "fundings",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DurationController",
+            "item": [
+                {
+                    "name": "POST /durations/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/durations/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /durations/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/durations/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /durations/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/durations/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /durations/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/durations/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /durations/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/durations/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /durations/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/durations/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "durations",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "QualificationController",
+            "item": [
+                {
+                    "name": "POST /qualifications/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /qualifications/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /qualifications/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /qualifications/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /qualifications/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /qualifications/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/qualifications/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "qualifications",
+                                "delete",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ModeController",
+            "item": [
+                {
+                    "name": "POST /modes/add",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/modes/add",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "add"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /modes/pagination",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/modes/pagination?page=1&limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "pagination"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /modes/list",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/modes/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "list"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "GET /modes/edit/:id",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/modes/edit/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "edit",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "POST /modes/update/:id",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/modes/update/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "update",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE /modes/delete/:id",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/modes/delete/:id",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "modes",
+                                "delete",
+                                ":id"
+                            ]
                         }
                     }
                 }
