@@ -28,15 +28,18 @@ export const populateImages = async (obj: any, req: any): Promise<any> => {
     }
 
     const result: any = {};
-    for (const key of Object.keys(obj)) {
-        if (key === 'image' && obj[key]) {
-            result[key] = obj[key];
-            result['fullImageUrl'] = await getFullImageUrl(obj[key], req);
-        } else if (typeof obj[key] === 'object') {
-            result[key] = await populateImages(obj[key], req);
+    const entries = Object.entries(obj);
+    
+    await Promise.all(entries.map(async ([key, value]) => {
+        if (key === 'image' && value) {
+            result[key] = value;
+            result['fullImageUrl'] = await getFullImageUrl(value as string | ObjectId, req);
+        } else if (typeof value === 'object') {
+            result[key] = await populateImages(value, req);
         } else {
-            result[key] = obj[key];
+            result[key] = value;
         }
-    }
+    }));
+    
     return result;
 };
