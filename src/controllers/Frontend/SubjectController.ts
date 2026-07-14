@@ -1,30 +1,44 @@
-import { JsonController, Get, HttpError } from "routing-controllers";
+import { JsonController, Get, HttpError, Req } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
 import { encrypt } from "../../utils/crypto";
 import { Subject } from "../../models/Subject";
+import { getFullImageUrl } from "../../utils/mediaUtils";
 
 @JsonController("/frontend/subject")
 export class FrontendSubjectController {
 
     @Get("/")
-    async getAllSubjects() {
+    async getAllSubjects(@Req() req: any) {
         try {
             const subjectDB = new QueryBuilder<Subject>("subjects");
 
             const subjects = await subjectDB.find({ status: true, isDeleted: { $ne: true } }, {
                 projection: {
-                    title: 1
+                    createdAt: 0,
+                    updatedAt: 0,
+                    isDeleted: 0
                 }
             });
+
+            const data = await Promise.all(subjects.map(async (s) => {
+                const mapped: any = {
+                    ...s,
+                    _id: s._id?.toString()
+                };
+
+                if (s.image) {
+                    mapped.image = s.image.toString();
+                    mapped.fullImageUrl = await getFullImageUrl(s.image, req);
+                }
+
+                return mapped;
+            }));
 
             return {
                 data: encrypt({
                     success: true,
-                    data: subjects.map(s => ({
-                        _id: s._id?.toString(),
-                        title: s.title
-                    }))
+                    data
                 })
             };
         } catch (error) {

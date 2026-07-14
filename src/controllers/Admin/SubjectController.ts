@@ -1,10 +1,11 @@
-import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete } from "routing-controllers";
+import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete, Req } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import { Subject } from "../../models/Subject";
 import { ObjectId } from "mongodb";
+import { getFullImageUrl } from "../../utils/mediaUtils";
 
 @JsonController("/subjects")
 @UseBefore(AdminMiddleware)
@@ -25,6 +26,10 @@ export class SubjectController {
             // Construct new subject object
             const newSubject: Subject = {
                 title: decryptedBody.title,
+                badge: decryptedBody.badge,
+                description: decryptedBody.description,
+                image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
+                tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -113,7 +118,7 @@ export class SubjectController {
     }
 
     @Get("/edit/:id")
-    async getSubjectById(@Param("id") id: string) {
+    async getSubjectById(@Param("id") id: string, @Req() req: any) {
         try {
             const subjectDB = new QueryBuilder<Subject>("subjects");
 
@@ -129,12 +134,16 @@ export class SubjectController {
                 throw new HttpError(404, "Subject not found");
             }
 
+            const fullImageUrl = subject.image ? await getFullImageUrl(subject.image, req) : null;
+
             return {
                 data: encrypt({
                     success: true,
                     data: {
                         ...subject,
-                        _id: subject._id?.toString()
+                        _id: subject._id?.toString(),
+                        image: subject.image?.toString(),
+                        fullImageUrl
                     }
                 })
             };
@@ -163,6 +172,10 @@ export class SubjectController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
+
+            if (updateFields.image) {
+                updateFields.image = new ObjectId(updateFields.image);
+            }
 
             const result = await subjectDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 

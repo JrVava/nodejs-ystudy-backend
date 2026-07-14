@@ -6,6 +6,9 @@ export interface Location {
     slug: string;
     short_description: string;
     long_description: string;
+    badge?: string;
+    description?: string;
+    tags?: string[];
     image?: ObjectId | null; // ObjectId of media collection
     status?: boolean;
     isDeleted?: boolean;
