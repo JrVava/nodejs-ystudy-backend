@@ -39,6 +39,9 @@ export class LocationController {
                 slug: decryptedBody.slug,
                 short_description: decryptedBody.short_description,
                 long_description: decryptedBody.long_description,
+                badge: decryptedBody.badge,
+                description: decryptedBody.description,
+                tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
@@ -82,6 +85,7 @@ export class LocationController {
                     data: results.data.map(l => ({
                         _id: l._id?.toString(),
                         title: l.title,
+                        slug: l.slug,
                         status: l.status,
                         createdAt: l.createdAt,
                         updatedAt: l.updatedAt

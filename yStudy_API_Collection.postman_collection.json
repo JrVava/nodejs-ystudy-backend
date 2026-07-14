@@ -367,7 +367,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/location/add",
@@ -455,7 +455,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/location/update/:id",
@@ -1693,7 +1693,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/subjects/add",
@@ -1781,7 +1781,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/subjects/update/:id",
@@ -2107,7 +2107,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/qualifications/add",
@@ -2195,7 +2195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+                            "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"title\\\": \\\"your-title\\\", \\\"badge\\\": \\\"your-badge\\\", \\\"description\\\": \\\"your-description\\\", \\\"image\\\": \\\"media_object_id\\\", \\\"tags\\\": [\\\"tag1\\\", \\\"tag2\\\"]}\"\n}"
                         },
                         "url": {
                             "raw": "{{base_url}}/qualifications/update/:id",

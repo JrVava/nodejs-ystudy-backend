@@ -1,10 +1,11 @@
-import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete } from "routing-controllers";
+import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete, Req } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import { Qualification } from "../../models/Qualification";
 import { ObjectId } from "mongodb";
+import { getFullImageUrl } from "../../utils/mediaUtils";
 
 @JsonController("/qualifications")
 @UseBefore(AdminMiddleware)
@@ -25,6 +26,10 @@ export class QualificationController {
             // Construct new qualification object
             const newQualification: Qualification = {
                 title: decryptedBody.title,
+                badge: decryptedBody.badge,
+                description: decryptedBody.description,
+                image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
+                tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -113,7 +118,7 @@ export class QualificationController {
     }
 
     @Get("/edit/:id")
-    async getQualificationById(@Param("id") id: string) {
+    async getQualificationById(@Param("id") id: string, @Req() req: any) {
         try {
             const qualificationDB = new QueryBuilder<Qualification>("qualifications");
 
@@ -129,12 +134,16 @@ export class QualificationController {
                 throw new HttpError(404, "Qualification not found");
             }
 
+            const fullImageUrl = qualification.image ? await getFullImageUrl(qualification.image, req) : null;
+
             return {
                 data: encrypt({
                     success: true,
                     data: {
                         ...qualification,
-                        _id: qualification._id?.toString()
+                        _id: qualification._id?.toString(),
+                        image: qualification.image?.toString(),
+                        fullImageUrl
                     }
                 })
             };
@@ -163,6 +172,10 @@ export class QualificationController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
+
+            if (updateFields.image) {
+                updateFields.image = new ObjectId(updateFields.image);
+            }
 
             const result = await qualificationDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
