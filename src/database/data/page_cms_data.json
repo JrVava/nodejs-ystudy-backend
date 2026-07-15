@@ -1867,6 +1867,17 @@
     },
     {
         "page": "study-subjects",
+        "secion_1": {
+            "title": "Degrees",
+            "description": "Search, shortlist and choose a realistic route.",
+            "status": true
+        },
+        "secion_2": {
+            "badge": "Find degrees",
+            "title": "Study subjects.",
+            "description": "Explore popular subjects for adult learners and career changers.",
+            "status": true
+        },
         "section_3": {
             "badge": "YStudy resource",
             "title": "Study Subjects",
@@ -2092,6 +2103,236 @@
         }
     },
     {
-        "page": "study-routes"
+        "page": "study-routes",
+        "secion_1": {
+            "title": "Degrees",
+            "description": "Search, shortlist and choose a realistic route.",
+            "status": true
+        },
+        "secion_2": {
+            "badge": "Find degrees",
+            "title": "Study routes.",
+            "description": "Compare foundation, HND, top-up, online and blended routes.",
+            "status": true
+        },
+        "section_3": {
+            "badge": "YStudy resource",
+            "title": "Study Routes",
+            "description": "Understand the route that fits your qualifications: foundation year, HND, top-up or master’s.",
+            "status": true
+        },
+        "section_4": {
+            "title": "Need help choosing the right route?",
+            "description": "Use Degree Match Finder or speak to a YStudy adviser before applying.",
+            "status": true
+        },
+        "section_5": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "badge": "Recommended routes",
+            "title": "Clear course signals.",
+            "description": "Use these signals to shortlist a realistic degree route, then ask an adviser to check funding and entry fit.",
+            "headers": {
+                "degree_header": "Degree route",
+                "best_header": "Best for",
+                "funding_header": "Funding",
+                "flexible_header": "Flexible study",
+                "salary_header": "Salary potential",
+                "verdict_header": "Verdict"
+            },
+            "rows": [
+                {
+                    "degree": "Business Management",
+                    "best": "Career changers",
+                    "funding": "✓",
+                    "flexible": "✓",
+                    "salary": "Medium–High",
+                    "verdict": "Best overall"
+                },
+                {
+                    "degree": "Cybersecurity",
+                    "best": "Digital careers",
+                    "funding": "✓",
+                    "flexible": "✓",
+                    "salary": "High",
+                    "verdict": "Highest salary"
+                },
+                {
+                    "degree": "Psychology",
+                    "best": "People-focused careers",
+                    "funding": "✓",
+                    "flexible": "×",
+                    "salary": "Medium",
+                    "verdict": "Popular route"
+                },
+                {
+                    "degree": "Online MSc",
+                    "best": "Working adults",
+                    "funding": "✓",
+                    "flexible": "✓",
+                    "salary": "Medium–High",
+                    "verdict": "Most flexible"
+                }
+            ],
+            "status": true
+        },
+        "section_8": {
+            "badge": "Ranking",
+            "title": "Top flexible degrees.",
+            "description": "Ranking components help users quickly understand the best route.",
+            "cards": [
+                {
+                    "position_number": "1",
+                    "title": "Business Management",
+                    "description": "Most flexible route for adults",
+                    "top_number": "92"
+                },
+                {
+                    "position_number": "2",
+                    "title": "Computing & Cybersecurity",
+                    "description": "Strong salary and demand",
+                    "top_number": "88"
+                },
+                {
+                    "position_number": "3",
+                    "title": "Health & Social Care",
+                    "description": "Good for community careers",
+                    "top_number": "84"
+                },
+                {
+                    "position_number": "4",
+                    "title": "Psychology",
+                    "description": "Popular career-changing subject",
+                    "top_number": "82"
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "badge": "Subjects",
+            "title": "What do you want to study?",
+            "description": "Explore the strongest subject routes for adult learners and check funding, salary and study mode before applying.",
+            "status": true
+        },
+        "section_10": {
+            "badge": "Starting university",
+            "title": "What to prepare before your course starts",
+            "description": "Not sure what you'll need for student life? Use a simple checklist to plan the essentials, avoid last-minute stress and feel ready before your first week.",
+            "image": "",
+            "status": true
+        },
+        "section_11": {
+            "badge": "Student and community",
+            "title": "Trust and SEO card families.",
+            "description": "Use these for community guides, student stories, adviser trust and testimonials.",
+            "status": true
+        },
+        "section_12": {
+            "badge": "Student Finance",
+            "title": "Check funding before you choose a course.",
+            "description": "Check Maintenance Loan, Tuition Fee Loan, grants, study mode risk and repayment basics before applying.",
+            "status": true
+        },
+        "section_13": {
+            "badge": "Important funding rule",
+            "title": "Study mode can affect Maintenance Loan.",
+            "description": "Online, distance-learning and weekend-only routes may not qualify for Maintenance Loan. Ask an adviser before choosing the course.",
+            "status": true
+        },
+        "section_14": {
+            "badge": "Comparison table",
+            "title": "Check funding routes.",
+            "description": "Clear decision signals for course shortlist, university comparison and funding guide pages.",
+            "headers": {
+                "route_header": "Route",
+                "funding_header": "Funding type",
+                "maintenance_header": "Maintenance Loan",
+                "best_header": "Best for",
+                "verdict_header": "Verdict"
+            },
+            "rows": [
+                {
+                    "route": "Campus / blended undergraduate",
+                    "funding": "Tuition + maintenance",
+                    "maintenance": "Usually stronger",
+                    "best": "Students needing living-cost support",
+                    "verdict": "Best overall route"
+                },
+                {
+                    "route": "Weekend-only",
+                    "funding": "Needs careful check",
+                    "maintenance": "Risk area",
+                    "best": "Working adults with limited time",
+                    "verdict": "Ask adviser first"
+                },
+                {
+                    "route": "Online / distance learning",
+                    "funding": "Tuition may apply",
+                    "maintenance": "Usually no maintenance",
+                    "best": "Remote learners",
+                    "verdict": "Good flexibility, less living-cost support"
+                },
+                {
+                    "route": "Postgraduate Master’s",
+                    "funding": "Postgraduate Loan",
+                    "maintenance": "Different system",
+                    "best": "Graduates and career changers",
+                    "verdict": "Check loan cap and tuition"
+                }
+            ],
+            "status": true
+        },
+        "section_15": {
+            "badge": "Stay in touch",
+            "title": "Your next step should feel organised.",
+            "description": "Create a free account to save progress, find your best degree and track applications.",
+            "status": true
+        }
     }
 ]

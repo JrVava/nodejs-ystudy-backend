@@ -211,7 +211,9 @@ export class ImageController {
   async listImages(
     @QueryParam("page") page: number = 1,
     @QueryParam("limit") limit: number = 10,
-    @QueryParam("folderId") folderId?: string
+    @QueryParam("folderId") folderId?: string,
+    @QueryParam("sort") sort: string = "desc",
+    @QueryParam("field") field: string = "createdAt"
   ) {
     try {
       const mediaDB = new QueryBuilder<Media>("media");
@@ -227,7 +229,9 @@ export class ImageController {
       }
 
       // Sort by newest first
-      const results = await mediaDB.paginate(filter, Number(page), Number(limit), { createdAt: -1 });
+      const sortOrder = sort.toLowerCase() === "asc" ? 1 : -1;
+      const sortOptions: any = { [field]: sortOrder };
+      const results = await mediaDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
       return {
         success: true,

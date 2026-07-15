@@ -13,12 +13,25 @@ export class CMSPageController {
     @Get("/")
     async getPages(
         @QueryParam("page") page: number = 1,
-        @QueryParam("limit") limit: number = 10
+        @QueryParam("limit") limit: number = 10,
+        @QueryParam("field") field: string = "createdAt",
+        @QueryParam("sort") sort: string = "desc",
+        @QueryParam("search") search?: string
     ) {
         try {
             const qb = new QueryBuilder<any>("page_cms_data");
 
-            const results = await qb.paginate({}, Number(page), Number(limit), { createdAt: -1 });
+            const filter: any = {};
+
+            if (search) {
+                filter.$or = [
+                    { page: { $regex: search, $options: "i" } }
+                ];
+            }
+
+            const sortOrder = sort.toLowerCase() === "asc" ? 1 : -1;
+            const sortOptions: any = { [field]: sortOrder };
+            const results = await qb.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
                 data: encrypt({

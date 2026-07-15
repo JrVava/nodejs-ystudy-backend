@@ -16,7 +16,9 @@ export class RecycleBinController {
     @Get("/list")
     async listDeleted(
         @QueryParam("page") page: number = 1,
-        @QueryParam("limit") limit: number = 10
+        @QueryParam("limit") limit: number = 10,
+        @QueryParam("field") field: string = "createdAt",
+        @QueryParam("sort") sort: string = "desc"
     ) {
         try {
             let allResults: any[] = [];
