@@ -78,12 +78,27 @@ export class CourseController {
     @Get("/pagination")
     async getCourses(
         @QueryParam("page") page: number = 1,
-        @QueryParam("limit") limit: number = 10
+        @QueryParam("limit") limit: number = 10,
+        @QueryParam("field") field: string = "createdAt",
+        @QueryParam("sort") sort: string = "desc",
+        @QueryParam("search") search?: string
     ) {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
 
-            const results = await courseDB.paginate({ isDeleted: { $ne: true } }, Number(page), Number(limit), { createdAt: -1 });
+            const filter: any = { isDeleted: { $ne: true } };
+
+            if (search) {
+                filter.$or = [
+                    { title: { $regex: search, $options: "i" } },
+                    { slug: { $regex: search, $options: "i" } }
+                ];
+            }
+
+            const sortOrder = sort.toLowerCase() === "asc" ? 1 : -1;
+            const sortOptions: any = { [field]: sortOrder };
+
+            const results = await courseDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
                 data: encrypt({
