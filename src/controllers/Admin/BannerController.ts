@@ -25,6 +25,7 @@ export class BannerController {
 
             const newBanner: Banner = {
                 internalName: decryptedBody.internalName,
+                bgColor: decryptedBody.bgColor,
                 background: { imageUrl: parsedImageUrl || null },
                 leftContent: decryptedBody.leftContent || { title: 'New Banner' },
                 rightCard: decryptedBody.rightCard || { layoutType: 'stacked-cards' },

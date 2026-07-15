@@ -11,6 +11,7 @@ export interface BannerItem {
 export interface Banner {
     _id?: ObjectId;
     internalName: string;
+    bgColor?: string;
 
     background?: {
         imageUrl?: string | ObjectId | null;
