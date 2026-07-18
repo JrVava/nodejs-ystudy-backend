@@ -75,10 +75,12 @@ export class BannerController {
             const results = await bannerDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
-                success: true,
-                ...results,
-                data: results.data.map(b => ({ ...b, _id: b._id?.toString() }))
-            };
+                            data: encrypt({
+                            success: true,
+                            ...results,
+                            data: results.data.map(b => ({ ...b, _id: b._id?.toString() }))
+                        })
+                        };
         } catch (error) {
             logger.error(`[BannerController:listBanners] Error occurred:`, error);
             if (error instanceof HttpError) throw error;

@@ -62,9 +62,11 @@ export class CMSPageController {
 
             if (!page) {
                 return {
-                    success: false,
-                    message: "Page not found"
-                };
+                                data: encrypt({
+                                    success: false,
+                                    message: "Page not found"
+                                })
+                            };
             }
 
             const populatedPage = await populateImages(page, req);
@@ -113,9 +115,11 @@ export class CMSPageController {
 
             if (!decryptedBody) {
                 return {
-                    success: false,
-                    message: "Invalid or empty payload"
-                };
+                                data: encrypt({
+                                    success: false,
+                                    message: "Invalid or empty payload"
+                                })
+                            };
             }
 
             // Extract the fields to update and update timestamp
@@ -126,9 +130,11 @@ export class CMSPageController {
 
             if (result.matchedCount === 0) {
                 return {
-                    success: false,
-                    message: "Page not found"
-                };
+                                data: encrypt({
+                                    success: false,
+                                    message: "Page not found"
+                                })
+                            };
             }
 
             return {

@@ -84,15 +84,17 @@ export class TimeTableController {
             const results = await timeTableDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
-                success: true,
-                ...results,
-                data: results.data.map((t: TimeTable) => ({
-                    _id: t._id?.toString(),
-                    title: t.title,
-                    createdAt: t.createdAt,
-                    updatedAt: t.updatedAt
-                }))
-            };
+                            data: encrypt({
+                            success: true,
+                            ...results,
+                            data: results.data.map((t: TimeTable) => ({
+                                _id: t._id?.toString(),
+                                title: t.title,
+                                createdAt: t.createdAt,
+                                updatedAt: t.updatedAt
+                            }))
+                        })
+                        };
         } catch (error) {
             logger.error(`[TimeTableController:listTimeTables] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
