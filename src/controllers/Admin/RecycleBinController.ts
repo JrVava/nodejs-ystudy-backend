@@ -13,28 +13,59 @@ import { allowedCollections } from "../../constants/collections";
 @UseBefore(AdminMiddleware)
 export class RecycleBinController {
 
+    @Get("/collections")
+    async getCollections() {
+        try {
+            const formattedCollections = allowedCollections.map(collection => {
+                const value = collection
+                    .replace(/([A-Z])/g, ' $1') // Handle camelCase
+                    .replace(/_/g, ' ') // Handle snake_case
+                    .trim()
+                    .split(/\s+/)
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                    .join(' ');
+                return { key: collection, value };
+            });
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: formattedCollections
+                })
+            };
+        } catch (error) {
+            logger.error(`[RecycleBinController:getCollections] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, "Internal server error");
+        }
+    }
+
     @Get("/list")
     async listDeleted(
         @QueryParam("page") page: number = 1,
         @QueryParam("limit") limit: number = 10,
-        @QueryParam("field") field: string = "createdAt",
-        @QueryParam("sort") sort: string = "desc"
+        @QueryParam("sort") sort: string = "desc",
+        @QueryParam("collection") collection?: string
     ) {
         try {
             let allResults: any[] = [];
 
-            for (const collectionName of allowedCollections) {
+            const collectionsToSearch = collection && allowedCollections.includes(collection)
+                ? [collection]
+                : allowedCollections;
+
+            for (const collectionName of collectionsToSearch) {
                 const qb = new QueryBuilder<any>(collectionName);
                 const results = await qb.find({ isDeleted: true }, { sort: { updatedAt: -1 } });
                 const withCollection = results.map(r => ({ ...r, collectionName }));
                 allResults.push(...withCollection);
             }
 
-            // Sort all by updatedAt desc
+            // Sort all by updatedAt based on the sort parameter
             allResults.sort((a, b) => {
                 const dateA = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
                 const dateB = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
-                return dateB - dateA;
+                return sort === "asc" ? dateA - dateB : dateB - dateA;
             });
 
             const total = allResults.length;
@@ -49,7 +80,8 @@ export class RecycleBinController {
                     totalPages: totalPages,
                     data: paginatedData.map(item => ({
                         ...item,
-                        _id: item._id?.toString()
+                        _id: item._id?.toString(),
+                        moduleName: item.collectionName
                     }))
                 })
             };
@@ -149,7 +181,7 @@ export class RecycleBinController {
                     if (fs.existsSync(targetDir)) {
                         fs.rmSync(targetDir, { recursive: true, force: true });
                     }
-                    
+
                     // Also delete all media DB records inside this folder
                     const mediaDB = new QueryBuilder<any>("media");
                     const medias = await mediaDB.find({ folderId: objId });
