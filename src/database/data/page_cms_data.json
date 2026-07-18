@@ -2334,5 +2334,492 @@
             "description": "Create a free account to save progress, find your best degree and track applications.",
             "status": true
         }
+    },
+    {
+        "page": "tools",
+        "section_2": {
+            "badge": "Free tools",
+            "title": "Pick the tool for your next step.",
+            "description": "Each one is free, takes minutes, and ends with a useful result — no sign-up needed.",
+            "status": true
+        },
+        "section_3": {
+            "title": "Need help?",
+            "description": "Book a free adviser call. We can review this tool result and help you choose the next step.",
+            "badge": "This page result can be saved and shared with an adviser.",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "degree-match-finder",
+        "section_2": {
+            "stepper": [
+                {
+                    "badge": "Question 1 of 12",
+                    "title": "What is your residency status in the UK?",
+                    "description": "This helps us include funding and route guidance.",
+                    "step": [
+                        {
+                            "title": "British citizen",
+                            "description": "Usually standard route",
+                            "icon": "🇬🇧"
+                        },
+                        {
+                            "title": "Settled status",
+                            "description": "EU settlement route",
+                            "icon": "✅"
+                        },
+                        {
+                            "title": "Pre-settled status",
+                            "description": "Needs careful review",
+                            "icon": "⏱️"
+                        },
+                        {
+                            "title": "ILR",
+                            "description": "Permanent residence route",
+                            "icon": "📋"
+                        },
+                        {
+                            "title": "Refugee/protection",
+                            "description": "Specific support route",
+                            "icon": "🛟"
+                        },
+                        {
+                            "title": "Not sure",
+                            "description": "We will check",
+                            "icon": "❓"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 2 of 12",
+                    "title": "What is your highest qualification right now?",
+                    "description": "Universities accept many entry routes — including none.",
+                    "step": [
+                        {
+                            "title": "No formal qualifications",
+                            "description": "Foundation Year or Access route",
+                            "icon": "🌱"
+                        },
+                        {
+                            "title": "GCSEs / O-levels only",
+                            "description": "Foundation Year or Access route",
+                            "icon": "📝"
+                        },
+                        {
+                            "title": "A-levels / equivalent",
+                            "description": "Direct entry to many degrees",
+                            "icon": "🎓"
+                        },
+                        {
+                            "title": "Foundation Year / Access Diploma",
+                            "description": "Direct entry to many degrees",
+                            "icon": "📚"
+                        },
+                        {
+                            "title": "HNC, HND or DipHE",
+                            "description": "Often allows top-up",
+                            "icon": "⭐"
+                        },
+                        {
+                            "title": "Bachelor's degree or higher",
+                            "description": "Postgraduate or conversion route",
+                            "icon": "🏆"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 3 of 12",
+                    "title": "Which subjects interest you most?",
+                    "description": "Pick whatever feels right — you can change this later.",
+                    "step": [
+                        {
+                            "title": "Business",
+                            "description": "Management, operations, HR",
+                            "icon": "💼"
+                        },
+                        {
+                            "title": "Computing",
+                            "description": "IT, software, digital",
+                            "icon": "💻"
+                        },
+                        {
+                            "title": "Health & Care",
+                            "description": "Care, public health, leadership",
+                            "icon": "🏥"
+                        },
+                        {
+                            "title": "Psychology",
+                            "description": "People, behaviour, research",
+                            "icon": "🧠"
+                        },
+                        {
+                            "title": "Law",
+                            "description": "Legal studies, compliance",
+                            "icon": "⚖️"
+                        },
+                        {
+                            "title": "Construction",
+                            "description": "Project and site management",
+                            "icon": "🏗️"
+                        },
+                        {
+                            "icon": "📣",
+                            "title": "Marketing",
+                            "description": "Digital, brand, content"
+                        },
+                        {
+                            "icon": "🌟",
+                            "title": "Something else",
+                            "description": "Show me all options"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 4 of 12",
+                    "title": "How would you like to study?",
+                    "description": "Choose the pattern that fits work and family life.",
+                    "step": [
+                        {
+                            "title": "Full-time on campus",
+                            "description": "Quickest route",
+                            "icon": "🏛️"
+                        },
+                        {
+                            "title": "Part-time on campus",
+                            "description": "Typical for working adults",
+                            "icon": "⏰"
+                        },
+                        {
+                            "title": "Online",
+                            "description": "Maximum flexibility",
+                            "icon": "💻"
+                        },
+                        {
+                            "title": "Blended",
+                            "description": "Online + campus/weekends",
+                            "icon": "🔀"
+                        },
+                        {
+                            "title": "Not sure yet",
+                            "description": "Show all options",
+                            "icon": "🤔"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 5 of 12",
+                    "title": "What salary level are you aiming for?",
+                    "description": "This helps suggest degree routes linked to career progression.",
+                    "step": [
+                        {
+                            "title": "£25k–£35k",
+                            "description": "First professional step",
+                            "icon": "🚀"
+                        },
+                        {
+                            "title": "£35k–£50k",
+                            "description": "Management or specialist route",
+                            "icon": "📈"
+                        },
+                        {
+                            "title": "£50k+",
+                            "description": "Leadership, tech, project or professional route",
+                            "icon": "🏆"
+                        },
+                        {
+                            "title": "Not sure",
+                            "description": "Show balanced options",
+                            "icon": "🤔"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 6 of 12",
+                    "title": "What is your work situation?",
+                    "description": "Work experience can strengthen applications.",
+                    "step": [
+                        {
+                            "title": "Working full-time",
+                            "description": "Need flexible route",
+                            "icon": "💼"
+                        },
+                        {
+                            "title": "Working part-time",
+                            "description": "Study around work",
+                            "icon": "🧾"
+                        },
+                        {
+                            "title": "Changing career",
+                            "description": "Need transition route",
+                            "icon": "🔄"
+                        },
+                        {
+                            "title": "Parent/carer",
+                            "description": "Need flexible support",
+                            "icon": "🏠"
+                        },
+                        {
+                            "title": "Not working right now",
+                            "description": "Need confidence and route advice",
+                            "icon": "🔍"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 7 of 12",
+                    "title": "What age range are you in?",
+                    "description": "YStudy is built for mature students and adults returning to education.",
+                    "step": [
+                        {
+                            "title": "18–20",
+                            "description": "Early adult route",
+                            "icon": "🌱"
+                        },
+                        {
+                            "title": "21–30",
+                            "description": "Mature student route",
+                            "icon": "🎯"
+                        },
+                        {
+                            "title": "31–40",
+                            "description": "Career progression route",
+                            "icon": "💼"
+                        },
+                        {
+                            "title": "41–50",
+                            "description": "Career change route",
+                            "icon": "🚀"
+                        },
+                        {
+                            "title": "51+",
+                            "description": "Adviser review recommended",
+                            "icon": "⭐"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 8 of 12",
+                    "title": "How confident is your English?",
+                    "description": "This is about interview confidence, not perfection.",
+                    "step": [
+                        {
+                            "title": "A1/A2",
+                            "description": "Speak to an adviser",
+                            "icon": "🌱"
+                        },
+                        {
+                            "title": "B1",
+                            "description": "Often enough for many foundation routes",
+                            "icon": "✅"
+                        },
+                        {
+                            "title": "B2",
+                            "description": "Likely interview confidence",
+                            "icon": "🎯"
+                        },
+                        {
+                            "title": "C1/C2",
+                            "description": "Advanced confidence",
+                            "icon": "🏆"
+                        },
+                        {
+                            "title": "Not sure",
+                            "description": "Take English checker",
+                            "icon": "🤔"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 9 of 12",
+                    "title": "Household income estimate?",
+                    "description": "Used only to estimate maintenance support.",
+                    "step": [
+                        {
+                            "title": "Under £25,000",
+                            "description": "Higher maintenance likely",
+                            "icon": "💷"
+                        },
+                        {
+                            "title": "£25,000–£45,000",
+                            "description": "Above-average maintenance",
+                            "icon": "💷"
+                        },
+                        {
+                            "title": "£45,000–£65,000",
+                            "description": "Reduced maintenance",
+                            "icon": "💷"
+                        },
+                        {
+                            "title": "Over £65,000",
+                            "description": "Minimum maintenance",
+                            "icon": "💷"
+                        },
+                        {
+                            "title": "Prefer not to say",
+                            "description": "Show broad range",
+                            "icon": "🤐"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 10 of 12",
+                    "title": "Are you changing career?",
+                    "description": "This helps shape your recommended route.",
+                    "step": [
+                        {
+                            "title": "Yes",
+                            "description": "I want a different career",
+                            "icon": "✅"
+                        },
+                        {
+                            "title": "Partly",
+                            "description": "I want progression",
+                            "icon": "📈"
+                        },
+                        {
+                            "title": "No",
+                            "description": "I want qualification in current field",
+                            "icon": "❌"
+                        },
+                        {
+                            "title": "Not sure",
+                            "description": "Help me decide",
+                            "icon": "🤔"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 11 of 12",
+                    "title": "Do you have children or caring responsibilities?",
+                    "description": "Some grants and flexible routes may be relevant.",
+                    "step": [
+                        {
+                            "title": "Yes",
+                            "description": "Parent/carer support may matter",
+                            "icon": "👨‍👩‍👧"
+                        },
+                        {
+                            "title": "No",
+                            "description": "Skip extra support",
+                            "icon": "❌"
+                        },
+                        {
+                            "title": "Prefer not to say",
+                            "description": "Keep it private",
+                            "icon": "🤔"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Final step",
+                    "title": "Where should we send your degree match?",
+                    "description": "Your result is ready. Enter your details to see the recommendation, save it to your dashboard and share it with an adviser.",
+                    "setp": []
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "YStudy",
+            "title": "Not sure what to do next?",
+            "description": "Start with a quick route check, then speak to a YStudy adviser before you apply."
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
     }
 ]

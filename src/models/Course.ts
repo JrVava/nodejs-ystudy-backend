@@ -18,6 +18,10 @@ export interface Course {
     careerOutcomeBadge?: string;
     availableCourses?: ObjectId[] | null;
     locations?: ObjectId[] | null;
+    subjects?: ObjectId[] | null;
+    qualifications?: ObjectId[] | null;
+    durations?: ObjectId[] | null;
+    fundings?: ObjectId[] | null;
     relatedCourses?: ObjectId[] | null;
     isDeleted?: boolean;
     status?: boolean;

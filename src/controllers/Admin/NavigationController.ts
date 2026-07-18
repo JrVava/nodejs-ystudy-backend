@@ -138,30 +138,31 @@ export class NavigationController {
     //     }
     // }
 
-    @Put("/reorder")
-    async reorderPages(@Body() body: any) {
-        try {
-            const decryptedBody = decrypt(body.data);
-            const qb = new QueryBuilder<Navigation>("navigations");
-            const { items } = decryptedBody;
+@Put("/reorder")
+async reorderPages(@Body() body: any) {
+    try {
+        const decryptedBody = decrypt(body.data);
+        const qb = new QueryBuilder<Navigation>("navigations");
+        const { items } = decryptedBody;
 
-            if (!items || !Array.isArray(items)) {
-                throw new HttpError(400, "Invalid items format");
+        if (!items || !Array.isArray(items)) {
+            throw new HttpError(400, "Invalid items format");
+        }
+
+        const bulkOps = items.map((item: any) => {
+            let parsedItemParentId = null;
+            if (item.parentId && item.parentId !== "null" && item.parentId !== "undefined" && item.parentId !== "") {
+                if (typeof item.parentId === 'object' && item.parentId.buffer && item.parentId.buffer.data) {
+                    parsedItemParentId = new ObjectId(Buffer.from(item.parentId.buffer.data));
+                } else if (ObjectId.isValid(item.parentId)) {
+                    parsedItemParentId = new ObjectId(item.parentId);
+                } else {
+                    throw new HttpError(400, `Invalid parentId format for item ${item.id}`);
+                }
             }
 
-            const bulkOps = items.map((item: any) => {
-                let parsedItemParentId = null;
-                if (item.parentId && item.parentId !== "null" && item.parentId !== "undefined" && item.parentId !== "") {
-                    if (typeof item.parentId === 'object' && item.parentId.buffer && item.parentId.buffer.data) {
-                        parsedItemParentId = new ObjectId(Buffer.from(item.parentId.buffer.data));
-                    } else if (ObjectId.isValid(item.parentId)) {
-                        parsedItemParentId = new ObjectId(item.parentId);
-                    } else {
-                        throw new HttpError(400, `Invalid parentId format for item ${item.id}`);
-                    }
-                }
-
-                return {
+            return {
+                data: encrypt({
                     updateOne: {
                         filter: { _id: new ObjectId(item.id), isDeleted: { $ne: true } },
                         update: {
@@ -172,112 +173,113 @@ export class NavigationController {
                             }
                         }
                     }
-                };
-            });
-
-            if (bulkOps.length > 0) {
-                await qb.bulkWrite(bulkOps);
-            }
-
-            return {
-                data: encrypt({
-                    success: true,
-                    message: "Pages reordered successfully"
                 })
             };
-        } catch (error) {
-            logger.error(`[NavigationController:reorderPages] Error occurred:`, error);
-            throw error;
+        });
+
+        if (bulkOps.length > 0) {
+            await qb.bulkWrite(bulkOps);
         }
+
+        return {
+            data: encrypt({
+                success: true,
+                message: "Pages reordered successfully"
+            })
+        };
+    } catch (error) {
+        logger.error(`[NavigationController:reorderPages] Error occurred:`, error);
+        throw error;
     }
+}
 
-    @Put("/update/:id")
-    async updatePage(@Param("id") id: string, @Body() body: any) {
-        try {
-            const decryptedBody = decrypt(body.data);
-            const qb = new QueryBuilder<Navigation>("navigations");
-            const { slug, pageName, componentName, parentId } = decryptedBody;
+@Put("/update/:id")
+async updatePage(@Param("id") id: string, @Body() body: any) {
+    try {
+        const decryptedBody = decrypt(body.data);
+        const qb = new QueryBuilder<Navigation>("navigations");
+        const { slug, pageName, componentName, parentId } = decryptedBody;
 
-            if (slug) {
-                const existingPage = await qb.findOne({ slug, _id: { $ne: new ObjectId(id) }, isDeleted: { $ne: true } });
-                if (existingPage) {
-                    throw new HttpError(400, "Slug already exists");
+        if (slug) {
+            const existingPage = await qb.findOne({ slug, _id: { $ne: new ObjectId(id) }, isDeleted: { $ne: true } });
+            if (existingPage) {
+                throw new HttpError(400, "Slug already exists");
+            }
+        }
+
+        const updateData: any = { updatedAt: new Date() };
+        if (slug) updateData.slug = slug;
+        if (pageName) updateData.pageName = pageName;
+        if (componentName) updateData.componentName = componentName;
+
+        if (parentId !== undefined) {
+            let parsedParentId = null;
+            if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
+                if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
+                    parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
+                } else if (ObjectId.isValid(parentId)) {
+                    parsedParentId = new ObjectId(parentId);
+                } else {
+                    throw new HttpError(400, "Invalid parentId format. Must be a valid ObjectId.");
                 }
             }
-
-            const updateData: any = { updatedAt: new Date() };
-            if (slug) updateData.slug = slug;
-            if (pageName) updateData.pageName = pageName;
-            if (componentName) updateData.componentName = componentName;
-
-            if (parentId !== undefined) {
-                let parsedParentId = null;
-                if (parentId && parentId !== "null" && parentId !== "undefined" && parentId !== "") {
-                    if (typeof parentId === 'object' && parentId.buffer && parentId.buffer.data) {
-                        parsedParentId = new ObjectId(Buffer.from(parentId.buffer.data));
-                    } else if (ObjectId.isValid(parentId)) {
-                        parsedParentId = new ObjectId(parentId);
-                    } else {
-                        throw new HttpError(400, "Invalid parentId format. Must be a valid ObjectId.");
-                    }
-                }
-                updateData.parentId = parsedParentId;
-            }
-
-            await qb.updateOne({ _id: new ObjectId(id), isDeleted: { $ne: true } }, updateData);
-            const result = await qb.findOne({ _id: new ObjectId(id), isDeleted: { $ne: true } });
-
-            if (!result) {
-                throw new HttpError(404, "Page not found");
-            }
-
-            return {
-                data: encrypt({
-                    success: true,
-                    data: result
-                })
-            };
-        } catch (error) {
-            logger.error(`[NavigationController:updatePage] Error occurred:`, error);
-            throw error;
+            updateData.parentId = parsedParentId;
         }
-    }
 
-    @Delete("/delete/:id")
-    async deletePage(@Param("id") id: string) {
-        try {
-            const qb = new QueryBuilder<Navigation>("navigations");
+        await qb.updateOne({ _id: new ObjectId(id), isDeleted: { $ne: true } }, updateData);
+        const result = await qb.findOne({ _id: new ObjectId(id), isDeleted: { $ne: true } });
 
-            const deleteChildren = async (parentId: ObjectId) => {
-                const children = await qb.find({ parentId, isDeleted: { $ne: true } });
-                for (const child of children) {
-                    if (child._id) {
-                        await deleteChildren(child._id as ObjectId);
-                        await qb.updateOne({ _id: child._id, isDeleted: { $ne: true } }, { $set: { isDeleted: true, updatedAt: new Date() } });
-                    }
-                }
-            };
-
-            const pageId = new ObjectId(id);
-            await deleteChildren(pageId);
-
-            const result = await qb.updateOne(
-                { _id: pageId, isDeleted: { $ne: true } },
-                { $set: { isDeleted: true, updatedAt: new Date() } }
-            );
-            if (!result || result.matchedCount === 0) {
-                throw new HttpError(404, "Page not found");
-            }
-
-            return {
-                data: encrypt({
-                    success: true,
-                    message: "Page deleted successfully"
-                })
-            };
-        } catch (error) {
-            logger.error(`[NavigationController:deletePage] Error occurred:`, error);
-            throw error;
+        if (!result) {
+            throw new HttpError(404, "Page not found");
         }
+
+        return {
+            data: encrypt({
+                success: true,
+                data: result
+            })
+        };
+    } catch (error) {
+        logger.error(`[NavigationController:updatePage] Error occurred:`, error);
+        throw error;
     }
+}
+
+@Delete("/delete/:id")
+async deletePage(@Param("id") id: string) {
+    try {
+        const qb = new QueryBuilder<Navigation>("navigations");
+
+        const deleteChildren = async (parentId: ObjectId) => {
+            const children = await qb.find({ parentId, isDeleted: { $ne: true } });
+            for (const child of children) {
+                if (child._id) {
+                    await deleteChildren(child._id as ObjectId);
+                    await qb.updateOne({ _id: child._id, isDeleted: { $ne: true } }, { $set: { isDeleted: true, updatedAt: new Date() } });
+                }
+            }
+        };
+
+        const pageId = new ObjectId(id);
+        await deleteChildren(pageId);
+
+        const result = await qb.updateOne(
+            { _id: pageId, isDeleted: { $ne: true } },
+            { $set: { isDeleted: true, updatedAt: new Date() } }
+        );
+        if (!result || result.matchedCount === 0) {
+            throw new HttpError(404, "Page not found");
+        }
+
+        return {
+            data: encrypt({
+                success: true,
+                message: "Page deleted successfully"
+            })
+        };
+    } catch (error) {
+        logger.error(`[NavigationController:deletePage] Error occurred:`, error);
+        throw error;
+    }
+}
 }
