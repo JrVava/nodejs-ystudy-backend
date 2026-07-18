@@ -2821,5 +2821,886 @@
             ],
             "status": true
         }
+    },
+    {
+        "page": "english-test",
+        "section_2": {
+            "status": true,
+            "badge": "Built for mature students",
+            "title": "Choose the right English check.",
+            "description": "Most students should start with B1 or B2. The result is not a rejection — it helps decide whether to apply now, choose a flexible route, or speak to an adviser before the interview.",
+            "card": {
+                "title": "This is not a rejection tool.",
+                "description": "English requirements vary by university, course and interview. Lower scores should not make a student self-reject.",
+                "cards": [
+                    "B1/B2: often enough to start exploring foundation-year and flexible routes.",
+                    "A1/A2 or unsure: speak to an adviser to identify realistic interviews and course options.",
+                    "Advanced: focus on choosing the right degree, funding and application route."
+                ]
+            },
+            "cards": [
+                {
+                    "badge": "B1",
+                    "title": "Intermediate interview check",
+                    "description": "For students who can handle everyday English and want to check simple interview, grammar and reading confidence.",
+                    "buttonName": "Start B1 test →",
+                    "questions": [
+                        {
+                            "question": "I ___ interested in studying Business Management.",
+                            "options": [
+                                "am",
+                                "is",
+                                "are",
+                                "be"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "She ___ to college twice a week.",
+                            "options": [
+                                "go",
+                                "goes",
+                                "going",
+                                "gone"
+                            ],
+                            "correct_answer": 1
+                        },
+                        {
+                            "question": "Choose the best sentence.",
+                            "options": [
+                                "I have five years of experience in retail.",
+                                "I has five years experience.",
+                                "I am five years experience.",
+                                "I experience five years."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “deadline” mean?",
+                            "options": [
+                                "A final date to complete something",
+                                "A place to study",
+                                "A type of loan",
+                                "A job title"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the correct question.",
+                            "options": [
+                                "Where you live?",
+                                "Where do you live?",
+                                "Where does you live?",
+                                "Where living you?"
+                            ],
+                            "correct_answer": 1
+                        },
+                        {
+                            "question": "I want to study because ___.",
+                            "options": [
+                                "I want improve my future",
+                                "I want to improve my future",
+                                "I wants improving future",
+                                "I future improve"
+                            ],
+                            "correct_answer": 1
+                        },
+                        {
+                            "question": "“The course includes lectures, workshops and assessments.” What does it include?",
+                            "options": [
+                                "Only exams",
+                                "Lectures, workshops and assessments",
+                                "Only online videos",
+                                "Only work placement"
+                            ],
+                            "correct_answer": 1
+                        },
+                        {
+                            "question": "Choose the polite interview answer.",
+                            "options": [
+                                "I do not know anything.",
+                                "I am interested and willing to learn.",
+                                "This is boring.",
+                                "I want money only."
+                            ],
+                            "correct_answer": 1
+                        },
+                        {
+                            "question": "I worked there ___ 2020 to 2024.",
+                            "options": [
+                                "from",
+                                "at",
+                                "on",
+                                "by"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What is “experience”?",
+                            "options": [
+                                "Something you have done or learned",
+                                "A university building",
+                                "A payment",
+                                "A test room"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best sentence.",
+                            "options": [
+                                "I can attend classes two days per week.",
+                                "I can attending classes.",
+                                "I can attends class.",
+                                "I can to attend class."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Applicants may be invited to an interview.” What may happen?",
+                            "options": [
+                                "They may have an interview",
+                                "They automatically fail",
+                                "They get funding immediately",
+                                "They must travel abroad"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "If I am accepted, I ___ start in September.",
+                            "options": [
+                                "will",
+                                "was",
+                                "did",
+                                "have"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best word: I am ___ for a new opportunity.",
+                            "options": [
+                                "looking",
+                                "look",
+                                "looked",
+                                "looks"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The opposite of “increase” is ___.",
+                            "options": [
+                                "reduce",
+                                "create",
+                                "arrive",
+                                "explain"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the correct form: My previous job ___ very busy.",
+                            "options": [
+                                "was",
+                                "were",
+                                "are",
+                                "be"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “evidence” mean?",
+                            "options": [
+                                "Documents or proof",
+                                "A subject name",
+                                "A room number",
+                                "A salary"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "I need help ___ my application.",
+                            "options": [
+                                "with",
+                                "to",
+                                "on",
+                                "for to"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best interview phrase.",
+                            "options": [
+                                "I have developed communication skills.",
+                                "I developing communication skill.",
+                                "I develop yesterday communication.",
+                                "I am communication."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Attendance is expected every week.” What does it mean?",
+                            "options": [
+                                "You should attend weekly",
+                                "You can attend once a year",
+                                "Attendance is not important",
+                                "Only online study is allowed"
+                            ],
+                            "correct_answer": 0
+                        }
+                    ]
+                },
+                {
+                    "badge": "B2",
+                    "title": "Upper-intermediate check",
+                    "description": "For students who can explain opinions, work experience and goals and want to check degree interview readiness.For students who can explain opinions, work experience and goals and want to check degree interview readiness.",
+                    "buttonName": "Start B2 test →",
+                    "questions": [
+                        {
+                            "question": "Choose the best sentence.",
+                            "options": [
+                                "Although I work full-time, I can organise my study schedule.",
+                                "Although I working full-time, I can organise.",
+                                "I can organise although full-time working.",
+                                "Although work full-time I organised."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The word “relevant” means ___.",
+                            "options": [
+                                "connected to the topic",
+                                "very expensive",
+                                "difficult to pronounce",
+                                "not allowed"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "If I had more time, I ___ more research before applying.",
+                            "options": [
+                                "would do",
+                                "will did",
+                                "do",
+                                "would done"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“The provider offers additional academic support during the first term.” What is offered?",
+                            "options": [
+                                "Extra study support",
+                                "A guaranteed job",
+                                "A rent discount",
+                                "A shorter course"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the most formal phrase.",
+                            "options": [
+                                "I would like to explain my motivation.",
+                                "I wanna say why.",
+                                "I tell you my reason.",
+                                "My reason is this yeah."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The course is suitable for students ___ have work experience.",
+                            "options": [
+                                "who",
+                                "which",
+                                "where",
+                                "when"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "I want to study business ___ it matches my management experience.",
+                            "options": [
+                                "because",
+                                "although",
+                                "unless",
+                                "despite"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “assessment” mean?",
+                            "options": [
+                                "A task used to judge learning",
+                                "A bank payment",
+                                "A class timetable",
+                                "A phone interview only"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best answer: “Why this course?”",
+                            "options": [
+                                "It links to my experience and future career goals.",
+                                "Because my friend said.",
+                                "I don’t know exactly.",
+                                "It is easy maybe."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Which sentence is clearest?",
+                            "options": [
+                                "I managed stock, trained new staff and solved customer issues.",
+                                "I do many things in job and stuff.",
+                                "I was doing working there things.",
+                                "My job is good."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The report must be submitted ___ Friday.",
+                            "options": [
+                                "by",
+                                "at",
+                                "in",
+                                "from"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Students are expected to analyse case studies.” What skill is needed?",
+                            "options": [
+                                "Understanding and explaining examples",
+                                "Only memorising names",
+                                "Driving to campus",
+                                "Paying fees"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the correct passive form.",
+                            "options": [
+                                "The application is reviewed by the admissions team.",
+                                "The application reviews by team.",
+                                "The application reviewed team.",
+                                "The application is review."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “eligible” mean?",
+                            "options": [
+                                "Meeting the conditions",
+                                "Being late",
+                                "Being older than 30",
+                                "Having a job only"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best sentence.",
+                            "options": [
+                                "My goal is to move into project coordination.",
+                                "My goal move project.",
+                                "I moving into goal project.",
+                                "Project is my goal move."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“However” is used to ___.",
+                            "options": [
+                                "show contrast",
+                                "give a date",
+                                "ask a question",
+                                "show ownership"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "I have been working in hospitality ___ six years.",
+                            "options": [
+                                "for",
+                                "since",
+                                "during",
+                                "from"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“The interview explores motivation, experience and study readiness.” What is discussed?",
+                            "options": [
+                                "Why you want to study, your background and readiness",
+                                "Only your age",
+                                "Only your income",
+                                "Only your passport"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the strongest phrase.",
+                            "options": [
+                                "I can give examples from my work experience.",
+                                "I have some things maybe.",
+                                "Examples are not needed.",
+                                "I cannot say."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “progression route” mean?",
+                            "options": [
+                                "A path to the next study or career step",
+                                "A bus route",
+                                "A payment schedule",
+                                "A lecture room"
+                            ],
+                            "correct_answer": 0
+                        }
+                    ]
+                },
+                {
+                    "badge": "C1",
+                    "title": "Advanced confidence check",
+                    "description": "For confident speakers checking advanced vocabulary, academic reading and professional interview expression.",
+                    "buttonName": "Start advanced test →",
+                    "questions": [
+                        {
+                            "question": "Choose the most precise sentence.",
+                            "options": [
+                                "My professional experience has strengthened my ability to evaluate problems and communicate solutions.",
+                                "My job made me better with things.",
+                                "I know problems and talking.",
+                                "Experience is good for me."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Nevertheless” is closest in meaning to ___.",
+                            "options": [
+                                "however",
+                                "therefore",
+                                "because",
+                                "for example"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The phrase “critically evaluate” means ___.",
+                            "options": [
+                                "judge strengths and weaknesses using evidence",
+                                "copy information exactly",
+                                "describe only personal opinion",
+                                "write a short list"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best academic phrase.",
+                            "options": [
+                                "This suggests a connection between experience and career motivation.",
+                                "This says me job good.",
+                                "I think because yes.",
+                                "It is nice and important."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "If the evidence were stronger, the conclusion ___ more convincing.",
+                            "options": [
+                                "would be",
+                                "will be",
+                                "was be",
+                                "is being"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Applicants are expected to justify their course choice.” What should they do?",
+                            "options": [
+                                "Explain clear reasons",
+                                "Pay a deposit",
+                                "Choose randomly",
+                                "Avoid examples"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the correct sentence.",
+                            "options": [
+                                "Having worked in management, I understand the importance of clear planning.",
+                                "Having work management, I understand.",
+                                "I having worked and understand planning.",
+                                "Worked in management planning clear."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The word “substantial” means ___.",
+                            "options": [
+                                "large or important",
+                                "temporary",
+                                "unclear",
+                                "optional"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Which sentence is strongest for an interview?",
+                            "options": [
+                                "I can link my work experience to the modules and career outcomes of the course.",
+                                "I like course because maybe good.",
+                                "I want study and then see.",
+                                "Modules are there."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“The policy may have implications for part-time students.” What are implications?",
+                            "options": [
+                                "Possible effects or consequences",
+                                "Lecture rooms",
+                                "Exam marks only",
+                                "Application forms"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best connector: ___ the course is demanding, I am prepared to manage my time.",
+                            "options": [
+                                "Although",
+                                "Because of",
+                                "So that",
+                                "Unless"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "What does “coherent” mean?",
+                            "options": [
+                                "Clear and logically connected",
+                                "Very short",
+                                "Informal",
+                                "Copied"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best sentence.",
+                            "options": [
+                                "My long-term aim is to progress into a management role where I can apply analytical and leadership skills.",
+                                "Long future role good management things.",
+                                "I want job better because course.",
+                                "Management is future and skill."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“To what extent” questions ask you to ___.",
+                            "options": [
+                                "consider how far something is true",
+                                "give only one example",
+                                "write a definition",
+                                "ignore evidence"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the correct form.",
+                            "options": [
+                                "The skills I have developed are transferable to higher education.",
+                                "The skills I developed is transferable.",
+                                "My skills transferring to education.",
+                                "I transferable skills education."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Robust evidence” means evidence that is ___.",
+                            "options": [
+                                "strong and reliable",
+                                "short and easy",
+                                "new but irrelevant",
+                                "personal only"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best phrase.",
+                            "options": [
+                                "I would welcome the opportunity to discuss my suitability in an interview.",
+                                "Give me place please.",
+                                "I need interview now.",
+                                "Interview is okay for me maybe."
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "The opposite of “ambiguous” is ___.",
+                            "options": [
+                                "clear",
+                                "formal",
+                                "difficult",
+                                "academic"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "“Students must synthesise ideas from multiple sources.” This means ___.",
+                            "options": [
+                                "combine ideas from different sources",
+                                "memorise one sentence",
+                                "avoid reading",
+                                "write only opinions"
+                            ],
+                            "correct_answer": 0
+                        },
+                        {
+                            "question": "Choose the best closing interview statement.",
+                            "options": [
+                                "I am motivated, realistic about the demands of study, and ready to take the next step with support.",
+                                "I finish now.",
+                                "I hope it is fine.",
+                                "This course yes."
+                            ],
+                            "correct_answer": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        "section_3": {
+            "cards": [
+                {
+                    "title": "What do universities expect?",
+                    "description": "Different universities and courses ask different questions. Your result is a starting point for choosing the safest route.",
+                    "link": ""
+                },
+                {
+                    "title": "B1 can be enough for many routes",
+                    "description": "Many mature students progress through foundation-year, CertHE or flexible routes. The adviser checks which interviews are realistic.",
+                    "link": ""
+                },
+                {
+                    "title": "Need course guidance?",
+                    "description": "Do not self-reject. Use your result to discuss courses, foundation routes and interview expectations with YStudy.",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "funding-checker",
+        "section_2": {
+            "badge": "Funding profile",
+            "title": "Estimate student finance support",
+            "card": {
+                "title": "Important",
+                "description": "Pre-settled status, weekend-only attendance, distance learning, previous study and age can change the outcome. Do not rely on a calculator only."
+            },
+            "status": true
+        },
+        "section_3": {
+            "cards": [
+                {
+                    "title": "Maintenance Loan",
+                    "description": "Paid to you for living costs. Amount depends on location, income and living situation."
+                },
+                {
+                    "title": "Tuition Fee Loan",
+                    "description": "Usually paid directly to the university or provider, not to your bank account."
+                },
+                {
+                    "title": "Funding risks",
+                    "description": "Previous study, distance learning, residency and age can affect eligibility."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "title": "Want help checking your funding?",
+            "description": "Send your result to YStudy and we’ll help you understand your best next step.",
+            "status": true
+        },
+        "section_5": {
+            "title": "Need help?",
+            "description": "Book a free adviser call. We can review this tool result and help you choose the next step.",
+            "badge": "This page result can be saved and shared with an adviser.",
+            "status": true
+        },
+        "section_6": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "cv-builder",
+        "section_2": {
+            "title": "Build your CV step by step.",
+            "description": "Complete the tabs. Your preview and score update automatically.",
+            "status": true
+        },
+        "section_3": {
+            "cards": [
+                {
+                    "title": "University application CV",
+                    "description": "Built for mature students, not just job applications. It highlights work history, responsibility and transferable skills.",
+                    "link": ""
+                },
+                {
+                    "title": "Send to adviser",
+                    "description": "When ready, send the CV context before a call so the adviser can recommend suitable degree routes.",
+                    "link": ""
+                },
+                {
+                    "title": "Next step",
+                    "description": "Use your CV to support your personal statement and course interview preparation.",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "title": "Want an adviser to review your CV?",
+            "description": "Save your CV and book a call. YStudy can help connect your experience to a realistic course, funding route and application plan.",
+            "status": true
+        },
+        "section_5": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
     }
 ]
