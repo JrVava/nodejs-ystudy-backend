@@ -3702,5 +3702,377 @@
             ],
             "status": true
         }
+    },
+    {
+        "page": "career-quiz",
+        "section_3": {
+            "title": "Suggested next steps",
+            "cards": [
+                {
+                    "title": "Explore matching degrees",
+                    "description": "Turn your career result into subjects",
+                    "link": ""
+                },
+                {
+                    "title": "Check pathway route",
+                    "description": "Qualification route and entry point",
+                    "link": ""
+                },
+                {
+                    "title": "Estimate student finance",
+                    "description": "Maintenance and tuition estimate",
+                    "link": ""
+                },
+                {
+                    "title": "Book Adviser Call",
+                    "description": "Get human help before applying",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "title": "Need help?",
+            "description": "Book a free adviser call. We can review this tool result and help you choose the next step.",
+            "badge": "This page result can be saved and shared with an adviser.",
+            "status": true
+        },
+        "section_5": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "eligibility-checker",
+        "section_2": {
+            "status": true,
+            "steps": [
+                {
+                    "badge": "Question 1 of 5",
+                    "title": "What's your residency status?",
+                    "description": "This helps us understand the likely funding route.",
+                    "name": "status",
+                    "options": [
+                        {
+                            "title": "British citizen",
+                            "icon": "🇬🇧",
+                            "description": "Born in the UK or naturalised"
+                        },
+                        {
+                            "title": "EU Settled Status",
+                            "icon": "✅",
+                            "description": "Granted under the EU Settlement Scheme"
+                        },
+                        {
+                            "title": "EU Pre-settled Status",
+                            "icon": "⏱️",
+                            "description": "Needs a careful funding review"
+                        },
+                        {
+                            "title": "Indefinite Leave to Remain",
+                            "icon": "📋",
+                            "description": "Often eligible if residency rules are met"
+                        },
+                        {
+                            "title": "Refugee / protection route",
+                            "icon": "🛟",
+                            "description": "Specific support route"
+                        },
+                        {
+                            "title": "Something else / not sure",
+                            "icon": "❓",
+                            "description": "We'll help you figure it out"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 2 of 5",
+                    "title": "Have you studied before?",
+                    "description": "Previous higher education can affect funding.",
+                    "name": "previous",
+                    "options": [
+                        {
+                            "title": "No previous higher education",
+                            "icon": "🌱",
+                            "description": "Usually the simplest route"
+                        },
+                        {
+                            "title": "Started but did not finish",
+                            "icon": "↩️",
+                            "description": "May need adviser review"
+                        },
+                        {
+                            "title": "HND, DipHE or equivalent",
+                            "icon": "⭐",
+                            "description": "Top-up or previous study rules may apply"
+                        },
+                        {
+                            "title": "Bachelor's degree or higher",
+                            "icon": "🏆",
+                            "description": "Funding may be limited for another undergraduate degree"
+                        },
+                        {
+                            "title": "Not sure",
+                            "icon": "🤔",
+                            "description": "Adviser check recommended"
+                        }
+                    ]
+                },
+                {
+                    "badge": "Question 3 of 5",
+                    "title": "How would you like to study?",
+                    "description": "Study mode can affect funding and course choice.",
+                    "name": "mode",
+                    "options": [
+                        {
+                            "title": "Full-time campus/blended",
+                            "icon": "🏛️",
+                            "description": "Most common undergraduate route"
+                        },
+                        {
+                            "title": "Part-time",
+                            "icon": "⏰",
+                            "description": "Good for working adults"
+                        },
+                        {
+                            "title": "Online",
+                            "icon": "💻",
+                            "description": "Flexible remote learning"
+                        }
+                    ]
+                }
+            ]
+        },
+        "section_3": {
+            "title": "Not sure what to do next?",
+            "description": "Start with a quick route check, then speak to a YStudy adviser before you apply.",
+            "badge": "YStudy",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "salary-checker",
+        "section_3": {
+            "title": "Need help?",
+            "description": "Book a free adviser call. We can review this tool result and help you choose the next step.",
+            "badge": "This page result can be saved and shared with an adviser.",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "personal-statement",
+        "section_2": {
+            "cards": [
+                {
+                    "title": "Course choice first",
+                    "description": "A strong statement matches the course. Use Degree Match Finder if you are not sure yet.",
+                    "link": ""
+                },
+                {
+                    "title": "Adviser review",
+                    "description": "Send the draft to an adviser before applying. They can check tone, structure and course fit.",
+                    "link": ""
+                },
+                {
+                    "title": "Build CV too",
+                    "description": "Your CV and statement should tell the same story about your experience and goals.",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "title": "Need help making it sound professional?",
+            "description": "YStudy can help you keep the statement honest, clear and suitable for the course you want.",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
     }
 ]
