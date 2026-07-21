@@ -206,7 +206,6 @@ export class FrontendCourseController {
                     return rcMapped;
                 }));
             }
-            console.log(mapped);
             return {
                 data: encrypt({
                     success: true,

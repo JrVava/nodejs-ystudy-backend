@@ -2367,6 +2367,34 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "FrontendCourseController",
+            "item": [
+                {
+                    "name": "GET /frontend/course/:slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/course/:slug",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "course",
+                                ":slug"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
