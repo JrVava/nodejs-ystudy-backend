@@ -9,91 +9,107 @@ import { ObjectId } from "mongodb";
 @JsonController("/frontend/course")
 export class FrontendCourseController {
 
-    // @Get("/")
-    // async getCourses(
-    //     @Req() req: any,
-    //     @QueryParam("page") page: number = 1,
-    //     @QueryParam("limit") limit: number = 10
-    // ) {
-    //     try {
-    //         const courseDB = new QueryBuilder<Course>("courses");
+    @Get("/allcourses")
+    async getCourses(
+        @Req() req: any
+    ) {
+        try {
+            const courseDB = new QueryBuilder<Course>("courses");
+            const filter = { status: true, isDeleted: { $ne: true } };
+            const allCourses = await courseDB.find(filter);
 
-    //         const filter = { status: true, isDeleted: { $ne: true } };
+            const locationDB = new QueryBuilder<any>("locations");
+            const subjectDB = new QueryBuilder<any>("subjects");
 
-    //         const locationDB = new QueryBuilder<any>("locations");
-    //         const modeDB = new QueryBuilder<any>("modes");
+            const locationIds = new Set<string>();
+            const subjectIds = new Set<string>();
 
-    //         const paginatedResult = await courseDB.paginate(filter, page, limit);
+            allCourses.forEach((c: any) => {
+                if (c.locations) c.locations.forEach((id: any) => locationIds.add(id.toString()));
+                if (c.subject) {
+                    if (Array.isArray(c.subject)) {
+                        c.subject.forEach((id: any) => subjectIds.add(id.toString()));
+                    } else {
+                        subjectIds.add(c.subject.toString());
+                    }
+                }
+                if (c.subjects) c.subjects.forEach((id: any) => subjectIds.add(id.toString()));
+            });
 
-    //         // Batch fetch related data to optimize performance
-    //         const locationIds = new Set<string>();
-    //         const modeIds = new Set<string>();
-    //         const relatedCourseIds = new Set<string>();
+            const [locationsList, subjectsList] = await Promise.all([
+                locationIds.size > 0 ? locationDB.find({ _id: { $in: Array.from(locationIds).map(id => new ObjectId(id)) } }) : [],
+                subjectIds.size > 0 ? subjectDB.find({ _id: { $in: Array.from(subjectIds).map(id => new ObjectId(id)) } }) : []
+            ]);
 
-    //         paginatedResult.data.forEach(c => {
-    //             if (c.locations) c.locations.forEach(id => locationIds.add(id.toString()));
-    //             if (c.modeType) c.modeType.forEach(id => modeIds.add(id.toString()));
-    //             if (c.availableCourses) c.availableCourses.forEach(id => relatedCourseIds.add(id.toString()));
-    //             if (c.relatedCourses) c.relatedCourses.forEach(id => relatedCourseIds.add(id.toString()));
-    //         });
+            const mapListWithImage = async (list: any[]) => {
+                return await Promise.all(list.map(async (item: any) => {
+                    const itemMapped = { ...item, _id: item._id?.toString() };
+                    if (item.image) {
+                        itemMapped.image = item.image.toString();
+                        itemMapped.fullImageUrl = await getFullImageUrl(item.image, req);
+                    }
+                    return itemMapped;
+                }));
+            };
 
-    //         const [locationsList, modesList, relatedCoursesList] = await Promise.all([
-    //             locationIds.size > 0 ? locationDB.find({ _id: { $in: Array.from(locationIds).map(id => new ObjectId(id)) } }) : [],
-    //             modeIds.size > 0 ? modeDB.find({ _id: { $in: Array.from(modeIds).map(id => new ObjectId(id)) } }) : [],
-    //             relatedCourseIds.size > 0 ? courseDB.find({ _id: { $in: Array.from(relatedCourseIds).map(id => new ObjectId(id)) } }) : []
-    //         ]);
+            const mappedLocations = await mapListWithImage(locationsList);
+            const mappedSubjects = await mapListWithImage(subjectsList);
 
-    //         const locationsMap = new Map(locationsList.map((loc: any) => [loc._id.toString(), loc]));
-    //         const modesMap = new Map(modesList.map((mode: any) => [mode._id.toString(), mode]));
-    //         const coursesMap = new Map(relatedCoursesList.map((course: any) => [course._id.toString(), course]));
+            const locationsMap = new Map(mappedLocations.map((loc: any) => [loc._id.toString(), loc]));
+            const subjectsMap = new Map(mappedSubjects.map((sub: any) => [sub._id.toString(), sub]));
 
-    //         const data = await Promise.all(paginatedResult.data.map(async (c) => {
-    //             const mapped: any = {
-    //                 ...c,
-    //                 _id: c._id?.toString()
-    //             };
+            const data = await Promise.all(allCourses.map(async (c: any) => {
+                const mapped: any = {
+                    ...c,
+                    _id: c._id?.toString()
+                };
 
-    //             if (c.image) {
-    //                 mapped.image = c.image.toString();
-    //                 mapped.fullImageUrl = await getFullImageUrl(c.image, req);
-    //             }
+                delete mapped.availableCourses;
+                delete mapped.relatedCourses;
+                delete mapped.durations;
+                delete mapped.fundings;
+                delete mapped.qualifications;
+                delete mapped.modeType;
+                delete mapped.qualification;
+                delete mapped.duration;
+                delete mapped.funding;
 
-    //             if (c.locations && c.locations.length > 0) {
-    //                 mapped.locations = c.locations.map(id => locationsMap.get(id.toString())).filter(Boolean);
-    //             }
+                if (c.image) {
+                    mapped.image = c.image.toString();
+                    mapped.fullImageUrl = await getFullImageUrl(c.image, req);
+                }
 
-    //             if (c.modeType && c.modeType.length > 0) {
-    //                 mapped.modeType = c.modeType.map(id => modesMap.get(id.toString())).filter(Boolean);
-    //             }
+                if (c.locations && c.locations.length > 0) {
+                    mapped.locations = c.locations.map((id: any) => locationsMap.get(id.toString())).filter(Boolean);
+                }
 
-    //             if (c.availableCourses && c.availableCourses.length > 0) {
-    //                 mapped.availableCourses = c.availableCourses.map(id => coursesMap.get(id.toString())).filter(Boolean);
-    //             }
+                if (c.subject) {
+                    if (Array.isArray(c.subject)) {
+                        mapped.subject = c.subject.map((id: any) => subjectsMap.get(id.toString())).filter(Boolean);
+                    } else {
+                        mapped.subject = subjectsMap.get(c.subject.toString()) || null;
+                    }
+                } else if (c.subjects && c.subjects.length > 0) {
+                    mapped.subjects = c.subjects.map((id: any) => subjectsMap.get(id.toString())).filter(Boolean);
+                }
 
-    //             if (c.relatedCourses && c.relatedCourses.length > 0) {
-    //                 mapped.relatedCourses = c.relatedCourses.map(id => coursesMap.get(id.toString())).filter(Boolean);
-    //             }
+                return mapped;
+            }));
 
-    //             return mapped;
-    //         }));
-
-    //         return {
-    //             data: encrypt({
-    //                 success: true,
-    //                 data: {
-    //                     courses: data,
-    //                     total: paginatedResult.total,
-    //                     page: paginatedResult.page,
-    //                     totalPages: paginatedResult.totalPages
-    //                 }
-    //             })
-    //         };
-    //     } catch (error) {
-    //         logger.error(`[FrontendCourseController:getCourses] Error occurred:`, error);
-    //         if (error instanceof HttpError) throw error;
-    //         throw new HttpError(500, "Internal server error");
-    //     }
-    // }
+            return {
+                data: encrypt({
+                    success: true,
+                    data: {
+                        courses: data
+                    }
+                })
+            };
+        } catch (error) {
+            logger.error(`[FrontendCourseController:getCourses] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, "Internal server error");
+        }
+    }
 
     @Get("/:slug")
     async getCourseBySlug(@Req() req: any, @Param("slug") slug: string) {
@@ -206,6 +222,43 @@ export class FrontendCourseController {
                     return rcMapped;
                 }));
             }
+
+            const courseCmsDB = new QueryBuilder<any>("course_cms");
+            if (c._id) {
+                const courseCms = await courseCmsDB.findOne({ courseId: c._id, isDeleted: { $ne: true } });
+                if (courseCms) {
+                    delete courseCms._id;
+                    delete courseCms.courseId;
+                    delete courseCms.isDeleted;
+                    delete courseCms.createdAt;
+                    delete courseCms.updatedAt;
+
+                    if (courseCms.section_10 && courseCms.section_10.featured_course) {
+                        let featuredId = courseCms.section_10.featured_course;
+                        try {
+                            if (typeof featuredId === 'string') {
+                                featuredId = new ObjectId(featuredId);
+                            }
+                            const fc = await courseDB.findOne({ _id: featuredId });
+                            if (fc) {
+                                const fcMapped: any = { ...fc, _id: fc._id?.toString() };
+                                if (fc.image) {
+                                    fcMapped.image = fc.image.toString();
+                                    fcMapped.fullImageUrl = await getFullImageUrl(fc.image, req);
+                                }
+                                courseCms.section_10.featured_course = fcMapped;
+                            } else {
+                                courseCms.section_10.featured_course = null;
+                            }
+                        } catch (err) {
+                            courseCms.section_10.featured_course = null;
+                        }
+                    }
+
+                    mapped.courseCms = courseCms;
+                }
+            }
+
             return {
                 data: encrypt({
                     success: true,

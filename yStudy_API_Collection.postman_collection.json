@@ -2372,6 +2372,29 @@
             "name": "FrontendCourseController",
             "item": [
                 {
+                    "name": "GET /frontend/course/allcourses",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/frontend/course/allcourses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "frontend",
+                                "course",
+                                "allcourses"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "GET /frontend/course/:slug",
                     "request": {
                         "method": "GET",

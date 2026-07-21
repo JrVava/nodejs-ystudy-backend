@@ -6,6 +6,7 @@ import logger from "../../utils/logger";
 import { encrypt, decrypt } from "../../utils/crypto";
 import { getFullImageUrl } from "../../utils/mediaUtils";
 import { Course } from "../../models/Course";
+import { CourseCms } from "../../models/CourseCms";
 
 @JsonController("/courses")
 @UseBefore(AdminMiddleware)
@@ -60,6 +61,34 @@ export class CourseController {
             };
 
             const result = await courseDB.insertOne(newCourse);
+
+            if (decryptedBody.courseType === 'General' && decryptedBody.courseCms) {
+                const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
+                const cmsData = decryptedBody.courseCms;
+                
+                const newCourseCms: CourseCms = {
+                    courseId: result.insertedId,
+                    courseType: 'General',
+                    section_2: cmsData.section_2,
+                    section_3: cmsData.section_3,
+                    section_4: cmsData.section_4,
+                    section_5: cmsData.section_5,
+                    section_6: cmsData.section_6,
+                    section_7: cmsData.section_7,
+                    section_8: cmsData.section_8,
+                    section_9: cmsData.section_9,
+                    section_10: cmsData.section_10 ? {
+                        ...cmsData.section_10,
+                        featured_course: cmsData.section_10.featured_course ? new ObjectId(cmsData.section_10.featured_course) : null
+                    } : undefined,
+                    section_11: cmsData.section_11,
+                    section_12: cmsData.section_12,
+                    createdAt: new Date(),
+                    updatedAt: new Date()
+                };
+
+                await courseCmsDB.insertOne(newCourseCms);
+            }
 
             return {
                 data: encrypt({
@@ -171,13 +200,25 @@ export class CourseController {
 
             const fullImageUrl = await getFullImageUrl(course.image, req);
 
+            const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
+            const courseCms = await courseCmsDB.findOne({ courseId: objId, isDeleted: { $ne: true } });
+
+            if (courseCms) {
+                delete (courseCms as any)._id;
+                delete (courseCms as any).courseId;
+                delete (courseCms as any).isDeleted;
+                delete (courseCms as any).createdAt;
+                delete (courseCms as any).updatedAt;
+            }
+
             return {
                 data: encrypt({
                     success: true,
                     data: {
                         ...course,
                         _id: course._id?.toString(),
-                        fullImageUrl
+                        fullImageUrl,
+                        courseCms: courseCms || null
                     }
                 })
             };
@@ -228,10 +269,42 @@ export class CourseController {
                 updateFields.modeType = updateFields.modeType.map((id: string) => new ObjectId(id));
             }
 
+            const courseCmsData = updateFields.courseCms;
+            delete updateFields.courseCms;
+
             const result = await courseDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Course not found");
+            }
+
+            if (courseCmsData) {
+                const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
+                const cmsUpdate: any = {
+                    section_2: courseCmsData.section_2,
+                    section_3: courseCmsData.section_3,
+                    section_4: courseCmsData.section_4,
+                    section_5: courseCmsData.section_5,
+                    section_6: courseCmsData.section_6,
+                    section_7: courseCmsData.section_7,
+                    section_8: courseCmsData.section_8,
+                    section_9: courseCmsData.section_9,
+                    section_10: courseCmsData.section_10 ? {
+                        ...courseCmsData.section_10,
+                        featured_course: courseCmsData.section_10.featured_course ? new ObjectId(courseCmsData.section_10.featured_course) : null
+                    } : undefined,
+                    section_11: courseCmsData.section_11,
+                    section_12: courseCmsData.section_12,
+                    updatedAt: new Date()
+                };
+
+                if (decryptedBody.courseType) {
+                    cmsUpdate.courseType = decryptedBody.courseType;
+                }
+
+                Object.keys(cmsUpdate).forEach(key => cmsUpdate[key] === undefined && delete cmsUpdate[key]);
+
+                await courseCmsDB.upsertOne({ courseId: objId }, cmsUpdate);
             }
 
             return {
@@ -267,6 +340,12 @@ export class CourseController {
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Course not found");
             }
+
+            const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
+            await courseCmsDB.updateOne(
+                { courseId: objId, isDeleted: { $ne: true } },
+                { $set: { isDeleted: true, updatedAt: new Date() } }
+            );
 
             return {
                 data: encrypt({
