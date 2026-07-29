@@ -11,18 +11,31 @@ export class FrontendCourseController {
 
     @Get("/allcourses")
     async getCourses(
-        @Req() req: any
+        @Req() req: any,
+        @QueryParam("pageSize") pageSize?: number
     ) {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
             const filter = { status: true, isDeleted: { $ne: true } };
-            const allCourses = await courseDB.find(filter);
+            const options: any = {};
+            if (pageSize && !isNaN(pageSize)) {
+                options.limit = Number(pageSize);
+            }
+            const allCourses = await courseDB.find(filter, options);
 
             const locationDB = new QueryBuilder<any>("locations");
             const subjectDB = new QueryBuilder<any>("subjects");
+            const modeDB = new QueryBuilder<any>("modes");
+            const qualificationDB = new QueryBuilder<any>("qualifications");
+            const durationDB = new QueryBuilder<any>("durations");
+            const fundingDB = new QueryBuilder<any>("fundings");
 
             const locationIds = new Set<string>();
             const subjectIds = new Set<string>();
+            const modeIds = new Set<string>();
+            const qualificationIds = new Set<string>();
+            const durationIds = new Set<string>();
+            const fundingIds = new Set<string>();
 
             allCourses.forEach((c: any) => {
                 if (c.locations) c.locations.forEach((id: any) => locationIds.add(id.toString()));
@@ -34,11 +47,51 @@ export class FrontendCourseController {
                     }
                 }
                 if (c.subjects) c.subjects.forEach((id: any) => subjectIds.add(id.toString()));
+
+                if (c.modeType) c.modeType.forEach((id: any) => modeIds.add(id.toString()));
+
+                if (c.qualification) {
+                    if (Array.isArray(c.qualification)) {
+                        c.qualification.forEach((id: any) => qualificationIds.add(id.toString()));
+                    } else {
+                        qualificationIds.add(c.qualification.toString());
+                    }
+                }
+                if (c.qualifications) c.qualifications.forEach((id: any) => qualificationIds.add(id.toString()));
+
+                if (c.duration) {
+                    if (Array.isArray(c.duration)) {
+                        c.duration.forEach((id: any) => durationIds.add(id.toString()));
+                    } else {
+                        durationIds.add(c.duration.toString());
+                    }
+                }
+                if (c.durations) c.durations.forEach((id: any) => durationIds.add(id.toString()));
+
+                if (c.funding) {
+                    if (Array.isArray(c.funding)) {
+                        c.funding.forEach((id: any) => fundingIds.add(id.toString()));
+                    } else {
+                        fundingIds.add(c.funding.toString());
+                    }
+                }
+                if (c.fundings) c.fundings.forEach((id: any) => fundingIds.add(id.toString()));
             });
 
-            const [locationsList, subjectsList] = await Promise.all([
+            const [
+                locationsList,
+                subjectsList,
+                modesList,
+                qualificationsList,
+                durationsList,
+                fundingsList
+            ] = await Promise.all([
                 locationIds.size > 0 ? locationDB.find({ _id: { $in: Array.from(locationIds).map(id => new ObjectId(id)) } }) : [],
-                subjectIds.size > 0 ? subjectDB.find({ _id: { $in: Array.from(subjectIds).map(id => new ObjectId(id)) } }) : []
+                subjectIds.size > 0 ? subjectDB.find({ _id: { $in: Array.from(subjectIds).map(id => new ObjectId(id)) } }) : [],
+                modeIds.size > 0 ? modeDB.find({ _id: { $in: Array.from(modeIds).map(id => new ObjectId(id)) } }) : [],
+                qualificationIds.size > 0 ? qualificationDB.find({ _id: { $in: Array.from(qualificationIds).map(id => new ObjectId(id)) } }) : [],
+                durationIds.size > 0 ? durationDB.find({ _id: { $in: Array.from(durationIds).map(id => new ObjectId(id)) } }) : [],
+                fundingIds.size > 0 ? fundingDB.find({ _id: { $in: Array.from(fundingIds).map(id => new ObjectId(id)) } }) : []
             ]);
 
             const mapListWithImage = async (list: any[]) => {
@@ -52,11 +105,28 @@ export class FrontendCourseController {
                 }));
             };
 
-            const mappedLocations = await mapListWithImage(locationsList);
-            const mappedSubjects = await mapListWithImage(subjectsList);
+            const [
+                mappedLocations,
+                mappedSubjects,
+                mappedModes,
+                mappedQualifications,
+                mappedDurations,
+                mappedFundings
+            ] = await Promise.all([
+                mapListWithImage(locationsList),
+                mapListWithImage(subjectsList),
+                mapListWithImage(modesList),
+                mapListWithImage(qualificationsList),
+                mapListWithImage(durationsList),
+                mapListWithImage(fundingsList)
+            ]);
 
             const locationsMap = new Map(mappedLocations.map((loc: any) => [loc._id.toString(), loc]));
             const subjectsMap = new Map(mappedSubjects.map((sub: any) => [sub._id.toString(), sub]));
+            const modesMap = new Map(mappedModes.map((m: any) => [m._id.toString(), m]));
+            const qualificationsMap = new Map(mappedQualifications.map((q: any) => [q._id.toString(), q]));
+            const durationsMap = new Map(mappedDurations.map((d: any) => [d._id.toString(), d]));
+            const fundingsMap = new Map(mappedFundings.map((f: any) => [f._id.toString(), f]));
 
             const data = await Promise.all(allCourses.map(async (c: any) => {
                 const mapped: any = {
@@ -66,13 +136,6 @@ export class FrontendCourseController {
 
                 delete mapped.availableCourses;
                 delete mapped.relatedCourses;
-                delete mapped.durations;
-                delete mapped.fundings;
-                delete mapped.qualifications;
-                delete mapped.modeType;
-                delete mapped.qualification;
-                delete mapped.duration;
-                delete mapped.funding;
 
                 if (c.image) {
                     mapped.image = c.image.toString();
@@ -91,6 +154,40 @@ export class FrontendCourseController {
                     }
                 } else if (c.subjects && c.subjects.length > 0) {
                     mapped.subjects = c.subjects.map((id: any) => subjectsMap.get(id.toString())).filter(Boolean);
+                }
+
+                if (c.modeType && c.modeType.length > 0) {
+                    mapped.modeType = c.modeType.map((id: any) => modesMap.get(id.toString())).filter(Boolean);
+                }
+
+                if (c.qualification) {
+                    if (Array.isArray(c.qualification)) {
+                        mapped.qualification = c.qualification.map((id: any) => qualificationsMap.get(id.toString())).filter(Boolean);
+                    } else {
+                        mapped.qualification = qualificationsMap.get(c.qualification.toString()) || null;
+                    }
+                } else if (c.qualifications && c.qualifications.length > 0) {
+                    mapped.qualifications = c.qualifications.map((id: any) => qualificationsMap.get(id.toString())).filter(Boolean);
+                }
+
+                if (c.duration) {
+                    if (Array.isArray(c.duration)) {
+                        mapped.duration = c.duration.map((id: any) => durationsMap.get(id.toString())).filter(Boolean);
+                    } else {
+                        mapped.duration = durationsMap.get(c.duration.toString()) || null;
+                    }
+                } else if (c.durations && c.durations.length > 0) {
+                    mapped.durations = c.durations.map((id: any) => durationsMap.get(id.toString())).filter(Boolean);
+                }
+
+                if (c.funding) {
+                    if (Array.isArray(c.funding)) {
+                        mapped.funding = c.funding.map((id: any) => fundingsMap.get(id.toString())).filter(Boolean);
+                    } else {
+                        mapped.funding = fundingsMap.get(c.funding.toString()) || null;
+                    }
+                } else if (c.fundings && c.fundings.length > 0) {
+                    mapped.fundings = c.fundings.map((id: any) => fundingsMap.get(id.toString())).filter(Boolean);
                 }
 
                 return mapped;

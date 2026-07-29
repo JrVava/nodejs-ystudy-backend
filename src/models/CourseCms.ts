@@ -22,6 +22,8 @@ export interface CourseCms {
     _id?: ObjectId;
     courseId: ObjectId;
     courseType: 'General' | 'Social';
+    kicker?: string;
+    bannerStyle?: 'blue' | 'black' | 'white' | string;
 
     section_2?: {
         badge?: string;

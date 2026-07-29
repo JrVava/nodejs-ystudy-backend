@@ -50,6 +50,18 @@ export class CourseController {
                 modeType: Array.isArray(decryptedBody.modeType)
                     ? decryptedBody.modeType.map((id: string) => new ObjectId(id))
                     : null,
+                subjects: Array.isArray(decryptedBody.subjects)
+                    ? decryptedBody.subjects.map((id: string) => new ObjectId(id))
+                    : null,
+                qualifications: Array.isArray(decryptedBody.qualifications)
+                    ? decryptedBody.qualifications.map((id: string) => new ObjectId(id))
+                    : null,
+                durations: Array.isArray(decryptedBody.durations)
+                    ? decryptedBody.durations.map((id: string) => new ObjectId(id))
+                    : null,
+                fundings: Array.isArray(decryptedBody.fundings)
+                    ? decryptedBody.fundings.map((id: string) => new ObjectId(id))
+                    : null,
                 salaryRange: {
                     from: decryptedBody.salaryRange?.from || 0,
                     to: decryptedBody.salaryRange?.to || 0
@@ -65,10 +77,12 @@ export class CourseController {
             if (decryptedBody.courseType === 'General' && decryptedBody.courseCms) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
-                
+
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'General',
+                    kicker: cmsData.kicker,
+                    bannerStyle: cmsData.bannerStyle,
                     section_2: cmsData.section_2,
                     section_3: cmsData.section_3,
                     section_4: cmsData.section_4,
@@ -269,6 +283,22 @@ export class CourseController {
                 updateFields.modeType = updateFields.modeType.map((id: string) => new ObjectId(id));
             }
 
+            if (Array.isArray(updateFields.subjects)) {
+                updateFields.subjects = updateFields.subjects.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.qualifications)) {
+                updateFields.qualifications = updateFields.qualifications.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.durations)) {
+                updateFields.durations = updateFields.durations.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.fundings)) {
+                updateFields.fundings = updateFields.fundings.map((id: string) => new ObjectId(id));
+            }
+
             const courseCmsData = updateFields.courseCms;
             delete updateFields.courseCms;
 
@@ -281,6 +311,8 @@ export class CourseController {
             if (courseCmsData) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsUpdate: any = {
+                    kicker: courseCmsData.kicker,
+                    bannerStyle: courseCmsData.bannerStyle,
                     section_2: courseCmsData.section_2,
                     section_3: courseCmsData.section_3,
                     section_4: courseCmsData.section_4,
