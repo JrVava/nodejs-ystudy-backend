@@ -5,6 +5,7 @@ import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import { UpcomingIntake } from "../../models/UpcomingIntake";
 import { ObjectId } from "mongodb";
+import { validMonths } from "../../constants/collections";
 
 @JsonController("/upcoming-intakes")
 @UseBefore(AdminMiddleware)
@@ -18,14 +19,26 @@ export class UpcomingIntakeController {
             if (!decryptedBody.year) {
                 throw new HttpError(400, "Year is required");
             }
+            if (!/^\d{4}$/.test(String(decryptedBody.year))) {
+                throw new HttpError(400, "Year must be a 4-digit format (e.g., 2026)");
+            }
             if (!decryptedBody.month) {
                 throw new HttpError(400, "Month is required");
+            }
+            if (!validMonths.includes(decryptedBody.month)) {
+                throw new HttpError(400, "Month must be a 3-letter abbreviation (e.g., Jan, Feb)");
             }
             if (!decryptedBody.subjectId) {
                 throw new HttpError(400, "subjectId is required");
             }
+            if (!ObjectId.isValid(decryptedBody.subjectId)) {
+                throw new HttpError(400, "Invalid subjectId format");
+            }
             if (!decryptedBody.qualificationId) {
                 throw new HttpError(400, "qualificationId is required");
+            }
+            if (!ObjectId.isValid(decryptedBody.qualificationId)) {
+                throw new HttpError(400, "Invalid qualificationId format");
             }
             if (!decryptedBody.link) {
                 throw new HttpError(400, "Link is required");
@@ -189,13 +202,28 @@ export class UpcomingIntakeController {
                 throw new HttpError(400, "Invalid upcoming intake ID format");
             }
 
+            if (decryptedBody.year !== undefined && !/^\d{4}$/.test(String(decryptedBody.year))) {
+                throw new HttpError(400, "Year must be a 4-digit format (e.g., 2026)");
+            }
+            if (decryptedBody.month !== undefined) {
+                if (!validMonths.includes(decryptedBody.month)) {
+                    throw new HttpError(400, "Month must be a 3-letter abbreviation (e.g., Jan, Feb)");
+                }
+            }
+
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
 
             if (updateFields.subjectId) {
+                if (!ObjectId.isValid(updateFields.subjectId)) {
+                    throw new HttpError(400, "Invalid subjectId format");
+                }
                 updateFields.subjectId = new ObjectId(updateFields.subjectId);
             }
             if (updateFields.qualificationId) {
+                if (!ObjectId.isValid(updateFields.qualificationId)) {
+                    throw new HttpError(400, "Invalid qualificationId format");
+                }
                 updateFields.qualificationId = new ObjectId(updateFields.qualificationId);
             }
 
