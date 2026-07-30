@@ -66,6 +66,10 @@ export class CourseController {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
                 
+                if (cmsData.overview || cmsData.salary || cmsData.funding || cmsData.study || cmsData.reviews || cmsData.Entry || cmsData.FAQ) {
+                    throw new HttpError(400, "Invalid CMS data format for General course. Expected General CMS fields.");
+                }
+                
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'General',
@@ -83,6 +87,29 @@ export class CourseController {
                     } : undefined,
                     section_11: cmsData.section_11,
                     section_12: cmsData.section_12,
+                    createdAt: new Date(),
+                    updatedAt: new Date()
+                };
+
+                await courseCmsDB.insertOne(newCourseCms);
+            } else if (decryptedBody.courseType === 'Social' && decryptedBody.courseCms) {
+                const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
+                const cmsData = decryptedBody.courseCms;
+                
+                if (cmsData.section_2 || cmsData.section_3 || cmsData.section_4 || cmsData.section_5 || cmsData.section_6 || cmsData.section_7 || cmsData.section_8 || cmsData.section_9 || cmsData.section_10 || cmsData.section_11 || cmsData.section_12) {
+                    throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
+                }
+                
+                const newCourseCms: CourseCms = {
+                    courseId: result.insertedId,
+                    courseType: 'Social',
+                    overview: cmsData.overview,
+                    salary: cmsData.salary,
+                    funding: cmsData.funding,
+                    study: cmsData.study,
+                    reviews: cmsData.reviews,
+                    Entry: cmsData.Entry,
+                    FAQ: cmsData.FAQ,
                     createdAt: new Date(),
                     updatedAt: new Date()
                 };
@@ -245,6 +272,17 @@ export class CourseController {
                 throw new HttpError(400, "Invalid course ID format");
             }
 
+            const course = await courseDB.findOne({ _id: objId, isDeleted: { $ne: true } });
+            if (!course) {
+                throw new HttpError(404, "Course not found");
+            }
+
+            if (decryptedBody.courseType && !['General', 'Social'].includes(decryptedBody.courseType)) {
+                throw new HttpError(400, "courseType must be either 'General' or 'Social'");
+            }
+
+            const effectiveCourseType = decryptedBody.courseType || course.courseType;
+
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
 
@@ -280,23 +318,44 @@ export class CourseController {
 
             if (courseCmsData) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
-                const cmsUpdate: any = {
-                    section_2: courseCmsData.section_2,
-                    section_3: courseCmsData.section_3,
-                    section_4: courseCmsData.section_4,
-                    section_5: courseCmsData.section_5,
-                    section_6: courseCmsData.section_6,
-                    section_7: courseCmsData.section_7,
-                    section_8: courseCmsData.section_8,
-                    section_9: courseCmsData.section_9,
-                    section_10: courseCmsData.section_10 ? {
-                        ...courseCmsData.section_10,
-                        featured_course: courseCmsData.section_10.featured_course ? new ObjectId(courseCmsData.section_10.featured_course) : null
-                    } : undefined,
-                    section_11: courseCmsData.section_11,
-                    section_12: courseCmsData.section_12,
-                    updatedAt: new Date()
-                };
+                let cmsUpdate: any = { updatedAt: new Date() };
+
+                if (effectiveCourseType === 'General') {
+                    if (courseCmsData.overview || courseCmsData.salary || courseCmsData.funding || courseCmsData.study || courseCmsData.reviews || courseCmsData.Entry || courseCmsData.FAQ) {
+                        throw new HttpError(400, "Invalid CMS data format for General course. Expected General CMS fields.");
+                    }
+                    cmsUpdate = {
+                        ...cmsUpdate,
+                        section_2: courseCmsData.section_2,
+                        section_3: courseCmsData.section_3,
+                        section_4: courseCmsData.section_4,
+                        section_5: courseCmsData.section_5,
+                        section_6: courseCmsData.section_6,
+                        section_7: courseCmsData.section_7,
+                        section_8: courseCmsData.section_8,
+                        section_9: courseCmsData.section_9,
+                        section_10: courseCmsData.section_10 ? {
+                            ...courseCmsData.section_10,
+                            featured_course: courseCmsData.section_10.featured_course ? new ObjectId(courseCmsData.section_10.featured_course) : null
+                        } : undefined,
+                        section_11: courseCmsData.section_11,
+                        section_12: courseCmsData.section_12,
+                    };
+                } else if (effectiveCourseType === 'Social') {
+                    if (courseCmsData.section_2 || courseCmsData.section_3 || courseCmsData.section_4 || courseCmsData.section_5 || courseCmsData.section_6 || courseCmsData.section_7 || courseCmsData.section_8 || courseCmsData.section_9 || courseCmsData.section_10 || courseCmsData.section_11 || courseCmsData.section_12) {
+                        throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
+                    }
+                    cmsUpdate = {
+                        ...cmsUpdate,
+                        overview: courseCmsData.overview,
+                        salary: courseCmsData.salary,
+                        funding: courseCmsData.funding,
+                        study: courseCmsData.study,
+                        reviews: courseCmsData.reviews,
+                        Entry: courseCmsData.Entry,
+                        FAQ: courseCmsData.FAQ,
+                    };
+                }
 
                 if (decryptedBody.courseType) {
                     cmsUpdate.courseType = decryptedBody.courseType;

@@ -199,17 +199,7 @@ export class FrontendCourseController {
                 mapped.modeType = await modeDB.find({ _id: { $in: c.modeType } });
             }
 
-            if (c.availableCourses && c.availableCourses.length > 0) {
-                const ac = await courseDB.find({ _id: { $in: c.availableCourses } });
-                mapped.availableCourses = await Promise.all(ac.map(async (rc: any) => {
-                    const rcMapped = { ...rc, _id: rc._id?.toString() };
-                    if (rc.image) {
-                        rcMapped.image = rc.image.toString();
-                        rcMapped.fullImageUrl = await getFullImageUrl(rc.image, req);
-                    }
-                    return rcMapped;
-                }));
-            }
+            // availableCourses are fetched in courseCms.section_2, so we skip fetching them here.
 
             if (c.relatedCourses && c.relatedCourses.length > 0) {
                 const rc = await courseDB.find({ _id: { $in: c.relatedCourses } });
@@ -219,11 +209,29 @@ export class FrontendCourseController {
                         rcMapped.image = rcItem.image.toString();
                         rcMapped.fullImageUrl = await getFullImageUrl(rcItem.image, req);
                     }
+                    
+                    delete rcMapped.availableCourses;
+                    delete rcMapped.relatedCourses;
+                    delete rcMapped.modeType;
+                    delete rcMapped.durations;
+                    delete rcMapped.fundings;
+                    delete rcMapped.qualifications;
+
+                    if (rcMapped.locations && rcMapped.locations.length > 0) {
+                        rcMapped.locations = await fetchAndMapWithImage(locationDB, rcMapped.locations);
+                    }
+                    if (rcMapped.subject) {
+                        rcMapped.subject = await fetchAndMapWithImage(subjectDB, rcMapped.subject);
+                    } else if (rcMapped.subjects && rcMapped.subjects.length > 0) {
+                        rcMapped.subjects = await fetchAndMapWithImage(subjectDB, rcMapped.subjects);
+                    }
+                    
                     return rcMapped;
                 }));
             }
 
             const courseCmsDB = new QueryBuilder<any>("course_cms");
+            mapped.courseCms = {};
             if (c._id) {
                 const courseCms = await courseCmsDB.findOne({ courseId: c._id, isDeleted: { $ne: true } });
                 if (courseCms) {
@@ -233,31 +241,73 @@ export class FrontendCourseController {
                     delete courseCms.createdAt;
                     delete courseCms.updatedAt;
 
-                    if (courseCms.section_10 && courseCms.section_10.featured_course) {
-                        let featuredId = courseCms.section_10.featured_course;
-                        try {
-                            if (typeof featuredId === 'string') {
-                                featuredId = new ObjectId(featuredId);
+                    for (const key of Object.keys(courseCms)) {
+                        if (key.startsWith('section_') && courseCms[key]) {
+                            if (courseCms[key].status === false) {
+                                delete courseCms[key];
                             }
-                            const fc = await courseDB.findOne({ _id: featuredId });
-                            if (fc) {
-                                const fcMapped: any = { ...fc, _id: fc._id?.toString() };
-                                if (fc.image) {
-                                    fcMapped.image = fc.image.toString();
-                                    fcMapped.fullImageUrl = await getFullImageUrl(fc.image, req);
+                        }
+                    }
+
+                    if (c.courseType === 'General') {
+                        if (courseCms.section_2) {
+                            const ac = await fetchAndMapWithImage(courseDB, c.availableCourses);
+                            if (ac) {
+                                const acArray = Array.isArray(ac) ? ac : [ac];
+                                courseCms.section_2.availableCourses = await Promise.all(acArray.map(async (item: any) => {
+                                    delete item.availableCourses;
+                                    delete item.relatedCourses;
+                                    delete item.modeType;
+                                    delete item.durations;
+                                    delete item.fundings;
+                                    delete item.qualifications;
+                                    
+                                    if (item.locations && item.locations.length > 0) {
+                                        item.locations = await fetchAndMapWithImage(locationDB, item.locations);
+                                    }
+                                    if (item.subject) {
+                                        item.subject = await fetchAndMapWithImage(subjectDB, item.subject);
+                                    } else if (item.subjects && item.subjects.length > 0) {
+                                        item.subjects = await fetchAndMapWithImage(subjectDB, item.subjects);
+                                    }
+                                    
+                                    return item;
+                                }));
+                            }
+                        }
+
+                        if (courseCms.section_7) {
+                            courseCms.section_7.subject = await fetchAndMapWithImage(subjectDB, (c as any).subject || c.subjects);
+                        }
+
+                        if (courseCms.section_10 && courseCms.section_10.featured_course) {
+                            let featuredId = courseCms.section_10.featured_course;
+                            try {
+                                if (typeof featuredId === 'string') {
+                                    featuredId = new ObjectId(featuredId);
                                 }
-                                courseCms.section_10.featured_course = fcMapped;
-                            } else {
+                                const fc = await courseDB.findOne({ _id: featuredId });
+                                if (fc) {
+                                    const fcMapped: any = { ...fc, _id: fc._id?.toString() };
+                                    if (fc.image) {
+                                        fcMapped.image = fc.image.toString();
+                                        fcMapped.fullImageUrl = await getFullImageUrl(fc.image, req);
+                                    }
+                                    courseCms.section_10.featured_course = fcMapped;
+                                } else {
+                                    courseCms.section_10.featured_course = null;
+                                }
+                            } catch (err) {
                                 courseCms.section_10.featured_course = null;
                             }
-                        } catch (err) {
-                            courseCms.section_10.featured_course = null;
                         }
                     }
 
                     mapped.courseCms = courseCms;
                 }
             }
+
+            delete mapped.availableCourses;
 
             return {
                 data: encrypt({

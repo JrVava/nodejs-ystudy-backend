@@ -101,6 +101,14 @@ export interface CourseCms {
         status?: boolean;
     };
 
+    overview?: any;
+    salary?: any;
+    funding?: any;
+    study?: any;
+    reviews?: any;
+    Entry?: any;
+    FAQ?: any;
+
     createdAt?: Date;
     updatedAt?: Date;
     isDeleted?: boolean;
