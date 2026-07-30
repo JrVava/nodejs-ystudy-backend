@@ -22,15 +22,13 @@ export interface CourseCms {
     _id?: ObjectId;
     courseId: ObjectId;
     courseType: 'General' | 'Social';
-    kicker?: string;
-    bannerStyle?: 'blue' | 'black' | 'white' | string;
 
     section_2?: {
         badge?: string;
         title?: string;
         description?: string;
     };
-    
+
     section_3?: {
         badge?: string;
         title?: string;
@@ -38,14 +36,14 @@ export interface CourseCms {
         cards?: CardGeneral[];
         status?: boolean;
     };
-    
+
     section_4?: {
         badge?: string;
         title?: string;
         cards?: CardGeneral[];
         status?: boolean;
     };
-    
+
     section_5?: {
         badge?: string;
         title?: string;
@@ -53,28 +51,28 @@ export interface CourseCms {
         cards?: CardWithBadge[];
         status?: boolean;
     };
-    
+
     section_6?: {
         badge?: string;
         title?: string;
         description?: string;
         status?: boolean;
     };
-    
+
     section_7?: {
         badge?: string;
         title?: string;
         description?: string;
         status?: boolean;
     };
-    
+
     section_8?: {
         badge?: string;
         title?: string;
         cards?: CardWithLink[];
         status?: boolean;
     };
-    
+
     section_9?: {
         badge?: string;
         title?: string;
@@ -82,7 +80,7 @@ export interface CourseCms {
         cards?: CardWithIcon[];
         status?: boolean;
     };
-    
+
     section_10?: {
         badge?: string;
         title?: string;
@@ -90,18 +88,26 @@ export interface CourseCms {
         featured_course?: ObjectId | string | null;
         status?: boolean;
     };
-    
+
     section_11?: {
         cards?: CardGeneral[];
         status?: boolean;
     };
-    
+
     section_12?: {
         title?: string;
         description?: string;
         cards?: CardWithLink[];
         status?: boolean;
     };
+
+    overview?: any;
+    salary?: any;
+    funding?: any;
+    study?: any;
+    reviews?: any;
+    Entry?: any;
+    FAQ?: any;
 
     createdAt?: Date;
     updatedAt?: Date;
