@@ -2572,7 +2572,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\\\"year\\\\\":\\\\\"2024\\\\\",\\\\\"month\\\\\":\\\\\"September\\\\\",\\\\\"subjectId\\\\\":\\\\\"64abcd...\\\\\",\\\\\"qualificationId\\\\\":\\\\\"64efgh...\\\\\",\\\\\"link\\\\\":\\\\\"https://example.com\\\\\"}\"\n}"
+              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"year\\\":\\\"2026\\\",\\\"month\\\":\\\"Jan\\\",\\\"subjectId\\\":\\\"64abcd...\\\",\\\"qualificationId\\\":\\\"64efgh...\\\",\\\"link\\\":\\\"https://example.com\\\"}\"\n}"
             },
             "url": {
               "raw": "{{base_url}}/upcoming-intakes/add",
@@ -2660,7 +2660,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\\\"year\\\\\":\\\\\"2024\\\\\",\\\\\"month\\\\\":\\\\\"September\\\\\",\\\\\"subjectId\\\\\":\\\\\"64abcd...\\\\\",\\\\\"qualificationId\\\\\":\\\\\"64efgh...\\\\\",\\\\\"link\\\\\":\\\\\"https://example.com\\\\\"}\"\n}"
+              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"year\\\":\\\"2026\\\",\\\"month\\\":\\\"Jan\\\",\\\"subjectId\\\":\\\"64abcd...\\\",\\\"qualificationId\\\":\\\"64efgh...\\\",\\\"link\\\":\\\"https://example.com\\\"}\"\n}"
             },
             "url": {
               "raw": "{{base_url}}/upcoming-intakes/update/:id",
@@ -2687,6 +2687,144 @@
               ],
               "path": [
                 "upcoming-intakes",
+                "delete",
+                ":id"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ToolController",
+      "item": [
+        {
+          "name": "POST /tools/add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"image\\\":\\\"64abcd...\\\",\\\"title\\\":\\\"AI Writer\\\",\\\"description\\\":\\\"Generates text\\\",\\\"time\\\":\\\"10 mins\\\",\\\"link\\\":\\\"https://example.com/tool\\\",\\\"mode\\\":\\\"free\\\"}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/tools/add",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
+                "add"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /tools/pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tools/pagination?page=1&limit=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
+                "pagination"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /tools/list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tools/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /tools/edit/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tools/edit/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
+                "edit",
+                ":id"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /tools/update/:id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here_containing_{\\\"image\\\":\\\"64abcd...\\\",\\\"title\\\":\\\"AI Writer\\\",\\\"description\\\":\\\"Generates text\\\",\\\"time\\\":\\\"10 mins\\\",\\\"link\\\":\\\"https://example.com/tool\\\",\\\"mode\\\":\\\"free\\\"}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/tools/update/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
+                "update",
+                ":id"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE /tools/delete/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tools/delete/:id",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tools",
                 "delete",
                 ":id"
               ]
