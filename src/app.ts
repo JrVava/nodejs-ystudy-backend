@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import express from "express";
+import cors from "cors";
 import { useExpressServer } from "routing-controllers";
 import path from "path";
 import { config } from "./config";
@@ -40,6 +41,7 @@ export class App {
     this.app.use("/media", express.static(path.join(__dirname, "../media")));
 
     // ✅ CUSTOM ROUTES AFTER BODY PARSER
+    this.app.use(cors());
     this.routes();
   }
 
