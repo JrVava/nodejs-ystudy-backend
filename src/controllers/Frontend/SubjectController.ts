@@ -1,4 +1,4 @@
-import { JsonController, Get, HttpError, Req } from "routing-controllers";
+import { JsonController, Get, HttpError, Req, QueryParam } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
 import { encrypt } from "../../utils/crypto";
@@ -9,17 +9,26 @@ import { getFullImageUrl } from "../../utils/mediaUtils";
 export class FrontendSubjectController {
 
     @Get("/")
-    async getAllSubjects(@Req() req: any) {
+    async getAllSubjects(
+        @Req() req: any,
+        @QueryParam("pageSize") pageSize?: number
+    ) {
         try {
             const subjectDB = new QueryBuilder<Subject>("subjects");
 
-            const subjects = await subjectDB.find({ status: true, isDeleted: { $ne: true } }, {
+            const options: any = {
                 projection: {
                     createdAt: 0,
                     updatedAt: 0,
                     isDeleted: 0
                 }
-            });
+            };
+
+            if (pageSize && !isNaN(pageSize)) {
+                options.limit = Number(pageSize);
+            }
+
+            const subjects = await subjectDB.find({ status: true, isDeleted: { $ne: true } }, options);
 
             const data = await Promise.all(subjects.map(async (s) => {
                 const mapped: any = {

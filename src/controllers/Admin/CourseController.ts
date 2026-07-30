@@ -50,6 +50,18 @@ export class CourseController {
                 modeType: Array.isArray(decryptedBody.modeType)
                     ? decryptedBody.modeType.map((id: string) => new ObjectId(id))
                     : null,
+                subjects: Array.isArray(decryptedBody.subjects)
+                    ? decryptedBody.subjects.map((id: string) => new ObjectId(id))
+                    : null,
+                qualifications: Array.isArray(decryptedBody.qualifications)
+                    ? decryptedBody.qualifications.map((id: string) => new ObjectId(id))
+                    : null,
+                durations: Array.isArray(decryptedBody.durations)
+                    ? decryptedBody.durations.map((id: string) => new ObjectId(id))
+                    : null,
+                fundings: Array.isArray(decryptedBody.fundings)
+                    ? decryptedBody.fundings.map((id: string) => new ObjectId(id))
+                    : null,
                 salaryRange: {
                     from: decryptedBody.salaryRange?.from || 0,
                     to: decryptedBody.salaryRange?.to || 0
@@ -65,11 +77,12 @@ export class CourseController {
             if (decryptedBody.courseType === 'General' && decryptedBody.courseCms) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
-                
+
                 if (cmsData.overview || cmsData.salary || cmsData.funding || cmsData.study || cmsData.reviews || cmsData.Entry || cmsData.FAQ) {
                     throw new HttpError(400, "Invalid CMS data format for General course. Expected General CMS fields.");
                 }
-                
+
+
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'General',
@@ -95,11 +108,11 @@ export class CourseController {
             } else if (decryptedBody.courseType === 'Social' && decryptedBody.courseCms) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
-                
+
                 if (cmsData.section_2 || cmsData.section_3 || cmsData.section_4 || cmsData.section_5 || cmsData.section_6 || cmsData.section_7 || cmsData.section_8 || cmsData.section_9 || cmsData.section_10 || cmsData.section_11 || cmsData.section_12) {
                     throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
                 }
-                
+
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'Social',
@@ -305,6 +318,22 @@ export class CourseController {
 
             if (Array.isArray(updateFields.modeType)) {
                 updateFields.modeType = updateFields.modeType.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.subjects)) {
+                updateFields.subjects = updateFields.subjects.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.qualifications)) {
+                updateFields.qualifications = updateFields.qualifications.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.durations)) {
+                updateFields.durations = updateFields.durations.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.fundings)) {
+                updateFields.fundings = updateFields.fundings.map((id: string) => new ObjectId(id));
             }
 
             const courseCmsData = updateFields.courseCms;
