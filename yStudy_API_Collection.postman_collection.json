@@ -2832,6 +2832,117 @@
           }
         }
       ]
+    },
+    {
+      "name": "Admin DynamicFormController",
+      "item": [
+        {
+          "name": "GET /dynamic-forms",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/dynamic-forms",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "dynamic-forms"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /dynamic-forms/update",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/dynamic-forms/update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "dynamic-forms",
+                "update"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frontend DynamicFormController",
+      "item": [
+        {
+          "name": "POST /frontend/dynamic-forms/config",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here_optional\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/dynamic-forms/config",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "dynamic-forms",
+                "config"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /frontend/dynamic-forms/submit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here_with_formData\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/dynamic-forms/submit",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "dynamic-forms",
+                "submit"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
