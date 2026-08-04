@@ -31,6 +31,7 @@ export class SubjectController {
                 image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
                 tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
+                salary: decryptedBody.salary,
                 createdAt: new Date(),
                 updatedAt: new Date()
             };

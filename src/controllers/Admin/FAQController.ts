@@ -71,18 +71,18 @@ export class FAQController {
             const results = await faqDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
-                            data: encrypt({
-                            success: true,
-                            ...results,
-                            data: results.data.map((f: FAQ) => ({
-                                _id: f._id?.toString(),
-                                slug: f.slug,
-                                question: f.question,
-                                createdAt: f.createdAt,
-                                updatedAt: f.updatedAt
-                            }))
-                        })
-                        };
+                data: encrypt({
+                    success: true,
+                    ...results,
+                    data: results.data.map((f: FAQ) => ({
+                        _id: f._id?.toString(),
+                        slug: f.slug,
+                        question: f.question,
+                        createdAt: f.createdAt,
+                        updatedAt: f.updatedAt
+                    }))
+                })
+            };
         } catch (error) {
             logger.error(`[FAQController:listFAQs] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
