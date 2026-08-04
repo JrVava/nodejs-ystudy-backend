@@ -17,7 +17,7 @@ export class TimeTableController {
             const timeTableDB = new QueryBuilder<TimeTable>("time_tables");
 
             // Validate required fields
-            if (!decryptedBody.title || !decryptedBody.slug) {
+            if (!decryptedBody.title) {
                 throw new HttpError(400, "title and slug are required fields");
             }
 
@@ -84,17 +84,18 @@ export class TimeTableController {
             const results = await timeTableDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
-                            data: encrypt({
-                            success: true,
-                            ...results,
-                            data: results.data.map((t: TimeTable) => ({
-                                _id: t._id?.toString(),
-                                title: t.title,
-                                createdAt: t.createdAt,
-                                updatedAt: t.updatedAt
-                            }))
-                        })
-                        };
+                data: encrypt({
+                    success: true,
+                    ...results,
+                    data: results.data.map((t: TimeTable) => ({
+                        _id: t._id?.toString(),
+                        title: t.title,
+                        slug: t.slug,
+                        createdAt: t.createdAt,
+                        updatedAt: t.updatedAt
+                    }))
+                })
+            };
         } catch (error) {
             logger.error(`[TimeTableController:listTimeTables] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
@@ -150,14 +151,6 @@ export class TimeTableController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
-
-            // If updating slug, check for uniqueness among non-deleted records
-            if (updateFields.slug) {
-                const existing = await timeTableDB.findOne({ slug: updateFields.slug, _id: { $ne: objId }, isDeleted: { $ne: true } });
-                if (existing) {
-                    throw new HttpError(400, "Time table with this slug already exists");
-                }
-            }
 
             // If items are provided, map them
             if (updateFields.items !== undefined) {

@@ -7,6 +7,7 @@ export interface Subject {
     description?: string;
     image?: ObjectId | null;
     tags?: string[];
+    salary?: string;
     status?: boolean;
     isDeleted?: boolean;
     createdAt?: Date;
