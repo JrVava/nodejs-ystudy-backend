@@ -22,6 +22,9 @@ export class App {
     // ✅ CONNECT DB FIRST
     await connectDB();
 
+    // ✅ APPLY CORS GLOBALLY BEFORE ROUTES
+    this.app.use(cors());
+
     // ✅ INIT routing-controllers FIRST
     this.app = useExpressServer(this.app, {
       cors: true,
@@ -41,7 +44,6 @@ export class App {
     this.app.use("/media", express.static(path.join(__dirname, "../media")));
 
     // ✅ CUSTOM ROUTES AFTER BODY PARSER
-    this.app.use(cors());
     this.routes();
   }
 
