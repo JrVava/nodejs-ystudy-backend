@@ -5402,5 +5402,1041 @@
             "description": "Use Degree Match Finder or speak to a YStudy adviser before applying.",
             "status": true
         }
+    },
+    {
+        "page": "childcare-grant",
+        "section_2": {
+            "badge": "Eligibility snapshot",
+            "title": "Who usually needs a funding check?",
+            "description": "A quick student-first view before they start an application.",
+            "cards": [
+                {
+                    "title": "British / Irish",
+                    "subTitle": "Usually strong route",
+                    "description": "Typically checked for England residence, course designation and previous study.",
+                    "link": "",
+                    "linkBtnName": "Check eligibility →"
+                },
+                {
+                    "title": "Settled / ILR",
+                    "subTitle": "Full support route",
+                    "description": "Often eligible for tuition and maintenance support if residence rules are met.",
+                    "link": "",
+                    "linkBtnName": "Check status →"
+                },
+                {
+                    "title": "Pre-settled",
+                    "subTitle": "Needs review",
+                    "description": "Can be possible, but residence history and category matter. Do not guess.",
+                    "link": "",
+                    "linkBtnName": "Ask adviser →"
+                },
+                {
+                    "title": "Refugee / protection",
+                    "subTitle": "Protected route",
+                    "description": "Often eligible for strong support, but documents and dates must be checked.",
+                    "link": "",
+                    "linkBtnName": "Start review →"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Funding journey",
+            "title": "From eligibility to repayment.",
+            "description": "Students understand finance faster when the process is shown as a journey, not a wall of rules.",
+            "cards": [
+                {
+                    "title": "1. Eligibility",
+                    "description": "Check nationality, immigration status, ordinary residence, age and previous study."
+                },
+                {
+                    "title": "2. Application",
+                    "description": "Submit SFE details, evidence and course information early to avoid delayed payments."
+                },
+                {
+                    "title": "3. Payments",
+                    "description": "Tuition goes to the provider. Maintenance is paid to the student after enrolment confirmation."
+                },
+                {
+                    "title": "4. Repayment",
+                    "description": "Repay only when earning above the threshold. It is income-based, not a normal bank loan."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Common myths",
+            "title": "Finance explained without panic.",
+            "description": "These blocks should reduce fear and increase adviser enquiries.",
+            "headers": {
+                "myth_header": "Myth",
+                "reality_header": "Reality",
+                "best_header": "Best next step"
+            },
+            "rows": [
+                {
+                    "myth": "“Student Finance is like a bank loan.”",
+                    "reality": "Repayment is based on income, not a fixed monthly instalment.",
+                    "best": "Use the repayment calculator."
+                },
+                {
+                    "myth": "“I must repay while I study.”",
+                    "reality": "No. Repayment starts only after the course and only above the income threshold.",
+                    "best": "Check Plan 5 estimate."
+                },
+                {
+                    "myth": "“If I studied before, I cannot get anything.”",
+                    "reality": "Previous study matters, but rules vary by route and qualification.",
+                    "best": "Book an adviser review."
+                },
+                {
+                    "myth": "“Online and weekend courses are always the same.”",
+                    "reality": "Mode and attendance can affect maintenance support.",
+                    "best": "Check before choosing the course."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Need certainty before you apply?",
+            "description": "YStudy can check your status, previous study and course type before you submit your application.",
+            "status": true
+        }
+    },
+    {
+        "page": "maintenance-loan",
+        "section_2": {
+            "badge": "Plain English",
+            "title": "What is the maintenance loan?",
+            "subTitle": "Key fact",
+            "description1": "The maintenance loan is income-assessed. The amount you receive depends on your household income — not just your own. Lower household income = higher maintenance support.",
+            "description2": "Unlike the tuition fee loan — which goes straight to your university — the maintenance loan is paid into your bank account to help you cover living costs while studying.",
+            "description3": "You can spend it on whatever you need: rent, bills, food, travel, childcare or course materials.",
+            "status": true
+        },
+        "section_3": {
+            "badge": "Maximum amounts",
+            "title": "2026/27 maximum amounts",
+            "description": "The maximums below apply to full-time students. Part-time students receive reduced amounts. These are the highest possible figures — most students receive less based on their household income.",
+            "headers": {
+                "living_header": "Living situation",
+                "maximum_header": "Maximum 2026/27",
+                "minimum_header": "Minimum (high income)"
+            },
+            "rows": [
+                {
+                    "living": "Living away — outside London",
+                    "maximum": "£10,830",
+                    "minimum": "£5,048"
+                },
+                {
+                    "living": "Living away — in London",
+                    "maximum": "£14,135",
+                    "minimum": "£7,039"
+                },
+                {
+                    "living": "Living at home",
+                    "maximum": "£9,118",
+                    "minimum": "£4,013"
+                },
+                {
+                    "living": "Studying — year abroad",
+                    "maximum": "£12,953",
+                    "minimum": "£6,533"
+                }
+            ],
+            "tableDescription": "2026/27 SFE published maximums. Actual entitlement varies by household income. Verify at gov.uk/student-finance.",
+            "status": true
+        },
+        "section_4": {
+            "badge": "SFE journey",
+            "title": "From eligibility to money in your bank.",
+            "description": "Student Finance as one guided path — not a wall of forms. Hover any step to see what happens and what we help you with.",
+            "stepper": [
+                {
+                    "stepNumber": 1,
+                    "title": "Confirm your residency status",
+                    "description": "Check immigration status, home address and 3-year residence before anything else."
+                },
+                {
+                    "stepNumber": 2,
+                    "title": "Check the course qualifies",
+                    "description": "Full-time, designated provider and the right study intensity for maintenance support."
+                },
+                {
+                    "stepNumber": 3,
+                    "title": "Estimate your amount",
+                    "description": "Use living situation and household income to estimate your maintenance loan."
+                },
+                {
+                    "stepNumber": 4,
+                    "title": "Gather your evidence",
+                    "description": "Identity, residency and household income documents ready before you apply."
+                },
+                {
+                    "stepNumber": 5,
+                    "title": "Apply to Student Finance",
+                    "description": "Submit your SFE application early — Tuition Fee Loan and Maintenance Loan together."
+                },
+                {
+                    "stepNumber": 6,
+                    "title": "Household income assessment",
+                    "description": "SFE assesses household income on a sliding scale to set your final amount."
+                },
+                {
+                    "stepNumber": 7,
+                    "title": "Approval & entitlement letter",
+                    "description": "You receive confirmation of your maintenance loan amount for the year."
+                },
+                {
+                    "stepNumber": 8,
+                    "title": "Paid into your bank",
+                    "description": "Three instalments across the year — usually September, January and April."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Try the calculator",
+            "title": "Estimate your maintenance loan.",
+            "description": "A live estimate that updates as you choose — income, living situation and study mode. 2026/27 figures.",
+            "status": true
+        },
+        "section_6": {
+            "badge": "Qualification rules",
+            "title": "Which qualifications does it cover?",
+            "description": "Full-time undergraduate study at designated UK providers. Coverage depends on qualification level and study intensity — not subject.",
+            "cards": [
+                {
+                    "title": "✓ Eligible — full maintenance loan available",
+                    "pointers": [
+                        "Full-time Bachelor's degrees (BA, BSc, BEng) at designated UK providers",
+                        "Bachelor's with Foundation Year — Year 0 funded the same as Years 1–3",
+                        "Foundation Degree (FdA, FdSc) — Level 5, 2 years full-time",
+                        "HND (Higher National Diploma) — Level 5",
+                        "HNC when delivered full-time",
+                        "Certificate of Higher Education (CertHE) — Level 4",
+                        "Top-Up Degree after FdA/FdSc/HND to a full Bachelor's"
+                    ]
+                },
+                {
+                    "title": "✗ Not eligible for the maintenance loan",
+                    "pointers": [
+                        "Distance-learning / fully-online undergraduate courses, except DSA cases",
+                        "Weekend-only cohorts (Sat & Sun) — usually classed as part-time intensity",
+                        "Part-time undergrad under 25% intensity",
+                        "Master's degrees — different Postgraduate Master's Loan system",
+                        "PhDs / Doctoral research — see the Doctoral Loan",
+                        "Access to HE Diplomas — Level 3 Advanced Learner Loan",
+                        "Apprenticeships — paid by your employer"
+                    ]
+                }
+            ]
+        },
+        "section_7": {
+            "badge": "Important exclusions",
+            "title": "Which courses do NOT qualify?",
+            "description1": "A course can be eligible for tuition funding but not for maintenance support — this trips up many adult learners.",
+            "cards": [
+                {
+                    "icon": "🚫",
+                    "title": "Distance-learning courses",
+                    "description": "Fully online undergraduate courses are not eligible for maintenance loan or grants, except strict DSA cases."
+                },
+                {
+                    "icon": "📅",
+                    "title": "Weekend-only cohorts",
+                    "description": "Saturday–Sunday-only programmes are often classed as part-time intensity even when marketed as full-time."
+                },
+                {
+                    "icon": "⏰",
+                    "title": "Part-time study",
+                    "description": "Part-time courses may qualify for tuition support above 25% intensity, but not maintenance loan."
+                },
+                {
+                    "icon": "📜",
+                    "title": "Non-designated providers",
+                    "description": "If the provider is not designated by SFE, you usually cannot access tuition or maintenance loans."
+                },
+                {
+                    "icon": "🌍",
+                    "title": "Courses overseas",
+                    "description": "A UK degree with a year abroad can be fine; a full overseas course is not maintenance-eligible."
+                },
+                {
+                    "icon": "🎓",
+                    "title": "Previous-degree ELQ cases",
+                    "description": "Equivalent or Lower Qualification rules can block new funding, with some exceptions."
+                }
+            ],
+            "subTitle": "The main exception: disabled students on distance learning",
+            "description2": "If you qualify for Disabled Students' Allowance and your disability means you cannot reasonably study in person, SFE can grant maintenance support for a distance-learning course. This is a strict test, not a workaround. ",
+            "link": "",
+            "linkname": "Disabled Students' Allowance →",
+            "status": true
+        },
+        "section_8": {
+            "badge": "Payments & assessment",
+            "title": "When is it paid — and whose income counts?",
+            "cards": [
+                {
+                    "icon": "📅",
+                    "title": "Paid in three instalments",
+                    "description": "For a September start, payments typically arrive in September, January and April. Exact dates vary by university."
+                },
+                {
+                    "icon": "👪",
+                    "title": "Whose income counts",
+                    "description": "Under 25 and dependent usually means parents' income. If you're 25+ or independent, your own and partner's income may count."
+                },
+                {
+                    "icon": "💡",
+                    "title": "Budget tip",
+                    "description": "Divide your annual loan by 12 and budget monthly — term payments need to last through holidays too."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Does the maintenance loan affect benefits?",
+            "description": "It can affect means-tested benefits like Universal Credit — it's often counted as income. If you currently receive benefits, speak to an adviser before applying.",
+            "status": true
+        },
+        "section_10": {
+            "badge": "Postgraduate warning",
+            "title": "Postgraduate Master's — different rules entirely.",
+            "description": "Everything above is for undergraduate Student Finance. The postgraduate system works differently — and the distance-learning rule does not apply the same way.",
+            "cards": [
+                {
+                    "title": "Undergraduate",
+                    "subTitle": "Two separate loans",
+                    "subTitleTextColor": "#1263ff",
+                    "pointers": [
+                        "Tuition Fee Loan to university",
+                        "Maintenance Loan to your bank",
+                        "Distance/online courses: no maintenance",
+                        "Weekend-only: usually no maintenance"
+                    ]
+                },
+                {
+                    "title": "Postgraduate Master's",
+                    "subTitle": "One combined loan",
+                    "subTitleTextColor": "#ff7a1a",
+                    "pointers": [
+                        "Up to £12,858 in 2026/27",
+                        "You allocate it however you choose",
+                        "Distance / online: still eligible",
+                        "Part-time: eligible over up to 4 years"
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_11": {
+            "badge": "Related guides",
+            "title": "Useful finance guides",
+            "cards": [
+                {
+                    "image": "",
+                    "title": "Tuition fee loan explained",
+                    "description": "Understand the loan paid directly to your university.",
+                    "link": ""
+                },
+                {
+                    "image": "",
+                    "title": "Check your eligibility",
+                    "description": "Residency, previous study and course rules explained.",
+                    "link": ""
+                },
+                {
+                    "image": "",
+                    "title": "How repayments work",
+                    "description": "Income-based repayment, thresholds and write-off rules.",
+                    "link": ""
+                },
+                {
+                    "image": "",
+                    "title": "Evidence checklist",
+                    "description": "Prepare identity, residency and income documents.",
+                    "link": ""
+                },
+                {
+                    "image": "",
+                    "title": "Master's loan",
+                    "description": "Different rules for postgraduate study.",
+                    "link": ""
+                },
+                {
+                    "image": "",
+                    "title": "Disabled Students' Allowance",
+                    "description": "Extra help for eligible students with disability-related study costs.",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_12": {
+            "badge": "FAQ",
+            "title": "Common maintenance loan questions.",
+            "status": true
+        },
+        "section_13": {
+            "badge": "Want a personal estimate?",
+            "title": "See your maintenance loan based on your actual situation.",
+            "description": "Use the calculator to estimate your loan based on your income, location and living situation.",
+            "image": "",
+            "status": true
+        },
+        "section_14": {
+            "badge": "Eligibility snapshot",
+            "title": "Who usually needs a funding check?",
+            "description": "A quick student-first view before they start an application.",
+            "cards": [
+                {
+                    "title": "British / Irish",
+                    "subTitle": "Usually strong route",
+                    "description": "Typically checked for England residence, course designation and previous study.",
+                    "link": "",
+                    "linkBtnName": "Check eligibility →"
+                },
+                {
+                    "title": "Settled / ILR",
+                    "subTitle": "Full support route",
+                    "description": "Often eligible for tuition and maintenance support if residence rules are met.",
+                    "link": "",
+                    "linkBtnName": "Check status →"
+                },
+                {
+                    "title": "Pre-settled",
+                    "subTitle": "Needs review",
+                    "description": "Can be possible, but residence history and category matter. Do not guess.",
+                    "link": "",
+                    "linkBtnName": "Ask adviser →"
+                },
+                {
+                    "title": "Refugee / protection",
+                    "subTitle": "Protected route",
+                    "description": "Often eligible for strong support, but documents and dates must be checked.",
+                    "link": "",
+                    "linkBtnName": "Start review →"
+                }
+            ],
+            "status": true
+        },
+        "section_15": {
+            "badge": "Funding journey",
+            "title": "From eligibility to repayment.",
+            "description": "Students understand finance faster when the process is shown as a journey, not a wall of rules.",
+            "cards": [
+                {
+                    "title": "1. Eligibility",
+                    "description": "Check nationality, immigration status, ordinary residence, age and previous study."
+                },
+                {
+                    "title": "2. Application",
+                    "description": "Submit SFE details, evidence and course information early to avoid delayed payments."
+                },
+                {
+                    "title": "3. Payments",
+                    "description": "Tuition goes to the provider. Maintenance is paid to the student after enrolment confirmation."
+                },
+                {
+                    "title": "4. Repayment",
+                    "description": "Repay only when earning above the threshold. It is income-based, not a normal bank loan."
+                }
+            ],
+            "status": true
+        },
+        "section_16": {
+            "badge": "Common myths",
+            "title": "Finance explained without panic.",
+            "description": "These blocks should reduce fear and increase adviser enquiries.",
+            "headers": {
+                "myth_header": "Myth",
+                "reality_header": "Reality",
+                "best_header": "Best next step"
+            },
+            "rows": [
+                {
+                    "myth": "“Student Finance is like a bank loan.”",
+                    "reality": "Repayment is based on income, not a fixed monthly instalment.",
+                    "best": "Use the repayment calculator."
+                },
+                {
+                    "myth": "“I must repay while I study.”",
+                    "reality": "No. Repayment starts only after the course and only above the income threshold.",
+                    "best": "Check Plan 5 estimate."
+                },
+                {
+                    "myth": "“If I studied before, I cannot get anything.”",
+                    "reality": "Previous study matters, but rules vary by route and qualification.",
+                    "best": "Book an adviser review."
+                },
+                {
+                    "myth": "“Online and weekend courses are always the same.”",
+                    "reality": "Mode and attendance can affect maintenance support.",
+                    "best": "Check before choosing the course."
+                }
+            ],
+            "status": true
+        },
+        "section_17": {
+            "title": "Need certainty before you apply?",
+            "description": "YStudy can check your status, previous study and course type before you submit your application.",
+            "status": true
+        },
+        "section_18": {
+            "badge": "Stay in touch",
+            "title": "Your next step should feel organised.",
+            "description": "Create a free account to save progress, find your best degree and track applications.",
+            "status": true
+        },
+        "section_19": {
+            "badge": "Tuition Fee Loan",
+            "title": "Tuition Fee Loan",
+            "description": "This section is ready for detailed content in the next content pass.",
+            "status": true
+        },
+        "section_20": {
+            "badge": "Grants",
+            "title": "Grants",
+            "description": "This section is ready for detailed content in the next content pass.",
+            "status": true
+        },
+        "section_21": {
+            "badge": "Repayment",
+            "title": "Repayment",
+            "description": "This section is ready for detailed content in the next content pass.",
+            "status": true
+        }
+    },
+    {
+        "page": "grants-support",
+        "section_2": {
+            "badge": "Funding cards",
+            "title": "Student finance and support cards.",
+            "description": "Use on Funding Hub, Maintenance Loan, grants, student finance guides and calculator results.",
+            "cards": [
+                {
+                    "image": "",
+                    "title": "Maintenance Loan",
+                    "subTitle": "Up to £14k+",
+                    "description": "Help with living costs.",
+                    "link": "",
+                    "linkBtnName": "View guide →"
+                },
+                {
+                    "image": "",
+                    "title": "Childcare Grant",
+                    "subTitle": "Extra support",
+                    "description": "Support for student parents.",
+                    "link": "",
+                    "linkBtnName": "Check support →"
+                },
+                {
+                    "image": "",
+                    "title": "DSA",
+                    "subTitle": "Study support",
+                    "description": "Disability-related support.",
+                    "link": "",
+                    "linkBtnName": "Learn more →"
+                },
+                {
+                    "image": "",
+                    "title": "Parents' Allowance",
+                    "subTitle": "Extra help",
+                    "description": "Help for student parents.",
+                    "link": "",
+                    "linkBtnName": "View guide →"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Calculator result",
+            "title": "Your student finance estimate.",
+            "description": "This is an indicative result. Final entitlement depends on SFE assessment, course intensity, household income, location and study mode.",
+            "cardTitle": "Total possible support",
+            "cardDescription": "£23,925",
+            "cards": [
+                {
+                    "title": "Tuition Fee Loan",
+                    "description": "£9,790"
+                },
+                {
+                    "title": "Maintenance Loan",
+                    "description": "£14,135"
+                },
+                {
+                    "title": "Extra grants",
+                    "description": "Check"
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Finance journey",
+            "title": "From application to repayment.",
+            "description": "The Tuition Fee Loan moves through eight stages — from confirming your status to the day it's written off. Click any stage to see exactly what happens, what you need to do, and how long it takes.",
+            "steppers": [
+                {
+                    "stepNumber": 1,
+                    "stepperName": "Status",
+                    "tag": "Stage 1 · Before you apply",
+                    "title": "Confirm your status",
+                    "description": "SFE first checks who you are: your residency, nationality and whether you've studied before. This decides what you can get.",
+                    "facts": [
+                        [
+                            "Who qualifies",
+                            "Usually 3 years' UK residence + settled/eligible status"
+                        ],
+                        [
+                            "Watch-out",
+                            "Previous study (ELQ) can reduce or block funding"
+                        ]
+                    ],
+                    "doit": "Have your passport/ID, residency history and any previous-study details ready before you start."
+                },
+                {
+                    "stepNumber": 2,
+                    "stepperName": "Course",
+                    "tag": "Stage 2 · Course check",
+                    "title": "Your course must be designated",
+                    "description": "The loan only flows if your course and provider are SFE-designated. Distance-only and some part-time intensities are treated differently.",
+                    "facts": [
+                        [
+                            "Eligible",
+                            "Designated undergraduate courses at registered providers"
+                        ],
+                        [
+                            "Not eligible",
+                            "Non-designated providers, most distance-only courses"
+                        ]
+                    ],
+                    "doit": "Confirm with the university that your specific course is SFE-designated for your start year."
+                },
+                {
+                    "stepNumber": 3,
+                    "stepperName": "Provider",
+                    "tag": "Stage 3 · Provider link",
+                    "title": "SFE links to your provider",
+                    "description": "Once your course is confirmed, SFE connects your application to the university so they can verify your enrolment later.",
+                    "facts": [
+                        [
+                            "What SFE needs",
+                            "Provider name, course title and start date"
+                        ],
+                        [
+                            "Timing",
+                            "Set up as soon as you have a firm offer"
+                        ]
+                    ],
+                    "doit": "Enter the exact provider and course as they appear on your offer letter."
+                },
+                {
+                    "stepNumber": 4,
+                    "stepperName": "Apply",
+                    "tag": "Stage 4 · Apply",
+                    "title": "Submit your application",
+                    "description": "You apply online through your regional Student Finance service. The Tuition Fee Loan is paid straight to the university — you never touch it.",
+                    "facts": [
+                        [
+                            "When to apply",
+                            "Open ~6 months before term; apply early"
+                        ],
+                        [
+                            "Paid to",
+                            "Your university, directly, in instalments"
+                        ]
+                    ],
+                    "doit": "Apply even before you have a confirmed place — you can update details later."
+                },
+                {
+                    "stepNumber": 5,
+                    "stepperName": "Evidence",
+                    "tag": "Stage 5 · Evidence",
+                    "title": "Send your evidence",
+                    "description": "SFE may ask for identity, residency or household-income evidence. Missing documents are the most common cause of delay.",
+                    "facts": [
+                        [
+                            "Common asks",
+                            "Passport, residency proof, household income"
+                        ],
+                        [
+                            "Risk",
+                            "Slow evidence = delayed first payment"
+                        ]
+                    ],
+                    "doit": "Upload everything SFE requests in one go, and keep copies."
+                },
+                {
+                    "stepNumber": 6,
+                    "stepperName": "Approval",
+                    "tag": "Stage 6 · Approval",
+                    "title": "SFE approves your funding",
+                    "description": "SFE assesses everything and confirms your entitlement. You'll get an entitlement letter showing your Tuition Fee Loan amount.",
+                    "facts": [
+                        [
+                            "Outcome",
+                            "Entitlement letter confirming amounts"
+                        ],
+                        [
+                            "If wrong",
+                            "You can request a reassessment"
+                        ]
+                    ],
+                    "doit": "Check the entitlement letter carefully and query anything that looks off."
+                },
+                {
+                    "stepNumber": 7,
+                    "stepperName": "Payments",
+                    "tag": "Stage 7 · Payments",
+                    "title": "The loan is paid out",
+                    "description": "After you enrol and the university confirms attendance, SFE releases the tuition payment directly to the provider, in instalments across the year.",
+                    "facts": [
+                        [
+                            "Trigger",
+                            "University confirms your enrolment"
+                        ],
+                        [
+                            "Schedule",
+                            "Usually three instalments per year"
+                        ]
+                    ],
+                    "doit": "Make sure you fully enrol — payment won't release until the provider confirms."
+                },
+                {
+                    "stepNumber": 8,
+                    "stepperName": "Repay",
+                    "tag": "Stage 8 · Repayment",
+                    "title": "You repay only when earning",
+                    "description": "Repayment is income-based and only starts above the Plan 5 threshold. Anything still owed after the term is written off — it's nothing like a commercial loan.",
+                    "facts": [
+                        [
+                            "You repay",
+                            "9% of income above the threshold"
+                        ],
+                        [
+                            "Write-off",
+                            "Remaining balance cleared after the set period"
+                        ]
+                    ],
+                    "doit": "You don't repay a penny while earning under the threshold — keep your contact details current with SLC."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Comparison table",
+            "title": "Check funding routes.",
+            "description": "Clear decision signals for course comparison, university comparison and funding guide pages.",
+            "headers": {
+                "route_header": "Route",
+                "funding_header": "Funding type",
+                "maintainance_header": "Maintenance Loan",
+                "best_header": "Best for",
+                "verdict_header": "Verdict"
+            },
+            "rows": [
+                {
+                    "route": "Campus / blended undergraduate",
+                    "funding": "Tuition + maintenance",
+                    "maintainance": "Usually stronger",
+                    "best": "Students needing living-cost support",
+                    "verdict": "Best overall route"
+                },
+                {
+                    "route": "Weekend-only",
+                    "funding": "Needs careful check",
+                    "maintainance": "Risk area",
+                    "best": "Working adults with limited time",
+                    "verdict": "Ask adviser first"
+                },
+                {
+                    "route": "Online / distance learning",
+                    "funding": "Tuition may apply",
+                    "maintainance": "Usually no maintenance",
+                    "best": "Remote learners",
+                    "verdict": "Good flexibility, less living-cost support"
+                },
+                {
+                    "route": "Postgraduate Master’s",
+                    "funding": "Postgraduate Loan",
+                    "maintainance": "Different system",
+                    "best": "Graduates and career changers",
+                    "verdict": "Check loan cap and tuition"
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "Money & student life",
+            "title": "Cost of living support while you study",
+            "description": "From rent and travel to food, childcare and study materials, compare the support available and understand what could affect your student finance before you apply.",
+            "image": ""
+        },
+        "section_7": {
+            "badge": "YStudy Money",
+            "title": "Student money decisions after finance.",
+            "description": "MoneySavingExpert-style cards for bank accounts, broadband, phone plans and student essentials.",
+            "cards": [
+                {
+                    "badge": "Editor's choice",
+                    "title": "Student bank account",
+                    "subTitle": "Welcome reward",
+                    "priceOrSpeed": "£100",
+                    "description": "Overdraft up to £1,500. Check eligibility and terms before applying."
+                },
+                {
+                    "badge": "Best value",
+                    "title": "Student mobile SIM",
+                    "subTitle": "Flexible monthly plan",
+                    "priceOrSpeed": "100GB",
+                    "description": "Useful for students who do not want a long contract."
+                },
+                {
+                    "badge": "Fast setup",
+                    "title": "Student broadband",
+                    "subTitle": "Shared house option",
+                    "priceOrSpeed": "150Mbps",
+                    "description": "Check installation, cancellation and minimum term."
+                }
+            ],
+            "status": true
+        },
+        "section_8": {
+            "badge": "Eligibility snapshot",
+            "title": "Who usually needs a funding check?",
+            "description": "A quick student-first view before they start an application.",
+            "cards": [
+                {
+                    "title": "British / Irish",
+                    "subTitle": "Usually strong route",
+                    "description": "Typically checked for England residence, course designation and previous study.",
+                    "link": "",
+                    "linkBtnName": "Check eligibility →"
+                },
+                {
+                    "title": "Settled / ILR",
+                    "subTitle": "Full support route",
+                    "description": "Often eligible for tuition and maintenance support if residence rules are met.",
+                    "link": "",
+                    "linkBtnName": "Check status →"
+                },
+                {
+                    "title": "Pre-settled",
+                    "subTitle": "Needs review",
+                    "description": "Can be possible, but residence history and category matter. Do not guess.",
+                    "link": "",
+                    "linkBtnName": "Ask adviser →"
+                },
+                {
+                    "title": "Refugee / protection",
+                    "subTitle": "Protected route",
+                    "description": "Often eligible for strong support, but documents and dates must be checked.",
+                    "link": "",
+                    "linkBtnName": "Start review →"
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "badge": "Funding journey",
+            "title": "From eligibility to repayment.",
+            "description": "Students understand finance faster when the process is shown as a journey, not a wall of rules.",
+            "cards": [
+                {
+                    "title": "1. Eligibility",
+                    "description": "Check nationality, immigration status, ordinary residence, age and previous study."
+                },
+                {
+                    "title": "2. Application",
+                    "description": "Submit SFE details, evidence and course information early to avoid delayed payments."
+                },
+                {
+                    "title": "3. Payments",
+                    "description": "Tuition goes to the provider. Maintenance is paid to the student after enrolment confirmation."
+                },
+                {
+                    "title": "4. Repayment",
+                    "description": "Repay only when earning above the threshold. It is income-based, not a normal bank loan."
+                }
+            ],
+            "status": true
+        },
+        "section_10": {
+            "badge": "Common myths",
+            "title": "Finance explained without panic.",
+            "description": "These blocks should reduce fear and increase adviser enquiries.",
+            "headers": {
+                "myth_header": "Myth",
+                "reality_header": "Reality",
+                "best_header": "Best next step"
+            },
+            "rows": [
+                {
+                    "myth": "“Student Finance is like a bank loan.”",
+                    "reality": "Repayment is based on income, not a fixed monthly instalment.",
+                    "best": "Use the repayment calculator."
+                },
+                {
+                    "myth": "“I must repay while I study.”",
+                    "reality": "No. Repayment starts only after the course and only above the income threshold.",
+                    "best": "Check Plan 5 estimate."
+                },
+                {
+                    "myth": "“If I studied before, I cannot get anything.”",
+                    "reality": "Previous study matters, but rules vary by route and qualification.",
+                    "best": "Book an adviser review."
+                },
+                {
+                    "myth": "“Online and weekend courses are always the same.”",
+                    "reality": "Mode and attendance can affect maintenance support.",
+                    "best": "Check before choosing the course."
+                }
+            ],
+            "status": true
+        },
+        "section_11": {
+            "title": "Need certainty before you apply?",
+            "description": "YStudy can check your status, previous study and course type before you submit your application.",
+            "status": true
+        },
+        "section_12": {
+            "badge": "Stay in touch",
+            "title": "Your next step should feel organised.",
+            "description": "Create a free account to save progress, find your best degree and track applications.",
+            "status": true
+        },
+        "section_13": {
+            "badge": "YStudy resource",
+            "title": "Grants & Support",
+            "description": "Understand extra student support such as childcare, parents’ support and DSA.",
+            "cards": [
+                {
+                    "title": "Childcare Grant",
+                    "description": "Support may be available for registered childcare.",
+                    "link": ""
+                },
+                {
+                    "title": "Parents’ Learning Allowance",
+                    "description": "Extra support for students with children.",
+                    "link": ""
+                },
+                {
+                    "title": "Disabled Students’ Allowance",
+                    "description": "Support for disability, health conditions or learning differences.",
+                    "link": ""
+                }
+            ],
+            "status": true
+        },
+        "section_14": {
+            "title": "Need help choosing the right route?",
+            "description": "Use Degree Match Finder or speak to a YStudy adviser before applying.",
+            "status": true
+        }
+    },
+    {
+        "page": "dsa",
+        "section_2": {
+            "badge": "Eligibility snapshot",
+            "title": "Who usually needs a funding check?",
+            "description": "A quick student-first view before they start an application.",
+            "cards": [
+                {
+                    "title": "British / Irish",
+                    "subTitle": "Usually strong route",
+                    "description": "Typically checked for England residence, course designation and previous study.",
+                    "link": "",
+                    "linkBtnName": "Check eligibility →"
+                },
+                {
+                    "title": "Settled / ILR",
+                    "subTitle": "Full support route",
+                    "description": "Often eligible for tuition and maintenance support if residence rules are met.",
+                    "link": "",
+                    "linkBtnName": "Check status →"
+                },
+                {
+                    "title": "Pre-settled",
+                    "subTitle": "Needs review",
+                    "description": "Can be possible, but residence history and category matter. Do not guess.",
+                    "link": "",
+                    "linkBtnName": "Ask adviser →"
+                },
+                {
+                    "title": "Refugee / protection",
+                    "subTitle": "Protected route",
+                    "description": "Often eligible for strong support, but documents and dates must be checked.",
+                    "link": "",
+                    "linkBtnName": "Start review →"
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Funding journey",
+            "title": "From eligibility to repayment.",
+            "description": "Students understand finance faster when the process is shown as a journey, not a wall of rules.",
+            "cards": [
+                {
+                    "title": "1. Eligibility",
+                    "description": "Check nationality, immigration status, ordinary residence, age and previous study."
+                },
+                {
+                    "title": "2. Application",
+                    "description": "Submit SFE details, evidence and course information early to avoid delayed payments."
+                },
+                {
+                    "title": "3. Payments",
+                    "description": "Tuition goes to the provider. Maintenance is paid to the student after enrolment confirmation."
+                },
+                {
+                    "title": "4. Repayment",
+                    "description": "Repay only when earning above the threshold. It is income-based, not a normal bank loan."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Common myths",
+            "title": "Finance explained without panic.",
+            "description": "These blocks should reduce fear and increase adviser enquiries.",
+            "headers": {
+                "myth_header": "Myth",
+                "reality_header": "Reality",
+                "best_header": "Best next step"
+            },
+            "rows": [
+                {
+                    "myth": "“Student Finance is like a bank loan.”",
+                    "reality": "Repayment is based on income, not a fixed monthly instalment.",
+                    "best": "Use the repayment calculator."
+                },
+                {
+                    "myth": "“I must repay while I study.”",
+                    "reality": "No. Repayment starts only after the course and only above the income threshold.",
+                    "best": "Check Plan 5 estimate."
+                },
+                {
+                    "myth": "“If I studied before, I cannot get anything.”",
+                    "reality": "Previous study matters, but rules vary by route and qualification.",
+                    "best": "Book an adviser review."
+                },
+                {
+                    "myth": "“Online and weekend courses are always the same.”",
+                    "reality": "Mode and attendance can affect maintenance support.",
+                    "best": "Check before choosing the course."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Need certainty before you apply?",
+            "description": "YStudy can check your status, previous study and course type before you submit your application.",
+            "status": true
+        }
     }
 ]
