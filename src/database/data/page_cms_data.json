@@ -1867,12 +1867,12 @@
     },
     {
         "page": "study-subjects",
-        "secion_1": {
+        "section_1": {
             "title": "Degrees",
             "description": "Search, shortlist and choose a realistic route.",
             "status": true
         },
-        "secion_2": {
+        "section_2": {
             "badge": "Find degrees",
             "title": "Study subjects.",
             "description": "Explore popular subjects for adult learners and career changers.",
@@ -2104,12 +2104,12 @@
     },
     {
         "page": "study-routes",
-        "secion_1": {
+        "section_1": {
             "title": "Degrees",
             "description": "Search, shortlist and choose a realistic route.",
             "status": true
         },
-        "secion_2": {
+        "section_2": {
             "badge": "Find degrees",
             "title": "Study routes.",
             "description": "Compare foundation, HND, top-up, online and blended routes.",
@@ -6436,6 +6436,680 @@
         "section_5": {
             "title": "Need certainty before you apply?",
             "description": "YStudy can check your status, previous study and course type before you submit your application.",
+            "status": true
+        }
+    },
+    {
+        "page": "resources-hub",
+        "section_2": {
+            "badge": "All guides",
+            "title": "Plain-English guides for adult learners.",
+            "description": "Funding, university routes, applications and careers — explained without jargon. Pick the one that answers your question.",
+            "status": true
+        },
+        "section_3": {
+            "title": "Need help choosing where to start?",
+            "description": "Talk to a student adviser before choosing a course or submitting an application.",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "Phase 8 authority hub",
+            "title": "High-value guides for students who are close to applying.",
+            "description": "These guides answer the questions that usually stop students from moving forward: eligibility, funding, entry routes and flexible study.",
+            "cards": [
+                {
+                    "title": "Mature student guide",
+                    "description": "Returning to education, changing career and studying while working."
+                },
+                {
+                    "title": "Settled status & Student Finance",
+                    "description": "Understand documents, residency and status questions before applying."
+                },
+                {
+                    "title": "Foundation year guide",
+                    "description": "Use Year 0 when you do not meet direct entry requirements."
+                },
+                {
+                    "title": "Online and blended degrees",
+                    "description": "Compare flexible study modes before choosing a course."
+                }
+            ]
+        }
+    },
+    {
+        "page": "university-routes",
+        "section_2": {
+            "badge": "Featured guides",
+            "title": "University Routes",
+            "description": "Open a guide or speak to an adviser if you want a route checked.",
+            "status": true
+        },
+        "section_3": {
+            "title": "Want a personalised route?",
+            "description": "A YStudy adviser can check your funding, qualifications and course options."
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "career-change",
+        "section_2": {
+            "badge": "Featured guides",
+            "title": "Career Change Guides",
+            "description": "Open a guide or speak to an adviser if you want a route checked.",
+            "status": true
+        },
+        "section_3": {
+            "title": "Want a personalised route?",
+            "description": "A YStudy adviser can check your funding, qualifications and course options.",
+            "status": true
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "why-ystudy",
+        "section_2": {
+            "badge": "Why students use YStudy",
+            "title": "Built for mature students, not generic applicants",
+            "description": "YStudy focuses on the decisions adults actually worry about.",
+            "cards": [
+                {
+                    "icon": "🧭",
+                    "title": "Independent",
+                    "description": "Guidance platform, not a university."
+                },
+                {
+                    "icon": "💷",
+                    "title": "Free guidance",
+                    "description": "Students can check options before applying."
+                },
+                {
+                    "icon": "✅",
+                    "title": "Funding focused",
+                    "description": "Eligibility and finance checks come early."
+                },
+                {
+                    "icon": "👥",
+                    "title": "Adult learner specialists",
+                    "description": "Built around working adults and career changers."
+                },
+                {
+                    "icon": "📝",
+                    "title": "Application support",
+                    "description": "Documents, interviews and adviser handoff."
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "What can we help with?",
+            "title": "One journey from unsure to applied",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Degree choice",
+                    "description": "Find realistic courses and routes."
+                },
+                {
+                    "number": "2",
+                    "title": "Funding",
+                    "description": "Check risks and possible support."
+                },
+                {
+                    "number": "3",
+                    "title": "Application",
+                    "description": "Prepare documents and personal statement."
+                },
+                {
+                    "number": "4",
+                    "title": "Interview",
+                    "description": "Use adviser guidance before important conversations."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "title": "Check your eligibility",
+            "description": "Start with funding and route confidence.",
+            "status": true
+        }
+    },
+    {
+        "page": "news-updates",
+        "section_2": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "polish-community",
+        "section_2": {
+            "badge": "Community snapshot",
+            "title": "What should Polish students know first?",
+            "description": "Polish people are one of the largest European communities in the UK. Many arrived after Poland joined the EU, built work and family lives here, and now want UK qualifications for career progression.",
+            "cards": [
+                {
+                    "icon": "🏙️",
+                    "title": "Large UK community",
+                    "description": "Major communities are in London, Birmingham, Manchester, Edinburgh, Glasgow, Southampton, Reading and Crewe."
+                },
+                {
+                    "icon": "📄",
+                    "title": "EUSS routes",
+                    "description": "Many Polish residents hold settled or pre-settled status under the EU Settlement Scheme, which may support home-fee and funding routes."
+                },
+                {
+                    "icon": "👷",
+                    "title": "Work-based progression",
+                    "description": "Construction, care, logistics, IT and business are common starting points for moving into professional roles."
+                },
+                {
+                    "icon": "🎓",
+                    "title": "Mature learner friendly",
+                    "description": "Foundation Year, CertHE and flexible degrees may suit adults who have worked for years and do not hold UK A-levels."
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "Student Finance",
+            "title": "Can you get Student Finance?",
+            "description": "Eligibility depends mainly on immigration status, residency history, previous study and the course — not simply nationality.",
+            "cards": [
+                {
+                    "badge": "Likely route",
+                    "badgeClass": "gg-status green",
+                    "title": "Settled Status",
+                    "description": "Usually treated like a UK citizen for home-fee and Student Finance purposes if other rules are met."
+                },
+                {
+                    "badge": "Often eligible",
+                    "badgeClass": "gg-status green",
+                    "title": "Pre-Settled Status",
+                    "description": "Many students qualify if they meet residency and course rules. Evidence matters."
+                },
+                {
+                    "badge": "Eligible route",
+                    "badgeClass": "gg-status green",
+                    "title": "ILR",
+                    "description": "Indefinite Leave to Remain is normally a strong route for home-fee and funding access."
+                },
+                {
+                    "badge": "Standard route",
+                    "badgeClass": "gg-status green",
+                    "title": "British Citizen",
+                    "description": "Apply through the standard Student Finance and admissions process."
+                },
+                {
+                    "badge": "Adviser review",
+                    "badgeClass": "gg-status amber",
+                    "title": "No EUSS / New arrival",
+                    "description": "May be case-by-case. Without eligible status, international fees may apply."
+                }
+            ],
+            "cardDescription": "3-year residency rule: keep evidence such as council tax, tenancy documents, utility bills, GP/NHS records, payslips, P60s and official letters.",
+            "status": true
+        },
+        "section_4": {
+            "badge": "Myths broken",
+            "title": "Common myths — broken.",
+            "description": "These pages should build confidence, not scare people away. A lower-confidence student should speak to an adviser, not assume university is impossible.",
+            "cards": [
+                {
+                    "badge": "Reality",
+                    "title": "❌ “I need A-levels.”",
+                    "description": "Foundation Year and mature-entry routes may allow adults to start without traditional A-levels, depending on the provider and course."
+                },
+                {
+                    "badge": "Reality",
+                    "title": "❌ “Student Finance is only for British citizens.”",
+                    "description": "Settled status, pre-settled status and ILR holders may be eligible for funding if the full rules are met."
+                },
+                {
+                    "badge": "Reality",
+                    "title": "❌ “My Matura will not count.”",
+                    "description": "Polish Matura is commonly understood by UK providers and may be accepted directly or through a qualification comparison route."
+                },
+                {
+                    "badge": "Reality",
+                    "title": "❌ “I am too old to study.”",
+                    "description": "Many YStudy students are working adults, parents and career changers in their 30s, 40s and 50s."
+                },
+                {
+                    "badge": "Reality",
+                    "title": "❌ “I cannot study because I work.”",
+                    "description": "Weekend, blended and flexible routes are designed for adults balancing work, bills and family commitments."
+                },
+                {
+                    "badge": "Reality",
+                    "title": "❌ “My English must be perfect.”",
+                    "description": "Interview requirements vary. Some foundation and flexible routes include academic support. The safest step is adviser matching."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Qualification conversion",
+            "title": "How do Polish qualifications translate?",
+            "description": "Students may start from Matura, UK qualifications, Polish higher education or no formal qualifications.",
+            "cards": [
+                {
+                    "title": "Polish Matura",
+                    "description": "Świadectwo dojrzałości can support university entry and may be compared to UK A-level study."
+                },
+                {
+                    "title": "UK route check",
+                    "description": "Provider checks grades, subjects, English evidence and whether ENIC evidence is needed."
+                },
+                {
+                    "title": "Degree entry",
+                    "description": "Direct entry, Foundation Year or CertHE route depending on course and profile."
+                },
+                {
+                    "title": "Apply with support",
+                    "description": "Documents, funding, English confidence and interview preparation."
+                }
+            ],
+            "cards2": [
+                {
+                    "title": "Licencjat",
+                    "description": "A Polish 3-year bachelor route may support postgraduate study or a career-change route. Check case by case."
+                },
+                {
+                    "title": "Magister",
+                    "description": "Often a strong academic background for UK postgraduate or professional progression routes."
+                },
+                {
+                    "title": "No formal qualifications",
+                    "description": "Mature applicants may still have options through Foundation Year, CertHE or work-experience routes."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "Funding snapshot",
+            "title": "How much funding could you receive?",
+            "description": "Figures used here follow the source content you provided for the Polish guide. Official amounts and eligibility can change.",
+            "cards": [
+                {
+                    "title": "Tuition Fee Loan",
+                    "amount": "£9,790",
+                    "description": "Paid to provider if approved."
+                },
+                {
+                    "title": "Maintenance Loan",
+                    "amount": "£14,135",
+                    "description": "London, away-from-home maximum used in the source guide."
+                },
+                {
+                    "title": "Childcare Grant",
+                    "amount": "£199.62/wk",
+                    "description": "For eligible students using registered childcare."
+                },
+                {
+                    "title": "Parents’ Learning Allowance",
+                    "amount": "£1,963",
+                    "description": "Extra support for some parents."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "badge": "Popular degree routes",
+            "title": "What degrees do Polish students often choose?",
+            "description": "These are observational patterns based on common work backgrounds and progression routes. The right choice still depends on the individual.",
+            "status": true
+        },
+        "section_8": {
+            "badge": "Career outcomes",
+            "title": "What could your career progression look like?",
+            "description": "Salary depends on employer, region, experience and sector. Use this as a planning guide, not a guarantee.",
+            "cards": [
+                {
+                    "title": "Care → Nursing",
+                    "salary": "£24k → £45k",
+                    "description": "Health & Social Care or nursing pathways."
+                },
+                {
+                    "title": "Site work → Construction PM",
+                    "salary": "£32k → £65k+",
+                    "description": "Construction management, QS and project roles."
+                },
+                {
+                    "title": "IT support → Developer",
+                    "salary": "£28k → £70k",
+                    "description": "Computing, software and cyber progression."
+                },
+                {
+                    "title": "Bookkeeper → Accountant",
+                    "salary": "£26k → £55k",
+                    "description": "Accounting, finance and professional qualification paths."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "badge": "Study locations",
+            "title": "Where could you study?",
+            "description": "No logos, no ranking claims — just useful location and study-mode information.",
+            "status": true
+        },
+        "section_10": {
+            "badge": "Challenges & solutions",
+            "title": "What challenges should you prepare for?",
+            "description": "These are based on the practical issues highlighted in the Polish community content you provided.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Residency documentation",
+                    "description": "Gather official UK evidence early: council tax, bills, GP records, payslips, P60s and Home Office status evidence."
+                },
+                {
+                    "number": "2",
+                    "title": "Academic English",
+                    "description": "Everyday English and academic writing are different. The best route depends on provider, course and interview expectations."
+                },
+                {
+                    "number": "3",
+                    "title": "Polish qualification recognition",
+                    "description": "Matura, Licencjat and Magister routes may be understood differently depending on course level. Get evidence early."
+                },
+                {
+                    "number": "4",
+                    "title": "Work and family balance",
+                    "description": "Many adults need flexible study patterns around shifts, childcare, rent and family responsibilities."
+                },
+                {
+                    "number": "5",
+                    "title": "Pre-settled to settled timing",
+                    "description": "If you can upgrade, plan early. It may help reduce uncertainty before starting the course."
+                }
+            ],
+            "status": true
+        },
+        "section_11": {
+            "badge": "Student stories",
+            "title": "What could your story look like?",
+            "description": "Use these as realistic journey examples. Replace with real testimonials when available.",
+            "status": true
+        },
+        "section_12": {
+            "badge": "FAQ",
+            "title": "Common questions from Polish students",
+            "description": "This section is designed for SEO and reassurance. Keep answers clear and practical.",
+            "status": true
+        },
+        "section_13": {
+            "badge": "Related tools",
+            "title": "Plan your next step with YStudy.",
+            "description": "These tools move the guide reader into a real application journey.",
+            "cards": [
+                {
+                    "badge": "Decision tool",
+                    "title": "Degree Match Finder",
+                    "description": "Match your goals, qualifications and study style to realistic routes."
+                },
+                {
+                    "badge": "Funding tool",
+                    "title": "Eligibility Checker",
+                    "description": "Check status, residence and funding risk before applying."
+                },
+                {
+                    "badge": "Interview tool",
+                    "title": "English Test",
+                    "description": "Choose B1, B2 or Advanced and check interview confidence."
+                }
+            ],
+            "status": true
+        },
+        "section_14": {
+            "badge": "Related guides",
+            "title": "Keep learning before you apply.",
+            "description": "Use article cards to connect the Polish guide to the wider Resources section.",
+            "status": true
+        },
+        "section_15": {
+            "title": "Ready to check your options?",
+            "description": "YStudy can help you understand Student Finance, Polish qualification evidence, flexible degree options and the application process.",
+            "pointers": [
+                "✓ Student Finance",
+                "✓ Matura / qualification route",
+                "✓ Flexible degrees",
+                "✓ Application support"
+            ],
+            "status": true
+        },
+        "section_16": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_17": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
             "status": true
         }
     }
