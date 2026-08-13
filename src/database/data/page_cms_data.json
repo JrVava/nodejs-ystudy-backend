@@ -7374,5 +7374,522 @@
             ],
             "status": true
         }
+    },
+    {
+        "page": "become-a-student-adviser",
+        "section_2": {
+            "badge": "Who this is for",
+            "title": "Advisers come from different backgrounds",
+            "description": "If people already ask you for education, career or funding advice, this could fit you.",
+            "cards": [
+                {
+                    "badge": "Education",
+                    "title": "Teacher",
+                    "description": "You understand learners and can explain routes clearly.",
+                    "image": ""
+                },
+                {
+                    "badge": "Recruitment",
+                    "title": "Recruiter",
+                    "description": "You know how to assess goals, skills and career potential.",
+                    "image": ""
+                },
+                {
+                    "badge": "Community",
+                    "title": "Community Leader",
+                    "description": "You already support people in your local or online community.",
+                    "image": ""
+                },
+                {
+                    "badge": "Social",
+                    "title": "Creator",
+                    "description": "You can introduce YStudy to an audience that trusts you.",
+                    "image": ""
+                },
+                {
+                    "badge": "Careers",
+                    "title": "Career Coach",
+                    "description": "You help adults move from uncertainty to action.",
+                    "image": ""
+                },
+                {
+                    "badge": "Student voice",
+                    "title": "Former Student",
+                    "description": "You know what the journey feels like from the inside.",
+                    "image": ""
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "How it works",
+            "title": "A simple referral and support process",
+            "description": "You refer students. YStudy supports the application journey.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Refer students",
+                    "description": "Introduce adults who want to study or need funding guidance."
+                },
+                {
+                    "number": "2",
+                    "title": "YStudy guides them",
+                    "description": "We help with degree choice, funding, documents and application steps."
+                },
+                {
+                    "number": "3",
+                    "title": "Student enrols",
+                    "description": "The student progresses through application and enrolment checks."
+                },
+                {
+                    "number": "4",
+                    "title": "You receive commission",
+                    "description": "Rewards are linked to successful student outcomes."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "badge": "Earnings examples",
+            "title": "Performance-based opportunity",
+            "description": "These cards show the type of earning scenarios a serious adviser may target.",
+            "cards": [
+                {
+                    "number": "5",
+                    "title": "Starter",
+                    "description": "students referred and supported."
+                },
+                {
+                    "number": "10",
+                    "title": "Builder",
+                    "description": "consistent monthly referrals."
+                },
+                {
+                    "number": "25",
+                    "title": "Growth",
+                    "description": "community or creator-led pipeline."
+                },
+                {
+                    "number": "50",
+                    "title": "Partner",
+                    "description": "large audience or team approach."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "badge": "Why advisers join",
+            "title": "Meaningful work with clear support",
+            "description": "YStudy gives advisers the tools, student journey and conversion system.",
+            "cards": [
+                {
+                    "icon": "🕒",
+                    "title": "Flexible",
+                    "description": "Work around your schedule and audience."
+                },
+                {
+                    "icon": "🏠",
+                    "title": "Remote",
+                    "description": "Support students online or by phone."
+                },
+                {
+                    "icon": "🧭",
+                    "title": "Meaningful",
+                    "description": "Help adults make life-changing decisions."
+                },
+                {
+                    "icon": "🤝",
+                    "title": "Ongoing support",
+                    "description": "Templates, training and adviser guidance."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "badge": "FAQ",
+            "title": "Common questions",
+            "description": "Short answers for people deciding their next step.",
+            "status": true
+        },
+        "section_7": {
+            "title": "Apply to become an adviser",
+            "description": "Start the adviser application and we will review your background.",
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_10": {
+            "cards": [
+                {
+                    "badge": "Adviser application",
+                    "title": "Apply to become a YStudy Student Adviser.",
+                    "description": "Tell us about your background, audience and how you would support students."
+                },
+                {
+                    "badge": "What we review",
+                    "title": "Simple, practical partnership checks.",
+                    "cards": [
+                        {
+                            "title": "Audience fit",
+                            "description": "Mature students, career changers, UK residents or adult learners."
+                        },
+                        {
+                            "title": "Promotion method",
+                            "description": "Referral, content, community, adviser support or paid partnership."
+                        },
+                        {
+                            "title": "Next step",
+                            "description": "Call, tracking link, adviser onboarding or campaign plan."
+                        }
+                    ]
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "affiliate-programme",
+        "section_2": {
+            "badge": "Suitable for",
+            "title": "Built for people with student traffic",
+            "description": "If your audience includes working adults, parents, EU residents or career changers, YStudy can fit naturally.",
+            "cards": [
+                {
+                    "badge": "Websites",
+                    "title": "Website owners",
+                    "description": "Add useful tools and referral CTAs.",
+                    "image": ""
+                },
+                {
+                    "badge": "Blogs",
+                    "title": "Bloggers",
+                    "description": "Link guides to YStudy support.",
+                    "image": ""
+                },
+                {
+                    "badge": "Groups",
+                    "title": "Communities",
+                    "description": "Help group members find study routes.",
+                    "image": ""
+                },
+                {
+                    "badge": "Social",
+                    "title": "Facebook groups",
+                    "description": "Promote guidance with tracked links.",
+                    "image": ""
+                },
+                {
+                    "badge": "Forums",
+                    "title": "Forums",
+                    "description": "Answer education questions with practical routes.",
+                    "image": ""
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "How it works",
+            "title": "From click to commission",
+            "description": "A simple partner journey that does not require you to handle applications yourself.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Share your link",
+                    "description": "Use your tracked affiliate link on your site, content or community."
+                },
+                {
+                    "number": "2",
+                    "title": "Student applies",
+                    "description": "The student uses YStudy tools or speaks to an adviser."
+                },
+                {
+                    "number": "3",
+                    "title": "Student enrols",
+                    "description": "We support the process through application and enrolment."
+                },
+                {
+                    "number": "4",
+                    "title": "Commission paid",
+                    "description": "You receive rewards based on agreed programme terms."
+                }
+            ]
+        },
+        "section_4": {
+            "cards": [
+                {
+                    "icon": "📊",
+                    "title": "Tracking dashboard",
+                    "description": "See clicks, leads, student progress and commission status in one place.",
+                    "cards": [
+                        {
+                            "number": "284",
+                            "title": "Clicks"
+                        },
+                        {
+                            "number": "39",
+                            "title": "Leads"
+                        },
+                        {
+                            "number": "12",
+                            "title": "Applications"
+                        },
+                        {
+                            "number": "4",
+                            "title": "Enrolments"
+                        }
+                    ]
+                },
+                {
+                    "icon": "💷",
+                    "title": "Commission structure",
+                    "description": "Simple performance-based rewards designed around successful student outcomes.",
+                    "pointers": [
+                        "Tracked referrals",
+                        "Clear reporting",
+                        "Partner support",
+                        "Regular payout reviews"
+                    ]
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "Join the affiliate programme",
+            "description": "Start with a partner review and we will suggest the best route.",
+            "status": true
+        },
+        "section_6": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_7": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_8": {
+            "cards": [
+                {
+                    "badge": "Affiliate enquiry",
+                    "title": "Join the YStudy affiliate programme.",
+                    "description": "Share YStudy tools and guidance with your website, blog or community."
+                },
+                {
+                    "badge": "What we review",
+                    "title": "Simple, practical partnership checks.",
+                    "cards": [
+                        {
+                            "title": "Audience fit",
+                            "description": "Mature students, career changers, UK residents or adult learners."
+                        },
+                        {
+                            "title": "Promotion method",
+                            "description": "Referral, content, community, adviser support or paid partnership."
+                        },
+                        {
+                            "title": "Next step",
+                            "description": "Call, tracking link, adviser onboarding or campaign plan."
+                        }
+                    ]
+                }
+            ],
+            "status": true
+        }
+    },
+    {
+        "page": "advertise-to-students",
+        "section_2": {
+            "badge": "Why advertise",
+            "title": "An engaged, intent-driven audience",
+            "description": "Students come to YStudy to plan their future — that means high intent and genuine attention for the right brands.",
+            "cards": [
+                {
+                    "icon": "🎯",
+                    "title": "High-intent audience",
+                    "description": "Reach students actively making decisions."
+                },
+                {
+                    "icon": "📍",
+                    "title": "Contextual placement",
+                    "description": "Show up alongside relevant guidance."
+                },
+                {
+                    "icon": "📊",
+                    "title": "Clear reporting",
+                    "description": "Transparent metrics on reach and engagement."
+                },
+                {
+                    "icon": "✅",
+                    "title": "Brand-safe",
+                    "description": "Independent, trusted, student-first environment."
+                }
+            ],
+            "status": true
+        },
+        "section_3": {
+            "badge": "How it works",
+            "title": "How a campaign works",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Tell us your goal",
+                    "description": "Brand awareness, sign-ups or offers."
+                },
+                {
+                    "number": "2",
+                    "title": "We propose placements",
+                    "description": "The right formats for your audience."
+                },
+                {
+                    "number": "3",
+                    "title": "Go live",
+                    "description": "Your campaign launches across relevant pages."
+                },
+                {
+                    "number": "4",
+                    "title": "Review results",
+                    "description": "Clear reporting on what performed."
+                }
+            ],
+            "status": true
+        },
+        "section_4": {
+            "title": "Promote your brand to students",
+            "description": "Tell us what you'd like to achieve and we'll build a plan.",
+            "status": true
+        },
+        "section_5": {
+            "cards": [
+                {
+                    "title": "Check if you can get funded.",
+                    "description": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Apply with YStudy.",
+                    "description": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Speak with an adviser.",
+                    "description": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "title": "Useful next steps",
+            "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
+            "cards": [
+                {
+                    "title": "Find degrees",
+                    "link": "Quickly understand if you may qualify for Student Finance, grants and flexible university routes."
+                },
+                {
+                    "title": "Funding hub",
+                    "link": "Send us your details and we’ll help you choose the right course, prepare documents and move forward."
+                },
+                {
+                    "title": "Careers & salaries",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Degree Match",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Salary Checker",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                },
+                {
+                    "title": "Student guides",
+                    "link": "Not sure what to study, what you can get or which documents you need? Book a free call."
+                }
+            ],
+            "status": true
+        }
     }
 ]
