@@ -2943,6 +2943,134 @@
           }
         }
       ]
+    },
+    {
+      "name": "Admin AuthenticateFrontendPageController",
+      "item": [
+        {
+          "name": "POST /authenticate-frontend-pages",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/authenticate-frontend-pages",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authenticate-frontend-pages"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /authenticate-frontend-pages/pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authenticate-frontend-pages/pagination?page=1&limit=10&field=createdAt&sort=desc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authenticate-frontend-pages",
+                "pagination"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "field",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "sort",
+                  "value": "desc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /authenticate-frontend-pages/edit/:slug",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authenticate-frontend-pages/edit/some-slug",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authenticate-frontend-pages",
+                "edit",
+                "some-slug"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /authenticate-frontend-pages/update/:slug",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/authenticate-frontend-pages/update/some-slug",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authenticate-frontend-pages",
+                "update",
+                "some-slug"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /authenticate-frontend-pages/delete/:slug",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authenticate-frontend-pages/delete/some-slug",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authenticate-frontend-pages",
+                "delete",
+                "some-slug"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }

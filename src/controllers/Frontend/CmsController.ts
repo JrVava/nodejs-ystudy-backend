@@ -3,6 +3,7 @@ import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
 import { populateImages } from "../../utils/mediaUtils";
 import { decrypt, encrypt } from "../../utils/crypto";
+import { verifyToken } from "../../utils/jwt";
 
 @JsonController("/frontend/cms")
 export class FrontendCmsController {
@@ -12,6 +13,30 @@ export class FrontendCmsController {
         try {
             const decryptedBody = decrypt(body.data);
             const slug = decryptedBody?.slug;
+
+            let isAuthenticated = true;
+            let isAuthRequiredFlag = false;
+
+            const authPageDB = new QueryBuilder<any>("authenticate_frontend_pages");
+            const isAuthRequired = await authPageDB.findOne({ slug: slug, isDeleted: { $ne: true } });
+
+            if (isAuthRequired && isAuthRequired.status !== false) {
+                isAuthRequiredFlag = true;
+                isAuthenticated = false; // assume not authenticated until proven otherwise
+                const authHeader = req.headers.authorization;
+
+                if (authHeader && authHeader.startsWith("Bearer ")) {
+                    const token = authHeader.split(" ")[1];
+                    try {
+                        const decoded: any = verifyToken(token);
+                        req.user = decoded;
+                        isAuthenticated = true; // token is valid
+                    } catch (error) {
+                        logger.error(`[FrontendCmsController:getCmsBySlug] Invalid or expired token`);
+                    }
+                }
+            }
+
             const qb = new QueryBuilder<any>("page_cms_data");
             // Querying by page (slug) and checking top-level status
             const page = await qb.findOne({ page: slug, isDeleted: { $ne: true } });
@@ -44,6 +69,8 @@ export class FrontendCmsController {
             return {
                 data: encrypt({
                     success: true,
+                    isAuthRequired: isAuthRequiredFlag,
+                    isAuthenticated: isAuthenticated,
                     data: finalData
                 })
             };
