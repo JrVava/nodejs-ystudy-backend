@@ -3071,6 +3071,212 @@
           }
         }
       ]
+    },
+    {
+      "name": "Frontend StudentStoryController",
+      "item": [
+        {
+          "name": "GET /frontend/student-stories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/frontend/student-stories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "student-stories"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frontend UpcomingIntakeController",
+      "item": [
+        {
+          "name": "GET /frontend/upcoming-intakes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/frontend/upcoming-intakes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "upcoming-intakes"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frontend ToolController",
+      "item": [
+        {
+          "name": "GET /frontend/tools",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/frontend/tools",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "tools"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Frontend AuthController",
+      "item": [
+        {
+          "name": "POST /frontend/auth/register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/auth/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /frontend/auth/login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /frontend/auth/logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/auth/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "auth",
+                "logout"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /frontend/auth/forgot-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/auth/forgot-password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "auth",
+                "forgot-password"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /frontend/auth/reset-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/frontend/auth/reset-password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "auth",
+                "reset-password"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
