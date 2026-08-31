@@ -976,5 +976,193 @@
     "updatedAt": {
       "$date": "2026-06-26T13:15:38.589Z"
     }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "slug": "masters",
+    "pageName": "Masters",
+    "componentName": "Masters",
+    "parentId": null,
+    "position": 0,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-06-26T13:15:38.589Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-26T13:15:38.589Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e30d9740c63e95ebdf11"
+    },
+    "slug": "masters-hub",
+    "pageName": "Masters Hub",
+    "componentName": "MastersHub",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 1,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-06-26T13:15:38.589Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-26T13:15:38.589Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf21"
+    },
+    "slug": "why-masters",
+    "pageName": "Why a Master’s?",
+    "componentName": "WhyAMasters",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 2,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf23"
+    },
+    "slug": "master-online-study",
+    "pageName": "100% Online Study",
+    "componentName": "OnlineStudy",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 3,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf25"
+    },
+    "slug": "master-global-sustainable-development",
+    "pageName": "Global Sustainable Development",
+    "componentName": "GlobalSustainableDevelopment",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 4,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf27"
+    },
+    "slug": "master-apply",
+    "pageName": "Apply Master",
+    "componentName": "ApplyMaster",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 5,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf28"
+    },
+    "slug": "search-masters",
+    "pageName": "Search Masters",
+    "componentName": "SearchMasters",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 6,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:05:36.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:05:36.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf22"
+    },
+    "slug": "master-funding",
+    "pageName": "Master’s Funding",
+    "componentName": "MastersFunding",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 7,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf24"
+    },
+    "slug": "master-project-management",
+    "pageName": "Project Management",
+    "componentName": "ProjectManagement",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 8,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a95e0a19740c63e95ebdf26"
+    },
+    "slug": "other-masters",
+    "pageName": "Other Masters",
+    "componentName": "OtherMasters",
+    "parentId": {
+      "$oid": "6a95e0a19740c63e95ebdf0f"
+    },
+    "position": 9,
+    "status": true,
+    "createdAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-01T02:02:20.000Z"
+    }
   }
 ]
