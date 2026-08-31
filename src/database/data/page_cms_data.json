@@ -8876,5 +8876,333 @@
             ],
             "status": true
         }
+    },
+    {
+        "page": "privacy-policy",
+        "section_1": {
+            "badge": "YStudy legal",
+            "title": "Privacy Policy",
+            "description": "How YStudy collects, uses, shares and protects your personal information.",
+            "status": true
+        },
+        "section_2": {
+            "title": "YStudy is operated by Dinnovi Ltd",
+            "description1": "<strong>YStudy</strong> is a brand owned and operated by <strong>DINNOVI LTD</strong>, a private limited company registered in England and Wales under company number <strong>12453420</strong>.",
+            "description2": "Registered office:<strong> Birmingham Business Centre Ltd, Quadrant Court Room 6, 51/52 Calthorpe Road, Edgbaston, Birmingham, England, B15 1TH.</strong>",
+            "description3": "Unless stated otherwise, “YStudy”, “we”, “us” and “our” in this policy mean Dinnovi Ltd when operating the YStudy brand. Where Dinnovi Ltd determines the purposes and means of processing personal data through <strong>YStudy, Dinnovi Ltd is the data controller</strong>.",
+            "status": true
+        },
+        "section_3": {
+            "title": "1. Who this notice is for",
+            "description1": "This notice applies to people who use the YStudy website, tools and application services — including prospective and current students, people making enquiries, and visitors to our site. It explains what we collect, why, who we share it with, how long we keep it, and your rights under UK data protection law (the UK GDPR and the Data Protection Act 2018).",
+            "description2": "YStudy is aimed at adults. Our services are not directed at children under 18, and we do not knowingly collect data from under-18s through our application service. If you believe a child has provided us with personal data, contact us and we will delete it.",
+            "status": true
+        },
+        "section_4": {
+            "title": "2. Information we collect",
+            "description1": "Depending on how you use YStudy, we may collect:",
+            "pointers": [
+                "<strong>Identity and contact details —</strong> name, email, telephone/WhatsApp number, and (where relevant) date of birth and address.",
+                "<strong>Application information —</strong> the course or degree level you want, your previous study, whether you have had UK student finance before, study preferences and saved courses.",
+                "<strong>Residence and immigration status —</strong> such as British, EU settled/pre-settled, Indefinite Leave to Remain or Refugee status, collected because it determines eligibility for particular courses and for Student Finance.",
+                "<strong>Education and background —</strong> qualifications, employment and work-experience information you choose to share, and documents you upload (such as a CV, personal statement or qualification certificates).",
+                "<strong>Messages —</strong> the content of enquiries and communications you send us by form, email, WhatsApp or phone.",
+                "<strong>Technical and usage data —</strong> IP address, device and browser information, and how you use our site, collected through cookies and similar technologies (see our Cookie Policy)."
+            ],
+            "description2": [
+                {
+                    "title": "Special category and sensitive data.",
+                    "description": "Certain information, such as data that may reveal your racial or ethnic origin or health information relevant to a Disabled Students' Allowance enquiry, is classified as \"special category\" data under the UK GDPR. We only collect this information when necessary and rely on an appropriate additional legal condition, usually your explicit consent or reasons of substantial public interest. Immigration status is handled with the same level of care. You are not required to provide sensitive information; however, without it, we may be unable to assess your eligibility for certain funding routes."
+                }
+            ],
+            "status": true
+        },
+        "section_5": {
+            "title": "3. Why we use your information, and our lawful bases",
+            "description1": "Under the UK GDPR we must have a lawful basis for each use of your data. Our uses and bases are:",
+            "pointers": [
+                "<strong>To respond to your enquiry and provide guidance — </strong> steps taken at your request before any contract, and our legitimate interest in helping people who contact us.",
+                "<strong>To assess eligibility and support your application </strong> (checking funding, matching courses, preparing documents, liaising with universities) — performance of our services to you, and where sensitive data is involved, your explicit consent.",
+                "<strong>To contact you about your application </strong> by your chosen method (WhatsApp, phone or email) — providing the service you asked for.",
+                "<strong>Marketing — </strong> your consent, which you can withdraw at any time (see section 8).",
+                "<strong>Legal, safeguarding, accounting and dispute purposes — </strong> compliance with our legal obligations and our legitimate interest in protecting our business and the people we help.",
+                "<strong>Improving and securing our site — </strong> our legitimate interest in a safe, working service, and consent for non-essential cookies."
+            ],
+            "description2": "Marketing consent is always kept separate from the information you give us to get application support — agreeing to be contacted about your application does not sign you up to marketing.",
+            "status": true
+        },
+        "section_6": {
+            "title": "4. Who we share your information with",
+            "description": "We share your information only where necessary for the service you have asked for, or where we are legally required to. This may include:",
+            "pointers": [
+                "<strong>Universities and education providers — </strong> where you ask us to support an application, we share the information needed to progress it. We tell you which providers are involved.",
+                "<strong>Service providers acting on our behalf — </strong> for example our form and CRM provider, hosting, email/communications and messaging (including WhatsApp), who process data under contract and only on our instructions.",
+                "<strong>Professional advisers — </strong> such as legal, accounting or insurance advisers, where needed.",
+                "<strong>Regulators or authorities — </strong> where we are legally obliged to disclose, or to protect someone's safety."
+            ],
+            "description2": "We do <strong>not</strong> sell your personal information, and we do not share it with advertisers for their own purposes. Advertising cookies (see the Cookie Policy) are used to measure and target our own campaigns, and only with your consent.",
+            "status": true
+        },
+        "section_7": {
+            "title": "5. International Transfers",
+            "description": "Some of our service providers may process personal data outside the UK. Where this occurs, we ensure that appropriate safeguards are in place, such as UK adequacy regulations for the destination country, the ICO's International Data Transfer Agreement (IDTA), or the EU Standard Contractual Clauses with the UK Addendum. For example, certain communications, analytics, and advertising service providers may be based in the United States. You may contact us to request further details about the safeguards that apply to a specific international transfer."
+        },
+        "section_8": {
+            "title": "6. How long we keep your information",
+            "description1": "We keep personal information only for as long as we need it for the purpose it was collected, then delete or anonymise it. Our standard retention periods are:",
+            "pointers": [
+                "<strong>Enquiries that do not proceed — </strong> up to 24 months from your last contact, then deleted.",
+                "<strong>Applicant and student records — </strong> for the duration of your application and while you remain a student we support, and then up to 6 years, to meet legal, accounting and dispute requirements.",
+                "<strong>Uploaded documents </strong> (CV, personal statement, certificates) — kept while your application is active and removed within 12 months of it closing, unless you ask us to remove them sooner.",
+                "<strong>Marketing records — </strong> until you unsubscribe or withdraw consent, and a suppression record afterwards so we can honour your opt-out.",
+                "<strong>Website/account data — </strong> cleared when you close your account or after a period of inactivity."
+            ],
+            "description2": "These are general periods; a specific legal obligation may occasionally require us to keep certain records for longer.",
+            "status": true
+        },
+        "section_9": {
+            "title": "7. Your rights",
+            "description1": "Under UK data protection law you have the right to: be informed about how we use your data; access a copy of it; have inaccurate data corrected; have data erased in certain circumstances; restrict or object to processing; data portability; and to withdraw consent at any time. Where we rely on legitimate interests, you can object and we will stop unless we have compelling legitimate grounds. You will not receive worse service for exercising your rights.",
+            "description2": "To exercise any right, contact us using the details in section 11. We explain these rights in more detail, and how to make a request, in our Data Protection & GDPRTerms of Use page.",
+            "status": true
+        },
+        "section_10": {
+            "title": "8. Marketing",
+            "description": "We only send you marketing where you have agreed to it. Every marketing message includes an easy way to unsubscribe, and you can opt out at any time by using that link, replying STOP to a WhatsApp/text message, or contacting us. Opting out of marketing does not stop the essential messages we need to send about an application you have asked us to support.",
+            "status": true
+        },
+        "section_11": {
+            "title": "9. Cookies and similar technologies",
+            "description": "We use cookies and similar technologies (including browser storage used to save your progress in our tools and dashboard) to run the site, understand how it is used, and — with your consent — to measure and improve our advertising. Full details and your choices are in our Cookie Policy.",
+            "status": true
+        },
+        "section_12": {
+            "title": "10. How we protect your information",
+            "description": "We use appropriate technical and organisational measures to protect personal data, including access controls, encryption in transit, and limiting access to those who need it. No system is completely secure, but we work to protect your information and to notify you and the ICO where we are legally required to in the event of a breach.",
+            "status": true
+        },
+        "section_13": {
+            "title": "11. Complaints and how to contact us",
+            "description1": "If you have any question about this notice, or wish to exercise your rights, contact us at privacy@ystudy.co.uk or via our contact page, or by writing to Dinnovi Ltd at the registered office above.",
+            "description2": "If you are not satisfied with how we handle your data, you have the right to complain to the Information Commissioner's Office (ICO), the UK data protection regulator, at ico.org.uk or by calling 0303 123 1113. We would, however, appreciate the chance to address your concerns first.",
+            "status": true
+        }
+    },
+    {
+        "page": "cookies-policy",
+        "section_1": {
+            "badge": "YStudy legal",
+            "title": "Cookie Policy",
+            "description": "How YStudy uses cookies, browser storage and similar technologies — and the choices you have.",
+            "status": true
+        },
+        "section_2": {
+            "title": "YStudy is operated by Dinnovi Ltd",
+            "description1": "<strong>YStudy</strong> is a brand owned and operated by <strong>DINNOVI LTD,</strong> a private limited company registered in England and Wales under company number <strong>12453420.</strong>",
+            "description2": "Registered office: <strong>Birmingham Business Centre Ltd, Quadrant Court Room 6, 51/52 Calthorpe Road, Edgbaston, Birmingham, England, B15 1TH.</strong>",
+            "description3": "Unless stated otherwise, “YStudy”, “we”, “us” and “our” in this policy mean Dinnovi Ltd when operating the YStudy brand. Where Dinnovi Ltd determines the purposes and means of processing personal data through YStudy, <strong>Dinnovi Ltd is the data controller.</strong>",
+            "status": true
+        },
+        "section_3": {
+            "title": "1. What Cookies and Similar Technologies Are",
+            "description1": "Cookies are small text files that are placed on your device when you visit a website. \"Similar technologies\" include pixels and tags, which are small pieces of code that can record activity, as well as browser storage technologies such as localStorage, which websites use to store and remember information. YStudy uses these technologies to make the website function properly, understand how it is used, and, where you have provided your consent, measure and improve our advertising.",
+            "description2": "We group these technologies into three categories, explained below. Only strictly necessary technologies are used without your consent; all other technologies are used only where you have provided your consent.",
+            "status": true
+        },
+        "section_4": {
+            "title": "2. Strictly necessary (always on)",
+            "description1": "These are required for the site to function and cannot be switched off. They do not track you for advertising. They include:",
+            "description2": "<strong>Session and security — </strong> keeping the site secure and remembering essential settings during your visit.",
+            "description3": "<strong>Your consent choice — </strong> remembering whether you accepted or declined optional cookies, so we don't ask every time.",
+            "description4": "<strong>Tool and dashboard storage — </strong> YStudy's calculators, checkers and your student workspace use your browser's localStorage to save your progress and saved items (for example your CV, saved courses and funding profile) on your own device, so you don't lose your work. In the current build this information stays in your browser; when accounts are fully live, this data will also be linked to your YStudy account.",
+            "status": true
+        },
+        "section_5": {
+            "title": "3. Analytics and performance (optional)",
+            "description": "With your consent, we use analytics technologies to understand how visitors find and use YStudy — which pages are visited, which tools are used, and where people run into difficulty — so we can improve the service. These help us count visits and measure performance. You can decline these without affecting your ability to use the site.",
+            "status": true
+        },
+        "section_6": {
+            "title": "4. Advertising and marketing (optional)",
+            "description1": "With your consent, we use advertising technologies from platforms such as <strong>Meta (Facebook and Instagram)</strong> and <strong>TikTok.</strong> These use pixels/tags to measure whether our ads led to enquiries, to avoid showing you ads for something you've already done, and to help us reach people who may benefit from our guidance. This may involve those platforms receiving information about your visit and setting their own cookies, acting as separate controllers under their own policies.",
+            "description2": "If you decline advertising cookies, these pixels do not run. You can also manage ad personalisation directly with Meta and TikTok.",
+            "status": true
+        },
+        "section_7": {
+            "title": "5. Your Choices",
+            "description1": "When you first visit YStudy, you will be asked to accept or decline optional cookies, including analytics and advertising cookies. You can change your preferences at any time by using the \"Cookie Settings\" link in the website footer or by clearing cookies through your browser settings. Most browsers also allow you to block or delete cookies; however, blocking strictly necessary cookies may prevent certain parts of the website from functioning properly.",
+            "description2": "You can clear data stored by a tool or dashboard at any time by clearing your browser's site data or by using any \"Reset\" option provided within the relevant tool.",
+            "status": true
+        },
+        "section_8": {
+            "title": "6. Cookies used (summary)",
+            "description1": "Because the exact cookies depend on the analytics and advertising tools active on the live site, the production site should publish an up-to-date cookie table (name, provider, purpose, duration) generated from the live configuration. As a summary of categories:",
+            "description2": "<strong>Necessary —</strong> consent record, security/session, tool & dashboard localStorage. Always active.",
+            "description3": "<strong>Analytics —</strong> site usage measurement. Active only with consent.",
+            "description4": "<strong>Advertising —</strong> Meta and TikTok pixels for campaign measurement and targeting. Active only with consent.",
+            "status": true
+        },
+        "section_9": {
+            "title": "7. How this links to your privacy rights",
+            "description": "What we do with information collected through these technologies is explained in our Privacy Policy, and your data-protection rights are described in our Data Protection & GDPRTerms of Use page. To ask a question about cookies, contact privacy@ystudy.co.uk.",
+            "status": true
+        },
+        "section_10": {
+            "title": "8. Updating This Policy",
+            "description": "We may update this Cookie Policy from time to time, for example, when our tools, technologies, or service providers change. The \"Last Updated\" date at the top of this policy indicates when it was most recently revised.",
+            "status": true
+        }
+    },
+    {
+        "page": "gdpr",
+        "section_1": {
+            "badge": "YStudy legal",
+            "title": "Data Protection & Your GDPR Rights",
+            "description": "A plain-English guide to your rights over your personal data when you use YStudy, and how to exercise them.",
+            "status": true
+        },
+        "section_2": {
+            "title": "YStudy is operated by Dinnovi Ltd",
+            "description1": "<strong>YStudy</strong> is a brand owned and operated by <strong>DINNOVI LTD,</strong> a private limited company registered in England and Wales under company number <strong>12453420.</strong>",
+            "description2": "Registered office: <strong>Birmingham Business Centre Ltd, Quadrant Court Room 6, 51/52 Calthorpe Road, Edgbaston, Birmingham, England, B15 1TH.</strong>",
+            "description3": "Unless stated otherwise, “YStudy”, “we”, “us” and “our” in this policy mean Dinnovi Ltd when operating the YStudy brand. Where Dinnovi Ltd determines the purposes and means of processing personal data through YStudy, <strong>Dinnovi Ltd is the data controller.</strong>",
+            "status": true
+        },
+        "section_3": {
+            "title": "Your rights at a glance",
+            "description": "YStudy (Dinnovi Ltd) is the data controller for the personal information you provide through our services. Under the UK GDPR and the Data Protection Act 2018 you have the rights below. They are free to use, and using them will never mean you get a worse service from us.",
+            "status": true
+        },
+        "section_4": {
+            "title": "The right to be informed",
+            "description": "You can know what data we hold, why, and who we share it with. That is what our Privacy Policy and Cookie Policy are for.",
+            "status": true
+        },
+        "section_5": {
+            "title": "The Right of Access",
+            "description": "You have the right to request a copy of the personal data we hold about you, known as a \"subject access request\", as well as information about how we use that data. We normally provide this information free of charge and respond within one month.",
+            "status": true
+        },
+        "section_6": {
+            "title": "The right to rectification",
+            "description": "If any information we hold about you is wrong or incomplete — a misspelled name, an old phone number, an out-of-date qualification — you can ask us to correct it. You can also update much of this yourself in your YStudy account.",
+            "status": true
+        },
+        "section_7": {
+            "title": "The Right to Erasure",
+            "description": "You have the right to request the deletion of your personal data, also known as the \"right to be forgotten\", in certain circumstances. For example, you may request deletion where your personal data is no longer necessary for the purpose for which it was collected, or where you withdraw your consent and there is no other lawful basis for retaining it. In some cases, we may be required to retain certain information to comply with legal obligations, such as maintaining accounting records. Where this applies, we will explain the reason for retaining the relevant information.",
+            "status": true
+        },
+        "section_8": {
+            "title": "The right to restrict processing",
+            "description": "You can ask us to pause using your data in certain situations — for example while we check the accuracy of data you have challenged.",
+            "status": true
+        },
+        "section_9": {
+            "title": "The right to object",
+            "description": "You can object to processing based on our legitimate interests, and to direct marketing. If you object to marketing we will stop straight away. If you object to other processing we will stop unless we have compelling legitimate grounds that override your interests.",
+            "status": true
+        },
+        "section_10": {
+            "title": "The right to data portability",
+            "description": "Where we process data you provided by automated means on the basis of consent or a contract, you can ask to receive it in a common, machine-readable format, or have it sent to another provider where technically feasible.",
+            "status": true
+        },
+        "section_11": {
+            "title": "The right to withdraw consent",
+            "description": "Where we rely on your consent — for example marketing, advertising cookies, or processing sensitive information — you can withdraw it at any time. Withdrawing consent does not affect processing that already took place, and does not affect processing we carry out on a different lawful basis.",
+            "status": true
+        },
+        "section_12": {
+            "title": "Automated decisions and profiling",
+            "description": "Our online tools (such as the eligibility checker and finance calculator) give you indicative guidance to help you understand your options — they do not make a final decision about you. Decisions about funding are made by Student Finance England, and admissions decisions are made by universities. We do not carry out automated decision-making that produces legal or similarly significant effects about you without a lawful basis and appropriate safeguards.",
+            "status": true
+        },
+        "section_13": {
+            "title": "How to Make a Request",
+            "description": "Contact us at <a href=\"mailto:privacy@ystudy.co.uk\">privacy@ystudy.co.uk</a>, through our contact page, or by writing to Dinnovi Ltd at the registered office shown above. To protect your data, we may need to verify your identity before we act. We respond to requests within <strong>one month;</strong> if a request is particularly complex, we may extend this by up to two further months and will tell you if so.",
+            "status": true
+        },
+        "section_14": {
+            "title": "Complaints",
+            "description": "If you are unhappy with how we handle your data, please tell us first so we can put it right. You also have the right to complain to the Information Commissioner's Office (ICO), the UK's data-protection regulator: <a href=\"https://ico.org.uk/make-a-complaint\" target=\"_blank\" rel=\"noopener noreferrer\">ico.org.uk/make-a-complaint</a>, helpline 0303 123 1113.",
+            "status": true
+        }
+    },
+    {
+        "page": "terms-policy",
+        "section_1": {
+            "badge": "YStudy legal",
+            "title": "Terms of Use",
+            "description": "The terms on which you may use the YStudy website, tools and guidance services.",
+            "status": true
+        },
+        "section_2": {
+            "title": "YStudy is operated by Dinnovi Ltd",
+            "description1": "<strong>YStudy</strong> is a brand owned and operated by <strong>DINNOVI LTD,</strong> a private limited company registered in England and Wales under company number <strong>12453420.</strong>",
+            "description2": "Registered office: <strong>Birmingham Business Centre Ltd, Quadrant Court Room 6, 51/52 Calthorpe Road, Edgbaston, Birmingham, England, B15 1TH.</strong>",
+            "description3": "Unless stated otherwise, “YStudy”, “we”, “us” and “our” in this policy mean Dinnovi Ltd when operating the YStudy brand. Where Dinnovi Ltd determines the purposes and means of processing personal data through YStudy, <strong>Dinnovi Ltd is the data controller.</strong>",
+            "status": true
+        },
+        "section_3": {
+            "title": "1. About These Terms",
+            "description": "These Terms of Use govern your use of the YStudy website and the free tools, information, and guidance services provided by Dinnovi Ltd (collectively, the \"Service\"). By accessing or using the Service, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not access or use the Service.",
+            "status": true
+        },
+        "section_4": {
+            "title": "2. What YStudy is — and is not",
+            "description1": "YStudy is a <strong>free guidance and support service</strong> that helps adults explore university study, understand funding, choose courses, prepare documents and apply, with support from advisers. We are funded by partner universities, so our guidance is free to you.",
+            "description2": "Importantly:",
+            "description3": "YStudy is <strong>independent of, and not part of, Student Finance England, the Student Loans Company, or any government body.</strong>",
+            "description4": "We do <strong>not</strong> decide whether you receive student finance. Funding decisions are made solely by Student Finance England, and admission decisions are made solely by universities.",
+            "description5": "Our tools (eligibility checker, finance calculator, salary and other tools) provide <strong>indicative estimates for general guidance only.</strong> They are not a promise of funding, a formal assessment, or financial, legal or immigration advice.",
+            "description6": "Figures shown (such as loan and grant amounts) are based on published rates for the stated academic year and may change; your actual entitlement depends on your circumstances and an official assessment.",
+            "status": true
+        },
+        "section_5": {
+            "title": "3. Eligibility to use the Service",
+            "description": "The Service is intended for adults aged 18 or over who are considering study in the UK. Some funding and course routes depend on your residence and immigration status, age, previous study and other factors; we help you understand these, but we cannot guarantee any particular outcome. As set out at the point of application, we may be unable to support applicants on certain temporary immigration statuses.",
+            "status": true
+        },
+        "section_6": {
+            "title": "4. Using the Service responsibly",
+            "description": "When you use YStudy you agree to give accurate information, to use the Service lawfully, and not to misuse it — for example by attempting to disrupt it, access it without authorisation, or submit anyone else's personal data without their permission. You are responsible for keeping your account details secure.",
+            "status": true
+        },
+        "section_7": {
+            "title": "5. Your account and saved content",
+            "description": "Where you create an account or save content (such as a CV, personal statement, saved courses or documents), you are responsible for that content and confirm you have the right to provide it. We handle your information in line with our Privacy Policy. We may suspend or close accounts that are inactive, or that are used in breach of these terms.",
+            "status": true
+        },
+        "section_8": {
+            "title": "6. No guarantee of outcome",
+            "description": "We work to give you accurate, helpful guidance, but we cannot and do not guarantee that you will be offered a place, receive funding, or achieve any particular result. Any decision you make about study or finance is your own, and you should check important details (including funding entitlement) with the official bodies before relying on them.",
+            "status": true
+        },
+        "section_9": {
+            "title": "7. Intellectual property",
+            "description": "The YStudy website, its content, design and tools are owned by Dinnovi Ltd or its licensors and are protected by law. You may use them for your own personal, non-commercial use in connection with the Service. You may not copy, reproduce or reuse our content or branding without our permission.",
+            "status": true
+        },
+        "section_10": {
+            "title": "8. Third-party links",
+            "description": "Our site links to third-party sites (such as GOV.UK, universities, and social platforms). We are not responsible for the content or practices of those sites; their own terms and privacy policies apply.",
+            "status": true
+        },
+        "section_11": {
+            "title": "9. Our Liability",
+            "description": "The Service and its tools are provided \"as is\" and are intended for general information and guidance only. To the fullest extent permitted by law, we are not liable for any loss or damage arising from reliance on indicative tool results or general guidance, or from decisions made by universities, colleges, Student Finance England, or other third parties. Nothing in these Terms excludes or limits our liability where doing so would be unlawful, including liability for death or personal injury caused by negligence, or for fraud or fraudulent misrepresentation. These Terms do not affect your statutory rights.",
+            "status": true
+        },
+        "section_12": {
+            "title": "10. Changes to the Service and These Terms",
+            "description": "We may update, improve, suspend, or withdraw parts of the Service from time to time. We may also update these Terms to reflect changes to the Service, legal requirements, or our practices. The \"Last Updated\" date indicates when these Terms were most recently revised. Where appropriate, we will provide notice of material changes. Your continued use of the Service after the updated Terms take effect constitutes your acceptance of the revised Terms.",
+            "status": true
+        },
+        "section_13": {
+            "title": "11. Governing Law and Contact",
+            "description": "These Terms are governed by the laws of England and Wales. The courts of England and Wales will have jurisdiction over any disputes arising from or in connection with these Terms, subject to any rights you may have under applicable law. If you have any questions about these Terms, you can contact us by email at <a href=\"mailto:hello@ystudy.co.uk\">hello@ystudy.co.uk</a> or by writing to Dinnovi Ltd at the registered office address stated above.",
+            "status": true
+        }
     }
 ]
