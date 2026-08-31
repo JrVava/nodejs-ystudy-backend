@@ -162,18 +162,16 @@ async reorderPages(@Body() body: any) {
             }
 
             return {
-                data: encrypt({
-                    updateOne: {
-                        filter: { _id: new ObjectId(item.id), isDeleted: { $ne: true } },
-                        update: {
-                            $set: {
-                                parentId: parsedItemParentId,
-                                position: item.position,
-                                updatedAt: new Date()
-                            }
+                updateOne: {
+                    filter: { _id: new ObjectId(item.id), isDeleted: { $ne: true } },
+                    update: {
+                        $set: {
+                            parentId: parsedItemParentId,
+                            position: item.position,
+                            updatedAt: new Date()
                         }
                     }
-                })
+                }
             };
         });
 
