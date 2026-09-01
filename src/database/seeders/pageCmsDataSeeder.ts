@@ -33,21 +33,31 @@ export const pageCmsDataSeeder = async () => {
   let processedCount = 0;
   for (const page of parsedData) {
     processCmsObject(page);
-    
-    // Exclude _id to avoid immutable field errors on update
     const { _id, ...updateData } = page;
     
-    await qb.upsertOne(
-      { page: page.page },
-      {
-        $set: { ...updateData, updatedAt: new Date() },
-        $setOnInsert: { createdAt: new Date() }
-      }
-    );
+    const existing = await qb.findOne({ page: page.page });
+    
+    if (existing) {
+      // Completely replace the document to ensure deleted sections are removed
+      await qb.deleteOne({ _id: existing._id });
+      await qb.insertOne({ 
+        ...updateData, 
+        _id: existing._id, 
+        createdAt: existing.createdAt, 
+        updatedAt: new Date() 
+      });
+    } else {
+      await qb.insertOne({ 
+        ...updateData, 
+        createdAt: new Date(), 
+        updatedAt: new Date() 
+      });
+    }
+    
     processedCount++;
   }
 
-  // Delete page CMS data that are no longer in the JSON file
+  // Delete page CMS data that are no longer in the JSON file entirely
   const jsonPages = parsedData.map((page: any) => page.page);
   const deleteResult = await qb.deleteMany({ page: { $nin: jsonPages } });
   const deletedCount = deleteResult.deletedCount || 0;
