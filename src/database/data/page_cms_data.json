@@ -5673,7 +5673,7 @@
             "subTitle": "The main exception: disabled students on distance learning",
             "description2": "If you qualify for Disabled Students' Allowance and your disability means you cannot reasonably study in person, SFE can grant maintenance support for a distance-learning course. This is a strict test, not a workaround. ",
             "link": "",
-            "linkname": "Disabled Students' Allowance →",
+            "linkBtnName": "Disabled Students' Allowance →",
             "status": true
         },
         "section_8": {
@@ -8945,7 +8945,8 @@
         },
         "section_7": {
             "title": "5. International Transfers",
-            "description": "Some of our service providers may process personal data outside the UK. Where this occurs, we ensure that appropriate safeguards are in place, such as UK adequacy regulations for the destination country, the ICO's International Data Transfer Agreement (IDTA), or the EU Standard Contractual Clauses with the UK Addendum. For example, certain communications, analytics, and advertising service providers may be based in the United States. You may contact us to request further details about the safeguards that apply to a specific international transfer."
+            "description": "Some of our service providers may process personal data outside the UK. Where this occurs, we ensure that appropriate safeguards are in place, such as UK adequacy regulations for the destination country, the ICO's International Data Transfer Agreement (IDTA), or the EU Standard Contractual Clauses with the UK Addendum. For example, certain communications, analytics, and advertising service providers may be based in the United States. You may contact us to request further details about the safeguards that apply to a specific international transfer.",
+            "status": true
         },
         "section_8": {
             "title": "6. How long we keep your information",
@@ -9030,8 +9031,8 @@
         },
         "section_7": {
             "title": "5. Your Choices",
-            "description1": "When you first visit YStudy, you will be asked to accept or decline optional cookies, including analytics and advertising cookies. You can change your preferences at any time by using the \"Cookie Settings\" link in the website footer or by clearing cookies through your browser settings. Most browsers also allow you to block or delete cookies; however, blocking strictly necessary cookies may prevent certain parts of the website from functioning properly.",
-            "description2": "You can clear data stored by a tool or dashboard at any time by clearing your browser's site data or by using any \"Reset\" option provided within the relevant tool.",
+            "description1": "When you first visit YStudy you are asked to accept or decline optional (analytics and advertising) cookies. You can change your choice at any time using the \"Cookie settings\" link in the site footer, or by clearing cookies in your browser. Most browsers also let you block or delete cookies through their settings — though blocking strictly necessary cookies may stop parts of the site working.",
+            "description2": "You can clear the tool/dashboard storage at any time by clearing your browser's site data, or by using any \"reset\" option provided within a tool.",
             "status": true
         },
         "section_8": {
@@ -9049,7 +9050,7 @@
         },
         "section_10": {
             "title": "8. Updating This Policy",
-            "description": "We may update this Cookie Policy from time to time, for example, when our tools, technologies, or service providers change. The \"Last Updated\" date at the top of this policy indicates when it was most recently revised.",
+            "description": "We may update this Cookie Policy when our tools or providers change. The \"last updated\" date at the top shows when it last changed.",
             "status": true
         }
     },
@@ -9080,7 +9081,7 @@
         },
         "section_5": {
             "title": "The Right of Access",
-            "description": "You have the right to request a copy of the personal data we hold about you, known as a \"subject access request\", as well as information about how we use that data. We normally provide this information free of charge and respond within one month.",
+            "description": "You can ask for a copy of the personal data we hold about you (a \"subject access request\"), and information about how we use it. We provide this free of charge and normally within one month.",
             "status": true
         },
         "section_6": {
@@ -9090,7 +9091,7 @@
         },
         "section_7": {
             "title": "The Right to Erasure",
-            "description": "You have the right to request the deletion of your personal data, also known as the \"right to be forgotten\", in certain circumstances. For example, you may request deletion where your personal data is no longer necessary for the purpose for which it was collected, or where you withdraw your consent and there is no other lawful basis for retaining it. In some cases, we may be required to retain certain information to comply with legal obligations, such as maintaining accounting records. Where this applies, we will explain the reason for retaining the relevant information.",
+            "description": "You can ask us to delete your personal data (\"the right to be forgotten\") in certain circumstances — for example where it is no longer needed, or where you withdraw consent and there is no other basis for keeping it. Sometimes we must keep certain records to meet a legal obligation (for example accounting records), and we will explain if that applies.",
             "status": true
         },
         "section_8": {
@@ -9146,7 +9147,7 @@
         },
         "section_3": {
             "title": "1. About These Terms",
-            "description": "These Terms of Use govern your use of the YStudy website and the free tools, information, and guidance services provided by Dinnovi Ltd (collectively, the \"Service\"). By accessing or using the Service, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not access or use the Service.",
+            "description": "These Terms of Use govern your use of the YStudy website and the free tools, information and guidance services we provide (\"the Service\"), operated by Dinnovi Ltd. By using the Service you accept these terms. If you do not accept them, please do not use the Service.",
             "status": true
         },
         "section_4": {
@@ -9191,17 +9192,17 @@
         },
         "section_11": {
             "title": "9. Our Liability",
-            "description": "The Service and its tools are provided \"as is\" and are intended for general information and guidance only. To the fullest extent permitted by law, we are not liable for any loss or damage arising from reliance on indicative tool results or general guidance, or from decisions made by universities, colleges, Student Finance England, or other third parties. Nothing in these Terms excludes or limits our liability where doing so would be unlawful, including liability for death or personal injury caused by negligence, or for fraud or fraudulent misrepresentation. These Terms do not affect your statutory rights.",
+            "description": "The Service and its tools are provided \"as is\" for general guidance. To the fullest extent permitted by law, we are not liable for any loss arising from reliance on indicative tool results or general guidance, or from decisions made by universities or Student Finance England. Nothing in these terms excludes or limits our liability where it would be unlawful to do so — including liability for death or personal injury caused by negligence, or for fraud. These terms do not affect your statutory rights.",
             "status": true
         },
         "section_12": {
             "title": "10. Changes to the Service and These Terms",
-            "description": "We may update, improve, suspend, or withdraw parts of the Service from time to time. We may also update these Terms to reflect changes to the Service, legal requirements, or our practices. The \"Last Updated\" date indicates when these Terms were most recently revised. Where appropriate, we will provide notice of material changes. Your continued use of the Service after the updated Terms take effect constitutes your acceptance of the revised Terms.",
+            "description": "We may update, improve or withdraw parts of the Service, and may update these terms from time to time. The \"last updated\" date shows when they last changed. Continued use of the Service after a change means you accept the updated terms.",
             "status": true
         },
         "section_13": {
             "title": "11. Governing Law and Contact",
-            "description": "These Terms are governed by the laws of England and Wales. The courts of England and Wales will have jurisdiction over any disputes arising from or in connection with these Terms, subject to any rights you may have under applicable law. If you have any questions about these Terms, you can contact us by email at <a href=\"mailto:hello@ystudy.co.uk\">hello@ystudy.co.uk</a> or by writing to Dinnovi Ltd at the registered office address stated above.",
+            "description": "These terms are governed by the laws of England and Wales, and the courts of England and Wales have jurisdiction. To contact us about these terms, email hello@ystudy.co.uk or write to Dinnovi Ltd at the registered office above.",
             "status": true
         }
     }

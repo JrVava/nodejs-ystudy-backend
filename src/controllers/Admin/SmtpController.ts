@@ -1,4 +1,5 @@
-import { JsonController, Post, Get, Body, HttpError, UseBefore } from "routing-controllers";
+import { JsonController, Post, Get, Body, HttpError, UseBefore, Param } from "routing-controllers";
+import { ObjectId } from "mongodb";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import logger from "../../utils/logger";
@@ -8,6 +9,29 @@ import { Smtp } from "../../models/Smtp";
 @JsonController("/smtp")
 @UseBefore(AdminMiddleware)
 export class SmtpController {
+
+    @Get("/edit/:id")
+    async getSmtpById(@Param("id") id: string) {
+        try {
+            const smtpDB = new QueryBuilder<Smtp>("smtps");
+            const record = await smtpDB.findOne({ _id: new ObjectId(id), isDeleted: { $ne: true } });
+
+            if (!record) {
+                throw new HttpError(404, "SMTP configuration not found");
+            }
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: record
+                })
+            };
+        } catch (error) {
+            logger.error(`[SmtpController:getSmtpById] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, "Internal server error");
+        }
+    }
 
     @Get("/get")
     async getSmtp() {

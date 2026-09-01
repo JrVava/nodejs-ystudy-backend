@@ -3277,6 +3277,85 @@
           }
         }
       ]
+    },
+    {
+      "name": "SmtpController",
+      "item": [
+        {
+          "name": "GET /smtp/get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/smtp/get",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "smtp",
+                "get"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /smtp/add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/smtp/add",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "smtp",
+                "add"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /smtp/update",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": \"encrypted_string_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/smtp/update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "smtp",
+                "update"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
