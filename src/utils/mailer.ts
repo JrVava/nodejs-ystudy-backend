@@ -8,10 +8,19 @@ export const sendEmail = async (to: string, subject: string, text: string, html?
         const smtpDB = new QueryBuilder<Smtp>("smtps");
         const config = await smtpDB.findOne({ isDeleted: { $ne: true }, status: true });
 
+        console.log("config", config)
         if (!config) {
             throw new Error("SMTP configuration not found or inactive");
         }
-
+        console.log({
+            host: config.host,
+            port: config.port,
+            secure: config.secure, // true for 465, false for other ports
+            auth: {
+                user: config.user,
+                pass: config.password
+            }
+        })
         const transporter = nodemailer.createTransport({
             host: config.host,
             port: config.port,

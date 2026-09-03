@@ -89,6 +89,7 @@ export class FrontendDynamicFormController {
 
             // Send email
             try {
+                console.log("config.recipient_email_id", config.recipient_email_id)
                 await sendEmail(
                     config.recipient_email_id as string,
                     formTitle,
@@ -96,6 +97,7 @@ export class FrontendDynamicFormController {
                     emailHtml
                 );
             } catch (emailError) {
+                console.log("emailError", emailError)
                 logger.error(`[FrontendDynamicFormController:submitForm] Failed to send email:`, emailError);
             }
 
