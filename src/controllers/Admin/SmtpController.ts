@@ -10,7 +10,7 @@ import { Smtp } from "../../models/Smtp";
 @UseBefore(AdminMiddleware)
 export class SmtpController {
 
-    @Get("/edit/:id")
+    @Get("/smtp-edit/:id")
     async getSmtpById(@Param("id") id: string) {
         try {
             const smtpDB = new QueryBuilder<Smtp>("smtps");
