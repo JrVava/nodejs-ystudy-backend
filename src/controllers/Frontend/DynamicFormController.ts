@@ -44,7 +44,6 @@ export class FrontendDynamicFormController {
         try {
             const decryptedBody = decrypt(body.data);
             const formData = decryptedBody?.formData;
-            console.log("config.recipient_email_id1", config.recipient_email_id)
             if (!formData) {
                 throw new HttpError(400, "formData is required");
             }
@@ -89,7 +88,6 @@ export class FrontendDynamicFormController {
 
             // Send email
             try {
-                console.log("config.recipient_email_id", config.recipient_email_id)
                 await sendEmail(
                     config.recipient_email_id as string,
                     formTitle,
