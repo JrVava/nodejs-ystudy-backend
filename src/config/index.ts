@@ -13,5 +13,6 @@ export const config = {
   jwt_secret: process.env.JWT_SECRET,
   idleTimeoutMs: process.env.IDLE_TIMEOUT_MS ? parseInt(process.env.IDLE_TIMEOUT_MS, 10) : 30 * 60 * 1000,
   jwtExpiresInMs: process.env.JWT_EXPIRES_IN_MS ? parseInt(process.env.JWT_EXPIRES_IN_MS, 10) : 2 * 60 * 60 * 1000,
-  mail_reset_url: process.env.MAIL_RESET_URL
+  mail_reset_url: process.env.MAIL_RESET_URL,
+  recipient_email_id: process.env.RECIPIENT_EMAIL_ID
 };
