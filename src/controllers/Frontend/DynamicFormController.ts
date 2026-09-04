@@ -6,6 +6,7 @@ import { DynamicForm } from "../../models/DynamicForm";
 import { ApplicationForm } from "../../models/ApplicationForm";
 import { sendEmail } from "../../utils/mailer";
 import { config } from "../../config";
+import { saveSubmissionToSheet } from "../../utils/googleSheets";
 
 @JsonController("/frontend/dynamic-forms")
 export class FrontendDynamicFormController {
@@ -70,34 +71,11 @@ export class FrontendDynamicFormController {
 
             const formTitle = form.title || "Complete one short form.";
 
-            // Construct email template dynamically from formData
-            let emailHtml = `<h2>${formTitle}</h2><table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">`;
-            for (const [key, value] of Object.entries(formData)) {
-                // Find the label from the dynamic form configuration
-                const fieldConfig = form.fields.find(f => f.name === key);
-                const label = fieldConfig ? fieldConfig.label : key;
+            // Send email in a separate function
+            await this.sendSubmissionEmail(formTitle, form.fields, formData);
 
-                // Ensure value is formatted nicely
-                const displayValue = typeof value === 'object' ? JSON.stringify(value) : String(value);
-                emailHtml += `<tr>
-                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>${label}</strong></td>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${displayValue}</td>
-                </tr>`;
-            }
-            emailHtml += `</table>`;
-
-            // Send email
-            try {
-                await sendEmail(
-                    config.recipient_email_id as string,
-                    formTitle,
-                    `A new ${formTitle} submission has been received. Please view this email in an HTML compatible client.`,
-                    emailHtml
-                );
-            } catch (emailError) {
-                console.log("emailError", emailError)
-                logger.error(`[FrontendDynamicFormController:submitForm] Failed to send email:`, emailError);
-            }
+            // Save to Google Sheets
+            await saveSubmissionToSheet(formTitle, form.fields, formData);
 
             return {
                 data: encrypt({
@@ -109,6 +87,38 @@ export class FrontendDynamicFormController {
             logger.error(`[FrontendDynamicFormController:submitForm] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, "Internal server error");
+        }
+    }
+
+    private async sendSubmissionEmail(formTitle: string, formFields: any[], formData: any) {
+        // Construct email template dynamically from formData
+        let emailHtml = `<h2>${formTitle}</h2><table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">`;
+        for (const [key, value] of Object.entries(formData)) {
+            // Find the label from the dynamic form configuration
+            const fieldConfig = formFields.find(f => f.name === key);
+            const label = fieldConfig ? fieldConfig.label : key;
+
+            // Ensure value is formatted nicely
+            const displayValue = typeof value === 'object' ? JSON.stringify(value) : String(value);
+            emailHtml += `<tr>
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>${label}</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd;">${displayValue}</td>
+            </tr>`;
+        }
+        emailHtml += `</table>`;
+
+        // Send email
+        try {
+            const recipientEmail = (config.recipient_email_id as string).replace(/[\s.]+$/, '');
+            await sendEmail(
+                recipientEmail,
+                formTitle,
+                `A new ${formTitle} submission has been received. Please view this email in an HTML compatible client.`,
+                emailHtml
+            );
+        } catch (emailError) {
+            console.log("emailError", emailError);
+            logger.error(`[FrontendDynamicFormController:sendSubmissionEmail] Failed to send email:`, emailError);
         }
     }
 }

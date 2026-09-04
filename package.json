@@ -28,6 +28,8 @@
     "crypto-js": "^4.2.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "google-auth-library": "^11.0.2",
+    "google-spreadsheet": "^5.3.0",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^7.3.0",
     "multer": "^2.2.0",
