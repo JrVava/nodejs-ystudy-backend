@@ -65,9 +65,6 @@ export class ImageController {
 
       const filePath = path.join(targetDir, `${uploadId}-${session.fileName}`);
 
-      // Simulate network delay so the user can visibly see the ETA and progress bar
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
       // Append buffer to file
       if (file && file.buffer) {
         fs.appendFileSync(filePath, file.buffer);
