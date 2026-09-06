@@ -27,12 +27,6 @@ export class TimeTableController {
                 mode: i.mode || ""
             })) : [];
 
-            // Check if slug already exists and is not deleted
-            const existing = await timeTableDB.findOne({ slug: decryptedBody.slug, isDeleted: { $ne: true } });
-            if (existing) {
-                throw new HttpError(400, "Time table with this slug already exists");
-            }
-
             const newTimeTable: TimeTable = {
                 badge: decryptedBody.badge,
                 title: decryptedBody.title,
