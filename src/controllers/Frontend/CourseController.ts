@@ -18,27 +18,38 @@ export class FrontendCourseController {
             const courseDB = new QueryBuilder<Course>("courses");
             const filter: any = { status: true, isDeleted: { $ne: true } };
 
+            const safeObjectId = (val: string) => {
+                try {
+                    return new ObjectId(val);
+                } catch (e) {
+                    return null;
+                }
+            };
+
             if (body) {
                 if (body.subject && body.subject !== "Any subject") {
-                    filter.$or = [
-                        { subject: new ObjectId(body.subject) },
-                        { subjects: new ObjectId(body.subject) }
-                    ];
+                    const id = safeObjectId(body.subject);
+                    if (id) filter.$or = [{ subject: id }, { subjects: id }];
                 }
                 if (body.qualification && body.qualification !== "Any qualification") {
-                    filter.qualifications = new ObjectId(body.qualification);
+                    const id = safeObjectId(body.qualification);
+                    if (id) filter.qualifications = id;
                 }
                 if (body.mode && body.mode !== "Any mode") {
-                    filter.modeType = new ObjectId(body.mode);
+                    const id = safeObjectId(body.mode);
+                    if (id) filter.modeType = id;
                 }
                 if (body.location && body.location !== "Any location") {
-                    filter.locations = new ObjectId(body.location);
+                    const id = safeObjectId(body.location);
+                    if (id) filter.locations = id;
                 }
                 if (body.duration && body.duration !== "Any duration") {
-                    filter.durations = new ObjectId(body.duration);
+                    const id = safeObjectId(body.duration);
+                    if (id) filter.durations = id;
                 }
                 if (body.funding && body.funding !== "Any funding") {
-                    filter.fundings = new ObjectId(body.funding);
+                    const id = safeObjectId(body.funding);
+                    if (id) filter.fundings = id;
                 }
                 if (body.keyword_search && body.keyword_search.trim() !== "") {
                     filter.title = { $regex: body.keyword_search.trim(), $options: "i" };
