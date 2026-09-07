@@ -10,8 +10,7 @@ export class FrontendSubjectController {
 
     @Get("/")
     async getAllSubjects(
-        @Req() req: any,
-        @QueryParam("pageSize") pageSize?: number
+        @Req() req: any
     ) {
         try {
             const subjectDB = new QueryBuilder<Subject>("subjects");
@@ -23,10 +22,6 @@ export class FrontendSubjectController {
                     isDeleted: 0
                 }
             };
-
-            if (pageSize && !isNaN(pageSize)) {
-                options.limit = Number(pageSize);
-            }
 
             const subjects = await subjectDB.find({ status: true, isDeleted: { $ne: true } }, options);
 
