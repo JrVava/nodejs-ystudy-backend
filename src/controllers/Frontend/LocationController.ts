@@ -5,7 +5,7 @@ import { encrypt } from "../../utils/crypto";
 import { Location } from "../../models/Location";
 import { getFullImageUrl } from "../../utils/mediaUtils";
 
-@JsonController("/frontend/location")
+@JsonController("/frontend/locations")
 export class FrontendLocationController {
 
     @Get("/")
