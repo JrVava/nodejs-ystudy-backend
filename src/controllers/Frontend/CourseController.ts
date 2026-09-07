@@ -1,4 +1,4 @@
-import { JsonController, Get, HttpError, Req, QueryParam, Param } from "routing-controllers";
+import { JsonController, Get, Post, Body, HttpError, Req, QueryParam, Param } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
 import { encrypt } from "../../utils/crypto";
@@ -9,13 +9,42 @@ import { ObjectId } from "mongodb";
 @JsonController("/frontend/course")
 export class FrontendCourseController {
 
-    @Get("/allcourses")
+    @Post("/allcourses")
     async getCourses(
-        @Req() req: any
+        @Req() req: any,
+        @Body() body: any
     ) {
         try {
             const courseDB = new QueryBuilder<Course>("courses");
-            const filter = { status: true, isDeleted: { $ne: true } };
+            const filter: any = { status: true, isDeleted: { $ne: true } };
+
+            if (body) {
+                if (body.subject && body.subject !== "Any subject") {
+                    filter.$or = [
+                        { subject: new ObjectId(body.subject) },
+                        { subjects: new ObjectId(body.subject) }
+                    ];
+                }
+                if (body.qualification && body.qualification !== "Any qualification") {
+                    filter.qualifications = new ObjectId(body.qualification);
+                }
+                if (body.mode && body.mode !== "Any mode") {
+                    filter.modeType = new ObjectId(body.mode);
+                }
+                if (body.location && body.location !== "Any location") {
+                    filter.locations = new ObjectId(body.location);
+                }
+                if (body.duration && body.duration !== "Any duration") {
+                    filter.durations = new ObjectId(body.duration);
+                }
+                if (body.funding && body.funding !== "Any funding") {
+                    filter.fundings = new ObjectId(body.funding);
+                }
+                if (body.keyword_search && body.keyword_search.trim() !== "") {
+                    filter.title = { $regex: body.keyword_search.trim(), $options: "i" };
+                }
+            }
+
             const allCourses = await courseDB.find(filter);
 
             const locationDB = new QueryBuilder<any>("locations");
