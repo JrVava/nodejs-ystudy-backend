@@ -74,6 +74,7 @@ export class SmtpController {
                 password: decryptedBody.password,
                 secure: decryptedBody.secure !== undefined ? decryptedBody.secure : true,
                 fromEmail: decryptedBody.fromEmail,
+                recipient_email: decryptedBody.recipient_email,
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -113,6 +114,7 @@ export class SmtpController {
             if (decryptedBody.password !== undefined) updateData.password = decryptedBody.password;
             if (decryptedBody.secure !== undefined) updateData.secure = decryptedBody.secure;
             if (decryptedBody.fromEmail !== undefined) updateData.fromEmail = decryptedBody.fromEmail;
+            if (decryptedBody.recipient_email !== undefined) updateData.recipient_email = decryptedBody.recipient_email;
             if (decryptedBody.status !== undefined) updateData.status = decryptedBody.status;
 
             await smtpDB.updateOne(

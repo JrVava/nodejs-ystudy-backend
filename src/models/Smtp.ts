@@ -8,6 +8,7 @@ export interface Smtp {
     password?: string;
     secure?: boolean;
     fromEmail?: string;
+    recipient_email?: string;
     status?: boolean;
     isDeleted?: boolean;
     createdAt?: Date;

@@ -1,24 +1,28 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
-import { config } from '../config';
 import logger from './logger';
+import { QueryBuilder } from '../database/QueryBuilder';
+import { GoogleSheetProvider } from '../models/GoogleSheetProvider';
 
 export async function saveSubmissionToSheet(formTitle: string, formFields: any[], formData: any) {
     try {
-        if (!config.googleServiceAccountEmail || !config.googlePrivateKey || !config.googleSpreadsheetId) {
-            logger.warn('Google Sheets configuration is missing. Skipping save to Google Sheets.');
+        const providerDB = new QueryBuilder<GoogleSheetProvider>('google_sheet_providers');
+        const provider = await providerDB.findOne({ isDeleted: { $ne: true }, status: { $ne: false } });
+
+        if (!provider || !provider.google_service_account_email || !provider.google_private_key || !provider.google_spreadsheet_id) {
+            logger.warn('Google Sheets configuration is missing or inactive in the database. Skipping save to Google Sheets.');
             return;
         }
 
         const serviceAccountAuth = new JWT({
-            email: config.googleServiceAccountEmail,
-            key: config.googlePrivateKey,
+            email: provider.google_service_account_email,
+            key: provider.google_private_key.replace(/\\n/g, '\n'),
             scopes: [
                 'https://www.googleapis.com/auth/spreadsheets',
             ],
         });
 
-        const doc = new GoogleSpreadsheet(config.googleSpreadsheetId, serviceAccountAuth);
+        const doc = new GoogleSpreadsheet(provider.google_spreadsheet_id, serviceAccountAuth);
 
         await doc.loadInfo();
 

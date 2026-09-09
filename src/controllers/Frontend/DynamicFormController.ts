@@ -7,6 +7,7 @@ import { ApplicationForm } from "../../models/ApplicationForm";
 import { sendEmail } from "../../utils/mailer";
 import { config } from "../../config";
 import { saveSubmissionToSheet } from "../../utils/googleSheets";
+import { Smtp } from "../../models/Smtp";
 
 @JsonController("/frontend/dynamic-forms")
 export class FrontendDynamicFormController {
@@ -109,7 +110,15 @@ export class FrontendDynamicFormController {
 
         // Send email
         try {
-            const recipientEmail = (config.recipient_email_id as string).replace(/[\s.]+$/, '');
+            const smtpDB = new QueryBuilder<Smtp>("smtps");
+            const smtpRecord = await smtpDB.findOne({ isDeleted: { $ne: true } });
+
+            if (!smtpRecord || !smtpRecord.recipient_email) {
+                logger.warn('[FrontendDynamicFormController:sendSubmissionEmail] SMTP configuration or recipient_email is missing in database. Skipping email send.');
+                return;
+            }
+
+            const recipientEmail = smtpRecord.recipient_email.replace(/[\s.]+$/, '');
             await sendEmail(
                 recipientEmail,
                 formTitle,
