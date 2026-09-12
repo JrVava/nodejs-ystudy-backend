@@ -2416,6 +2416,40 @@
               ]
             }
           }
+        },
+        {
+          "name": "POST /get-courses/by-ids",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/frontend/course/get-courses/by-ids",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "course",
+                "get-courses",
+                "by-ids"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -3354,6 +3388,59 @@
               ]
             }
           }
+        }
+      ]
+    },
+    {
+      "name": "FrontendSubjectController",
+      "item": [
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/frontend/subject",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "subject"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /get-subject/:slug",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/frontend/subject/get-subject/:slug",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "subject",
+                "get-subject",
+                ":slug"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     }

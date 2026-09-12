@@ -3,6 +3,7 @@ import { ObjectId } from "mongodb";
 export interface Subject {
     _id?: ObjectId;
     title: string;
+    slug: string;
     badge?: string;
     description?: string;
     image?: ObjectId | null;

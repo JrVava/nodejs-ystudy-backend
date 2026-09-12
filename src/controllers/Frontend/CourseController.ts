@@ -1,7 +1,7 @@
-import { JsonController, Get, Post, Body, HttpError, Req, QueryParam, Param } from "routing-controllers";
+import { JsonController, Get, Post, Body, HttpError, Req, Param } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import logger from "../../utils/logger";
-import { encrypt } from "../../utils/crypto";
+import { encrypt, decrypt } from "../../utils/crypto";
 import { Course } from "../../models/Course";
 import { getFullImageUrl } from "../../utils/mediaUtils";
 import { ObjectId } from "mongodb";
@@ -183,11 +183,7 @@ export class FrontendCourseController {
         }
 
         const locationDB = new QueryBuilder("locations");
-        const modeDB = new QueryBuilder("modes");
         const subjectDB = new QueryBuilder("subjects");
-        const qualificationDB = new QueryBuilder("qualifications");
-        const durationDB = new QueryBuilder("durations");
-        const fundingDB = new QueryBuilder("fundings");
         const courseDB = new QueryBuilder("courses");
 
         const anyC = c as any;
@@ -420,6 +416,51 @@ export class FrontendCourseController {
             };
         } catch (error) {
             logger.error(`[FrontendCourseController:getCourseBySlug] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, "Internal server error");
+        }
+    }
+
+    @Post("/get-courses/by-ids")
+    async getCoursesByIds(@Req() req: any, @Body() body: any) {
+        try {
+            const courseDB = new QueryBuilder<Course>("courses");
+            let ids: string[] = [];
+
+            if (body.data) {
+                const decryptedBody = decrypt(body.data);
+                ids = decryptedBody.ids || [];
+            } else {
+                ids = body.ids || [];
+            }
+
+            const objectIds = ids.map((id: string) => {
+                try {
+                    return new ObjectId(id);
+                } catch {
+                    return null;
+                }
+            }).filter((id): id is ObjectId => id !== null);
+
+            if (objectIds.length === 0) {
+                return {
+                    data: encrypt({
+                        success: true,
+                        data: []
+                    })
+                };
+            }
+
+            const courses = await courseDB.find({ _id: { $in: objectIds }, status: true, isDeleted: { $ne: true } });
+
+            return {
+                data: encrypt({
+                    success: true,
+                    data: courses
+                })
+            };
+        } catch (error) {
+            logger.error(`[FrontendCourseController:getCoursesByIds] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, "Internal server error");
         }

@@ -29,6 +29,7 @@ export class SubjectController {
                 title: decryptedBody.title,
                 badge: decryptedBody.badge,
                 description: decryptedBody.description,
+                slug: decryptedBody.slug,
                 image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
                 tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
@@ -99,6 +100,7 @@ export class SubjectController {
                     data: results.data.map(s => ({
                         _id: s._id?.toString(),
                         title: s.title,
+                        slug: s.slug,
                         status: s.status,
                         createdAt: s.createdAt,
                         updatedAt: s.updatedAt
@@ -131,6 +133,7 @@ export class SubjectController {
                     data: subjects.map((s: any) => ({
                         _id: s._id?.toString(),
                         title: s.title,
+                        slug: s.slug,
                         status: s.status
                     }))
                 })
@@ -203,7 +206,7 @@ export class SubjectController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
-            
+
             let cmsData: any = null;
             if (updateFields.cms) {
                 cmsData = updateFields.cms;
