@@ -4,6 +4,7 @@ import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import { Subject } from "../../models/Subject";
+import { SubjectCms } from "../../models/SubjectCms";
 import { ObjectId } from "mongodb";
 import { getFullImageUrl } from "../../utils/mediaUtils";
 
@@ -37,6 +38,18 @@ export class SubjectController {
             };
 
             const result = await subjectDB.insertOne(newSubject);
+
+            // Handle CMS if provided
+            if (decryptedBody.cms) {
+                const subjectCmsDB = new QueryBuilder<SubjectCms>("subjectCMS");
+                const cmsData: SubjectCms = {
+                    subjectId: result.insertedId,
+                    ...decryptedBody.cms,
+                    createdAt: new Date(),
+                    updatedAt: new Date()
+                };
+                await subjectCmsDB.insertOne(cmsData);
+            }
 
             return {
                 data: encrypt({
@@ -148,6 +161,9 @@ export class SubjectController {
                 throw new HttpError(404, "Subject not found");
             }
 
+            const subjectCmsDB = new QueryBuilder<SubjectCms>("subjectCMS");
+            const cms = await subjectCmsDB.findOne({ subjectId: objId, isDeleted: { $ne: true } });
+
             const fullImageUrl = subject.image ? await getFullImageUrl(subject.image, req) : null;
 
             return {
@@ -157,7 +173,8 @@ export class SubjectController {
                         ...subject,
                         _id: subject._id?.toString(),
                         image: subject.image?.toString(),
-                        fullImageUrl
+                        fullImageUrl,
+                        cms: cms || null
                     }
                 })
             };
@@ -186,12 +203,28 @@ export class SubjectController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
+            
+            let cmsData: any = null;
+            if (updateFields.cms) {
+                cmsData = updateFields.cms;
+                delete updateFields.cms;
+            }
 
             if (updateFields.image) {
                 updateFields.image = new ObjectId(updateFields.image);
             }
 
             const result = await subjectDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
+
+            if (cmsData) {
+                const subjectCmsDB = new QueryBuilder<SubjectCms>("subjectCMS");
+                const existingCms = await subjectCmsDB.findOne({ subjectId: objId });
+                if (existingCms) {
+                    await subjectCmsDB.updateOne({ subjectId: objId }, { $set: { ...cmsData, updatedAt: new Date() } });
+                } else {
+                    await subjectCmsDB.insertOne({ subjectId: objId, ...cmsData, createdAt: new Date(), updatedAt: new Date() });
+                }
+            }
 
             if (result.matchedCount === 0) {
                 throw new HttpError(404, "Subject not found");
