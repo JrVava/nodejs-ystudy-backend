@@ -30,7 +30,8 @@ export class FrontendSubjectController {
             const data = await Promise.all(subjects.map(async (s) => {
                 const mapped: any = {
                     ...s,
-                    _id: s._id?.toString()
+                    _id: s._id?.toString(),
+                    isSubject: s.isSubject !== undefined ? s.isSubject : true
                 };
 
                 if (s.image) {
@@ -80,7 +81,8 @@ export class FrontendSubjectController {
 
             const mapped: any = {
                 ...subject,
-                _id: subject._id?.toString()
+                _id: subject._id?.toString(),
+                isSubject: subject.isSubject !== undefined ? subject.isSubject : true
             };
 
             const cms = await subjectCmsDB.findOne({ subjectId: subject._id, isDeleted: { $ne: true } });

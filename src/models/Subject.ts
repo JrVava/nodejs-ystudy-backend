@@ -10,6 +10,7 @@ export interface Subject {
     tags?: string[];
     salary?: string;
     status?: boolean;
+    isSubject?: boolean;
     isDeleted?: boolean;
     createdAt?: Date;
     updatedAt?: Date;

@@ -29,10 +29,11 @@ export class SubjectController {
                 title: decryptedBody.title,
                 badge: decryptedBody.badge,
                 description: decryptedBody.description,
-                slug: decryptedBody.slug,
-                image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
+                slug: decryptedBody.slug || decryptedBody.title.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w\-]+/g, "").replace(/\-\-+/g, "-"),
+                image: decryptedBody.image && ObjectId.isValid(decryptedBody.image) ? new ObjectId(decryptedBody.image) : null,
                 tags: Array.isArray(decryptedBody.tags) ? decryptedBody.tags : [],
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
+                isSubject: true,
                 salary: decryptedBody.salary,
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -204,17 +205,26 @@ export class SubjectController {
                 throw new HttpError(400, "Invalid subject ID format");
             }
 
-            const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
+            const updateFields: any = {
+                ...decryptedBody,
+                isSubject: true,
+                updatedAt: new Date()
+            };
             delete updateFields._id; // Prevent updating ID
+            delete updateFields.fullImageUrl;
+            delete updateFields.createdAt;
 
             let cmsData: any = null;
             if (updateFields.cms) {
-                cmsData = updateFields.cms;
+                cmsData = { ...updateFields.cms };
                 delete updateFields.cms;
+                delete cmsData._id;
+                delete cmsData.subjectId;
+                delete cmsData.createdAt;
             }
 
-            if (updateFields.image) {
-                updateFields.image = new ObjectId(updateFields.image);
+            if (updateFields.image !== undefined) {
+                updateFields.image = updateFields.image && ObjectId.isValid(updateFields.image) ? new ObjectId(updateFields.image) : null;
             }
 
             const result = await subjectDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
