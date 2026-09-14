@@ -4,6 +4,7 @@ import { verifyToken } from "../utils/jwt";
 import { config } from "../config";
 import logger from "../utils/logger";
 import { encrypt } from "../utils/crypto";
+import { revalidateFrontend } from "../utils/revalidateFrontend";
 
 const userLastActivity: Record<string, number> = {};
 
@@ -46,6 +47,16 @@ export class AdminMiddleware implements ExpressMiddlewareInterface {
       
       // Attach the decoded user payload to the request
       (request as any).user = decoded;
+      
+      // Automatically trigger frontend revalidation if this request modifies data
+      response.on('finish', () => {
+        if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(request.method)) {
+          if (response.statusCode >= 200 && response.statusCode < 300) {
+            // Revalidate the entire Next.js layout cache
+            revalidateFrontend('/?type=layout');
+          }
+        }
+      });
       
       next();
     } catch (error) {

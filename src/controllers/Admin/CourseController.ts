@@ -425,7 +425,7 @@ export class CourseController {
                 { $set: { isDeleted: true, updatedAt: new Date() } }
             );
 
-            if (result.matchedCount === 0) {
+            if (result.modifiedCount === 0) {
                 throw new HttpError(404, "Course not found");
             }
 
