@@ -53,7 +53,7 @@ export class AdminMiddleware implements ExpressMiddlewareInterface {
         if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(request.method)) {
           if (response.statusCode >= 200 && response.statusCode < 300) {
             // Revalidate the entire Next.js layout cache
-            revalidateFrontend('/?type=layout');
+            revalidateFrontend('/', 'layout');
           }
         }
       });
