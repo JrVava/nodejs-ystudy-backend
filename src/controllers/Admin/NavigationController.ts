@@ -3,6 +3,7 @@ import { QueryBuilder } from "../../database/QueryBuilder";
 import { ObjectId } from "mongodb";
 import { Navigation } from "../../models/Navigation";
 import { Course } from "../../models/Course";
+import { Subject } from "../../models/Subject";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
@@ -60,9 +61,11 @@ export class NavigationController {
         try {
             const navQb = new QueryBuilder<Navigation>("navigations");
             const courseQb = new QueryBuilder<Course>("courses");
+            const subjectQb = new QueryBuilder<Subject>("subjects");
 
             const pages = await navQb.find({ isDeleted: { $ne: true } });
             const courses = await courseQb.find({ isDeleted: { $ne: true } });
+            const subjects = await subjectQb.find({ isDeleted: { $ne: true } });
 
             const combined = [
                 ...pages.map(p => ({
@@ -74,6 +77,11 @@ export class NavigationController {
                     name: c.title,
                     slug: c.slug,
                     type: 'course'
+                })),
+                ...subjects.map(s => ({
+                    name: s.title,
+                    slug: s.slug,
+                    type: 'subject'
                 }))
             ];
 
