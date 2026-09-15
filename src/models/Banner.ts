@@ -15,6 +15,8 @@ export interface Banner {
 
     background?: {
         imageUrl?: string | ObjectId | null;
+        fullImageUrl?: string;
+        bgColor?: string;
     };
 
     leftContent: {
@@ -23,6 +25,10 @@ export interface Banner {
         title: string;
         description?: string;
         footerItems?: Array<{ label: string; value: string }>;
+        sfeText?: string;
+        sfeLinkText?: string;
+        sfeLinkUrl?: string;
+        showSfe?: boolean;
     };
 
     rightCard: {

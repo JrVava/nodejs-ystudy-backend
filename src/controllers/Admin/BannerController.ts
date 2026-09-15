@@ -25,8 +25,11 @@ export class BannerController {
 
             const newBanner: Banner = {
                 internalName: decryptedBody.internalName,
-                bgColor: decryptedBody.bgColor,
-                background: { imageUrl: parsedImageUrl || null },
+                background: {
+                    imageUrl: parsedImageUrl || null,
+                    fullImageUrl: decryptedBody.background?.fullImageUrl || "",
+                    bgColor: decryptedBody.background?.bgColor || decryptedBody.bgColor || ""
+                },
                 leftContent: decryptedBody.leftContent || { title: 'New Banner' },
                 rightCard: decryptedBody.rightCard || { layoutType: 'stacked-cards' },
                 isActive: decryptedBody.isActive !== undefined ? decryptedBody.isActive : true,
