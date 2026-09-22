@@ -56,6 +56,7 @@ export interface CourseCms {
         badge?: string;
         title?: string;
         description?: string;
+        cards?: CardWithLink[];
         status?: boolean;
     };
 
