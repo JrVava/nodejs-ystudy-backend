@@ -78,11 +78,6 @@ export class CourseController {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
 
-                if (cmsData.overview || cmsData.salary || cmsData.funding || cmsData.study || cmsData.reviews || cmsData.Entry || cmsData.FAQ) {
-                    throw new HttpError(400, "Invalid CMS data format for General course. Expected General CMS fields.");
-                }
-
-
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'General',
@@ -108,10 +103,6 @@ export class CourseController {
             } else if (decryptedBody.courseType === 'Social' && decryptedBody.courseCms) {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
-
-                if (cmsData.section_2 || cmsData.section_3 || cmsData.section_4 || cmsData.section_5 || cmsData.section_6 || cmsData.section_7 || cmsData.section_8 || cmsData.section_9 || cmsData.section_10 || cmsData.section_11 || cmsData.section_12) {
-                    throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
-                }
 
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
@@ -350,9 +341,7 @@ export class CourseController {
                 let cmsUpdate: any = { updatedAt: new Date() };
 
                 if (effectiveCourseType === 'General') {
-                    if (courseCmsData.overview || courseCmsData.salary || courseCmsData.funding || courseCmsData.study || courseCmsData.reviews || courseCmsData.Entry || courseCmsData.FAQ) {
-                        throw new HttpError(400, "Invalid CMS data format for General course. Expected General CMS fields.");
-                    }
+
                     cmsUpdate = {
                         ...cmsUpdate,
                         section_2: courseCmsData.section_2,
@@ -378,9 +367,7 @@ export class CourseController {
                     console.log("reviews", courseCmsData.reviews);
                     console.log("Entry", courseCmsData.Entry);
                     console.log("FAQ", courseCmsData.FAQ);
-                    if (courseCmsData.section_2 || courseCmsData.section_3 || courseCmsData.section_4 || courseCmsData.section_5 || courseCmsData.section_6 || courseCmsData.section_7 || courseCmsData.section_8 || courseCmsData.section_9 || courseCmsData.section_10 || courseCmsData.section_11 || courseCmsData.section_12) {
-                        throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
-                    }
+
                     cmsUpdate = {
                         ...cmsUpdate,
                         overview: courseCmsData.overview,
