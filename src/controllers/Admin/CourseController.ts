@@ -378,7 +378,7 @@ export class CourseController {
                     console.log("reviews", courseCmsData.reviews);
                     console.log("Entry", courseCmsData.Entry);
                     console.log("FAQ", courseCmsData.FAQ);
-                    if (courseCmsData.overview || courseCmsData.salary || courseCmsData.funding || courseCmsData.study || courseCmsData.reviews || courseCmsData.Entry || courseCmsData.FAQ) {
+                    if (courseCmsData.section_2 || courseCmsData.section_3 || courseCmsData.section_4 || courseCmsData.section_5 || courseCmsData.section_6 || courseCmsData.section_7 || courseCmsData.section_8 || courseCmsData.section_9 || courseCmsData.section_10 || courseCmsData.section_11 || courseCmsData.section_12) {
                         throw new HttpError(400, "Invalid CMS data format for Social course. Expected Social CMS fields.");
                     }
                     cmsUpdate = {
