@@ -104,6 +104,16 @@ export class CourseController {
                 const courseCmsDB = new QueryBuilder<CourseCms>("course_cms");
                 const cmsData = decryptedBody.courseCms;
 
+                if (cmsData.salary && cmsData.salary.cards) {
+                    cmsData.salary.cards.forEach((card: any) => {
+                        if (card.image && typeof card.image === 'object' && card.image._id) {
+                            card.image = card.image._id.toString();
+                        } else if (card.image) {
+                            card.image = card.image.toString();
+                        }
+                    });
+                }
+
                 const newCourseCms: CourseCms = {
                     courseId: result.insertedId,
                     courseType: 'Social',
@@ -376,6 +386,16 @@ export class CourseController {
                     console.log("reviews", courseCmsData.reviews);
                     console.log("Entry", courseCmsData.Entry);
                     console.log("FAQ", courseCmsData.FAQ);
+
+                    if (courseCmsData.salary && courseCmsData.salary.cards) {
+                        courseCmsData.salary.cards.forEach((card: any) => {
+                            if (card.image && typeof card.image === 'object' && card.image._id) {
+                                card.image = card.image._id.toString();
+                            } else if (card.image) {
+                                card.image = card.image.toString();
+                            }
+                        });
+                    }
 
                     cmsUpdate = {
                         ...cmsUpdate,
