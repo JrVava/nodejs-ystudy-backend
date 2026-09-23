@@ -371,6 +371,15 @@ export class FrontendCourseController {
                     courseCms.FAQ.section_1.faq = faqData;
                 }
 
+                if (courseCms.salary && courseCms.salary.cards && courseCms.salary.cards.length > 0) {
+                    for (const card of courseCms.salary.cards) {
+                        if (card.image) {
+                            card.image = card.image.toString();
+                            card.fullImageUrl = await getFullImageUrl(card.image, req);
+                        }
+                    }
+                }
+
                 mapped.courseCms = courseCms;
             }
         }
