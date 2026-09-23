@@ -318,6 +318,15 @@ export class FrontendCourseController {
         const studentStoriesDB = new QueryBuilder("student_stories");
         const studentStoriesData = await studentStoriesDB.find({ isDeleted: { $ne: true } });
 
+        if (studentStoriesData && studentStoriesData.length > 0) {
+            for (const story of studentStoriesData) {
+                if (story.image) {
+                    story.image = story.image.toString();
+                    story.fullImageUrl = await getFullImageUrl(story.image, req);
+                }
+            }
+        }
+
         const upcomingIntakesDB = new QueryBuilder("upcoming_intakes");
         const upcomingIntakesData = await upcomingIntakesDB.find({ isDeleted: { $ne: true } });
 
