@@ -1,10 +1,11 @@
-import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete } from "routing-controllers";
+import { JsonController, Post, Body, UseBefore, HttpError, Get, QueryParam, Param, Delete, Req } from "routing-controllers";
 import { QueryBuilder } from "../../database/QueryBuilder";
 import { encrypt, decrypt } from "../../utils/crypto";
 import logger from "../../utils/logger";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import { StudentStory } from "../../models/StudentStory";
 import { ObjectId } from "mongodb";
+import { getFullImageUrl } from "../../utils/mediaUtils";
 
 @JsonController("/student-stories")
 @UseBefore(AdminMiddleware)
@@ -30,6 +31,15 @@ export class StudentStoryController {
 
             const storyDB = new QueryBuilder<StudentStory>("student_stories");
 
+            let imageId: ObjectId | undefined;
+            if (decryptedBody.image) {
+                if (typeof decryptedBody.image === 'object' && decryptedBody.image._id) {
+                    imageId = new ObjectId(decryptedBody.image._id);
+                } else if (typeof decryptedBody.image === 'string') {
+                    imageId = new ObjectId(decryptedBody.image);
+                }
+            }
+
             const newStory: StudentStory = {
                 name: decryptedBody.name,
                 description: decryptedBody.description,
@@ -39,6 +49,7 @@ export class StudentStoryController {
                 subject: decryptedBody.subject,
                 year: decryptedBody.year,
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
+                image: imageId,
                 createdAt: new Date(),
                 updatedAt: new Date()
             };
@@ -140,7 +151,7 @@ export class StudentStoryController {
     }
 
     @Get("/edit/:id")
-    async getStudentStoryById(@Param("id") id: string) {
+    async getStudentStoryById(@Param("id") id: string, @Req() req: any) {
         try {
             const storyDB = new QueryBuilder<StudentStory>("student_stories");
 
@@ -156,12 +167,15 @@ export class StudentStoryController {
                 throw new HttpError(404, "Student story not found");
             }
 
+            const fullImageUrl = await getFullImageUrl(story.image, req);
+
             return {
                 data: encrypt({
                     success: true,
                     data: {
                         ...story,
-                        _id: story._id?.toString()
+                        _id: story._id?.toString(),
+                        fullImageUrl
                     }
                 })
             };
@@ -196,6 +210,14 @@ export class StudentStoryController {
 
             const updateFields: any = { ...decryptedBody, updatedAt: new Date() };
             delete updateFields._id; // Prevent updating ID
+
+            if (updateFields.image) {
+                if (typeof updateFields.image === 'object' && updateFields.image._id) {
+                    updateFields.image = new ObjectId(updateFields.image._id);
+                } else if (typeof updateFields.image === 'string') {
+                    updateFields.image = new ObjectId(updateFields.image);
+                }
+            }
 
             const result = await storyDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });
 

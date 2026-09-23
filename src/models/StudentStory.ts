@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb";
 
 export interface StudentStory {
     _id?: ObjectId;
+    image?: ObjectId;
     badge?: string;
     star: number;
     description: string;
