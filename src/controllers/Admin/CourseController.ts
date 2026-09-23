@@ -240,6 +240,15 @@ export class CourseController {
                 delete (courseCms as any).isDeleted;
                 delete (courseCms as any).createdAt;
                 delete (courseCms as any).updatedAt;
+
+                if (course.courseType === "Social" && courseCms.salary && courseCms.salary.cards && courseCms.salary.cards.length > 0) {
+                    for (const card of courseCms.salary.cards) {
+                        if (card.image) {
+                            card.image = card.image.toString();
+                            card.fullImageUrl = await getFullImageUrl(card.image, req);
+                        }
+                    }
+                }
             }
 
             return {
