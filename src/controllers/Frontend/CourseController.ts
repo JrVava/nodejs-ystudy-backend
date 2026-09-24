@@ -353,6 +353,15 @@ export class FrontendCourseController {
         if (c.subjects && c.subjects.length > 0) {
             const subjectIds = c.subjects.map((id: any) => new ObjectId(id));
             subjectsData = await subjectsDB.find({ _id: { $in: subjectIds }, isDeleted: { $ne: true } });
+            
+            if (subjectsData && subjectsData.length > 0) {
+                for (const subject of subjectsData) {
+                    if (subject.image) {
+                        subject.image = subject.image.toString();
+                        subject.fullImageUrl = await getFullImageUrl(subject.image, req);
+                    }
+                }
+            }
         }
 
         const faqDB = new QueryBuilder("faqs");
