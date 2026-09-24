@@ -330,6 +330,24 @@ export class FrontendCourseController {
         const upcomingIntakesDB = new QueryBuilder("upcoming_intakes");
         const upcomingIntakesData = await upcomingIntakesDB.find({ isDeleted: { $ne: true } });
 
+        if (upcomingIntakesData && upcomingIntakesData.length > 0) {
+            const subjectDBForIntakes = new QueryBuilder("subjects");
+            const qualDBForIntakes = new QueryBuilder("qualifications");
+            
+            for (const intake of upcomingIntakesData) {
+                if (intake.subjectId) {
+                    const subject = await subjectDBForIntakes.findOne({ _id: new ObjectId(intake.subjectId) });
+                    if (subject) intake.subject = subject.title;
+                    delete intake.subjectId;
+                }
+                if (intake.qualificationId) {
+                    const qual = await qualDBForIntakes.findOne({ _id: new ObjectId(intake.qualificationId) });
+                    if (qual) intake.qualification = qual.title;
+                    delete intake.qualificationId;
+                }
+            }
+        }
+
         const subjectsDB = new QueryBuilder("subjects");
         const subjectsData = await subjectsDB.find({ slug: slug, isDeleted: { $ne: true } });
 
