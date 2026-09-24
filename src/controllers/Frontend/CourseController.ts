@@ -349,7 +349,11 @@ export class FrontendCourseController {
         }
 
         const subjectsDB = new QueryBuilder("subjects");
-        const subjectsData = await subjectsDB.find({ slug: slug, isDeleted: { $ne: true } });
+        let subjectsData: any[] = [];
+        if (c.subjects && c.subjects.length > 0) {
+            const subjectIds = c.subjects.map((id: any) => new ObjectId(id));
+            subjectsData = await subjectsDB.find({ _id: { $in: subjectIds }, isDeleted: { $ne: true } });
+        }
 
         const faqDB = new QueryBuilder("faqs");
         const faqData = await faqDB.find({ slug: slug, isDeleted: { $ne: true } });
