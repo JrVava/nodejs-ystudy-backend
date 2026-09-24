@@ -53,6 +53,7 @@ export class UpcomingIntakeController {
                 qualificationId: new ObjectId(decryptedBody.qualificationId),
                 link: decryptedBody.link,
                 linkName: decryptedBody.linkName,
+                description: decryptedBody.description,
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
                 createdAt: new Date(),
                 updatedAt: new Date()

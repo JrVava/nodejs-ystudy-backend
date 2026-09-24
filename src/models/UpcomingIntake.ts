@@ -7,6 +7,7 @@ export interface UpcomingIntake {
     subjectId: ObjectId | null;
     qualificationId: ObjectId | null;
     link: string;
+    description: string;
     linkName: string;
     status?: boolean;
     isDeleted?: boolean;
