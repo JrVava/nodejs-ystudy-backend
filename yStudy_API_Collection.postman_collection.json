@@ -3443,6 +3443,35 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "FrontendGuideController",
+      "item": [
+        {
+          "name": "GET /frontend/guides/list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/frontend/guides/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "frontend",
+                "guides",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
