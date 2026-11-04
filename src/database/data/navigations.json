@@ -434,6 +434,25 @@
   },
   {
     "_id": {
+      "$oid": "6a3e781e9e7460c6e4ec08f2"
+    },
+    "slug": "student-loan-repayment",
+    "pageName": "Student Loan Repayment",
+    "componentName": "StudentLoanRepayment",
+    "status": true,
+    "parentId": {
+      "$oid": "6a3e772e9e7460c6e4ec08e7"
+    },
+    "position": 10,
+    "createdAt": {
+      "$date": "2026-11-04T03:29:21.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-04T03:29:21.000Z"
+    }
+  },
+  {
+    "_id": {
       "$oid": "6a3e78549e7460c6e4ec08f2"
     },
     "slug": "tools",

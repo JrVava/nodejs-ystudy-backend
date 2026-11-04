@@ -9206,5 +9206,433 @@
             "description": "These terms are governed by the laws of England and Wales, and the courts of England and Wales have jurisdiction. To contact us about these terms, email hello@ystudy.co.uk or write to Dinnovi Ltd at the registered office above.",
             "status": true
         }
+    },
+    {
+        "page": "student-loan-repayment",
+        "section_2": {
+            "badge": "Plain English",
+            "title": "How income-based student loan repayments work.",
+            "subTitle": "Key fact",
+            "description1": "You repay a percentage of what you earn over a threshold — not a percentage of the balance. Earn less and you pay less; earn nothing above the threshold and you pay nothing at all.",
+            "description2": "Student loans are legally repayable. Most UK employee repayments are deducted automatically through payroll when earnings exceed the applicable threshold. Write-off rules and dates vary by loan plan and circumstances.",
+            "status": true
+        },
+        "section_3": {
+            "badge": "YSTUDY · STUDENT LOAN REPAYMENT",
+            "title": "Understand your repayments, without the guesswork.",
+            "description": "Choose your undergraduate repayment plan and whether you also have an English postgraduate loan. Estimates use the 2026/27 England repayment thresholds and assume equal monthly earnings.",
+            "status": true
+        },
+        "section_4": {
+            "title": "What this calculator does — and does not — calculate",
+            "description1": "It estimates regular income-contingent deductions using published plan thresholds. It does not predict the amount you will repay over 30 or 40 years, future interest, salary growth or write-off balances. Your outstanding loan balance matters when you approach full repayment, and separately recoverable overpayments may be payable even when your earnings are below the threshold.",
+            "description2": "For multiple undergraduate loans, SLC may allocate repayments between plans; this estimator shows only one undergraduate deduction, not 9% for every undergraduate plan. If you are unsure of your plan, <a href=\"https://www.gov.uk/repaying-your-student-loan/which-repayment-plan-you-are-on\" target=\"_blank\" rel=\"noopener noreferrer\">check your plan on GOV.UK</a>.",
+            "status": true
+        },
+        "section_5": {
+            "badge": "When repayment starts",
+            "title": "When you actually start repaying.",
+            "description": "You only repay once your income is over the threshold for your plan — income means everything you earn before tax, including bonuses and overtime. Thresholds can change on 6 April; check the applicable tax year.",
+            "cards": [
+                {
+                    "icon": "📅",
+                    "title": "When it starts",
+                    "description": "The earliest is the April after you leave your course. Part-time students on a course longer than four years that began before 1 January 2027 start the April four years after it began."
+                },
+                {
+                    "icon": "⏸️",
+                    "title": "When it pauses",
+                    "description": "Repayments stop automatically if you stop working or your income drops below the threshold, and restart when you're over it again."
+                },
+                {
+                    "icon": "↩️",
+                    "title": "You can claim a refund",
+                    "description": "If your total income for the tax year ended up below the annual threshold — say you only went over in a single month — you can ask for a refund."
+                }
+            ],
+            "status": true
+        },
+        "section_6": {
+            "title": "Repayment thresholds by plan",
+            "description1": "Thresholds change and depend on the tax year. Check the official GOV.UK table before relying on these figures.",
+            "description2": "You repay a percentage of income above these amounts. They may change on 6 April; confirm current rates on GOV.UK.",
+            "description3": "Not sure which plan you're on?",
+            "cards": [
+                {
+                    "icon": "✅",
+                    "title": "No penalty for paying early",
+                    "description": "You can pay off some or all of your loan whenever you like, with no early-repayment charge."
+                },
+                {
+                    "icon": "📊",
+                    "title": "It won't affect your credit score",
+                    "description": "Student loans don't appear on credit reports and don't affect your score — though a mortgage lender may factor the monthly deduction into affordability checks."
+                },
+                {
+                    "icon": "✉️",
+                    "title": "Overpaid? Repaid separately",
+                    "description": "If the Student Loans Company pays you more loan or grant than you were entitled to, they'll write to you — and an overpayment is repaid separately."
+                }
+            ],
+            "status": true,
+            "moduleName": "RepaymentThresholdsPlan",
+            "headers": [
+                "Plan",
+                "Weekly",
+                "Monthly",
+                "Yearly",
+                "Who it's usually for"
+            ],
+            "rows": [
+                {
+                    "isHighlighted": false,
+                    "cells": [
+                        "Plan 1",
+                        "£517",
+                        "£2,241",
+                        "£26,900",
+                        "Started before 2012"
+                    ]
+                },
+                {
+                    "isHighlighted": false,
+                    "cells": [
+                        "Plan 2",
+                        "£565",
+                        "£2,448",
+                        "£29,385",
+                        "English undergrad, 2012–2022"
+                    ]
+                },
+                {
+                    "isHighlighted": false,
+                    "cells": [
+                        "Plan 4",
+                        "£649",
+                        "£2,816",
+                        "£33,795",
+                        "Scotland"
+                    ]
+                },
+                {
+                    "isHighlighted": true,
+                    "cells": [
+                        "<strong>Plan 5</strong>",
+                        "<strong>£480</strong>",
+                        "<strong>£2,083</strong>",
+                        "<strong>£25,000</strong>",
+                        "English undergrad from 2023"
+                    ]
+                },
+                {
+                    "isHighlighted": false,
+                    "cells": [
+                        "Postgraduate",
+                        "£403",
+                        "£1,750",
+                        "£21,000",
+                        "Master's or Doctoral loans"
+                    ]
+                }
+            ]
+        },
+        "section_7": {
+            "title": "When you start repaying — official thresholds",
+            "description": "The current thresholds for every plan and the full rules, from GOV.UK.",
+            "link": "https://www.gov.uk/repaying-your-student-loan/when-you-start-repaying",
+            "status": true
+        },
+        "section_8": {
+            "badge": "How it actually works",
+            "title": "Six things worth knowing about repayments.",
+            "description": "It's a loan — but it behaves more like a graduate contribution than a credit card.",
+            "cards": [
+                {
+                    "icon": "⚙️",
+                    "title": "It comes out automatically",
+                    "description": "Taken through PAYE like tax, before your pay reaches you. There's nothing to set up, chase or miss."
+                },
+                {
+                    "icon": "📉",
+                    "title": "Based on income, not what you owe",
+                    "description": "You pay a percentage of what you earn over the threshold. Earn under it and you pay nothing that month."
+                },
+                {
+                    "icon": "🏦",
+                    "title": "Not normally shown on credit reports",
+                    "description": "It isn't on your credit file. Mortgage lenders look at the monthly deduction from your pay, not the balance."
+                },
+                {
+                    "icon": "🧮",
+                    "title": "Interest increases your balance",
+                    "description": "Because repayments are capped by income and the loan is written off, many graduates never repay the full amount plus interest."
+                },
+                {
+                    "icon": "🗓️",
+                    "title": "Write-off rules depend on your plan",
+                    "description": "40 years for an undergraduate Plan 5 loan, 30 years for a postgraduate loan — counted from the April after you finish."
+                },
+                {
+                    "icon": "🌍",
+                    "title": "Abroad or self-employed?",
+                    "description": "Self-employed borrowers usually repay through Self Assessment. Overseas repayments use country-specific thresholds and SLC assessments."
+                }
+            ],
+            "status": true
+        },
+        "section_9": {
+            "title": "Full terms & conditions of student loans",
+            "description": "The legal detail behind every point above, published by the government.",
+            "link": "https://www.gov.uk/guidance/terms-and-conditions-of-student-loans",
+            "status": true
+        },
+        "section_10": {
+            "badge": "After your funding is approved",
+            "title": "Your obligations once Student Finance is approved.",
+            "description": "Getting your funding approved is the start, not the end — to keep it flowing and avoid paying money back.",
+            "cards": [
+                {
+                    "icon": "📝",
+                    "title": "Enrol and register every year",
+                    "description": "Your university confirms your registration to Student Finance before any money is released. No registration, no payment."
+                },
+                {
+                    "icon": "🔁",
+                    "title": "Reapply for funding each year",
+                    "description": "It isn't automatic after year one. You must reapply for every year of your course — ideally before the annual deadline."
+                },
+                {
+                    "icon": "✏️",
+                    "title": "Keep your details up to date",
+                    "description": "Tell Student Finance promptly if your address, bank account, course, university or household income changes."
+                },
+                {
+                    "icon": "⚠️",
+                    "title": "Report any change in circumstances",
+                    "description": "Switching course, suspending, repeating a year or withdrawing all affect your entitlement — and can create an overpayment."
+                },
+                {
+                    "icon": "🎓",
+                    "title": "Stay enrolled and engaged",
+                    "description": "Funding is tied to being an active, registered student. Dropping below attendance requirements can pause or stop payments."
+                },
+                {
+                    "icon": "💳",
+                    "title": "Maintenance arrives in three instalments",
+                    "description": "One near the start of each term, into your UK bank account — not a single lump sum. Budget for the gaps."
+                }
+            ],
+            "status": true
+        },
+        "section_11": {
+            "title": "Manage your student finance account",
+            "description": "Reapply, update your details and report changes in your official online account.",
+            "link": "https://www.gov.uk/student-finance",
+            "status": true
+        },
+        "section_12": {
+            "badge": "After you graduate · while repaying",
+            "title": "After you graduate: staying on top of repayment.",
+            "description": "Repayment is mostly automatic — but a few obligations stay with you for the whole repayment period.",
+            "cards": [
+                {
+                    "icon": "📍",
+                    "title": "Keep your details current — even abroad",
+                    "description": "The Student Loans Company must be able to reach you for your whole repayment period, wherever you live. If they can't, you can face penalties or a higher fixed repayment."
+                },
+                {
+                    "icon": "✈️",
+                    "title": "Moving abroad? Tell them before you go",
+                    "description": "If you'll be outside the UK for more than three months, notify the SLC and complete an Overseas Income Assessment. They set fixed repayments based on that country — repayment doesn't stop."
+                },
+                {
+                    "icon": "🧾",
+                    "title": "Self-employed? Declare it via Self Assessment",
+                    "description": "In a PAYE job, repayments are automatic. If you're self-employed, you report income on your tax return and HMRC collects the repayment over the threshold."
+                },
+                {
+                    "icon": "📄",
+                    "title": "Check your annual statement",
+                    "description": "The Student Loans Company sends a yearly statement. Check your payments, interest and balance, and query anything that looks wrong."
+                },
+                {
+                    "icon": "🏁",
+                    "title": "Near the end, switch to Direct Debit",
+                    "description": "In the final couple of years you can move to Direct Debit so you don't overpay through payroll. If you do overpay, you're entitled to a refund."
+                },
+                {
+                    "icon": "🧹",
+                    "title": "Write-off happens automatically",
+                    "description": "You don't apply for it. After 40 years (undergraduate) or 30 years (postgraduate), any remaining balance is cleared automatically."
+                }
+            ],
+            "status": true
+        },
+        "section_13": {
+            "title": "Repaying from abroad & if you're self-employed",
+            "description": "How repayment works overseas and through Self Assessment, from the official source.",
+            "link": "https://www.gov.uk/repaying-your-student-loan",
+            "status": true
+        },
+        "section_14": {
+            "badge": "PRACTICAL GUIDANCE",
+            "title": "What changes could affect your student loan?",
+            "description": "Repayment is income-based, but leaving university, changing your course, receiving an overpayment or moving overseas can create separate responsibilities. Use these guides alongside the official terms.",
+            "cards": [
+                {
+                    "badge": "01",
+                    "title": "Leaving, suspending or transferring",
+                    "description": "Tell your university and Student Finance England as soon as possible. Your funding can be reassessed, and you may need to repay maintenance paid for a period after you became ineligible. Tuition Fee Loan liability depends on when you leave and your course arrangements.",
+                    "link": "https://www.gov.uk/student-finance-if-you-suspend-or-leave",
+                    "linkName": "Official guidance on leaving study ↗"
+                },
+                {
+                    "badge": "02",
+                    "title": "Lower income or a career break",
+                    "description": "PAYE deductions normally stop in pay periods below the relevant threshold. Bonuses or uneven pay may still trigger deductions. You may be able to request a refund if annual earnings were below the threshold.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/getting-a-refund",
+                    "linkName": "Repayment refunds ↗"
+                },
+                {
+                    "badge": "03",
+                    "title": "Interest and loan balance",
+                    "description": "Interest can be added even when your income is below the repayment threshold, so your outstanding balance may grow. Some borrowers repay the balance in full; others reach the applicable write-off date. Voluntary repayments may not be refundable.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+                    "linkName": "Current interest and repayment rules ↗"
+                },
+                {
+                    "badge": "04",
+                    "title": "Moving abroad or self-employment",
+                    "description": "If you go abroad for more than three months, tell the Student Loans Company and provide income information. If self-employed, repayments are generally assessed through Self Assessment. Ignoring requests can lead to fixed repayment demands or arrears.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/how-you-repay",
+                    "linkName": "How you repay ↗"
+                },
+                {
+                    "badge": "05",
+                    "title": "Overpayments are different",
+                    "description": "Funding paid to you when you were not entitled to it can be recovered separately from normal income-contingent repayments. Contact SLC promptly if you receive an overpayment notice; do not assume the usual salary threshold applies.",
+                    "link": "https://www.gov.uk/student-finance",
+                    "linkName": "Manage your student finance ↗"
+                },
+                {
+                    "badge": "06",
+                    "title": "Exceptional circumstances",
+                    "description": "Different rules may apply in cases of death, permanent inability to work due to illness or disability, and certain insolvency circumstances. Do not assume cancellation is automatic: check the conditions and evidence requirements with SLC.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
+                    "linkName": "Cancellation and write-off rules ↗"
+                }
+            ],
+            "status": true
+        },
+        "section_15": {
+            "title": "Know your obligations",
+            "description": "Keep your contact details current, report course and residency changes, check your online loan account, and retain correspondence about funding decisions.",
+            "link": "https://www.gov.uk/repaying-your-student-loan",
+            "btnName": "Read official repayment guidance ↗",
+            "status": true
+        },
+        "section_16": {
+            "badge": "REAL-LIFE REPAYMENT QUESTIONS",
+            "title": "Important situations to plan for",
+            "cards": [
+                {
+                    "title": "Two jobs or irregular bonuses",
+                    "description": "PAYE deductions are generally calculated separately for each employment and each pay period. A bonus can trigger a deduction even when your annual income is below the annual threshold. Self Assessment may produce a different year-end result.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/how-you-repay",
+                    "linkName": "Official repayment methods ↗"
+                },
+                {
+                    "title": "Returning to university",
+                    "description": "Previous study can affect eligibility for new tuition and maintenance funding. Existing repayment obligations and eligibility for a new loan are separate questions. Check both before applying.",
+                    "link": "https://www.gov.uk/student-finance/who-qualifies",
+                    "linkName": "Who qualifies ↗"
+                },
+                {
+                    "title": "Refunds and incorrect deductions",
+                    "description": "You may qualify for a refund in circumstances such as deductions before your repayment start date, use of an incorrect plan or earnings below the annual threshold. Voluntary extra repayments are generally not refundable.",
+                    "link": "https://www.gov.uk/repaying-your-student-loan/getting-a-refund",
+                    "linkName": "How to request a refund ↗"
+                },
+                {
+                    "title": "Leaving or suspending your course",
+                    "description": "Contact your university and SFE promptly. Funding may be reassessed and overpayments can become separately recoverable, regardless of your earnings. Ask for a written explanation if you disagree with a decision.",
+                    "link": "https://www.gov.uk/student-finance-if-you-suspend-or-leave",
+                    "linkName": "Suspension and withdrawal ↗"
+                }
+            ],
+            "status": true
+        },
+        "section_17": {
+            "title": "Source, independence and publication notice",
+            "description": "Information is aimed primarily at borrowers with English student finance. Figures are labelled for the 2026/27 tax year and should be checked before publishing, including any later government updates. YStudy is an independent recruitment and guidance brand of Dinnovi Ltd; it is not affiliated with or endorsed by Student Finance England or the Student Loans Company. This page provides general information, not personalised financial or legal advice.",
+            "cards": [
+                {
+                    "link": "https://www.gov.uk/repaying-your-student-loan",
+                    "linkName": "GOV.UK repayment guidance"
+                },
+                {
+                    "link": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
+                    "linkName": "Write-off and cancellation"
+                },
+                {
+                    "link": "https://www.gov.uk/repaying-your-student-loan/how-you-repay",
+                    "linkName": "PAYE, Self Assessment and overseas"
+                }
+            ],
+            "status": true
+        },
+        "section_18": {
+            "badge": "The honest truth",
+            "title": "It's misunderstood — not something to fear.",
+            "description1": "Student Finance is the most misunderstood part of going to university, and the misunderstanding stops a lot of capable people from applying. Student loans are legal debts with repayment and reporting obligations. It's an income-contingent contribution: you only pay while you earn above the threshold, your repayment rate is set by your plan, and any remaining balance may be cancelled when the applicable write-off conditions are met.",
+            "description2": "We'd rather you understood that now than be surprised later. If the numbers above still feel confusing, that's exactly what a free YStudy adviser is for.",
+            "status": true
+        },
+        "section_19": {
+            "title": "Guidance only.",
+            "description": "This tool gives estimates to help you understand how repayment works. What you actually repay varies according to each individual's circumstances, their earnings over time and their specific loan plan. For your exact position, always check the official source.",
+            "status": true
+        },
+        "section_20": {
+            "title": "Official student loan repayment calculator & rules",
+            "description": "Check your plan, thresholds and exactly what you'll repay on GOV.UK — the authoritative source.",
+            "link": "https://www.gov.uk/repaying-your-student-loan",
+            "status": true
+        },
+        "section_21": {
+            "description": "Calculator methodology: the interactive estimator uses 2026/27 published repayment thresholds and plan rates for illustrative payroll-period deductions. It does not forecast lifetime repayments, future interest or write-offs. Verify figures against GOV.UK before publishing or using them in financial decisions.",
+            "status": true
+        },
+        "section_22": {
+            "badge": "TRANSPARENCY",
+            "title": "How to interpret the calculators",
+            "cards": [
+                {
+                    "title": "Monthly deductions",
+                    "description": "These are illustrative estimates based on the selected salary and plan threshold. Actual payroll deductions depend on earnings in each pay period, the applicable tax year and payroll rounding."
+                },
+                {
+                    "title": "Lifetime projections",
+                    "description": "Long-term totals are scenarios, not predictions or maximum costs. They rely on assumptions about salary growth, interest, thresholds and repayment duration. Your actual result may differ substantially."
+                },
+                {
+                    "title": "Loan amounts and interest",
+                    "description": "Funding limits and interest rates may change. Check official terms for your course start date and loan plan; do not treat sample balances or rates on this page as an offer or confirmed entitlement."
+                }
+            ],
+            "status": true
+        },
+        "section_23": {
+            "description": "<strong>Independent guidance:</strong> YStudy is a brand of Dinnovi Ltd. We are not Student Finance England, the Student Loans Company or a government agency. Our tools are for education and general information only, not a funding decision or personal financial advice. Official eligibility and repayment obligations are determined under the applicable rules. <a href=\"https://www.gov.uk/repaying-your-student-loan\">Check GOV.UK ↗</a>",
+            "badge": "Content review: November 2026 · Verify current rates and thresholds before publishing.",
+            "status": true
+        },
+        "section_24": {
+            "badge": "Still unsure?",
+            "title": "Talk to a free YStudy adviser.",
+            "description": "Confused by thresholds, interest or having two loans? Book a free call and we'll explain it in plain terms.",
+            "image": "",
+            "status": true
+        }
     }
 ]

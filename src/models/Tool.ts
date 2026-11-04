@@ -7,6 +7,8 @@ export interface Tool {
     description: string;
     time: string;
     link: string;
+    btnLabel: string;
+    badge: string;
     mode: "paid" | "free";
     status?: boolean;
     isDeleted?: boolean;

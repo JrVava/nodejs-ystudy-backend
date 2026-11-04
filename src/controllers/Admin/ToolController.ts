@@ -31,6 +31,9 @@ export class ToolController {
             if (!decryptedBody.mode) {
                 throw new HttpError(400, "Mode is required");
             }
+            if (!decryptedBody.badge) {
+                throw new HttpError(400, "badge is required");
+            }
             if (!["paid", "free"].includes(decryptedBody.mode)) {
                 throw new HttpError(400, "Mode must be either 'paid' or 'free'");
             }
@@ -48,6 +51,8 @@ export class ToolController {
                 description: decryptedBody.description,
                 time: decryptedBody.time,
                 link: decryptedBody.link,
+                btnLabel: decryptedBody.btnLabel,
+                badge: decryptedBody.badge,
                 mode: decryptedBody.mode,
                 image: new ObjectId(decryptedBody.image),
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
