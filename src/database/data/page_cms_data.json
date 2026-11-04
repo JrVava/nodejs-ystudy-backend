@@ -9276,63 +9276,68 @@
             ],
             "status": true,
             "moduleName": "RepaymentThresholdsPlan",
-            "headers": [
-                "Plan",
-                "Weekly",
-                "Monthly",
-                "Yearly",
-                "Who it's usually for"
-            ],
             "rows": [
                 {
                     "isHighlighted": false,
-                    "cells": [
-                        "Plan 1",
-                        "£517",
-                        "£2,241",
-                        "£26,900",
-                        "Started before 2012"
-                    ]
+                    "plan": "Plan 1",
+                    "weekly": "£517",
+                    "monthly": "£2,241",
+                    "yearly": "£26,900",
+                    "who_for": "Started before 2012"
                 },
                 {
                     "isHighlighted": false,
-                    "cells": [
-                        "Plan 2",
-                        "£565",
-                        "£2,448",
-                        "£29,385",
-                        "English undergrad, 2012–2022"
-                    ]
+                    "plan": "Plan 2",
+                    "weekly": "£565",
+                    "monthly": "£2,448",
+                    "yearly": "£29,385",
+                    "who_for": "English undergrad, 2012–2022"
                 },
                 {
                     "isHighlighted": false,
-                    "cells": [
-                        "Plan 4",
-                        "£649",
-                        "£2,816",
-                        "£33,795",
-                        "Scotland"
-                    ]
+                    "plan": "Plan 4",
+                    "weekly": "£649",
+                    "monthly": "£2,816",
+                    "yearly": "£33,795",
+                    "who_for": "Scotland"
                 },
                 {
                     "isHighlighted": true,
-                    "cells": [
-                        "<strong>Plan 5</strong>",
-                        "<strong>£480</strong>",
-                        "<strong>£2,083</strong>",
-                        "<strong>£25,000</strong>",
-                        "English undergrad from 2023"
-                    ]
+                    "plan": "Plan 5",
+                    "weekly": "£480",
+                    "monthly": "£2,083",
+                    "yearly": "£25,000",
+                    "who_for": "English undergrad from 2023"
                 },
                 {
                     "isHighlighted": false,
-                    "cells": [
-                        "Postgraduate",
-                        "£403",
-                        "£1,750",
-                        "£21,000",
-                        "Master's or Doctoral loans"
-                    ]
+                    "plan": "Postgraduate",
+                    "weekly": "£403",
+                    "monthly": "£1,750",
+                    "yearly": "£21,000",
+                    "who_for": "Master's or Doctoral loans"
+                }
+            ],
+            "columns": [
+                {
+                    "key": "plan",
+                    "header": "Plan"
+                },
+                {
+                    "key": "weekly",
+                    "header": "Weekly"
+                },
+                {
+                    "key": "monthly",
+                    "header": "Monthly"
+                },
+                {
+                    "key": "yearly",
+                    "header": "Yearly"
+                },
+                {
+                    "key": "who_for",
+                    "header": "Who it's usually for"
                 }
             ]
         },

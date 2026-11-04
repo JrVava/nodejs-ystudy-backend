@@ -11,7 +11,8 @@ export const allowedCollections = [
     "qualifications",
     "modes",
     "durations",
-    "fundings"
+    "fundings",
+    "repayment_thresholds_plans"
 ];
 
 export const validMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
