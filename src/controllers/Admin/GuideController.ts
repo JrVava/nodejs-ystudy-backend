@@ -28,6 +28,9 @@ export class GuideController {
                 title: decryptedBody.title,
                 subTitle: decryptedBody.subTitle,
                 description: decryptedBody.description,
+                badge: decryptedBody.badge,
+                read_time: decryptedBody.read_time,
+                icon: decryptedBody.icon,
                 link: decryptedBody.link,
                 image: decryptedBody.image ? new ObjectId(decryptedBody.image) : null,
                 status: decryptedBody.status !== undefined ? decryptedBody.status : true,
@@ -68,7 +71,9 @@ export class GuideController {
 
             if (search) {
                 filter.$or = [
-                    { title: { $regex: search, $options: "i" } }
+                    { title: { $regex: search, $options: "i" } },
+                    { subTitle: { $regex: search, $options: "i" } },
+                    { badge: { $regex: search, $options: "i" } }
                 ];
             }
 
@@ -86,6 +91,9 @@ export class GuideController {
                         _id: g._id?.toString(),
                         title: g.title,
                         subTitle: g.subTitle,
+                        badge: g.badge,
+                        read_time: g.read_time,
+                        icon: g.icon?.toString ? g.icon.toString() : g.icon,
                         status: g.status,
                         createdAt: g.createdAt,
                         updatedAt: g.updatedAt
@@ -108,7 +116,12 @@ export class GuideController {
 
             const guides = await guideDB.find({ status: true, isDeleted: { $ne: true } }, {
                 projection: {
-                    title: 1
+                    title: 1,
+                    subTitle: 1,
+                    badge: 1,
+                    read_time: 1,
+                    icon: 1,
+                    status: 1
                 }
             });
 
@@ -118,6 +131,10 @@ export class GuideController {
                     data: guides.map((g: any) => ({
                         _id: g._id?.toString(),
                         title: g.title,
+                        subTitle: g.subTitle,
+                        badge: g.badge,
+                        read_time: g.read_time,
+                        icon: g.icon?.toString ? g.icon.toString() : g.icon,
                         status: g.status
                     }))
                 })
@@ -149,6 +166,10 @@ export class GuideController {
             }
 
             const fullImageUrl = await getFullImageUrl(guide.image, req);
+            let fullIconUrl = null;
+            if (guide.icon && ObjectId.isValid(guide.icon.toString()) && guide.icon.toString().length === 24) {
+                fullIconUrl = await getFullImageUrl(guide.icon, req);
+            }
 
             return {
                 data: encrypt({
@@ -156,7 +177,8 @@ export class GuideController {
                     data: {
                         ...guide,
                         _id: guide._id?.toString(),
-                        fullImageUrl
+                        fullImageUrl,
+                        fullIconUrl
                     }
                 })
             };
@@ -188,6 +210,10 @@ export class GuideController {
 
             if (updateFields.image) {
                 updateFields.image = new ObjectId(updateFields.image);
+            }
+
+            if (updateFields.icon && typeof updateFields.icon === "string" && ObjectId.isValid(updateFields.icon) && updateFields.icon.length === 24) {
+                updateFields.icon = new ObjectId(updateFields.icon);
             }
 
             const result = await guideDB.updateOne({ _id: objId, isDeleted: { $ne: true } }, { $set: updateFields });

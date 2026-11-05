@@ -153,6 +153,30 @@
             "status": true
         },
         "section_11": {
+            "badge": "THE HONEST TRUTH ABOUT STUDENT FINANCE",
+            "title": "It's a loan — but a fair one.",
+            "description": "Student Finance is often misunderstood. We'd rather you know now than be surprised later.",
+            "truth_cards": [
+                {
+                    "title": "It's a loan, not a grant",
+                    "description": "Tuition is paid to university. Maintenance is paid to you."
+                },
+                {
+                    "title": "You only repay above £25,000",
+                    "description": "Repayment is based on income, not the balance."
+                },
+                {
+                    "title": "Wiped after 30 / 40 years",
+                    "description": "Many graduates do not repay the full amount."
+                }
+            ],
+            "next_intake": {
+                "title": "Next intake: September 2026",
+                "description": "Applications close in August — secure your place early."
+            },
+            "status": true
+        },
+        "section_12": {
             "badge": "SALARY PROJECTION",
             "title": "What could your route look like?",
             "description": "Salary cards create a stronger decision signal for users comparing courses.",
@@ -185,30 +209,6 @@
             "cta_banner": {
                 "title": "What could you earn after studying?",
                 "subtitle": "Check salary ranges for business, computing, healthcare, psychology and more."
-            },
-            "status": true
-        },
-        "section_12": {
-            "badge": "THE HONEST TRUTH ABOUT STUDENT FINANCE",
-            "title": "It's a loan — but a fair one.",
-            "description": "Student Finance is often misunderstood. We'd rather you know now than be surprised later.",
-            "truth_cards": [
-                {
-                    "title": "It's a loan, not a grant",
-                    "description": "Tuition is paid to university. Maintenance is paid to you."
-                },
-                {
-                    "title": "You only repay above £25,000",
-                    "description": "Repayment is based on income, not the balance."
-                },
-                {
-                    "title": "Wiped after 30 / 40 years",
-                    "description": "Many graduates do not repay the full amount."
-                }
-            ],
-            "next_intake": {
-                "title": "Next intake: September 2026",
-                "description": "Applications close in August — secure your place early."
             },
             "status": true
         },
@@ -2772,7 +2772,8 @@
         "section_3": {
             "badge": "YStudy",
             "title": "Not sure what to do next?",
-            "description": "Start with a quick route check, then speak to a YStudy adviser before you apply."
+            "description": "Start with a quick route check, then speak to a YStudy adviser before you apply.",
+            "status": true
         },
         "section_4": {
             "cards": [

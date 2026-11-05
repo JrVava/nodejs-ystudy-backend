@@ -5,6 +5,9 @@ export interface Guide {
     title: string;
     subTitle?: string;
     description?: string;
+    badge?: string;
+    read_time?: string;
+    icon?: string;
     link?: string;
     image?: string | ObjectId | null;
     status: boolean;
