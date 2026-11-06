@@ -3539,15 +3539,148 @@
     {
         "page": "funding-checker",
         "section_2": {
-            "badge": "Funding profile",
-            "title": "Estimate student finance support",
-            "card": {
-                "title": "Important",
-                "description": "Pre-settled status, weekend-only attendance, distance learning, previous study and age can change the outcome. Do not rely on a calculator only."
-            },
+            "description": "<strong>Illustrative funding information.</strong> Figures, examples and calculations are estimates, not an SFE award or eligibility decision. Actual support depends on the applicable academic year, course, provider, residency, previous study, study mode and individual circumstances. Check <a href='https://www.gov.uk/student-finance'>GOV.UK</a> and your SFE account.",
             "status": true
         },
         "section_3": {
+            "badge": "Funding profile",
+            "title": "Estimate student finance support",
+            "description": "Guidance only. Student Finance England makes the final decision and rates can change by academic year.",
+            "card1": {
+                "title": "Important",
+                "description": "Pre-settled status, weekend-only attendance, distance learning, previous study and age can change the outcome. Do not rely on a calculator only."
+            },
+            "card2": {
+                "title": "Why you got this result"
+            },
+            "stepper": {
+                "title": "Next steps",
+                "steps": [
+                    {
+                        "number": "1",
+                        "title": "Check eligibility",
+                        "description": "Confirm status, study mode and previous study."
+                    },
+                    {
+                        "number": "2",
+                        "title": "Choose course",
+                        "description": "Match funding to a realistic degree route."
+                    },
+                    {
+                        "number": "3",
+                        "title": "Apply to SFE",
+                        "description": "Prepare evidence before submitting forms."
+                    }
+                ]
+            },
+            "card3": {
+                "description": "<strong>2026/27 England reference rates.</strong> Tuition figures are maximum annual caps, not guaranteed awards. London maintenance is up to £14,135; outside London is up to £10,830 for eligible students living away from home. Maintenance amounts are standard full-time minimum–maximum ranges; actual support is means-tested and depends on eligibility. The calculator does not assume that having children or an adult dependant guarantees a grant."
+            },
+            "card4": {
+                "title": "Potential non-repayable grants",
+                "description1": "Select Yes for children or an adult dependant to see the relevant grant maximums.",
+                "description2": "2026/27 maximums: Parents’ Learning Allowance up to £2,024; Adult Dependants’ Grant up to £3,545. These are separate, income-assessed grants, not guaranteed awards. Actual amounts can be lower or zero."
+            },
+            "status": true
+        },
+        "section_4": {
+            "badge": "STUDENT FINANCE & ADDITIONAL SUPPORT",
+            "title": "Every way to fund your future.",
+            "description1": "From tuition fees and living costs to help for parents and additional needs — discover your options in one place.",
+            "cards": [
+                {
+                    "badge": "LOAN",
+                    "title": "Maintenance Loan",
+                    "fees": "Up to £14,135",
+                    "subTitle": "Living costs · London",
+                    "image": "",
+                    "description": "Maintenance support for eligible students. Outside London: up to £10,830; with parents: up to £9,118.",
+                    "link": "/funding/maintenance-loan",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "LOAN",
+                    "title": "Tuition Fee Loan",
+                    "fees": "Up to £9,790",
+                    "subTitle": "Standard full-time undergraduate",
+                    "image": "",
+                    "description": "Tuition support paid towards eligible course fees. Different caps may apply to foundation years and other courses.",
+                    "link": "/funding/tuition-fee-loan",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "GRANT",
+                    "title": "Parents’ Learning Allowance",
+                    "fees": "Up to £2,024",
+                    "subTitle": "Potential non-repayable grant",
+                    "image": "",
+                    "description": "Extra help for eligible students with dependent children, subject to individual assessment.",
+                    "link": "/funding/grants",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "GRANT",
+                    "title": "Adult Dependants’ Grant",
+                    "fees": "Up to £3,545",
+                    "subTitle": "Potential non-repayable grant",
+                    "image": "",
+                    "description": "Support where an eligible adult depends on you financially; separate criteria apply.",
+                    "link": "/funding/grants",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "GRANT",
+                    "title": "Childcare Grant",
+                    "fees": "Up to 85%",
+                    "subTitle": "Of eligible childcare costs · capped",
+                    "image": "",
+                    "description": "Help with approved childcare expenses for qualifying students with children.",
+                    "link": "/funding/childcare-grant",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "SUPPORT",
+                    "title": "Disabled Students’ Allowance",
+                    "fees": "Needs-based",
+                    "subTitle": "Support for eligible study needs",
+                    "image": "",
+                    "description": "May contribute to specialist equipment, non-medical help and other eligible study-related costs.",
+                    "link": "/funding/disabled-students-allowance",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "BURSARY",
+                    "title": "University Bursaries",
+                    "fees": "Varies",
+                    "subTitle": "University-specific support",
+                    "image": "",
+                    "description": "Scholarships, hardship funds and bursaries depend on the university and award rules.",
+                    "link": "/funding",
+                    "linkName": "Explore funding "
+                },
+                {
+                    "badge": "LOAN",
+                    "title": "Postgraduate Master’s Loan",
+                    "fees": "Separate funding",
+                    "subTitle": "For eligible postgraduate courses",
+                    "image": "",
+                    "description": "Explore postgraduate finance and how it differs from undergraduate support.",
+                    "link": "",
+                    "linkName": "Explore funding "
+                }
+            ],
+            "description2": "Figures shown are illustrative 2026/27 maximums for eligible students in England. “Up to” is not a guaranteed award. Student Finance England and the relevant provider assess eligibility. Loans and grants have separate rules and may not all be combined. <a href='https://www.gov.uk/student-finance'>Official guidance</a>",
+            "status": true
+        },
+        "section_5": {
+            "badge": "UNDERSTAND YOUR OPTIONS",
+            "title": "Funding is more than a number.",
+            "description": "Understand how loans, grants and bursaries work, how previous study can affect eligibility, and which steps to take next.",
+            "link": "",
+            "linkName": "Explore the funding hub →",
+            "status": true
+        },
+        "section_6": {
             "cards": [
                 {
                     "title": "Maintenance Loan",
@@ -3564,18 +3697,18 @@
             ],
             "status": true
         },
-        "section_4": {
+        "section_7": {
             "title": "Want help checking your funding?",
             "description": "Send your result to YStudy and we’ll help you understand your best next step.",
             "status": true
         },
-        "section_5": {
+        "section_8": {
             "title": "Need help?",
-            "description": "Book a free adviser call. We can review this tool result and help you choose the next step.",
-            "badge": "This page result can be saved and shared with an adviser.",
+            "description1": "Book a free adviser call. We can review this tool result and help you choose the next step.",
+            "description2": "This page result can be saved and shared with an adviser.",
             "status": true
         },
-        "section_6": {
+        "section_9": {
             "cards": [
                 {
                     "title": "Check if you can get funded.",
@@ -3592,7 +3725,7 @@
             ],
             "status": true
         },
-        "section_7": {
+        "section_10": {
             "title": "Useful next steps",
             "description": "Move from information to action. Compare degrees, check funding, explore careers and apply with support.",
             "cards": [
