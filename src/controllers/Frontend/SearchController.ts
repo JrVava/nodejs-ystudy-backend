@@ -55,13 +55,29 @@ export class FrontendSearchController {
             let subjectsResult: SearchResultItem[] = [];
             let toolsResult: SearchResultItem[] = [];
 
-            const regexQuery = rawQuery ? { $regex: escapeRegex(rawQuery), $options: "i" } : null;
+            // Case 1: Search is empty -> Default to get all courses; subjects & tools are empty arrays
+            if (!rawQuery) {
+                if (searchCourses) {
+                    const courses = await courseDB.find(
+                        { status: true, isDeleted: { $ne: true } },
+                        { sort: { createdAt: -1 } }
+                    );
 
-            // 1. Search Courses & Course CMS values
-            if (searchCourses) {
-                let matchingCourseIds: any[] = [];
+                    coursesResult = courses.map((c) => ({
+                        module: "Course",
+                        title: c.title,
+                        description: c.shortDescription || c.longDescription || "",
+                        link: c.slug ? `degrees/course/${c.slug}` : ""
+                    }));
+                }
+                subjectsResult = [];
+                toolsResult = [];
+            } else {
+                // Case 2: Search is not empty -> Filter courses, subjects and tools using search & CMS values
+                const regexQuery = { $regex: escapeRegex(rawQuery), $options: "i" };
 
-                if (regexQuery) {
+                // 1. Search Courses & Course CMS values
+                if (searchCourses) {
                     // Search in Course CMS values across sections
                     const courseCmsOrConditions: any[] = [
                         { "section_2.title": regexQuery },
@@ -139,11 +155,9 @@ export class FrontendSearchController {
                         { isDeleted: { $ne: true }, $or: courseCmsOrConditions },
                         { projection: { courseId: 1 } }
                     );
-                    matchingCourseIds = matchingCms.map((doc: any) => doc.courseId).filter(Boolean);
-                }
+                    const matchingCourseIds = matchingCms.map((doc: any) => doc.courseId).filter(Boolean);
 
-                const courseFilter: any = { status: true, isDeleted: { $ne: true } };
-                if (regexQuery) {
+                    const courseFilter: any = { status: true, isDeleted: { $ne: true } };
                     const orConditions: any[] = [
                         { title: regexQuery },
                         { slug: regexQuery },
@@ -156,23 +170,20 @@ export class FrontendSearchController {
                     }
 
                     courseFilter.$or = orConditions;
+
+                    const courses = await courseDB.find(courseFilter, { sort: { createdAt: -1 } });
+
+                    // If no courses match, coursesResult will be an empty array []
+                    coursesResult = courses.map((c) => ({
+                        module: "Course",
+                        title: c.title,
+                        description: c.shortDescription || c.longDescription || "",
+                        link: c.slug ? `degrees/course/${c.slug}` : ""
+                    }));
                 }
 
-                const courses = await courseDB.find(courseFilter, { sort: { createdAt: -1 } });
-
-                coursesResult = courses.map((c) => ({
-                    module: "Course",
-                    title: c.title,
-                    description: c.shortDescription || c.longDescription || "",
-                    link: c.slug ? `degrees/course/${c.slug}` : ""
-                }));
-            }
-
-            // 2. Search Subjects & Subject CMS values
-            if (searchSubjects) {
-                let matchingSubjectIds: any[] = [];
-
-                if (regexQuery) {
+                // 2. Search Subjects & Subject CMS values
+                if (searchSubjects) {
                     // Search in Subject CMS values across sections
                     const subjectCmsOrConditions: any[] = [
                         { "section_2.title": regexQuery },
@@ -212,11 +223,9 @@ export class FrontendSearchController {
                         { isDeleted: { $ne: true }, $or: subjectCmsOrConditions },
                         { projection: { subjectId: 1 } }
                     );
-                    matchingSubjectIds = matchingCms.map((doc: any) => doc.subjectId).filter(Boolean);
-                }
+                    const matchingSubjectIds = matchingCms.map((doc: any) => doc.subjectId).filter(Boolean);
 
-                const subjectFilter: any = { status: true, isDeleted: { $ne: true } };
-                if (regexQuery) {
+                    const subjectFilter: any = { status: true, isDeleted: { $ne: true } };
                     const orConditions: any[] = [
                         { title: regexQuery },
                         { slug: regexQuery },
@@ -229,38 +238,41 @@ export class FrontendSearchController {
                     }
 
                     subjectFilter.$or = orConditions;
+
+                    const subjects = await subjectDB.find(subjectFilter, { sort: { createdAt: -1 } });
+
+                    // If no subjects match, subjectsResult will be an empty array []
+                    subjectsResult = subjects.map((s) => ({
+                        module: "Subject",
+                        title: s.title,
+                        description: s.description || "",
+                        link: s.slug ? `degrees/${s.slug}` : ""
+                    }));
                 }
 
-                const subjects = await subjectDB.find(subjectFilter, { sort: { createdAt: -1 } });
+                // 3. Search Tools
+                if (searchTools) {
+                    const toolFilter: any = {
+                        status: true,
+                        isDeleted: { $ne: true },
+                        $or: [
+                            { title: regexQuery },
+                            { description: regexQuery },
+                            { badge: regexQuery },
+                            { link: regexQuery }
+                        ]
+                    };
 
-                subjectsResult = subjects.map((s) => ({
-                    module: "Subject",
-                    title: s.title,
-                    description: s.description || "",
-                    link: s.slug ? `degrees/${s.slug}` : ""
-                }));
-            }
+                    const tools = await toolDB.find(toolFilter, { sort: { createdAt: -1 } });
 
-            // 3. Search Tools
-            if (searchTools) {
-                const toolFilter: any = { status: true, isDeleted: { $ne: true } };
-                if (regexQuery) {
-                    toolFilter.$or = [
-                        { title: regexQuery },
-                        { description: regexQuery },
-                        { badge: regexQuery },
-                        { link: regexQuery }
-                    ];
+                    // If no tools match, toolsResult will be an empty array []
+                    toolsResult = tools.map((t) => ({
+                        module: "Tools",
+                        title: t.title,
+                        description: t.description || "",
+                        link: t.link || ""
+                    }));
                 }
-
-                const tools = await toolDB.find(toolFilter, { sort: { createdAt: -1 } });
-
-                toolsResult = tools.map((t) => ({
-                    module: "Tools",
-                    title: t.title,
-                    description: t.description || "",
-                    link: t.link || ""
-                }));
             }
 
             const total = coursesResult.length + subjectsResult.length + toolsResult.length;
@@ -271,6 +283,7 @@ export class FrontendSearchController {
                     search: rawQuery,
                     total,
                     data: {
+                        courses: coursesResult,
                         combined: [
                             ...coursesResult,
                             ...subjectsResult,
