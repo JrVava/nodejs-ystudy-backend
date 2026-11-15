@@ -19,6 +19,7 @@ export interface Course {
     availableCourses?: ObjectId[] | null;
     locations?: ObjectId[] | null;
     subjects?: ObjectId[] | null;
+    routes?: ObjectId[] | null;
     qualifications?: ObjectId[] | null;
     durations?: ObjectId[] | null;
     fundings?: ObjectId[] | null;

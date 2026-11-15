@@ -53,6 +53,9 @@ export class CourseController {
                 subjects: Array.isArray(decryptedBody.subjects)
                     ? decryptedBody.subjects.map((id: string) => new ObjectId(id))
                     : null,
+                routes: Array.isArray(decryptedBody.routes)
+                    ? decryptedBody.routes.map((id: string) => new ObjectId(id))
+                    : null,
                 qualifications: Array.isArray(decryptedBody.qualifications)
                     ? decryptedBody.qualifications.map((id: string) => new ObjectId(id))
                     : null,
@@ -332,6 +335,10 @@ export class CourseController {
 
             if (Array.isArray(updateFields.subjects)) {
                 updateFields.subjects = updateFields.subjects.map((id: string) => new ObjectId(id));
+            }
+
+            if (Array.isArray(updateFields.routes)) {
+                updateFields.routes = updateFields.routes.map((id: string) => new ObjectId(id));
             }
 
             if (Array.isArray(updateFields.qualifications)) {
