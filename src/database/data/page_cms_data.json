@@ -1892,7 +1892,8 @@
         },
         "section_5": {
             "badge": "Main subject guides",
-            "title": "Explore the subjects students ask about most."
+            "title": "Explore the subjects students ask about most.",
+            "status": true
         },
         "section_6": {
             "cards": [
