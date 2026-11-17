@@ -51,6 +51,10 @@ export class FrontendCourseController {
                     const id = safeObjectId(body.funding);
                     if (id) filter.fundings = id;
                 }
+                if ((body.route || body.routes) && body.route !== "Any route" && body.routes !== "Any route") {
+                    const id = safeObjectId(body.route || body.routes);
+                    if (id) filter.routes = id;
+                }
                 if (body.keyword_search && body.keyword_search.trim() !== "") {
                     filter.title = { $regex: body.keyword_search.trim(), $options: "i" };
                 }
