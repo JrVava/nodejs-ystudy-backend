@@ -14,7 +14,7 @@ export class FrontendQualificationController {
             const qualificationDB = new QueryBuilder<Qualification>("qualifications");
 
             // Find all active and non-deleted qualifications
-            const qualifications = await qualificationDB.find({ status: true, isDeleted: { $ne: true } }, {
+            const qualifications = await qualificationDB.find({ status: { $ne: false }, isDeleted: { $ne: true } }, {
                 projection: {
                     createdAt: 0,
                     updatedAt: 0,
@@ -49,3 +49,7 @@ export class FrontendQualificationController {
         }
     }
 }
+
+// Alias for singular /frontend/qualification
+@JsonController("/frontend/qualification")
+export class FrontendSingleQualificationController extends FrontendQualificationController {}

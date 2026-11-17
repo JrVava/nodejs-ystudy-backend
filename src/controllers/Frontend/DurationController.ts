@@ -13,7 +13,7 @@ export class FrontendDurationController {
             const durationDB = new QueryBuilder<Duration>("durations");
 
             // Find all active and non-deleted durations
-            const durations = await durationDB.find({ status: true, isDeleted: { $ne: true } }, {
+            const durations = await durationDB.find({ status: { $ne: false }, isDeleted: { $ne: true } }, {
                 projection: {
                     title: 1
                 }
@@ -35,3 +35,7 @@ export class FrontendDurationController {
         }
     }
 }
+
+// Alias for singular /frontend/duration
+@JsonController("/frontend/duration")
+export class FrontendSingleDurationController extends FrontendDurationController {}

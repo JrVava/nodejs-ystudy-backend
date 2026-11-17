@@ -25,7 +25,7 @@ export class FrontendSubjectController {
                 }
             };
 
-            const subjects = await subjectDB.find({ status: true, isDeleted: { $ne: true } }, options);
+            const subjects = await subjectDB.find({ status: { $ne: false }, isDeleted: { $ne: true } }, options);
 
             const data = await Promise.all(subjects.map(async (s) => {
                 const mapped: any = {
@@ -115,3 +115,7 @@ export class FrontendSubjectController {
         }
     }
 }
+
+// Alias for plural /frontend/subjects
+@JsonController("/frontend/subjects")
+export class FrontendPluralSubjectController extends FrontendSubjectController {}

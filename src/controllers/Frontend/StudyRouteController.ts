@@ -17,7 +17,7 @@ export class FrontendStudyRouteController {
                 { status: { $ne: false }, isDeleted: { $ne: true } },
                 {
                     projection: {
-                        _id: 0,
+                        _id: 1,
                         title: 1,
                         description: 1,
                         slug: 1,
@@ -27,6 +27,8 @@ export class FrontendStudyRouteController {
             );
 
             const data = routes.map((r) => ({
+                _id: r._id?.toString(),
+                id: r._id?.toString(),
                 title: r.title,
                 description: r.description,
                 slug: r.slug,
@@ -46,4 +48,8 @@ export class FrontendStudyRouteController {
         }
     }
 }
+
+// Alias for singular /frontend/study-route
+@JsonController("/frontend/study-route")
+export class FrontendSingleStudyRouteController extends FrontendStudyRouteController {}
 

@@ -13,7 +13,7 @@ export class FrontendFundingController {
             const fundingDB = new QueryBuilder<Funding>("fundings");
 
             // Find all active and non-deleted fundings
-            const fundings = await fundingDB.find({ status: true, isDeleted: { $ne: true } }, {
+            const fundings = await fundingDB.find({ status: { $ne: false }, isDeleted: { $ne: true } }, {
                 projection: {
                     title: 1
                 }
@@ -35,3 +35,7 @@ export class FrontendFundingController {
         }
     }
 }
+
+// Alias for singular /frontend/funding
+@JsonController("/frontend/funding")
+export class FrontendSingleFundingController extends FrontendFundingController {}

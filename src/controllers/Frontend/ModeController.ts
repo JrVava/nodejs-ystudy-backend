@@ -13,7 +13,7 @@ export class FrontendModeController {
             const modeDB = new QueryBuilder<Mode>("modes");
 
             // Find all active and non-deleted modes
-            const modes = await modeDB.find({ status: true, isDeleted: { $ne: true } }, {
+            const modes = await modeDB.find({ status: { $ne: false }, isDeleted: { $ne: true } }, {
                 projection: {
                     title: 1
                 }
@@ -35,3 +35,7 @@ export class FrontendModeController {
         }
     }
 }
+
+// Alias for singular /frontend/mode
+@JsonController("/frontend/mode")
+export class FrontendSingleModeController extends FrontendModeController {}
