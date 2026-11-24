@@ -49,7 +49,8 @@ export class FrontendDegreeMatchController {
                 bestTimeToCall: decryptedBody.bestTimeToCall ? String(decryptedBody.bestTimeToCall).trim() : undefined,
                 is_agree: decryptedBody.is_agree !== undefined ? Boolean(decryptedBody.is_agree) : undefined,
                 status: "pending",
-                is_notification_send: false,
+                isNotificationSend: false,
+                isNotificationSendToAdmin: false,
                 isDeleted: false,
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -83,10 +84,10 @@ export class FrontendDegreeMatchController {
 
                             await sendEmail(recipientEmail, subject, textContent, htmlContent);
 
-                            // After successfully sending email, update is_notification_send to true
+                            // After successfully sending email, update isNotificationSend to true
                             await degreeMatchDB.updateOne(
                                 { _id: insertedId },
-                                { $set: { is_notification_send: true, updatedAt: new Date() } }
+                                { $set: { isNotificationSend: true, updatedAt: new Date() } }
                             );
                         } catch (userEmailError: any) {
                             logger.error(`[FrontendDegreeMatchController:addDegreeMatch] Failed to send email to user:`, userEmailError);
@@ -100,40 +101,38 @@ export class FrontendDegreeMatchController {
                             const smtpRecord = await smtpDB.findOne({ isDeleted: { $ne: true }, status: true });
 
                             if (smtpRecord && smtpRecord.recipient_email) {
-                                const adminEmails = smtpRecord.recipient_email
-                                    .split(",")
-                                    .map(e => e.trim().replace(/[\s.]+$/, ''))
-                                    .filter(e => e.length > 0);
+                                const recipientEmail = smtpRecord.recipient_email.trim();
+                                const adminSubject = "New Degree Match Submission";
+                                const detailsTable = `
+                                    <h2>New Degree Match Submission</h2>
+                                    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+                                        <tr><td><strong>First Name</strong></td><td>${degreeMatchData.firstName || "-"}</td></tr>
+                                        <tr><td><strong>Email</strong></td><td>${degreeMatchData.email || "-"}</td></tr>
+                                        <tr><td><strong>Phone</strong></td><td>${degreeMatchData.phone || "-"}</td></tr>
+                                        <tr><td><strong>Residency Status</strong></td><td>${degreeMatchData.residencyStatus || "-"}</td></tr>
+                                        <tr><td><strong>Highest Qualification</strong></td><td>${degreeMatchData.highestQualification || "-"}</td></tr>
+                                        <tr><td><strong>Subjects of Interest</strong></td><td>${degreeMatchData.subjectsInterest || "-"}</td></tr>
+                                        <tr><td><strong>Study</strong></td><td>${degreeMatchData.study || "-"}</td></tr>
+                                        <tr><td><strong>Career</strong></td><td>${degreeMatchData.career || "-"}</td></tr>
+                                        <tr><td><strong>Salary Level</strong></td><td>${degreeMatchData.salaryLevel || "-"}</td></tr>
+                                        <tr><td><strong>Situation</strong></td><td>${degreeMatchData.situation || "-"}</td></tr>
+                                        <tr><td><strong>Age Range</strong></td><td>${degreeMatchData.ageRange || "-"}</td></tr>
+                                        <tr><td><strong>Language Confident</strong></td><td>${degreeMatchData.languageConfident || "-"}</td></tr>
+                                        <tr><td><strong>Household Income</strong></td><td>${degreeMatchData.HouseholdIncome || "-"}</td></tr>
+                                        <tr><td><strong>Responsibilities</strong></td><td>${degreeMatchData.responsibilities || "-"}</td></tr>
+                                        <tr><td><strong>Best Time To Call</strong></td><td>${degreeMatchData.bestTimeToCall || "-"}</td></tr>
+                                        <tr><td><strong>Agreed</strong></td><td>${degreeMatchData.is_agree !== undefined ? String(degreeMatchData.is_agree) : "-"}</td></tr>
+                                    </table>
+                                `;
+                                const adminText = `A new Degree Match submission has been received from ${degreeMatchData.firstName || "a user"} (${degreeMatchData.email || "No email"}).`;
 
-                                if (adminEmails.length > 0) {
-                                    const adminSubject = "New Degree Match Submission";
-                                    const detailsTable = `
-                                        <h2>New Degree Match Submission</h2>
-                                        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
-                                            <tr><td><strong>First Name</strong></td><td>${degreeMatchData.firstName || "-"}</td></tr>
-                                            <tr><td><strong>Email</strong></td><td>${degreeMatchData.email || "-"}</td></tr>
-                                            <tr><td><strong>Phone</strong></td><td>${degreeMatchData.phone || "-"}</td></tr>
-                                            <tr><td><strong>Residency Status</strong></td><td>${degreeMatchData.residencyStatus || "-"}</td></tr>
-                                            <tr><td><strong>Highest Qualification</strong></td><td>${degreeMatchData.highestQualification || "-"}</td></tr>
-                                            <tr><td><strong>Subjects of Interest</strong></td><td>${degreeMatchData.subjectsInterest || "-"}</td></tr>
-                                            <tr><td><strong>Study</strong></td><td>${degreeMatchData.study || "-"}</td></tr>
-                                            <tr><td><strong>Career</strong></td><td>${degreeMatchData.career || "-"}</td></tr>
-                                            <tr><td><strong>Salary Level</strong></td><td>${degreeMatchData.salaryLevel || "-"}</td></tr>
-                                            <tr><td><strong>Situation</strong></td><td>${degreeMatchData.situation || "-"}</td></tr>
-                                            <tr><td><strong>Age Range</strong></td><td>${degreeMatchData.ageRange || "-"}</td></tr>
-                                            <tr><td><strong>Language Confident</strong></td><td>${degreeMatchData.languageConfident || "-"}</td></tr>
-                                            <tr><td><strong>Household Income</strong></td><td>${degreeMatchData.HouseholdIncome || "-"}</td></tr>
-                                            <tr><td><strong>Responsibilities</strong></td><td>${degreeMatchData.responsibilities || "-"}</td></tr>
-                                            <tr><td><strong>Best Time To Call</strong></td><td>${degreeMatchData.bestTimeToCall || "-"}</td></tr>
-                                            <tr><td><strong>Agreed</strong></td><td>${degreeMatchData.is_agree !== undefined ? String(degreeMatchData.is_agree) : "-"}</td></tr>
-                                        </table>
-                                    `;
-                                    const adminText = `A new Degree Match submission has been received from ${degreeMatchData.firstName || "a user"} (${degreeMatchData.email || "No email"}).`;
+                                await sendEmail(recipientEmail, adminSubject, adminText, detailsTable);
 
-                                    for (const adminEmail of adminEmails) {
-                                        await sendEmail(adminEmail, adminSubject, adminText, detailsTable);
-                                    }
-                                }
+                                // After successfully sending email to admin, update isNotificationSendToAdmin to true
+                                await degreeMatchDB.updateOne(
+                                    { _id: insertedId },
+                                    { $set: { isNotificationSendToAdmin: true, updatedAt: new Date() } }
+                                );
                             } else {
                                 logger.warn(`[FrontendDegreeMatchController:addDegreeMatch] SMTP recipient_email not configured. Skipping admin email.`);
                             }

@@ -92,7 +92,8 @@ export class DegreeMatchController {
                         bestTimeToCall: item.bestTimeToCall || "",
                         status: item.status || "pending",
                         is_agree: item.is_agree,
-                        is_notification_send: item.is_notification_send !== undefined ? Boolean(item.is_notification_send) : false,
+                        isNotificationSend: item.isNotificationSend !== undefined ? Boolean(item.isNotificationSend) : false,
+                        isNotificationSendToAdmin: item.isNotificationSendToAdmin !== undefined ? Boolean(item.isNotificationSendToAdmin) : false,
                         createdAt: item.createdAt,
                         updatedAt: item.updatedAt
                     }))

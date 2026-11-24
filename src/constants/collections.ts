@@ -15,7 +15,8 @@ export const allowedCollections = [
     "repayment_thresholds_plans",
     "study_routes",
     "form_send_email_to_users",
-    "degree_matches"
+    "degree_matches",
+    "eligibility_checkers"
 ];
 
 export const validMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
