@@ -3,6 +3,7 @@ import { connectDB } from "../mongo";
 import { adminSeeder } from "./adminSeeder";
 import { navigationSeeder } from "./navigationSeeder";
 import { pageCmsDataSeeder } from "./pageCmsDataSeeder";
+import { formSendEmailSeeder } from "./formSendEmailSeeder";
 
 const seeders = [
   {
@@ -16,6 +17,10 @@ const seeders = [
   {
     name: "Page CMS Data Seeder",
     run: pageCmsDataSeeder,
+  },
+  {
+    name: "Form Send Email Seeder",
+    run: formSendEmailSeeder,
   },
   // Add more here
   // { name: "Role Seeder", run: roleSeeder },
