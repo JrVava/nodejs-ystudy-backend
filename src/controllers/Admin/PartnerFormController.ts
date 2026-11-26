@@ -4,9 +4,9 @@ import { QueryBuilder } from "../../database/QueryBuilder";
 import { AdminMiddleware } from "../../middleware/AdminMiddleware";
 import logger from "../../utils/logger";
 import { encrypt, decrypt } from "../../utils/crypto";
-import { BecomeAnAdviser, BecomeAnAdviserStatus } from "../../models/BecomeAnAdviser";
+import { PartnerForm, PartnerFormStatus } from "../../models/PartnerForm";
 
-const allStatuses: BecomeAnAdviserStatus[] = [
+const allStatuses: PartnerFormStatus[] = [
     "Under process",
     "completed",
     "reviwed",
@@ -19,21 +19,30 @@ const allowedStatuses: string[] = [
     "reviewed"
 ];
 
-@JsonController("/become-an-adviser")
+export const allowedModules = [
+    { label: "Become An Adviser", value: "becomeAnAdviser" },
+    { label: "Influencers", value: "influencers" },
+    { label: "Affiliate Partners", value: "affiliatePartners" },
+    { label: "Business", value: "business" },
+    { label: "Refer A friend", value: "referAFriend" }
+];
+
+@JsonController("/partner-form")
 @UseBefore(AdminMiddleware)
-export class BecomeAnAdviserController {
+export class PartnerFormController {
 
     @Get("/pagination")
-    async listBecomeAnAdvisers(
+    async listPartnerForms(
         @QueryParam("page") page: number = 1,
         @QueryParam("limit") limit: number = 10,
         @QueryParam("field") field: string = "createdAt",
         @QueryParam("sort") sort: string = "desc",
         @QueryParam("search") search?: string,
-        @QueryParam("status") status?: string
+        @QueryParam("status") status?: string,
+        @QueryParam("module") moduleParam: string = "becomeAnAdviser"
     ) {
         try {
-            const adviserDB = new QueryBuilder<BecomeAnAdviser>("become_an_advisers");
+            const partnerFormDB = new QueryBuilder<PartnerForm>("partner_forms");
 
             const filter: any = { isDeleted: { $ne: true } };
 
@@ -41,10 +50,16 @@ export class BecomeAnAdviserController {
                 filter.status = status.trim();
             }
 
+            const targetModule = (moduleParam && moduleParam.trim() !== "") ? moduleParam.trim() : "becomeAnAdviser";
+            if (targetModule.toLowerCase() !== "all") {
+                filter.module = { $regex: new RegExp(`^${targetModule}$`, "i") };
+            }
+
             if (search && search.trim() !== "") {
                 const term = search.trim();
                 const regex = { $regex: term, $options: "i" };
                 filter.$or = [
+                    { module: regex },
                     { fullName: regex },
                     { email: regex },
                     { phone: regex },
@@ -55,7 +70,7 @@ export class BecomeAnAdviserController {
 
             const sortOrder = sort.toLowerCase() === "asc" ? 1 : -1;
             const sortOptions: any = { [field]: sortOrder };
-            const results = await adviserDB.paginate(filter, Number(page), Number(limit), sortOptions);
+            const results = await partnerFormDB.paginate(filter, Number(page), Number(limit), sortOptions);
 
             return {
                 data: encrypt({
@@ -63,8 +78,10 @@ export class BecomeAnAdviserController {
                     total: results.total,
                     page: results.page,
                     totalPages: results.totalPages,
+                    selectedModule: targetModule,
                     data: results.data.map(item => ({
                         _id: item._id?.toString(),
+                        module: item.module || "becomeAnAdviser",
                         fullName: item.fullName || "",
                         email: item.email || "",
                         phone: item.phone || "",
@@ -79,7 +96,7 @@ export class BecomeAnAdviserController {
                 })
             };
         } catch (error: any) {
-            logger.error(`[BecomeAnAdviserController:listBecomeAnAdvisers] Error occurred:`, error);
+            logger.error(`[PartnerFormController:listPartnerForms] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, error.message || "Internal server error");
         }
@@ -95,7 +112,7 @@ export class BecomeAnAdviserController {
                 })
             };
         } catch (error: any) {
-            logger.error(`[BecomeAnAdviserController:getAllStatuses] Error occurred:`, error);
+            logger.error(`[PartnerFormController:getAllStatuses] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, error.message || "Internal server error");
         }
@@ -104,6 +121,27 @@ export class BecomeAnAdviserController {
     @Get("/all-status")
     async getAllStatusesAlias() {
         return this.getAllStatuses();
+    }
+
+    @Get("/modules")
+    async getAllModules() {
+        try {
+            return {
+                data: encrypt({
+                    success: true,
+                    data: allowedModules
+                })
+            };
+        } catch (error: any) {
+            logger.error(`[PartnerFormController:getAllModules] Error occurred:`, error);
+            if (error instanceof HttpError) throw error;
+            throw new HttpError(500, error.message || "Internal server error");
+        }
+    }
+
+    @Get("/all-modules")
+    async getAllModulesAlias() {
+        return this.getAllModules();
     }
 
     @Post("/update-status/:id")
@@ -133,14 +171,14 @@ export class BecomeAnAdviserController {
                 throw new HttpError(400, `Invalid status. Must be one of: ${allStatuses.join(", ")}`);
             }
 
-            const adviserDB = new QueryBuilder<BecomeAnAdviser>("become_an_advisers");
-            const result = await adviserDB.updateOne(
+            const partnerFormDB = new QueryBuilder<PartnerForm>("partner_forms");
+            const result = await partnerFormDB.updateOne(
                 { _id: objId, isDeleted: { $ne: true } },
                 { $set: { status, updatedAt: new Date() } }
             );
 
             if (result.matchedCount === 0) {
-                throw new HttpError(404, "Become an adviser record not found");
+                throw new HttpError(404, "Partner form record not found");
             }
 
             return {
@@ -151,7 +189,7 @@ export class BecomeAnAdviserController {
                 })
             };
         } catch (error: any) {
-            logger.error(`[BecomeAnAdviserController:updateStatus] Error occurred:`, error);
+            logger.error(`[PartnerFormController:updateStatus] Error occurred:`, error);
             if (error instanceof HttpError) throw error;
             throw new HttpError(500, error.message || "Internal server error");
         }
@@ -166,7 +204,15 @@ export class BecomeAnAdviserController {
     }
 }
 
-// Alias for /becomeAnAdviser
+// Aliases for /partnerForm and backward compatibility
+@JsonController("/partnerForm")
+@UseBefore(AdminMiddleware)
+export class PartnerFormCamelCaseController extends PartnerFormController { }
+
+@JsonController("/become-an-adviser")
+@UseBefore(AdminMiddleware)
+export class BecomeAnAdviserController extends PartnerFormController { }
+
 @JsonController("/becomeAnAdviser")
 @UseBefore(AdminMiddleware)
-export class BecomeAnAdviserCamelCaseController extends BecomeAnAdviserController { }
+export class BecomeAnAdviserCamelCaseController extends PartnerFormController { }

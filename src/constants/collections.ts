@@ -17,6 +17,7 @@ export const allowedCollections = [
     "form_send_email_to_users",
     "degree_matches",
     "eligibility_checkers",
+    "partner_forms",
     "become_an_advisers"
 ];
 
